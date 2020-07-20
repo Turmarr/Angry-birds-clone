@@ -1,0 +1,8 @@
+The project plan details the intended structure of the project and shows 
+that some thought went into the technology and library choices. A connection
+between the libraries and the game logic is not present in the plan. The plan 
+is clear and has a good idea about what can be done in the given time. The 
+division of work is done on a high level, but could be more detailed and tell 
+also about the working practices.
+
+Grade for the project plan: 4
