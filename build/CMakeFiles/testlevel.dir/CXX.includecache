@@ -1,0 +1,24 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/mnt/c/Users/tuoma/Documents/Programming/CPP/angry-birds-2020-3/src/level.hpp
+vector
+-
+list
+-
+
+/mnt/c/Users/tuoma/Documents/Programming/CPP/angry-birds-2020-3/src/leveltesting.cpp
+level.hpp
+/mnt/c/Users/tuoma/Documents/Programming/CPP/angry-birds-2020-3/src/level.hpp
+iostream
+-
+list
+-
+vector
+-
+

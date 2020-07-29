@@ -1,0 +1,3 @@
+/mnt/c/Users/tuoma/Documents/Programming/CPP/angry-birds-2020-3/build/CMakeFiles/rebuild_cache.dir
+/mnt/c/Users/tuoma/Documents/Programming/CPP/angry-birds-2020-3/build/CMakeFiles/edit_cache.dir
+/mnt/c/Users/tuoma/Documents/Programming/CPP/angry-birds-2020-3/build/CMakeFiles/testlevel.dir
