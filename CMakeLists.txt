@@ -1,7 +1,18 @@
 cmake_minimum_required(VERSION 3.16.3)
-project(testlevel)
- 
-#However, the file(GLOB...) allows for wildcard additions:
-file(GLOB SOURCES "src/*.cpp" "src/*.hpp")
- 
-add_executable(testlevel ${SOURCES})
+project(test)
+
+include_directories("src")
+
+set(EXECUTABLE_NAME example)
+
+file(GLOB SOURCES src/*.cpp src/*.png)
+add_executable(${EXECUTABLE_NAME} ${SOURCES})
+set(CMAKE_BUILD_TYPE Debug)
+
+find_package(Box2D REQUIRED)
+target_link_libraries(${EXECUTABLE_NAME} Box2D)
+
+
+find_package(SFML 2.5 REQUIRED network audio graphics window system)
+
+target_link_libraries(${EXECUTABLE_NAME} sfml-network sfml-audio sfml-graphics sfml-window sfml-system)
