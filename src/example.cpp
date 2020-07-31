@@ -31,7 +31,7 @@ int main() {
 
     //box width and hight in pixels
     static const float WIDTH = 32.0f;
-    static const float HEIGHT = 32.0f;
+    static const float HEIGHT = 64.0f;
 
     //time step for simulation
     float timeStep = 1.0f / 60.0f;
@@ -127,7 +127,7 @@ int main() {
 
         for (auto body : dynamic) {
             sf::RectangleShape dyn { {WIDTH, HEIGHT} };
-            dyn.setOrigin(16.f, 16.f);
+            dyn.setOrigin(WIDTH/2, HEIGHT/2);
             dyn.setPosition(body->GetPosition().x * SCALE, body->GetPosition().y * SCALE);
             dyn.setRotation(body->GetAngle() * 180/b2_pi);
             dyn.setFillColor(sf::Color::Green);
