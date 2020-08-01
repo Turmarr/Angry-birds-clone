@@ -1,10 +1,3 @@
-//
-//  box.hpp
-//  box2d_Hello_World
-//
-//  Created by Aleksi Sohlman on 29.7.2020.
-//  Copyright © 2020 Aleksi Sohlman. All rights reserved.
-//
 
 #ifndef box_hpp
 #define box_hpp

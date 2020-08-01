@@ -1,10 +1,3 @@
-//
-//  Ground.cpp
-//  box2d_Hello_World
-//
-//  Created by Aleksi Sohlman on 1.8.2020.
-//  Copyright © 2020 Aleksi Sohlman. All rights reserved.
-//
 
 #include "ground.hpp"
 

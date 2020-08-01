@@ -1,10 +1,3 @@
-//
-//  Ground.hpp
-//  box2d_Hello_World
-//
-//  Created by Aleksi Sohlman on 1.8.2020.
-//  Copyright © 2020 Aleksi Sohlman. All rights reserved.
-//
 
 #ifndef ground_hpp
 #define ground_hpp
