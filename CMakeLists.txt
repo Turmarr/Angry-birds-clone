@@ -8,7 +8,7 @@ set(EXECUTABLE_NAME example)
 
 include_directories(${CMAKE_CURRENT_SOURCE_DIR}/src/include)
 
-file(GLOB SOURCES src/*.cpp src/*.png)
+file(GLOB SOURCES src/*.cpp src/*.hpp src/*.png)
 add_executable(${EXECUTABLE_NAME} ${SOURCES})
 set(CMAKE_BUILD_TYPE Debug)
 
