@@ -1,4 +1,5 @@
 cmake_minimum_required(VERSION 3.16.3)
+set (CMAKE_CXX_STANDARD 11)
 project(example)
 
 include_directories("src")
@@ -9,7 +10,7 @@ set (CMAKE_CXX_STANDARD 11)
 
 include_directories(${CMAKE_CURRENT_SOURCE_DIR}/src/include)
 
-file(GLOB SOURCES src/*.cpp src/*.png)
+file(GLOB SOURCES src/*.cpp src/*.hpp src/*.png)
 add_executable(${EXECUTABLE_NAME} ${SOURCES})
 set(CMAKE_BUILD_TYPE Debug)
 
