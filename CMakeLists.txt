@@ -5,6 +5,8 @@ project(example)
 include_directories("src")
 
 set(EXECUTABLE_NAME example)
+set (CMAKE_CXX_STANDARD 11)
+
 
 include_directories(${CMAKE_CURRENT_SOURCE_DIR}/src/include)
 
