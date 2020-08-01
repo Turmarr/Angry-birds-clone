@@ -31,12 +31,13 @@ folder and then make. The executable will be generated with the name "example"
 
 const int WINDOW_WIDTH = 1600;
 const int WINDOW_HEIGHT = 1200;
-const float SCALE = 30.f;
 
 
 
 
 int main() {
+    
+    const float SCALE = 30.f;
 
     //time step for simulation
     float timeStep = 1.0f / 60.0f;
