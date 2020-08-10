@@ -4,7 +4,7 @@
 #include <SFML/Audio.hpp>
 #include <SFML/Network.hpp>
 
-#include "include/box2d/box2d.h"
+#include "Box2D/box2d/box2d.h"
 #include <list>
 #include <iostream>
 

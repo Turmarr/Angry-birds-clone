@@ -2,7 +2,7 @@
 #ifndef ground_hpp
 #define ground_hpp
 
-#include <box2d/box2d.h>
+#include "Box2D/box2d/box2d.h"
 #include <SFML/Graphics.hpp>
 
 class Ground {
