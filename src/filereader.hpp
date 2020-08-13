@@ -22,7 +22,8 @@ File structure:
 
 It doesn't matter what is after the # as it only watches for the first character of each line, but
 it has to be the first character. It is possible to leave blocks away, then the vectors will just be empty.
-If a block in the middle is empty the # has to be present to tick the counter to the correct block.
+If a block in the middle is empty the # has to be present to tick the counter to the correct block. Empty lines
+are possible but on them there must not be any characters except for "\n".
 
 On every line the information is separated by blank spaces.
 
