@@ -1,0 +1,1 @@
+/usr/bin/c++ -g CMakeFiles/test.dir/src/filereader.cpp.o CMakeFiles/test.dir/src/filetest.cpp.o -o test 
