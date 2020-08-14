@@ -5,6 +5,8 @@
 #include <sstream>
 #include <exception>
 
+#ifndef FILE_READER
+#define FILE_READER
 /*
 The files to be read must be placed into the builds folder.
 
@@ -109,3 +111,5 @@ class Filereader {
         std::vector<struct Ground> ground_;
         struct Cannon cannon_;
 };
+
+#endif
