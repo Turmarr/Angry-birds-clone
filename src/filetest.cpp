@@ -5,6 +5,7 @@ int main() {
     
     Filereader file("test.txt");
 
+    auto cannon = file.GetCannon();
     auto pig = file.GetPigs();
     auto bird = file.GetBirds();
     auto object = file.GetObjects();
@@ -14,6 +15,10 @@ int main() {
     std::cout << "Amount of birds: " << bird.size() << std::endl;
     std::cout << "Amount of objects: " << object.size() << std::endl;
     std::cout << "Amount of groundpoints: " << ground.size() << std::endl;
+
+    std::cout << std::endl;
+    std::cout << "Cannon:" << std::endl;
+    std::cout << cannon.x << " " << cannon.y << std::endl;
 
     std::cout << std::endl;
     std::cout << "Pigs:" << std::endl;

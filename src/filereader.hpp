@@ -15,10 +15,11 @@ main program.
 
 File structure:
 # starts a new block the blocks are in order:
-1 Pigs
-2 Birds
-3 Objects
-4 groundpoints (maybe not necessary)
+1 Cannon
+2 Pigs
+3 Birds
+4 Objects
+5 groundpoints (maybe not necessary)
 
 It doesn't matter what is after the # as it only watches for the first character of each line, but
 it has to be the first character. It is possible to leave blocks away, then the vectors will just be empty.
@@ -26,6 +27,9 @@ If a block in the middle is empty the # has to be present to tick the counter to
 are possible but on them there must not be any characters except for "\n".
 
 On every line the information is separated by blank spaces.
+
+Cannon:
+"position on x-axis" "position on y-axis"
 
 Pigs:
 "type of pig" "how manieth it is to be shot"
@@ -45,6 +49,11 @@ class file_exception : public std::exception {
     {
     	return "Failed to read file";
     }
+};
+
+struct Cannon {
+    int x;
+    int y;
 };
 
 struct Pig {
@@ -89,9 +98,14 @@ class Filereader {
             return ground_;
         }
 
+        Cannon GetCannon() const {
+            return cannon_;
+        }
+
     private:
         std::vector<struct Pig> pigs_;
         std::vector<struct Bird> birds_;
         std::vector<struct Object> objects_;
         std::vector<struct Ground> ground_;
+        struct Cannon cannon_;
 };

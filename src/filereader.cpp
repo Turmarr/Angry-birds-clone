@@ -3,7 +3,13 @@
 #include <fstream>
 #include <sstream>
 
-
+Cannon ReadCannon(std::string line) {
+    Cannon cannon;
+    std::stringstream ss;
+    ss.str(line);
+    ss >> cannon.x >> cannon.y;
+    return cannon;
+}
 
 Pig ReadPig(std::string line) {
     Pig pig;
@@ -65,20 +71,26 @@ Filereader::Filereader(std::string filename) {
             }
             else {
                 switch (block_no) {
-                    case 0:
-                        break;
+                    //case 0:
+                        //break;
                     case 1:
+                        cannon_ = ReadCannon(line);
+                        break;
+                    case 2:
                         pigs_.push_back(ReadPig(line));
                         //std::cout << "pigs: " << pigs_.size() << std::endl;
                         break;
-                    case 2:
+                    case 3:
                         birds_.push_back(ReadBird(line));
                         break;
-                    case 3:
+                    case 4:
                         objects_.push_back(ReadObject(line));
                         break;
-                    case 4:
+                    case 5:
                         ground_.push_back(ReadGround(line));
+                        break;
+
+                    default:
                         break;
                     
                 }
