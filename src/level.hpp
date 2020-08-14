@@ -2,7 +2,6 @@
 
 #include <vector>
 #include <list>
-#include "filereader.hpp"
 
 #ifndef LEVEL_CLASS
 #define LEVEL_CLASS
