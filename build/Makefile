@@ -169,32 +169,59 @@ src/filereader.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/src/filereader.cpp.s
 .PHONY : src/filereader.cpp.s
 
-src/filetest.o: src/filetest.cpp.o
+src/level.o: src/level.cpp.o
 
-.PHONY : src/filetest.o
+.PHONY : src/level.o
 
 # target to build an object file
-src/filetest.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/src/filetest.cpp.o
-.PHONY : src/filetest.cpp.o
+src/level.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/src/level.cpp.o
+.PHONY : src/level.cpp.o
 
-src/filetest.i: src/filetest.cpp.i
+src/level.i: src/level.cpp.i
 
-.PHONY : src/filetest.i
+.PHONY : src/level.i
 
 # target to preprocess a source file
-src/filetest.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/src/filetest.cpp.i
-.PHONY : src/filetest.cpp.i
+src/level.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/src/level.cpp.i
+.PHONY : src/level.cpp.i
 
-src/filetest.s: src/filetest.cpp.s
+src/level.s: src/level.cpp.s
 
-.PHONY : src/filetest.s
+.PHONY : src/level.s
 
 # target to generate assembly for a file
-src/filetest.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/src/filetest.cpp.s
-.PHONY : src/filetest.cpp.s
+src/level.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/src/level.cpp.s
+.PHONY : src/level.cpp.s
+
+src/leveltesting.o: src/leveltesting.cpp.o
+
+.PHONY : src/leveltesting.o
+
+# target to build an object file
+src/leveltesting.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/src/leveltesting.cpp.o
+.PHONY : src/leveltesting.cpp.o
+
+src/leveltesting.i: src/leveltesting.cpp.i
+
+.PHONY : src/leveltesting.i
+
+# target to preprocess a source file
+src/leveltesting.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/src/leveltesting.cpp.i
+.PHONY : src/leveltesting.cpp.i
+
+src/leveltesting.s: src/leveltesting.cpp.s
+
+.PHONY : src/leveltesting.s
+
+# target to generate assembly for a file
+src/leveltesting.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/src/leveltesting.cpp.s
+.PHONY : src/leveltesting.cpp.s
 
 # Help Target
 help:
@@ -208,9 +235,12 @@ help:
 	@echo "... src/filereader.o"
 	@echo "... src/filereader.i"
 	@echo "... src/filereader.s"
-	@echo "... src/filetest.o"
-	@echo "... src/filetest.i"
-	@echo "... src/filetest.s"
+	@echo "... src/level.o"
+	@echo "... src/level.i"
+	@echo "... src/level.s"
+	@echo "... src/leveltesting.o"
+	@echo "... src/leveltesting.i"
+	@echo "... src/leveltesting.s"
 .PHONY : help
 
 

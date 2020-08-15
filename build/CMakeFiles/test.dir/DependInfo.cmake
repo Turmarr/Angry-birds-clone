@@ -5,7 +5,8 @@ set(CMAKE_DEPENDS_LANGUAGES
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
   "/mnt/c/Users/tuoma/Documents/Programming/CPP/angry-birds-2020-3/src/filereader.cpp" "/mnt/c/Users/tuoma/Documents/Programming/CPP/angry-birds-2020-3/build/CMakeFiles/test.dir/src/filereader.cpp.o"
-  "/mnt/c/Users/tuoma/Documents/Programming/CPP/angry-birds-2020-3/src/filetest.cpp" "/mnt/c/Users/tuoma/Documents/Programming/CPP/angry-birds-2020-3/build/CMakeFiles/test.dir/src/filetest.cpp.o"
+  "/mnt/c/Users/tuoma/Documents/Programming/CPP/angry-birds-2020-3/src/level.cpp" "/mnt/c/Users/tuoma/Documents/Programming/CPP/angry-birds-2020-3/build/CMakeFiles/test.dir/src/level.cpp.o"
+  "/mnt/c/Users/tuoma/Documents/Programming/CPP/angry-birds-2020-3/src/leveltesting.cpp" "/mnt/c/Users/tuoma/Documents/Programming/CPP/angry-birds-2020-3/build/CMakeFiles/test.dir/src/leveltesting.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")
 

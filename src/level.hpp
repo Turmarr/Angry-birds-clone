@@ -1,7 +1,8 @@
-//#include "include/box2d/box2d.h"
+#include "Box2D/box2d/box2d.h"
 
 #include <vector>
 #include <list>
+#include <algorithm>
 #include "filereader.hpp"
 
 #ifndef LEVEL_CLASS
@@ -11,18 +12,19 @@
 To make testing without the real classes possible the level is defined as a template class
 */
 
-template <typename T, typename D, typename S>
+//needs the constructors added to the for loops for the different objects
+
+
 class Level {
     public:
         //initialises the level and puts the first pig into the cannon
-        Level(std::vector<T> pigs, std::list<D> objects, std::list<S> birds)
-            : pigs_(pigs), objects_(objects), birds_(birds), score_(0) {
-                current_pig_ = pigs_.begin();
-                birdcount_ = 0;
-                for (auto i : birds_) {birdcount_++;}
-                
-            }
+        Level(std::string filename);
 
+        std::vector<Pig> GetPigs() const {
+            return pigs_;
+        }
+
+        void Update();
         //deconstructs the level, is where the level end screen will be determined
         /*
         ~Level() {
@@ -40,30 +42,10 @@ class Level {
         }
         */
         
-        //If possible called in the destructor of the bird class but final implementation
-        //may require a different approach
-        bool ReduceBirdcount() {
-            birdcount_--;
-            if (birdcount_ == 0) {
-                return true;
-            }
-            return false;
-        }
-
-        //to enable the game loop to detect when there are no birds left
-        const int GetBirdcount() const {
-            return birdcount_;
-        }
-
-        bool NextPig() {
-            current_pig_++;
-            if (current_pig_ != pigs_.end()) {
-                return true;
-            }
-            return false;
-        }
+        
 
         //returns how many pigs are left
+        /*
         int GetPigs() const {
             auto i = pigs_.begin();
             for (; i != current_pig_; i++) { }
@@ -71,17 +53,27 @@ class Level {
             for (; i != pigs_.end(); i++, j++) { }
             return j;
         }
-
+        */
+        
         //will update all the objects
         //cannot be implemented before the objects themselves are built
 
     private:
-        typename std::vector<T>::iterator current_pig_;
-        std::vector<T> pigs_;
-        std::list<D> objects_;
-        std::list<S> birds_;
-        int birdcount_;
-        int score_;
+        static const float SCALE_ = 30.f;
+        float timeStep_ = 1.0f / 60.0f;
+        int32 velocityIterations_ = 8;
+        int32 positionIterations_ = 3;
+        b2World world_;
+        
+        int points = 0;
+
+        std::vector<struct Pig> pigs_;
+        std::vector<Pig>::iterator current_pig_;
+        std::vector<struct Bird> birds_;
+        std::vector<struct Object> objects_;
+        std::vector<struct Ground> ground_;
+        struct Cannon cannon_;
+        
 };
 
 #endif

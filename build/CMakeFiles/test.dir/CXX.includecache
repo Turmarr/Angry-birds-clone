@@ -6,6 +6,16 @@
 
 #IncludeRegexTransform: 
 
+/mnt/c/Users/tuoma/Documents/Programming/CPP/angry-birds-2020-3/src/filereader.cpp
+filereader.hpp
+/mnt/c/Users/tuoma/Documents/Programming/CPP/angry-birds-2020-3/src/filereader.hpp
+iostream
+-
+fstream
+-
+sstream
+-
+
 /mnt/c/Users/tuoma/Documents/Programming/CPP/angry-birds-2020-3/src/filereader.hpp
 string
 -
@@ -18,11 +28,5 @@ fstream
 sstream
 -
 exception
--
-
-/mnt/c/Users/tuoma/Documents/Programming/CPP/angry-birds-2020-3/src/filetest.cpp
-filereader.hpp
-/mnt/c/Users/tuoma/Documents/Programming/CPP/angry-birds-2020-3/src/filereader.hpp
-fstream
 -
 

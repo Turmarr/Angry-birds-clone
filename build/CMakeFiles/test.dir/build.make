@@ -89,32 +89,47 @@ CMakeFiles/test.dir/src/filereader.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/test.dir/src/filereader.cpp.s"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /mnt/c/Users/tuoma/Documents/Programming/CPP/angry-birds-2020-3/src/filereader.cpp -o CMakeFiles/test.dir/src/filereader.cpp.s
 
-CMakeFiles/test.dir/src/filetest.cpp.o: CMakeFiles/test.dir/flags.make
-CMakeFiles/test.dir/src/filetest.cpp.o: ../src/filetest.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/mnt/c/Users/tuoma/Documents/Programming/CPP/angry-birds-2020-3/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/test.dir/src/filetest.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/test.dir/src/filetest.cpp.o -c /mnt/c/Users/tuoma/Documents/Programming/CPP/angry-birds-2020-3/src/filetest.cpp
+CMakeFiles/test.dir/src/level.cpp.o: CMakeFiles/test.dir/flags.make
+CMakeFiles/test.dir/src/level.cpp.o: ../src/level.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/mnt/c/Users/tuoma/Documents/Programming/CPP/angry-birds-2020-3/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/test.dir/src/level.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/test.dir/src/level.cpp.o -c /mnt/c/Users/tuoma/Documents/Programming/CPP/angry-birds-2020-3/src/level.cpp
 
-CMakeFiles/test.dir/src/filetest.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/test.dir/src/filetest.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /mnt/c/Users/tuoma/Documents/Programming/CPP/angry-birds-2020-3/src/filetest.cpp > CMakeFiles/test.dir/src/filetest.cpp.i
+CMakeFiles/test.dir/src/level.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/test.dir/src/level.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /mnt/c/Users/tuoma/Documents/Programming/CPP/angry-birds-2020-3/src/level.cpp > CMakeFiles/test.dir/src/level.cpp.i
 
-CMakeFiles/test.dir/src/filetest.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/test.dir/src/filetest.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /mnt/c/Users/tuoma/Documents/Programming/CPP/angry-birds-2020-3/src/filetest.cpp -o CMakeFiles/test.dir/src/filetest.cpp.s
+CMakeFiles/test.dir/src/level.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/test.dir/src/level.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /mnt/c/Users/tuoma/Documents/Programming/CPP/angry-birds-2020-3/src/level.cpp -o CMakeFiles/test.dir/src/level.cpp.s
+
+CMakeFiles/test.dir/src/leveltesting.cpp.o: CMakeFiles/test.dir/flags.make
+CMakeFiles/test.dir/src/leveltesting.cpp.o: ../src/leveltesting.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/mnt/c/Users/tuoma/Documents/Programming/CPP/angry-birds-2020-3/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/test.dir/src/leveltesting.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/test.dir/src/leveltesting.cpp.o -c /mnt/c/Users/tuoma/Documents/Programming/CPP/angry-birds-2020-3/src/leveltesting.cpp
+
+CMakeFiles/test.dir/src/leveltesting.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/test.dir/src/leveltesting.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /mnt/c/Users/tuoma/Documents/Programming/CPP/angry-birds-2020-3/src/leveltesting.cpp > CMakeFiles/test.dir/src/leveltesting.cpp.i
+
+CMakeFiles/test.dir/src/leveltesting.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/test.dir/src/leveltesting.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /mnt/c/Users/tuoma/Documents/Programming/CPP/angry-birds-2020-3/src/leveltesting.cpp -o CMakeFiles/test.dir/src/leveltesting.cpp.s
 
 # Object files for target test
 test_OBJECTS = \
 "CMakeFiles/test.dir/src/filereader.cpp.o" \
-"CMakeFiles/test.dir/src/filetest.cpp.o"
+"CMakeFiles/test.dir/src/level.cpp.o" \
+"CMakeFiles/test.dir/src/leveltesting.cpp.o"
 
 # External object files for target test
 test_EXTERNAL_OBJECTS =
 
 test: CMakeFiles/test.dir/src/filereader.cpp.o
-test: CMakeFiles/test.dir/src/filetest.cpp.o
+test: CMakeFiles/test.dir/src/level.cpp.o
+test: CMakeFiles/test.dir/src/leveltesting.cpp.o
 test: CMakeFiles/test.dir/build.make
 test: CMakeFiles/test.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/mnt/c/Users/tuoma/Documents/Programming/CPP/angry-birds-2020-3/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Linking CXX executable test"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/mnt/c/Users/tuoma/Documents/Programming/CPP/angry-birds-2020-3/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Linking CXX executable test"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/test.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
