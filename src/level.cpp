@@ -10,7 +10,7 @@ Level::Level(std::string filename) {
     auto temp_pigs = info.GetPigs();
     sort(temp_pigs.begin(), temp_pigs.end(), [](Pig a, Pig b) {return a.pos < b.pos;});
     for (auto i : info.GetPigs()) {
-        
+        //a = b 
         pigs_.push_back(i);
     }
 
@@ -29,7 +29,7 @@ Level::Level(std::string filename) {
     cannon_ = info.GetCannon();
 
     b2Vec2 gravity (0.0f, 10.0f);
-    b2World world(gravity);
-    world_ = world;
+    world_->SetGravity(gravity);
+
     
 }

@@ -63,7 +63,8 @@ class Level {
         float timeStep_ = 1.0f / 60.0f;
         int32 velocityIterations_ = 8;
         int32 positionIterations_ = 3;
-        b2World world_;
+        
+        b2World* world_;
         
         int points = 0;
 
