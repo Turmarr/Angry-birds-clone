@@ -13,13 +13,14 @@ class Bird: public Destructables
 
         float x_,y_; //The placement in the window
         float scale_;
+        float radius_
 
         void initSprite();
         void initTexture();
         void initPhysics(b2World& world);
     
     public:
-        Bird(float x, float y, b2World& world, const float scale);
+        Bird(float x, float y, b2World& world, const float scale, float radius);
         ~Bird();
 
         void Update();

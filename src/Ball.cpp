@@ -1,11 +1,12 @@
 #include "Ball.hpp"
 #include <iostream>
 
-Ball::Ball(float x, float y, const std::string& type, float radius, b2World& world){
+Ball::Ball(float x, float y, const std::string& type, float radius, b2World& world, const float scale){
     x_ = x;
     y_ = y;
     type_ = type;
     radius_ = radius;
+    scale_ = scale;
 
     initTexture();
     initSprite();

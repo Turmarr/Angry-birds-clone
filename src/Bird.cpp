@@ -2,19 +2,20 @@
 #include "Bird.hpp"
 #include <iostream>
 
-Bird::Bird(float x, float y, b2World& world, const float scale){
+Bird::Bird(float x, float y, b2World& world, const float scale, float radius){
     x_ = x;
     y_ = y;
     scale_ = scale;
+    radius_ = radius;
     
     initTexture();
     initSprite();
-    initPhysics();
+    initPhysics(world);
 
 }
 
 Bird::~Bird(){
-
+    delete pic_;
 }
 
 //Initializes the bird
