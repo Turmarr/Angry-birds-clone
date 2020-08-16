@@ -53,7 +53,7 @@ void Bird::initPhysics(b2World& world){
 }
 
 
-void Bird::Draw(sf::RenderTarget& target){
+void Bird::Draw(sf::RenderWindow& target){
 
     sprite.setPosition(body->GetPosition().x*scale_,body->GetPosition().y*scale_);
     sprite.setRotation(body->GetAngle()*180/b2_pi);

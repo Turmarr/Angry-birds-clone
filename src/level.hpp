@@ -53,7 +53,7 @@ class Level {
 
     private:
         void CreateGround();
-        void DrawGround(sf::RenderTarget& target);
+        void DrawGround(sf::RenderWindow& target);
 
         const float SCALE_ = 30.f;
         float timeStep_ = 1.0f / 60.0f;

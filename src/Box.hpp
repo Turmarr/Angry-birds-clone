@@ -26,6 +26,6 @@ class Box: public Destructables
         Box(float x, float y, const std::string& type, float angle, b2World& world, const float scale);
         ~Box();
 
-        void Draw(sf::RenderTarget& target);
+        void Draw(sf::RenderWindow& target);
         
 };

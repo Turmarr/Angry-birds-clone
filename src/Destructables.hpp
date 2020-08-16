@@ -12,6 +12,6 @@ class Destructables
     public:
         Destructables(){}
         ~Destructables(){}
-        virtual void Draw(sf::RenderTarget& target) = 0;
+        virtual void Draw(sf::RenderWindow& target) = 0;
 
 };

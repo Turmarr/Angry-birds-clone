@@ -31,7 +31,7 @@ void Ball::initTexture(){
     
     std::string file;
 
-    if (type_ == "Wood"){
+    if (type_ == "wood"){
         file= "Textures/wood.jpg";
     }
     else if (type_ == "Stone"){
@@ -62,7 +62,7 @@ void Ball::initPhysics(b2World& world){
 
 }
 
-void Ball::Draw(sf::RenderTarget& target){
+void Ball::Draw(sf::RenderWindow& target){
     shape.setPosition(body->GetPosition().x*scale_,body->GetPosition().y*scale_);
     shape.setRotation(body->GetAngle()*180/b2_pi);
     target.draw(shape);

@@ -65,6 +65,9 @@ Filereader::Filereader(std::string filename) {
             if (line[0] == '#') {
                 block_no++;
             }
+            else if (line[0] =='/') {
+                continue;
+            }
             else if (line.size() == 0) {
             //std::cout << "con" << std::endl;
             continue;

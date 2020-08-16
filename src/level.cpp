@@ -21,7 +21,7 @@ Level::Level(std::string filename) {
 
     Filereader info(filename);
 
-    std::cout << "file" << std::endl;
+    //std::cout << "file" << std::endl;
 
     ground_ = info.GetGround();
     CreateGround();
@@ -33,14 +33,14 @@ Level::Level(std::string filename) {
         pigs_.push_back(i);
     }
 
-    std::cout << "pig" << std::endl;
+    //std::cout << "pig" << std::endl;
 
     for (auto i : info.GetBirds()) {
         Bird bird(i.x, i.y, *world_, SCALE_);
         birds_.push_back(bird);
     }
 
-    std::cout << "bird" << std::endl;
+    //std::cout << "bird" << std::endl;
     
     for (auto i : info.GetObjects()) {
         if (i.type == "box") {
@@ -53,7 +53,7 @@ Level::Level(std::string filename) {
         }
     }
 
-    std::cout << "object" << std::endl;
+    //std::cout << "object" << std::endl;
 
     for (auto i : info.GetGround()) {
         ground_.push_back(i);
@@ -61,7 +61,10 @@ Level::Level(std::string filename) {
 
     cannon_ = info.GetCannon();
 
-    std::cout << "all" << std::endl;
+    //std::cout << "all" << std::endl;
+    //std::cout << birds_.size() << std::endl;
+    //std::cout << box_.size() << std::endl;
+    //std::cout << ball_.size() << std::endl;
 }
 
 void Level::CreateGround() {
@@ -79,25 +82,25 @@ void Level::CreateGround() {
     }
 }
 
-void Level::DrawGround(sf::RenderTarget& target) {
+void Level::DrawGround(sf::RenderWindow& window) {
     for (auto i : ground_) {
         sf::RectangleShape ground { { i.width, i.height } };
         ground.setOrigin(i.width/2, i.height/2);
         ground.setPosition(i.x, i.y);
         //ground.setRotation(groundBody->GetAngle() * 180/b2_pi);
-        ground.setFillColor(sf::Color::Red);
-        target.draw(ground);
+        ground.setFillColor(sf::Color::Black);
+        window.draw(ground);
     }
 }
 
 void Level::Update(sf::RenderWindow& window) {
 
     world_->Step(timeStep_, velocityIterations_, positionIterations_);
-
-    window.clear();
-
+    //std::cout << 1 << std::endl;
+    window.clear(sf::Color::White);
+    //std::cout << 2 << std::endl;
     DrawGround(window);
-
+    //std::cout << 3 << std::endl;
     //add pigs when ready
 
     for (auto i : birds_) {

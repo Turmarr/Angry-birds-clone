@@ -8,6 +8,7 @@ Box::Box(float x, float y, const std::string& type, float angle, b2World& world,
     angle_ = angle;
     scale_ = scale;
 
+    initBlock();
     initPhysics(world);
     initTexture();
 
@@ -52,19 +53,20 @@ void Box::initTexture(){
 
     std::string file;
 
-    if (type_ == "Wood"){
+    if (type_ == "wood"){
         file= "Textures/wood.jpg";
     }
-    else if (type_ == "Stone"){
+    else if (type_ == "stone"){
         file = "Textures/stone.jpg";
     }
 
     if(!this->pic_.loadFromFile(file)){
         std::cout<< "Error when loading the image from textures." <<std::endl;
     }
+    
 }
 
-void Box::Draw(sf::RenderTarget& target){
+void Box::Draw(sf::RenderWindow& target){
     shape.setPosition(body->GetPosition().x*scale_, body->GetPosition().y*scale_);
     shape.setRotation(body->GetAngle()*180/b2_pi);
     target.draw(shape);
