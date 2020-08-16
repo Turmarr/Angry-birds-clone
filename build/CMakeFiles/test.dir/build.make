@@ -102,9 +102,22 @@ CMakeFiles/test.dir/src/Bird.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/test.dir/src/Bird.cpp.s"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /mnt/c/Users/tuoma/Documents/Programming/CPP/angry-birds-2020-3/src/Bird.cpp -o CMakeFiles/test.dir/src/Bird.cpp.s
 
+CMakeFiles/test.dir/src/Bomb.cpp.o: CMakeFiles/test.dir/flags.make
+CMakeFiles/test.dir/src/Bomb.cpp.o: ../src/Bomb.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/mnt/c/Users/tuoma/Documents/Programming/CPP/angry-birds-2020-3/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/test.dir/src/Bomb.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/test.dir/src/Bomb.cpp.o -c /mnt/c/Users/tuoma/Documents/Programming/CPP/angry-birds-2020-3/src/Bomb.cpp
+
+CMakeFiles/test.dir/src/Bomb.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/test.dir/src/Bomb.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /mnt/c/Users/tuoma/Documents/Programming/CPP/angry-birds-2020-3/src/Bomb.cpp > CMakeFiles/test.dir/src/Bomb.cpp.i
+
+CMakeFiles/test.dir/src/Bomb.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/test.dir/src/Bomb.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /mnt/c/Users/tuoma/Documents/Programming/CPP/angry-birds-2020-3/src/Bomb.cpp -o CMakeFiles/test.dir/src/Bomb.cpp.s
+
 CMakeFiles/test.dir/src/Box.cpp.o: CMakeFiles/test.dir/flags.make
 CMakeFiles/test.dir/src/Box.cpp.o: ../src/Box.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/mnt/c/Users/tuoma/Documents/Programming/CPP/angry-birds-2020-3/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/test.dir/src/Box.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/mnt/c/Users/tuoma/Documents/Programming/CPP/angry-birds-2020-3/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/test.dir/src/Box.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/test.dir/src/Box.cpp.o -c /mnt/c/Users/tuoma/Documents/Programming/CPP/angry-birds-2020-3/src/Box.cpp
 
 CMakeFiles/test.dir/src/Box.cpp.i: cmake_force
@@ -117,7 +130,7 @@ CMakeFiles/test.dir/src/Box.cpp.s: cmake_force
 
 CMakeFiles/test.dir/src/Box2D/b2_block_allocator.cpp.o: CMakeFiles/test.dir/flags.make
 CMakeFiles/test.dir/src/Box2D/b2_block_allocator.cpp.o: ../src/Box2D/b2_block_allocator.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/mnt/c/Users/tuoma/Documents/Programming/CPP/angry-birds-2020-3/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/test.dir/src/Box2D/b2_block_allocator.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/mnt/c/Users/tuoma/Documents/Programming/CPP/angry-birds-2020-3/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/test.dir/src/Box2D/b2_block_allocator.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/test.dir/src/Box2D/b2_block_allocator.cpp.o -c /mnt/c/Users/tuoma/Documents/Programming/CPP/angry-birds-2020-3/src/Box2D/b2_block_allocator.cpp
 
 CMakeFiles/test.dir/src/Box2D/b2_block_allocator.cpp.i: cmake_force
@@ -130,7 +143,7 @@ CMakeFiles/test.dir/src/Box2D/b2_block_allocator.cpp.s: cmake_force
 
 CMakeFiles/test.dir/src/Box2D/b2_body.cpp.o: CMakeFiles/test.dir/flags.make
 CMakeFiles/test.dir/src/Box2D/b2_body.cpp.o: ../src/Box2D/b2_body.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/mnt/c/Users/tuoma/Documents/Programming/CPP/angry-birds-2020-3/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/test.dir/src/Box2D/b2_body.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/mnt/c/Users/tuoma/Documents/Programming/CPP/angry-birds-2020-3/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/test.dir/src/Box2D/b2_body.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/test.dir/src/Box2D/b2_body.cpp.o -c /mnt/c/Users/tuoma/Documents/Programming/CPP/angry-birds-2020-3/src/Box2D/b2_body.cpp
 
 CMakeFiles/test.dir/src/Box2D/b2_body.cpp.i: cmake_force
@@ -143,7 +156,7 @@ CMakeFiles/test.dir/src/Box2D/b2_body.cpp.s: cmake_force
 
 CMakeFiles/test.dir/src/Box2D/b2_broad_phase.cpp.o: CMakeFiles/test.dir/flags.make
 CMakeFiles/test.dir/src/Box2D/b2_broad_phase.cpp.o: ../src/Box2D/b2_broad_phase.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/mnt/c/Users/tuoma/Documents/Programming/CPP/angry-birds-2020-3/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/test.dir/src/Box2D/b2_broad_phase.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/mnt/c/Users/tuoma/Documents/Programming/CPP/angry-birds-2020-3/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/test.dir/src/Box2D/b2_broad_phase.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/test.dir/src/Box2D/b2_broad_phase.cpp.o -c /mnt/c/Users/tuoma/Documents/Programming/CPP/angry-birds-2020-3/src/Box2D/b2_broad_phase.cpp
 
 CMakeFiles/test.dir/src/Box2D/b2_broad_phase.cpp.i: cmake_force
@@ -156,7 +169,7 @@ CMakeFiles/test.dir/src/Box2D/b2_broad_phase.cpp.s: cmake_force
 
 CMakeFiles/test.dir/src/Box2D/b2_chain_circle_contact.cpp.o: CMakeFiles/test.dir/flags.make
 CMakeFiles/test.dir/src/Box2D/b2_chain_circle_contact.cpp.o: ../src/Box2D/b2_chain_circle_contact.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/mnt/c/Users/tuoma/Documents/Programming/CPP/angry-birds-2020-3/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/test.dir/src/Box2D/b2_chain_circle_contact.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/mnt/c/Users/tuoma/Documents/Programming/CPP/angry-birds-2020-3/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object CMakeFiles/test.dir/src/Box2D/b2_chain_circle_contact.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/test.dir/src/Box2D/b2_chain_circle_contact.cpp.o -c /mnt/c/Users/tuoma/Documents/Programming/CPP/angry-birds-2020-3/src/Box2D/b2_chain_circle_contact.cpp
 
 CMakeFiles/test.dir/src/Box2D/b2_chain_circle_contact.cpp.i: cmake_force
@@ -169,7 +182,7 @@ CMakeFiles/test.dir/src/Box2D/b2_chain_circle_contact.cpp.s: cmake_force
 
 CMakeFiles/test.dir/src/Box2D/b2_chain_polygon_contact.cpp.o: CMakeFiles/test.dir/flags.make
 CMakeFiles/test.dir/src/Box2D/b2_chain_polygon_contact.cpp.o: ../src/Box2D/b2_chain_polygon_contact.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/mnt/c/Users/tuoma/Documents/Programming/CPP/angry-birds-2020-3/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object CMakeFiles/test.dir/src/Box2D/b2_chain_polygon_contact.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/mnt/c/Users/tuoma/Documents/Programming/CPP/angry-birds-2020-3/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building CXX object CMakeFiles/test.dir/src/Box2D/b2_chain_polygon_contact.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/test.dir/src/Box2D/b2_chain_polygon_contact.cpp.o -c /mnt/c/Users/tuoma/Documents/Programming/CPP/angry-birds-2020-3/src/Box2D/b2_chain_polygon_contact.cpp
 
 CMakeFiles/test.dir/src/Box2D/b2_chain_polygon_contact.cpp.i: cmake_force
@@ -182,7 +195,7 @@ CMakeFiles/test.dir/src/Box2D/b2_chain_polygon_contact.cpp.s: cmake_force
 
 CMakeFiles/test.dir/src/Box2D/b2_chain_shape.cpp.o: CMakeFiles/test.dir/flags.make
 CMakeFiles/test.dir/src/Box2D/b2_chain_shape.cpp.o: ../src/Box2D/b2_chain_shape.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/mnt/c/Users/tuoma/Documents/Programming/CPP/angry-birds-2020-3/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building CXX object CMakeFiles/test.dir/src/Box2D/b2_chain_shape.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/mnt/c/Users/tuoma/Documents/Programming/CPP/angry-birds-2020-3/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Building CXX object CMakeFiles/test.dir/src/Box2D/b2_chain_shape.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/test.dir/src/Box2D/b2_chain_shape.cpp.o -c /mnt/c/Users/tuoma/Documents/Programming/CPP/angry-birds-2020-3/src/Box2D/b2_chain_shape.cpp
 
 CMakeFiles/test.dir/src/Box2D/b2_chain_shape.cpp.i: cmake_force
@@ -195,7 +208,7 @@ CMakeFiles/test.dir/src/Box2D/b2_chain_shape.cpp.s: cmake_force
 
 CMakeFiles/test.dir/src/Box2D/b2_circle_contact.cpp.o: CMakeFiles/test.dir/flags.make
 CMakeFiles/test.dir/src/Box2D/b2_circle_contact.cpp.o: ../src/Box2D/b2_circle_contact.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/mnt/c/Users/tuoma/Documents/Programming/CPP/angry-birds-2020-3/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Building CXX object CMakeFiles/test.dir/src/Box2D/b2_circle_contact.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/mnt/c/Users/tuoma/Documents/Programming/CPP/angry-birds-2020-3/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Building CXX object CMakeFiles/test.dir/src/Box2D/b2_circle_contact.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/test.dir/src/Box2D/b2_circle_contact.cpp.o -c /mnt/c/Users/tuoma/Documents/Programming/CPP/angry-birds-2020-3/src/Box2D/b2_circle_contact.cpp
 
 CMakeFiles/test.dir/src/Box2D/b2_circle_contact.cpp.i: cmake_force
@@ -208,7 +221,7 @@ CMakeFiles/test.dir/src/Box2D/b2_circle_contact.cpp.s: cmake_force
 
 CMakeFiles/test.dir/src/Box2D/b2_circle_shape.cpp.o: CMakeFiles/test.dir/flags.make
 CMakeFiles/test.dir/src/Box2D/b2_circle_shape.cpp.o: ../src/Box2D/b2_circle_shape.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/mnt/c/Users/tuoma/Documents/Programming/CPP/angry-birds-2020-3/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Building CXX object CMakeFiles/test.dir/src/Box2D/b2_circle_shape.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/mnt/c/Users/tuoma/Documents/Programming/CPP/angry-birds-2020-3/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Building CXX object CMakeFiles/test.dir/src/Box2D/b2_circle_shape.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/test.dir/src/Box2D/b2_circle_shape.cpp.o -c /mnt/c/Users/tuoma/Documents/Programming/CPP/angry-birds-2020-3/src/Box2D/b2_circle_shape.cpp
 
 CMakeFiles/test.dir/src/Box2D/b2_circle_shape.cpp.i: cmake_force
@@ -221,7 +234,7 @@ CMakeFiles/test.dir/src/Box2D/b2_circle_shape.cpp.s: cmake_force
 
 CMakeFiles/test.dir/src/Box2D/b2_collide_circle.cpp.o: CMakeFiles/test.dir/flags.make
 CMakeFiles/test.dir/src/Box2D/b2_collide_circle.cpp.o: ../src/Box2D/b2_collide_circle.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/mnt/c/Users/tuoma/Documents/Programming/CPP/angry-birds-2020-3/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Building CXX object CMakeFiles/test.dir/src/Box2D/b2_collide_circle.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/mnt/c/Users/tuoma/Documents/Programming/CPP/angry-birds-2020-3/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_13) "Building CXX object CMakeFiles/test.dir/src/Box2D/b2_collide_circle.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/test.dir/src/Box2D/b2_collide_circle.cpp.o -c /mnt/c/Users/tuoma/Documents/Programming/CPP/angry-birds-2020-3/src/Box2D/b2_collide_circle.cpp
 
 CMakeFiles/test.dir/src/Box2D/b2_collide_circle.cpp.i: cmake_force
@@ -234,7 +247,7 @@ CMakeFiles/test.dir/src/Box2D/b2_collide_circle.cpp.s: cmake_force
 
 CMakeFiles/test.dir/src/Box2D/b2_collide_edge.cpp.o: CMakeFiles/test.dir/flags.make
 CMakeFiles/test.dir/src/Box2D/b2_collide_edge.cpp.o: ../src/Box2D/b2_collide_edge.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/mnt/c/Users/tuoma/Documents/Programming/CPP/angry-birds-2020-3/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_13) "Building CXX object CMakeFiles/test.dir/src/Box2D/b2_collide_edge.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/mnt/c/Users/tuoma/Documents/Programming/CPP/angry-birds-2020-3/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_14) "Building CXX object CMakeFiles/test.dir/src/Box2D/b2_collide_edge.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/test.dir/src/Box2D/b2_collide_edge.cpp.o -c /mnt/c/Users/tuoma/Documents/Programming/CPP/angry-birds-2020-3/src/Box2D/b2_collide_edge.cpp
 
 CMakeFiles/test.dir/src/Box2D/b2_collide_edge.cpp.i: cmake_force
@@ -247,7 +260,7 @@ CMakeFiles/test.dir/src/Box2D/b2_collide_edge.cpp.s: cmake_force
 
 CMakeFiles/test.dir/src/Box2D/b2_collide_polygon.cpp.o: CMakeFiles/test.dir/flags.make
 CMakeFiles/test.dir/src/Box2D/b2_collide_polygon.cpp.o: ../src/Box2D/b2_collide_polygon.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/mnt/c/Users/tuoma/Documents/Programming/CPP/angry-birds-2020-3/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_14) "Building CXX object CMakeFiles/test.dir/src/Box2D/b2_collide_polygon.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/mnt/c/Users/tuoma/Documents/Programming/CPP/angry-birds-2020-3/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_15) "Building CXX object CMakeFiles/test.dir/src/Box2D/b2_collide_polygon.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/test.dir/src/Box2D/b2_collide_polygon.cpp.o -c /mnt/c/Users/tuoma/Documents/Programming/CPP/angry-birds-2020-3/src/Box2D/b2_collide_polygon.cpp
 
 CMakeFiles/test.dir/src/Box2D/b2_collide_polygon.cpp.i: cmake_force
@@ -260,7 +273,7 @@ CMakeFiles/test.dir/src/Box2D/b2_collide_polygon.cpp.s: cmake_force
 
 CMakeFiles/test.dir/src/Box2D/b2_collision.cpp.o: CMakeFiles/test.dir/flags.make
 CMakeFiles/test.dir/src/Box2D/b2_collision.cpp.o: ../src/Box2D/b2_collision.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/mnt/c/Users/tuoma/Documents/Programming/CPP/angry-birds-2020-3/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_15) "Building CXX object CMakeFiles/test.dir/src/Box2D/b2_collision.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/mnt/c/Users/tuoma/Documents/Programming/CPP/angry-birds-2020-3/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_16) "Building CXX object CMakeFiles/test.dir/src/Box2D/b2_collision.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/test.dir/src/Box2D/b2_collision.cpp.o -c /mnt/c/Users/tuoma/Documents/Programming/CPP/angry-birds-2020-3/src/Box2D/b2_collision.cpp
 
 CMakeFiles/test.dir/src/Box2D/b2_collision.cpp.i: cmake_force
@@ -273,7 +286,7 @@ CMakeFiles/test.dir/src/Box2D/b2_collision.cpp.s: cmake_force
 
 CMakeFiles/test.dir/src/Box2D/b2_contact.cpp.o: CMakeFiles/test.dir/flags.make
 CMakeFiles/test.dir/src/Box2D/b2_contact.cpp.o: ../src/Box2D/b2_contact.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/mnt/c/Users/tuoma/Documents/Programming/CPP/angry-birds-2020-3/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_16) "Building CXX object CMakeFiles/test.dir/src/Box2D/b2_contact.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/mnt/c/Users/tuoma/Documents/Programming/CPP/angry-birds-2020-3/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_17) "Building CXX object CMakeFiles/test.dir/src/Box2D/b2_contact.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/test.dir/src/Box2D/b2_contact.cpp.o -c /mnt/c/Users/tuoma/Documents/Programming/CPP/angry-birds-2020-3/src/Box2D/b2_contact.cpp
 
 CMakeFiles/test.dir/src/Box2D/b2_contact.cpp.i: cmake_force
@@ -286,7 +299,7 @@ CMakeFiles/test.dir/src/Box2D/b2_contact.cpp.s: cmake_force
 
 CMakeFiles/test.dir/src/Box2D/b2_contact_manager.cpp.o: CMakeFiles/test.dir/flags.make
 CMakeFiles/test.dir/src/Box2D/b2_contact_manager.cpp.o: ../src/Box2D/b2_contact_manager.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/mnt/c/Users/tuoma/Documents/Programming/CPP/angry-birds-2020-3/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_17) "Building CXX object CMakeFiles/test.dir/src/Box2D/b2_contact_manager.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/mnt/c/Users/tuoma/Documents/Programming/CPP/angry-birds-2020-3/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_18) "Building CXX object CMakeFiles/test.dir/src/Box2D/b2_contact_manager.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/test.dir/src/Box2D/b2_contact_manager.cpp.o -c /mnt/c/Users/tuoma/Documents/Programming/CPP/angry-birds-2020-3/src/Box2D/b2_contact_manager.cpp
 
 CMakeFiles/test.dir/src/Box2D/b2_contact_manager.cpp.i: cmake_force
@@ -299,7 +312,7 @@ CMakeFiles/test.dir/src/Box2D/b2_contact_manager.cpp.s: cmake_force
 
 CMakeFiles/test.dir/src/Box2D/b2_contact_solver.cpp.o: CMakeFiles/test.dir/flags.make
 CMakeFiles/test.dir/src/Box2D/b2_contact_solver.cpp.o: ../src/Box2D/b2_contact_solver.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/mnt/c/Users/tuoma/Documents/Programming/CPP/angry-birds-2020-3/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_18) "Building CXX object CMakeFiles/test.dir/src/Box2D/b2_contact_solver.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/mnt/c/Users/tuoma/Documents/Programming/CPP/angry-birds-2020-3/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_19) "Building CXX object CMakeFiles/test.dir/src/Box2D/b2_contact_solver.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/test.dir/src/Box2D/b2_contact_solver.cpp.o -c /mnt/c/Users/tuoma/Documents/Programming/CPP/angry-birds-2020-3/src/Box2D/b2_contact_solver.cpp
 
 CMakeFiles/test.dir/src/Box2D/b2_contact_solver.cpp.i: cmake_force
@@ -312,7 +325,7 @@ CMakeFiles/test.dir/src/Box2D/b2_contact_solver.cpp.s: cmake_force
 
 CMakeFiles/test.dir/src/Box2D/b2_distance.cpp.o: CMakeFiles/test.dir/flags.make
 CMakeFiles/test.dir/src/Box2D/b2_distance.cpp.o: ../src/Box2D/b2_distance.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/mnt/c/Users/tuoma/Documents/Programming/CPP/angry-birds-2020-3/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_19) "Building CXX object CMakeFiles/test.dir/src/Box2D/b2_distance.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/mnt/c/Users/tuoma/Documents/Programming/CPP/angry-birds-2020-3/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_20) "Building CXX object CMakeFiles/test.dir/src/Box2D/b2_distance.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/test.dir/src/Box2D/b2_distance.cpp.o -c /mnt/c/Users/tuoma/Documents/Programming/CPP/angry-birds-2020-3/src/Box2D/b2_distance.cpp
 
 CMakeFiles/test.dir/src/Box2D/b2_distance.cpp.i: cmake_force
@@ -325,7 +338,7 @@ CMakeFiles/test.dir/src/Box2D/b2_distance.cpp.s: cmake_force
 
 CMakeFiles/test.dir/src/Box2D/b2_distance_joint.cpp.o: CMakeFiles/test.dir/flags.make
 CMakeFiles/test.dir/src/Box2D/b2_distance_joint.cpp.o: ../src/Box2D/b2_distance_joint.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/mnt/c/Users/tuoma/Documents/Programming/CPP/angry-birds-2020-3/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_20) "Building CXX object CMakeFiles/test.dir/src/Box2D/b2_distance_joint.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/mnt/c/Users/tuoma/Documents/Programming/CPP/angry-birds-2020-3/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_21) "Building CXX object CMakeFiles/test.dir/src/Box2D/b2_distance_joint.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/test.dir/src/Box2D/b2_distance_joint.cpp.o -c /mnt/c/Users/tuoma/Documents/Programming/CPP/angry-birds-2020-3/src/Box2D/b2_distance_joint.cpp
 
 CMakeFiles/test.dir/src/Box2D/b2_distance_joint.cpp.i: cmake_force
@@ -338,7 +351,7 @@ CMakeFiles/test.dir/src/Box2D/b2_distance_joint.cpp.s: cmake_force
 
 CMakeFiles/test.dir/src/Box2D/b2_draw.cpp.o: CMakeFiles/test.dir/flags.make
 CMakeFiles/test.dir/src/Box2D/b2_draw.cpp.o: ../src/Box2D/b2_draw.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/mnt/c/Users/tuoma/Documents/Programming/CPP/angry-birds-2020-3/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_21) "Building CXX object CMakeFiles/test.dir/src/Box2D/b2_draw.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/mnt/c/Users/tuoma/Documents/Programming/CPP/angry-birds-2020-3/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_22) "Building CXX object CMakeFiles/test.dir/src/Box2D/b2_draw.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/test.dir/src/Box2D/b2_draw.cpp.o -c /mnt/c/Users/tuoma/Documents/Programming/CPP/angry-birds-2020-3/src/Box2D/b2_draw.cpp
 
 CMakeFiles/test.dir/src/Box2D/b2_draw.cpp.i: cmake_force
@@ -351,7 +364,7 @@ CMakeFiles/test.dir/src/Box2D/b2_draw.cpp.s: cmake_force
 
 CMakeFiles/test.dir/src/Box2D/b2_dynamic_tree.cpp.o: CMakeFiles/test.dir/flags.make
 CMakeFiles/test.dir/src/Box2D/b2_dynamic_tree.cpp.o: ../src/Box2D/b2_dynamic_tree.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/mnt/c/Users/tuoma/Documents/Programming/CPP/angry-birds-2020-3/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_22) "Building CXX object CMakeFiles/test.dir/src/Box2D/b2_dynamic_tree.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/mnt/c/Users/tuoma/Documents/Programming/CPP/angry-birds-2020-3/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_23) "Building CXX object CMakeFiles/test.dir/src/Box2D/b2_dynamic_tree.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/test.dir/src/Box2D/b2_dynamic_tree.cpp.o -c /mnt/c/Users/tuoma/Documents/Programming/CPP/angry-birds-2020-3/src/Box2D/b2_dynamic_tree.cpp
 
 CMakeFiles/test.dir/src/Box2D/b2_dynamic_tree.cpp.i: cmake_force
@@ -364,7 +377,7 @@ CMakeFiles/test.dir/src/Box2D/b2_dynamic_tree.cpp.s: cmake_force
 
 CMakeFiles/test.dir/src/Box2D/b2_edge_circle_contact.cpp.o: CMakeFiles/test.dir/flags.make
 CMakeFiles/test.dir/src/Box2D/b2_edge_circle_contact.cpp.o: ../src/Box2D/b2_edge_circle_contact.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/mnt/c/Users/tuoma/Documents/Programming/CPP/angry-birds-2020-3/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_23) "Building CXX object CMakeFiles/test.dir/src/Box2D/b2_edge_circle_contact.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/mnt/c/Users/tuoma/Documents/Programming/CPP/angry-birds-2020-3/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_24) "Building CXX object CMakeFiles/test.dir/src/Box2D/b2_edge_circle_contact.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/test.dir/src/Box2D/b2_edge_circle_contact.cpp.o -c /mnt/c/Users/tuoma/Documents/Programming/CPP/angry-birds-2020-3/src/Box2D/b2_edge_circle_contact.cpp
 
 CMakeFiles/test.dir/src/Box2D/b2_edge_circle_contact.cpp.i: cmake_force
@@ -377,7 +390,7 @@ CMakeFiles/test.dir/src/Box2D/b2_edge_circle_contact.cpp.s: cmake_force
 
 CMakeFiles/test.dir/src/Box2D/b2_edge_polygon_contact.cpp.o: CMakeFiles/test.dir/flags.make
 CMakeFiles/test.dir/src/Box2D/b2_edge_polygon_contact.cpp.o: ../src/Box2D/b2_edge_polygon_contact.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/mnt/c/Users/tuoma/Documents/Programming/CPP/angry-birds-2020-3/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_24) "Building CXX object CMakeFiles/test.dir/src/Box2D/b2_edge_polygon_contact.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/mnt/c/Users/tuoma/Documents/Programming/CPP/angry-birds-2020-3/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_25) "Building CXX object CMakeFiles/test.dir/src/Box2D/b2_edge_polygon_contact.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/test.dir/src/Box2D/b2_edge_polygon_contact.cpp.o -c /mnt/c/Users/tuoma/Documents/Programming/CPP/angry-birds-2020-3/src/Box2D/b2_edge_polygon_contact.cpp
 
 CMakeFiles/test.dir/src/Box2D/b2_edge_polygon_contact.cpp.i: cmake_force
@@ -390,7 +403,7 @@ CMakeFiles/test.dir/src/Box2D/b2_edge_polygon_contact.cpp.s: cmake_force
 
 CMakeFiles/test.dir/src/Box2D/b2_edge_shape.cpp.o: CMakeFiles/test.dir/flags.make
 CMakeFiles/test.dir/src/Box2D/b2_edge_shape.cpp.o: ../src/Box2D/b2_edge_shape.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/mnt/c/Users/tuoma/Documents/Programming/CPP/angry-birds-2020-3/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_25) "Building CXX object CMakeFiles/test.dir/src/Box2D/b2_edge_shape.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/mnt/c/Users/tuoma/Documents/Programming/CPP/angry-birds-2020-3/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_26) "Building CXX object CMakeFiles/test.dir/src/Box2D/b2_edge_shape.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/test.dir/src/Box2D/b2_edge_shape.cpp.o -c /mnt/c/Users/tuoma/Documents/Programming/CPP/angry-birds-2020-3/src/Box2D/b2_edge_shape.cpp
 
 CMakeFiles/test.dir/src/Box2D/b2_edge_shape.cpp.i: cmake_force
@@ -403,7 +416,7 @@ CMakeFiles/test.dir/src/Box2D/b2_edge_shape.cpp.s: cmake_force
 
 CMakeFiles/test.dir/src/Box2D/b2_fixture.cpp.o: CMakeFiles/test.dir/flags.make
 CMakeFiles/test.dir/src/Box2D/b2_fixture.cpp.o: ../src/Box2D/b2_fixture.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/mnt/c/Users/tuoma/Documents/Programming/CPP/angry-birds-2020-3/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_26) "Building CXX object CMakeFiles/test.dir/src/Box2D/b2_fixture.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/mnt/c/Users/tuoma/Documents/Programming/CPP/angry-birds-2020-3/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_27) "Building CXX object CMakeFiles/test.dir/src/Box2D/b2_fixture.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/test.dir/src/Box2D/b2_fixture.cpp.o -c /mnt/c/Users/tuoma/Documents/Programming/CPP/angry-birds-2020-3/src/Box2D/b2_fixture.cpp
 
 CMakeFiles/test.dir/src/Box2D/b2_fixture.cpp.i: cmake_force
@@ -416,7 +429,7 @@ CMakeFiles/test.dir/src/Box2D/b2_fixture.cpp.s: cmake_force
 
 CMakeFiles/test.dir/src/Box2D/b2_friction_joint.cpp.o: CMakeFiles/test.dir/flags.make
 CMakeFiles/test.dir/src/Box2D/b2_friction_joint.cpp.o: ../src/Box2D/b2_friction_joint.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/mnt/c/Users/tuoma/Documents/Programming/CPP/angry-birds-2020-3/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_27) "Building CXX object CMakeFiles/test.dir/src/Box2D/b2_friction_joint.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/mnt/c/Users/tuoma/Documents/Programming/CPP/angry-birds-2020-3/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_28) "Building CXX object CMakeFiles/test.dir/src/Box2D/b2_friction_joint.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/test.dir/src/Box2D/b2_friction_joint.cpp.o -c /mnt/c/Users/tuoma/Documents/Programming/CPP/angry-birds-2020-3/src/Box2D/b2_friction_joint.cpp
 
 CMakeFiles/test.dir/src/Box2D/b2_friction_joint.cpp.i: cmake_force
@@ -429,7 +442,7 @@ CMakeFiles/test.dir/src/Box2D/b2_friction_joint.cpp.s: cmake_force
 
 CMakeFiles/test.dir/src/Box2D/b2_gear_joint.cpp.o: CMakeFiles/test.dir/flags.make
 CMakeFiles/test.dir/src/Box2D/b2_gear_joint.cpp.o: ../src/Box2D/b2_gear_joint.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/mnt/c/Users/tuoma/Documents/Programming/CPP/angry-birds-2020-3/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_28) "Building CXX object CMakeFiles/test.dir/src/Box2D/b2_gear_joint.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/mnt/c/Users/tuoma/Documents/Programming/CPP/angry-birds-2020-3/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_29) "Building CXX object CMakeFiles/test.dir/src/Box2D/b2_gear_joint.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/test.dir/src/Box2D/b2_gear_joint.cpp.o -c /mnt/c/Users/tuoma/Documents/Programming/CPP/angry-birds-2020-3/src/Box2D/b2_gear_joint.cpp
 
 CMakeFiles/test.dir/src/Box2D/b2_gear_joint.cpp.i: cmake_force
@@ -442,7 +455,7 @@ CMakeFiles/test.dir/src/Box2D/b2_gear_joint.cpp.s: cmake_force
 
 CMakeFiles/test.dir/src/Box2D/b2_island.cpp.o: CMakeFiles/test.dir/flags.make
 CMakeFiles/test.dir/src/Box2D/b2_island.cpp.o: ../src/Box2D/b2_island.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/mnt/c/Users/tuoma/Documents/Programming/CPP/angry-birds-2020-3/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_29) "Building CXX object CMakeFiles/test.dir/src/Box2D/b2_island.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/mnt/c/Users/tuoma/Documents/Programming/CPP/angry-birds-2020-3/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_30) "Building CXX object CMakeFiles/test.dir/src/Box2D/b2_island.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/test.dir/src/Box2D/b2_island.cpp.o -c /mnt/c/Users/tuoma/Documents/Programming/CPP/angry-birds-2020-3/src/Box2D/b2_island.cpp
 
 CMakeFiles/test.dir/src/Box2D/b2_island.cpp.i: cmake_force
@@ -455,7 +468,7 @@ CMakeFiles/test.dir/src/Box2D/b2_island.cpp.s: cmake_force
 
 CMakeFiles/test.dir/src/Box2D/b2_joint.cpp.o: CMakeFiles/test.dir/flags.make
 CMakeFiles/test.dir/src/Box2D/b2_joint.cpp.o: ../src/Box2D/b2_joint.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/mnt/c/Users/tuoma/Documents/Programming/CPP/angry-birds-2020-3/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_30) "Building CXX object CMakeFiles/test.dir/src/Box2D/b2_joint.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/mnt/c/Users/tuoma/Documents/Programming/CPP/angry-birds-2020-3/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_31) "Building CXX object CMakeFiles/test.dir/src/Box2D/b2_joint.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/test.dir/src/Box2D/b2_joint.cpp.o -c /mnt/c/Users/tuoma/Documents/Programming/CPP/angry-birds-2020-3/src/Box2D/b2_joint.cpp
 
 CMakeFiles/test.dir/src/Box2D/b2_joint.cpp.i: cmake_force
@@ -468,7 +481,7 @@ CMakeFiles/test.dir/src/Box2D/b2_joint.cpp.s: cmake_force
 
 CMakeFiles/test.dir/src/Box2D/b2_math.cpp.o: CMakeFiles/test.dir/flags.make
 CMakeFiles/test.dir/src/Box2D/b2_math.cpp.o: ../src/Box2D/b2_math.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/mnt/c/Users/tuoma/Documents/Programming/CPP/angry-birds-2020-3/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_31) "Building CXX object CMakeFiles/test.dir/src/Box2D/b2_math.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/mnt/c/Users/tuoma/Documents/Programming/CPP/angry-birds-2020-3/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_32) "Building CXX object CMakeFiles/test.dir/src/Box2D/b2_math.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/test.dir/src/Box2D/b2_math.cpp.o -c /mnt/c/Users/tuoma/Documents/Programming/CPP/angry-birds-2020-3/src/Box2D/b2_math.cpp
 
 CMakeFiles/test.dir/src/Box2D/b2_math.cpp.i: cmake_force
@@ -481,7 +494,7 @@ CMakeFiles/test.dir/src/Box2D/b2_math.cpp.s: cmake_force
 
 CMakeFiles/test.dir/src/Box2D/b2_motor_joint.cpp.o: CMakeFiles/test.dir/flags.make
 CMakeFiles/test.dir/src/Box2D/b2_motor_joint.cpp.o: ../src/Box2D/b2_motor_joint.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/mnt/c/Users/tuoma/Documents/Programming/CPP/angry-birds-2020-3/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_32) "Building CXX object CMakeFiles/test.dir/src/Box2D/b2_motor_joint.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/mnt/c/Users/tuoma/Documents/Programming/CPP/angry-birds-2020-3/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_33) "Building CXX object CMakeFiles/test.dir/src/Box2D/b2_motor_joint.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/test.dir/src/Box2D/b2_motor_joint.cpp.o -c /mnt/c/Users/tuoma/Documents/Programming/CPP/angry-birds-2020-3/src/Box2D/b2_motor_joint.cpp
 
 CMakeFiles/test.dir/src/Box2D/b2_motor_joint.cpp.i: cmake_force
@@ -494,7 +507,7 @@ CMakeFiles/test.dir/src/Box2D/b2_motor_joint.cpp.s: cmake_force
 
 CMakeFiles/test.dir/src/Box2D/b2_mouse_joint.cpp.o: CMakeFiles/test.dir/flags.make
 CMakeFiles/test.dir/src/Box2D/b2_mouse_joint.cpp.o: ../src/Box2D/b2_mouse_joint.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/mnt/c/Users/tuoma/Documents/Programming/CPP/angry-birds-2020-3/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_33) "Building CXX object CMakeFiles/test.dir/src/Box2D/b2_mouse_joint.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/mnt/c/Users/tuoma/Documents/Programming/CPP/angry-birds-2020-3/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_34) "Building CXX object CMakeFiles/test.dir/src/Box2D/b2_mouse_joint.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/test.dir/src/Box2D/b2_mouse_joint.cpp.o -c /mnt/c/Users/tuoma/Documents/Programming/CPP/angry-birds-2020-3/src/Box2D/b2_mouse_joint.cpp
 
 CMakeFiles/test.dir/src/Box2D/b2_mouse_joint.cpp.i: cmake_force
@@ -507,7 +520,7 @@ CMakeFiles/test.dir/src/Box2D/b2_mouse_joint.cpp.s: cmake_force
 
 CMakeFiles/test.dir/src/Box2D/b2_polygon_circle_contact.cpp.o: CMakeFiles/test.dir/flags.make
 CMakeFiles/test.dir/src/Box2D/b2_polygon_circle_contact.cpp.o: ../src/Box2D/b2_polygon_circle_contact.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/mnt/c/Users/tuoma/Documents/Programming/CPP/angry-birds-2020-3/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_34) "Building CXX object CMakeFiles/test.dir/src/Box2D/b2_polygon_circle_contact.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/mnt/c/Users/tuoma/Documents/Programming/CPP/angry-birds-2020-3/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_35) "Building CXX object CMakeFiles/test.dir/src/Box2D/b2_polygon_circle_contact.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/test.dir/src/Box2D/b2_polygon_circle_contact.cpp.o -c /mnt/c/Users/tuoma/Documents/Programming/CPP/angry-birds-2020-3/src/Box2D/b2_polygon_circle_contact.cpp
 
 CMakeFiles/test.dir/src/Box2D/b2_polygon_circle_contact.cpp.i: cmake_force
@@ -520,7 +533,7 @@ CMakeFiles/test.dir/src/Box2D/b2_polygon_circle_contact.cpp.s: cmake_force
 
 CMakeFiles/test.dir/src/Box2D/b2_polygon_contact.cpp.o: CMakeFiles/test.dir/flags.make
 CMakeFiles/test.dir/src/Box2D/b2_polygon_contact.cpp.o: ../src/Box2D/b2_polygon_contact.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/mnt/c/Users/tuoma/Documents/Programming/CPP/angry-birds-2020-3/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_35) "Building CXX object CMakeFiles/test.dir/src/Box2D/b2_polygon_contact.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/mnt/c/Users/tuoma/Documents/Programming/CPP/angry-birds-2020-3/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_36) "Building CXX object CMakeFiles/test.dir/src/Box2D/b2_polygon_contact.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/test.dir/src/Box2D/b2_polygon_contact.cpp.o -c /mnt/c/Users/tuoma/Documents/Programming/CPP/angry-birds-2020-3/src/Box2D/b2_polygon_contact.cpp
 
 CMakeFiles/test.dir/src/Box2D/b2_polygon_contact.cpp.i: cmake_force
@@ -533,7 +546,7 @@ CMakeFiles/test.dir/src/Box2D/b2_polygon_contact.cpp.s: cmake_force
 
 CMakeFiles/test.dir/src/Box2D/b2_polygon_shape.cpp.o: CMakeFiles/test.dir/flags.make
 CMakeFiles/test.dir/src/Box2D/b2_polygon_shape.cpp.o: ../src/Box2D/b2_polygon_shape.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/mnt/c/Users/tuoma/Documents/Programming/CPP/angry-birds-2020-3/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_36) "Building CXX object CMakeFiles/test.dir/src/Box2D/b2_polygon_shape.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/mnt/c/Users/tuoma/Documents/Programming/CPP/angry-birds-2020-3/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_37) "Building CXX object CMakeFiles/test.dir/src/Box2D/b2_polygon_shape.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/test.dir/src/Box2D/b2_polygon_shape.cpp.o -c /mnt/c/Users/tuoma/Documents/Programming/CPP/angry-birds-2020-3/src/Box2D/b2_polygon_shape.cpp
 
 CMakeFiles/test.dir/src/Box2D/b2_polygon_shape.cpp.i: cmake_force
@@ -546,7 +559,7 @@ CMakeFiles/test.dir/src/Box2D/b2_polygon_shape.cpp.s: cmake_force
 
 CMakeFiles/test.dir/src/Box2D/b2_prismatic_joint.cpp.o: CMakeFiles/test.dir/flags.make
 CMakeFiles/test.dir/src/Box2D/b2_prismatic_joint.cpp.o: ../src/Box2D/b2_prismatic_joint.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/mnt/c/Users/tuoma/Documents/Programming/CPP/angry-birds-2020-3/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_37) "Building CXX object CMakeFiles/test.dir/src/Box2D/b2_prismatic_joint.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/mnt/c/Users/tuoma/Documents/Programming/CPP/angry-birds-2020-3/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_38) "Building CXX object CMakeFiles/test.dir/src/Box2D/b2_prismatic_joint.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/test.dir/src/Box2D/b2_prismatic_joint.cpp.o -c /mnt/c/Users/tuoma/Documents/Programming/CPP/angry-birds-2020-3/src/Box2D/b2_prismatic_joint.cpp
 
 CMakeFiles/test.dir/src/Box2D/b2_prismatic_joint.cpp.i: cmake_force
@@ -559,7 +572,7 @@ CMakeFiles/test.dir/src/Box2D/b2_prismatic_joint.cpp.s: cmake_force
 
 CMakeFiles/test.dir/src/Box2D/b2_pulley_joint.cpp.o: CMakeFiles/test.dir/flags.make
 CMakeFiles/test.dir/src/Box2D/b2_pulley_joint.cpp.o: ../src/Box2D/b2_pulley_joint.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/mnt/c/Users/tuoma/Documents/Programming/CPP/angry-birds-2020-3/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_38) "Building CXX object CMakeFiles/test.dir/src/Box2D/b2_pulley_joint.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/mnt/c/Users/tuoma/Documents/Programming/CPP/angry-birds-2020-3/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_39) "Building CXX object CMakeFiles/test.dir/src/Box2D/b2_pulley_joint.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/test.dir/src/Box2D/b2_pulley_joint.cpp.o -c /mnt/c/Users/tuoma/Documents/Programming/CPP/angry-birds-2020-3/src/Box2D/b2_pulley_joint.cpp
 
 CMakeFiles/test.dir/src/Box2D/b2_pulley_joint.cpp.i: cmake_force
@@ -572,7 +585,7 @@ CMakeFiles/test.dir/src/Box2D/b2_pulley_joint.cpp.s: cmake_force
 
 CMakeFiles/test.dir/src/Box2D/b2_revolute_joint.cpp.o: CMakeFiles/test.dir/flags.make
 CMakeFiles/test.dir/src/Box2D/b2_revolute_joint.cpp.o: ../src/Box2D/b2_revolute_joint.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/mnt/c/Users/tuoma/Documents/Programming/CPP/angry-birds-2020-3/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_39) "Building CXX object CMakeFiles/test.dir/src/Box2D/b2_revolute_joint.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/mnt/c/Users/tuoma/Documents/Programming/CPP/angry-birds-2020-3/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_40) "Building CXX object CMakeFiles/test.dir/src/Box2D/b2_revolute_joint.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/test.dir/src/Box2D/b2_revolute_joint.cpp.o -c /mnt/c/Users/tuoma/Documents/Programming/CPP/angry-birds-2020-3/src/Box2D/b2_revolute_joint.cpp
 
 CMakeFiles/test.dir/src/Box2D/b2_revolute_joint.cpp.i: cmake_force
@@ -585,7 +598,7 @@ CMakeFiles/test.dir/src/Box2D/b2_revolute_joint.cpp.s: cmake_force
 
 CMakeFiles/test.dir/src/Box2D/b2_rope.cpp.o: CMakeFiles/test.dir/flags.make
 CMakeFiles/test.dir/src/Box2D/b2_rope.cpp.o: ../src/Box2D/b2_rope.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/mnt/c/Users/tuoma/Documents/Programming/CPP/angry-birds-2020-3/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_40) "Building CXX object CMakeFiles/test.dir/src/Box2D/b2_rope.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/mnt/c/Users/tuoma/Documents/Programming/CPP/angry-birds-2020-3/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_41) "Building CXX object CMakeFiles/test.dir/src/Box2D/b2_rope.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/test.dir/src/Box2D/b2_rope.cpp.o -c /mnt/c/Users/tuoma/Documents/Programming/CPP/angry-birds-2020-3/src/Box2D/b2_rope.cpp
 
 CMakeFiles/test.dir/src/Box2D/b2_rope.cpp.i: cmake_force
@@ -598,7 +611,7 @@ CMakeFiles/test.dir/src/Box2D/b2_rope.cpp.s: cmake_force
 
 CMakeFiles/test.dir/src/Box2D/b2_rope_joint.cpp.o: CMakeFiles/test.dir/flags.make
 CMakeFiles/test.dir/src/Box2D/b2_rope_joint.cpp.o: ../src/Box2D/b2_rope_joint.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/mnt/c/Users/tuoma/Documents/Programming/CPP/angry-birds-2020-3/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_41) "Building CXX object CMakeFiles/test.dir/src/Box2D/b2_rope_joint.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/mnt/c/Users/tuoma/Documents/Programming/CPP/angry-birds-2020-3/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_42) "Building CXX object CMakeFiles/test.dir/src/Box2D/b2_rope_joint.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/test.dir/src/Box2D/b2_rope_joint.cpp.o -c /mnt/c/Users/tuoma/Documents/Programming/CPP/angry-birds-2020-3/src/Box2D/b2_rope_joint.cpp
 
 CMakeFiles/test.dir/src/Box2D/b2_rope_joint.cpp.i: cmake_force
@@ -611,7 +624,7 @@ CMakeFiles/test.dir/src/Box2D/b2_rope_joint.cpp.s: cmake_force
 
 CMakeFiles/test.dir/src/Box2D/b2_settings.cpp.o: CMakeFiles/test.dir/flags.make
 CMakeFiles/test.dir/src/Box2D/b2_settings.cpp.o: ../src/Box2D/b2_settings.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/mnt/c/Users/tuoma/Documents/Programming/CPP/angry-birds-2020-3/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_42) "Building CXX object CMakeFiles/test.dir/src/Box2D/b2_settings.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/mnt/c/Users/tuoma/Documents/Programming/CPP/angry-birds-2020-3/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_43) "Building CXX object CMakeFiles/test.dir/src/Box2D/b2_settings.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/test.dir/src/Box2D/b2_settings.cpp.o -c /mnt/c/Users/tuoma/Documents/Programming/CPP/angry-birds-2020-3/src/Box2D/b2_settings.cpp
 
 CMakeFiles/test.dir/src/Box2D/b2_settings.cpp.i: cmake_force
@@ -624,7 +637,7 @@ CMakeFiles/test.dir/src/Box2D/b2_settings.cpp.s: cmake_force
 
 CMakeFiles/test.dir/src/Box2D/b2_stack_allocator.cpp.o: CMakeFiles/test.dir/flags.make
 CMakeFiles/test.dir/src/Box2D/b2_stack_allocator.cpp.o: ../src/Box2D/b2_stack_allocator.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/mnt/c/Users/tuoma/Documents/Programming/CPP/angry-birds-2020-3/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_43) "Building CXX object CMakeFiles/test.dir/src/Box2D/b2_stack_allocator.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/mnt/c/Users/tuoma/Documents/Programming/CPP/angry-birds-2020-3/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_44) "Building CXX object CMakeFiles/test.dir/src/Box2D/b2_stack_allocator.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/test.dir/src/Box2D/b2_stack_allocator.cpp.o -c /mnt/c/Users/tuoma/Documents/Programming/CPP/angry-birds-2020-3/src/Box2D/b2_stack_allocator.cpp
 
 CMakeFiles/test.dir/src/Box2D/b2_stack_allocator.cpp.i: cmake_force
@@ -637,7 +650,7 @@ CMakeFiles/test.dir/src/Box2D/b2_stack_allocator.cpp.s: cmake_force
 
 CMakeFiles/test.dir/src/Box2D/b2_time_of_impact.cpp.o: CMakeFiles/test.dir/flags.make
 CMakeFiles/test.dir/src/Box2D/b2_time_of_impact.cpp.o: ../src/Box2D/b2_time_of_impact.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/mnt/c/Users/tuoma/Documents/Programming/CPP/angry-birds-2020-3/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_44) "Building CXX object CMakeFiles/test.dir/src/Box2D/b2_time_of_impact.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/mnt/c/Users/tuoma/Documents/Programming/CPP/angry-birds-2020-3/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_45) "Building CXX object CMakeFiles/test.dir/src/Box2D/b2_time_of_impact.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/test.dir/src/Box2D/b2_time_of_impact.cpp.o -c /mnt/c/Users/tuoma/Documents/Programming/CPP/angry-birds-2020-3/src/Box2D/b2_time_of_impact.cpp
 
 CMakeFiles/test.dir/src/Box2D/b2_time_of_impact.cpp.i: cmake_force
@@ -650,7 +663,7 @@ CMakeFiles/test.dir/src/Box2D/b2_time_of_impact.cpp.s: cmake_force
 
 CMakeFiles/test.dir/src/Box2D/b2_timer.cpp.o: CMakeFiles/test.dir/flags.make
 CMakeFiles/test.dir/src/Box2D/b2_timer.cpp.o: ../src/Box2D/b2_timer.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/mnt/c/Users/tuoma/Documents/Programming/CPP/angry-birds-2020-3/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_45) "Building CXX object CMakeFiles/test.dir/src/Box2D/b2_timer.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/mnt/c/Users/tuoma/Documents/Programming/CPP/angry-birds-2020-3/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_46) "Building CXX object CMakeFiles/test.dir/src/Box2D/b2_timer.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/test.dir/src/Box2D/b2_timer.cpp.o -c /mnt/c/Users/tuoma/Documents/Programming/CPP/angry-birds-2020-3/src/Box2D/b2_timer.cpp
 
 CMakeFiles/test.dir/src/Box2D/b2_timer.cpp.i: cmake_force
@@ -663,7 +676,7 @@ CMakeFiles/test.dir/src/Box2D/b2_timer.cpp.s: cmake_force
 
 CMakeFiles/test.dir/src/Box2D/b2_weld_joint.cpp.o: CMakeFiles/test.dir/flags.make
 CMakeFiles/test.dir/src/Box2D/b2_weld_joint.cpp.o: ../src/Box2D/b2_weld_joint.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/mnt/c/Users/tuoma/Documents/Programming/CPP/angry-birds-2020-3/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_46) "Building CXX object CMakeFiles/test.dir/src/Box2D/b2_weld_joint.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/mnt/c/Users/tuoma/Documents/Programming/CPP/angry-birds-2020-3/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_47) "Building CXX object CMakeFiles/test.dir/src/Box2D/b2_weld_joint.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/test.dir/src/Box2D/b2_weld_joint.cpp.o -c /mnt/c/Users/tuoma/Documents/Programming/CPP/angry-birds-2020-3/src/Box2D/b2_weld_joint.cpp
 
 CMakeFiles/test.dir/src/Box2D/b2_weld_joint.cpp.i: cmake_force
@@ -676,7 +689,7 @@ CMakeFiles/test.dir/src/Box2D/b2_weld_joint.cpp.s: cmake_force
 
 CMakeFiles/test.dir/src/Box2D/b2_wheel_joint.cpp.o: CMakeFiles/test.dir/flags.make
 CMakeFiles/test.dir/src/Box2D/b2_wheel_joint.cpp.o: ../src/Box2D/b2_wheel_joint.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/mnt/c/Users/tuoma/Documents/Programming/CPP/angry-birds-2020-3/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_47) "Building CXX object CMakeFiles/test.dir/src/Box2D/b2_wheel_joint.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/mnt/c/Users/tuoma/Documents/Programming/CPP/angry-birds-2020-3/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_48) "Building CXX object CMakeFiles/test.dir/src/Box2D/b2_wheel_joint.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/test.dir/src/Box2D/b2_wheel_joint.cpp.o -c /mnt/c/Users/tuoma/Documents/Programming/CPP/angry-birds-2020-3/src/Box2D/b2_wheel_joint.cpp
 
 CMakeFiles/test.dir/src/Box2D/b2_wheel_joint.cpp.i: cmake_force
@@ -689,7 +702,7 @@ CMakeFiles/test.dir/src/Box2D/b2_wheel_joint.cpp.s: cmake_force
 
 CMakeFiles/test.dir/src/Box2D/b2_world.cpp.o: CMakeFiles/test.dir/flags.make
 CMakeFiles/test.dir/src/Box2D/b2_world.cpp.o: ../src/Box2D/b2_world.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/mnt/c/Users/tuoma/Documents/Programming/CPP/angry-birds-2020-3/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_48) "Building CXX object CMakeFiles/test.dir/src/Box2D/b2_world.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/mnt/c/Users/tuoma/Documents/Programming/CPP/angry-birds-2020-3/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_49) "Building CXX object CMakeFiles/test.dir/src/Box2D/b2_world.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/test.dir/src/Box2D/b2_world.cpp.o -c /mnt/c/Users/tuoma/Documents/Programming/CPP/angry-birds-2020-3/src/Box2D/b2_world.cpp
 
 CMakeFiles/test.dir/src/Box2D/b2_world.cpp.i: cmake_force
@@ -702,7 +715,7 @@ CMakeFiles/test.dir/src/Box2D/b2_world.cpp.s: cmake_force
 
 CMakeFiles/test.dir/src/Box2D/b2_world_callbacks.cpp.o: CMakeFiles/test.dir/flags.make
 CMakeFiles/test.dir/src/Box2D/b2_world_callbacks.cpp.o: ../src/Box2D/b2_world_callbacks.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/mnt/c/Users/tuoma/Documents/Programming/CPP/angry-birds-2020-3/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_49) "Building CXX object CMakeFiles/test.dir/src/Box2D/b2_world_callbacks.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/mnt/c/Users/tuoma/Documents/Programming/CPP/angry-birds-2020-3/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_50) "Building CXX object CMakeFiles/test.dir/src/Box2D/b2_world_callbacks.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/test.dir/src/Box2D/b2_world_callbacks.cpp.o -c /mnt/c/Users/tuoma/Documents/Programming/CPP/angry-birds-2020-3/src/Box2D/b2_world_callbacks.cpp
 
 CMakeFiles/test.dir/src/Box2D/b2_world_callbacks.cpp.i: cmake_force
@@ -713,9 +726,22 @@ CMakeFiles/test.dir/src/Box2D/b2_world_callbacks.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/test.dir/src/Box2D/b2_world_callbacks.cpp.s"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /mnt/c/Users/tuoma/Documents/Programming/CPP/angry-birds-2020-3/src/Box2D/b2_world_callbacks.cpp -o CMakeFiles/test.dir/src/Box2D/b2_world_callbacks.cpp.s
 
+CMakeFiles/test.dir/src/Normal.cpp.o: CMakeFiles/test.dir/flags.make
+CMakeFiles/test.dir/src/Normal.cpp.o: ../src/Normal.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/mnt/c/Users/tuoma/Documents/Programming/CPP/angry-birds-2020-3/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_51) "Building CXX object CMakeFiles/test.dir/src/Normal.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/test.dir/src/Normal.cpp.o -c /mnt/c/Users/tuoma/Documents/Programming/CPP/angry-birds-2020-3/src/Normal.cpp
+
+CMakeFiles/test.dir/src/Normal.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/test.dir/src/Normal.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /mnt/c/Users/tuoma/Documents/Programming/CPP/angry-birds-2020-3/src/Normal.cpp > CMakeFiles/test.dir/src/Normal.cpp.i
+
+CMakeFiles/test.dir/src/Normal.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/test.dir/src/Normal.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /mnt/c/Users/tuoma/Documents/Programming/CPP/angry-birds-2020-3/src/Normal.cpp -o CMakeFiles/test.dir/src/Normal.cpp.s
+
 CMakeFiles/test.dir/src/filereader.cpp.o: CMakeFiles/test.dir/flags.make
 CMakeFiles/test.dir/src/filereader.cpp.o: ../src/filereader.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/mnt/c/Users/tuoma/Documents/Programming/CPP/angry-birds-2020-3/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_50) "Building CXX object CMakeFiles/test.dir/src/filereader.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/mnt/c/Users/tuoma/Documents/Programming/CPP/angry-birds-2020-3/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_52) "Building CXX object CMakeFiles/test.dir/src/filereader.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/test.dir/src/filereader.cpp.o -c /mnt/c/Users/tuoma/Documents/Programming/CPP/angry-birds-2020-3/src/filereader.cpp
 
 CMakeFiles/test.dir/src/filereader.cpp.i: cmake_force
@@ -728,7 +754,7 @@ CMakeFiles/test.dir/src/filereader.cpp.s: cmake_force
 
 CMakeFiles/test.dir/src/level.cpp.o: CMakeFiles/test.dir/flags.make
 CMakeFiles/test.dir/src/level.cpp.o: ../src/level.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/mnt/c/Users/tuoma/Documents/Programming/CPP/angry-birds-2020-3/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_51) "Building CXX object CMakeFiles/test.dir/src/level.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/mnt/c/Users/tuoma/Documents/Programming/CPP/angry-birds-2020-3/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_53) "Building CXX object CMakeFiles/test.dir/src/level.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/test.dir/src/level.cpp.o -c /mnt/c/Users/tuoma/Documents/Programming/CPP/angry-birds-2020-3/src/level.cpp
 
 CMakeFiles/test.dir/src/level.cpp.i: cmake_force
@@ -741,7 +767,7 @@ CMakeFiles/test.dir/src/level.cpp.s: cmake_force
 
 CMakeFiles/test.dir/src/main.cpp.o: CMakeFiles/test.dir/flags.make
 CMakeFiles/test.dir/src/main.cpp.o: ../src/main.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/mnt/c/Users/tuoma/Documents/Programming/CPP/angry-birds-2020-3/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_52) "Building CXX object CMakeFiles/test.dir/src/main.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/mnt/c/Users/tuoma/Documents/Programming/CPP/angry-birds-2020-3/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_54) "Building CXX object CMakeFiles/test.dir/src/main.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/test.dir/src/main.cpp.o -c /mnt/c/Users/tuoma/Documents/Programming/CPP/angry-birds-2020-3/src/main.cpp
 
 CMakeFiles/test.dir/src/main.cpp.i: cmake_force
@@ -756,6 +782,7 @@ CMakeFiles/test.dir/src/main.cpp.s: cmake_force
 test_OBJECTS = \
 "CMakeFiles/test.dir/src/Ball.cpp.o" \
 "CMakeFiles/test.dir/src/Bird.cpp.o" \
+"CMakeFiles/test.dir/src/Bomb.cpp.o" \
 "CMakeFiles/test.dir/src/Box.cpp.o" \
 "CMakeFiles/test.dir/src/Box2D/b2_block_allocator.cpp.o" \
 "CMakeFiles/test.dir/src/Box2D/b2_body.cpp.o" \
@@ -803,6 +830,7 @@ test_OBJECTS = \
 "CMakeFiles/test.dir/src/Box2D/b2_wheel_joint.cpp.o" \
 "CMakeFiles/test.dir/src/Box2D/b2_world.cpp.o" \
 "CMakeFiles/test.dir/src/Box2D/b2_world_callbacks.cpp.o" \
+"CMakeFiles/test.dir/src/Normal.cpp.o" \
 "CMakeFiles/test.dir/src/filereader.cpp.o" \
 "CMakeFiles/test.dir/src/level.cpp.o" \
 "CMakeFiles/test.dir/src/main.cpp.o"
@@ -812,6 +840,7 @@ test_EXTERNAL_OBJECTS =
 
 test: CMakeFiles/test.dir/src/Ball.cpp.o
 test: CMakeFiles/test.dir/src/Bird.cpp.o
+test: CMakeFiles/test.dir/src/Bomb.cpp.o
 test: CMakeFiles/test.dir/src/Box.cpp.o
 test: CMakeFiles/test.dir/src/Box2D/b2_block_allocator.cpp.o
 test: CMakeFiles/test.dir/src/Box2D/b2_body.cpp.o
@@ -859,6 +888,7 @@ test: CMakeFiles/test.dir/src/Box2D/b2_weld_joint.cpp.o
 test: CMakeFiles/test.dir/src/Box2D/b2_wheel_joint.cpp.o
 test: CMakeFiles/test.dir/src/Box2D/b2_world.cpp.o
 test: CMakeFiles/test.dir/src/Box2D/b2_world_callbacks.cpp.o
+test: CMakeFiles/test.dir/src/Normal.cpp.o
 test: CMakeFiles/test.dir/src/filereader.cpp.o
 test: CMakeFiles/test.dir/src/level.cpp.o
 test: CMakeFiles/test.dir/src/main.cpp.o
@@ -869,7 +899,7 @@ test: /usr/lib/x86_64-linux-gnu/libsfml-graphics.so.2.5.1
 test: /usr/lib/x86_64-linux-gnu/libsfml-window.so.2.5.1
 test: /usr/lib/x86_64-linux-gnu/libsfml-system.so.2.5.1
 test: CMakeFiles/test.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/mnt/c/Users/tuoma/Documents/Programming/CPP/angry-birds-2020-3/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_53) "Linking CXX executable test"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/mnt/c/Users/tuoma/Documents/Programming/CPP/angry-birds-2020-3/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_55) "Linking CXX executable test"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/test.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.

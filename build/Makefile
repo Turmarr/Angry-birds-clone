@@ -196,6 +196,33 @@ src/Bird.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/src/Bird.cpp.s
 .PHONY : src/Bird.cpp.s
 
+src/Bomb.o: src/Bomb.cpp.o
+
+.PHONY : src/Bomb.o
+
+# target to build an object file
+src/Bomb.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/src/Bomb.cpp.o
+.PHONY : src/Bomb.cpp.o
+
+src/Bomb.i: src/Bomb.cpp.i
+
+.PHONY : src/Bomb.i
+
+# target to preprocess a source file
+src/Bomb.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/src/Bomb.cpp.i
+.PHONY : src/Bomb.cpp.i
+
+src/Bomb.s: src/Bomb.cpp.s
+
+.PHONY : src/Bomb.s
+
+# target to generate assembly for a file
+src/Bomb.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/src/Bomb.cpp.s
+.PHONY : src/Bomb.cpp.s
+
 src/Box.o: src/Box.cpp.o
 
 .PHONY : src/Box.o
@@ -1465,6 +1492,33 @@ src/Box2D/b2_world_callbacks.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/src/Box2D/b2_world_callbacks.cpp.s
 .PHONY : src/Box2D/b2_world_callbacks.cpp.s
 
+src/Normal.o: src/Normal.cpp.o
+
+.PHONY : src/Normal.o
+
+# target to build an object file
+src/Normal.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/src/Normal.cpp.o
+.PHONY : src/Normal.cpp.o
+
+src/Normal.i: src/Normal.cpp.i
+
+.PHONY : src/Normal.i
+
+# target to preprocess a source file
+src/Normal.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/src/Normal.cpp.i
+.PHONY : src/Normal.cpp.i
+
+src/Normal.s: src/Normal.cpp.s
+
+.PHONY : src/Normal.s
+
+# target to generate assembly for a file
+src/Normal.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/src/Normal.cpp.s
+.PHONY : src/Normal.cpp.s
+
 src/filereader.o: src/filereader.cpp.o
 
 .PHONY : src/filereader.o
@@ -1561,6 +1615,9 @@ help:
 	@echo "... src/Bird.o"
 	@echo "... src/Bird.i"
 	@echo "... src/Bird.s"
+	@echo "... src/Bomb.o"
+	@echo "... src/Bomb.i"
+	@echo "... src/Bomb.s"
 	@echo "... src/Box.o"
 	@echo "... src/Box.i"
 	@echo "... src/Box.s"
@@ -1702,6 +1759,9 @@ help:
 	@echo "... src/Box2D/b2_world_callbacks.o"
 	@echo "... src/Box2D/b2_world_callbacks.i"
 	@echo "... src/Box2D/b2_world_callbacks.s"
+	@echo "... src/Normal.o"
+	@echo "... src/Normal.i"
+	@echo "... src/Normal.s"
 	@echo "... src/filereader.o"
 	@echo "... src/filereader.i"
 	@echo "... src/filereader.s"

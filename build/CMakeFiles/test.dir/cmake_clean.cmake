@@ -1,6 +1,7 @@
 file(REMOVE_RECURSE
   "CMakeFiles/test.dir/src/Ball.cpp.o"
   "CMakeFiles/test.dir/src/Bird.cpp.o"
+  "CMakeFiles/test.dir/src/Bomb.cpp.o"
   "CMakeFiles/test.dir/src/Box.cpp.o"
   "CMakeFiles/test.dir/src/Box2D/b2_block_allocator.cpp.o"
   "CMakeFiles/test.dir/src/Box2D/b2_body.cpp.o"
@@ -48,6 +49,7 @@ file(REMOVE_RECURSE
   "CMakeFiles/test.dir/src/Box2D/b2_wheel_joint.cpp.o"
   "CMakeFiles/test.dir/src/Box2D/b2_world.cpp.o"
   "CMakeFiles/test.dir/src/Box2D/b2_world_callbacks.cpp.o"
+  "CMakeFiles/test.dir/src/Normal.cpp.o"
   "CMakeFiles/test.dir/src/filereader.cpp.o"
   "CMakeFiles/test.dir/src/level.cpp.o"
   "CMakeFiles/test.dir/src/main.cpp.o"
