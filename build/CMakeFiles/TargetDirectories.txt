@@ -1,0 +1,3 @@
+/Users/henrivalimaki/Desktop/Yliopisto/C++/angry-birds-2020-3/build/CMakeFiles/rebuild_cache.dir
+/Users/henrivalimaki/Desktop/Yliopisto/C++/angry-birds-2020-3/build/CMakeFiles/edit_cache.dir
+/Users/henrivalimaki/Desktop/Yliopisto/C++/angry-birds-2020-3/build/CMakeFiles/Angry_Birds.dir
