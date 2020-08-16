@@ -5,16 +5,23 @@
 #include <SFML/System.hpp>
 #include <SFML/Window.hpp>
 
+#include <iostream>
 #include "level.hpp"
 
 
 
 Level::Level(std::string filename) {
 
+    //std::cout << "pig" << std::endl;
     b2Vec2 gravity (0.0f, 10.0f);
-    world_->SetGravity(gravity);
+    b2World world(gravity);
+    world_ = &world;
+
+    //std::cout << "pig" << std::endl;
 
     Filereader info(filename);
+
+    std::cout << "file" << std::endl;
 
     ground_ = info.GetGround();
     CreateGround();
@@ -26,10 +33,14 @@ Level::Level(std::string filename) {
         pigs_.push_back(i);
     }
 
+    std::cout << "pig" << std::endl;
+
     for (auto i : info.GetBirds()) {
         Bird bird(i.x, i.y, *world_, SCALE_);
         birds_.push_back(bird);
     }
+
+    std::cout << "bird" << std::endl;
     
     for (auto i : info.GetObjects()) {
         if (i.type == "box") {
@@ -42,11 +53,15 @@ Level::Level(std::string filename) {
         }
     }
 
+    std::cout << "object" << std::endl;
+
     for (auto i : info.GetGround()) {
         ground_.push_back(i);
     }
 
     cannon_ = info.GetCannon();
+
+    std::cout << "all" << std::endl;
 }
 
 void Level::CreateGround() {

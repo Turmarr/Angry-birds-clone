@@ -7,6 +7,8 @@
 
 int main(){
 
+    std::cout << "before" << std::endl;
+
     Level test("test.txt");
 
     sf::RenderWindow window(sf::VideoMode(800, 600), "Testing for enemies", sf::Style::Titlebar | sf::Style::Close);
