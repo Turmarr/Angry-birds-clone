@@ -3,16 +3,16 @@
 #include <fstream>
 #include <sstream>
 
-Cannon ReadCannon(std::string line) {
-    Cannon cannon;
+Cannonc ReadCannon(std::string line) {
+    Cannonc cannon;
     std::stringstream ss;
     ss.str(line);
     ss >> cannon.x >> cannon.y;
     return cannon;
 }
 
-Pig ReadPig(std::string line) {
-    Pig pig;
+Pigc ReadPig(std::string line) {
+    Pigc pig;
     std::stringstream ss;
     ss.str(line);
     ss >> pig.type >> pig.pos;
@@ -21,27 +21,27 @@ Pig ReadPig(std::string line) {
         
 }
 
-Bird ReadBird(std::string line) {
-    Bird bird;
+Birdc ReadBird(std::string line) {
+    Birdc bird;
     std::stringstream ss;
     ss.str(line);
     ss >> bird.type >> bird.x >> bird.y;
     return bird;
 }
 
-Object ReadObject(std::string line) {
-    Object object;
+Objectc ReadObject(std::string line) {
+    Objectc object;
     std::stringstream ss;
     ss.str(line);
-    ss >> object.type >> object.x >> object.y;
+    ss >> object.type >> object.material >> object.x >> object.y;
     return object;
 }
 
-Ground ReadGround(std::string line) {
-    Ground ground;
+Groundc ReadGround(std::string line) {
+    Groundc ground;
     std::stringstream ss;
     ss.str(line);
-    ss >> ground.x >> ground.y;
+    ss >> ground.x >> ground.y >> ground.width >> ground.height;
     return ground;
 }
 

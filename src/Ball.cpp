@@ -1,11 +1,12 @@
 #include "Ball.hpp"
 #include <iostream>
 
-Ball::Ball(float x, float y, const std::string& type, float radius, b2World& world){
+Ball::Ball(float x, float y, const std::string& type, float radius, b2World& world, const float scale){
     x_ = x;
     y_ = y;
     type_ = type;
     radius_ = radius;
+    scale_ = scale;
 
     initTexture();
     initSprite();
@@ -53,17 +54,11 @@ void Ball::initPhysics(b2World& world){
     circle.m_radius = radius_/scale_;
 
     b2FixtureDef FixtureDef;
-    FixtureDef.density = 1.0f
-    FixtureDef.friction = 0.3f
+    FixtureDef.density = 1.0f;
+    FixtureDef.friction = 0.3f;
 
     FixtureDef.shape = &circle;
     body->CreateFixture(&FixtureDef);
-
-}
-
-//Checks the collisions?
-void Ball::Update(){
-
 
 }
 

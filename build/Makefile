@@ -142,6 +142,87 @@ test/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/build
 .PHONY : test/fast
 
+src/Ball.o: src/Ball.cpp.o
+
+.PHONY : src/Ball.o
+
+# target to build an object file
+src/Ball.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/src/Ball.cpp.o
+.PHONY : src/Ball.cpp.o
+
+src/Ball.i: src/Ball.cpp.i
+
+.PHONY : src/Ball.i
+
+# target to preprocess a source file
+src/Ball.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/src/Ball.cpp.i
+.PHONY : src/Ball.cpp.i
+
+src/Ball.s: src/Ball.cpp.s
+
+.PHONY : src/Ball.s
+
+# target to generate assembly for a file
+src/Ball.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/src/Ball.cpp.s
+.PHONY : src/Ball.cpp.s
+
+src/Bird.o: src/Bird.cpp.o
+
+.PHONY : src/Bird.o
+
+# target to build an object file
+src/Bird.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/src/Bird.cpp.o
+.PHONY : src/Bird.cpp.o
+
+src/Bird.i: src/Bird.cpp.i
+
+.PHONY : src/Bird.i
+
+# target to preprocess a source file
+src/Bird.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/src/Bird.cpp.i
+.PHONY : src/Bird.cpp.i
+
+src/Bird.s: src/Bird.cpp.s
+
+.PHONY : src/Bird.s
+
+# target to generate assembly for a file
+src/Bird.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/src/Bird.cpp.s
+.PHONY : src/Bird.cpp.s
+
+src/Box.o: src/Box.cpp.o
+
+.PHONY : src/Box.o
+
+# target to build an object file
+src/Box.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/src/Box.cpp.o
+.PHONY : src/Box.cpp.o
+
+src/Box.i: src/Box.cpp.i
+
+.PHONY : src/Box.i
+
+# target to preprocess a source file
+src/Box.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/src/Box.cpp.i
+.PHONY : src/Box.cpp.i
+
+src/Box.s: src/Box.cpp.s
+
+.PHONY : src/Box.s
+
+# target to generate assembly for a file
+src/Box.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/src/Box.cpp.s
+.PHONY : src/Box.cpp.s
+
 src/filereader.o: src/filereader.cpp.o
 
 .PHONY : src/filereader.o
@@ -196,32 +277,32 @@ src/level.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/src/level.cpp.s
 .PHONY : src/level.cpp.s
 
-src/leveltesting.o: src/leveltesting.cpp.o
+src/main.o: src/main.cpp.o
 
-.PHONY : src/leveltesting.o
+.PHONY : src/main.o
 
 # target to build an object file
-src/leveltesting.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/src/leveltesting.cpp.o
-.PHONY : src/leveltesting.cpp.o
+src/main.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/src/main.cpp.o
+.PHONY : src/main.cpp.o
 
-src/leveltesting.i: src/leveltesting.cpp.i
+src/main.i: src/main.cpp.i
 
-.PHONY : src/leveltesting.i
+.PHONY : src/main.i
 
 # target to preprocess a source file
-src/leveltesting.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/src/leveltesting.cpp.i
-.PHONY : src/leveltesting.cpp.i
+src/main.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/src/main.cpp.i
+.PHONY : src/main.cpp.i
 
-src/leveltesting.s: src/leveltesting.cpp.s
+src/main.s: src/main.cpp.s
 
-.PHONY : src/leveltesting.s
+.PHONY : src/main.s
 
 # target to generate assembly for a file
-src/leveltesting.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/src/leveltesting.cpp.s
-.PHONY : src/leveltesting.cpp.s
+src/main.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/src/main.cpp.s
+.PHONY : src/main.cpp.s
 
 # Help Target
 help:
@@ -232,15 +313,24 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... test"
+	@echo "... src/Ball.o"
+	@echo "... src/Ball.i"
+	@echo "... src/Ball.s"
+	@echo "... src/Bird.o"
+	@echo "... src/Bird.i"
+	@echo "... src/Bird.s"
+	@echo "... src/Box.o"
+	@echo "... src/Box.i"
+	@echo "... src/Box.s"
 	@echo "... src/filereader.o"
 	@echo "... src/filereader.i"
 	@echo "... src/filereader.s"
 	@echo "... src/level.o"
 	@echo "... src/level.i"
 	@echo "... src/level.s"
-	@echo "... src/leveltesting.o"
-	@echo "... src/leveltesting.i"
-	@echo "... src/leveltesting.s"
+	@echo "... src/main.o"
+	@echo "... src/main.i"
+	@echo "... src/main.s"
 .PHONY : help
 
 

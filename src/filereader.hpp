@@ -40,10 +40,10 @@ Birds:
 "type of bird" "position on x-axis" "position on y-axis"
 
 Objects:
-"type of object" "position on x-axis" "position on y-axis"
+"type of object(box/ball)" "material of object" "position on x-axis" "position on y-axis"
 
-Groundpoint: (This will be utilized if box2d custom ground is implemented)
-"position on x-axis" "position on y-axis"
+Groundboxes:
+"position on x-axis" "position on y-axis" "width" "height"
 */
 
 class file_exception : public std::exception {
@@ -53,63 +53,66 @@ class file_exception : public std::exception {
     }
 };
 
-struct Cannon {
+struct Cannonc {
     int x;
     int y;
 };
 
-struct Pig {
+struct Pigc {
     std::string type;
     int pos;
 };
 
-struct Bird {
-    int x;
-    int y;
+struct Birdc {
+    float x;
+    float y;
     std::string type;
 };
 
-struct Object {
-    int x;
-    int y;
+struct Objectc {
+    float x;
+    float y;
     std::string type;
+    std::string material;
 };
 
-struct Ground {
-    int x;
-    int y;
+struct Groundc {
+    float x;
+    float y;
+    float width;
+    float height;
 };
 
 class Filereader {
     public:
         Filereader(std::string filename);
 
-        std::vector<struct Pig> GetPigs() const {
+        std::vector<struct Pigc> GetPigs() const {
             return pigs_;
         }
 
-        std::vector<struct Bird> GetBirds() const {
+        std::vector<struct Birdc> GetBirds() const {
             return birds_;
         }
 
-        std::vector<struct Object> GetObjects() const {
+        std::vector<struct Objectc> GetObjects() const {
             return objects_;
         }
 
-        std::vector<struct Ground> GetGround() const {
+        std::vector<struct Groundc> GetGround() const {
             return ground_;
         }
 
-        Cannon GetCannon() const {
+        Cannonc GetCannon() const {
             return cannon_;
         }
 
     private:
-        std::vector<struct Pig> pigs_;
-        std::vector<struct Bird> birds_;
-        std::vector<struct Object> objects_;
-        std::vector<struct Ground> ground_;
-        struct Cannon cannon_;
+        std::vector<struct Pigc> pigs_;
+        std::vector<struct Birdc> birds_;
+        std::vector<struct Objectc> objects_;
+        std::vector<struct Groundc> ground_;
+        struct Cannonc cannon_;
 };
 
 #endif

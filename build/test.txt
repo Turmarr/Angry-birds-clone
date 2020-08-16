@@ -1,14 +1,14 @@
 # cannon
-5 4
+60 540
 
-#pigs
-test 6
+# Pigs
 
+# Birds
+bird 300 450
 
+# Objects
+box wood 300 510
+ball wood 400 500
 
-
-gh 7
-g 4
-
-#
-gsdg 4 6
+# groundpoints
+400 570 800 60

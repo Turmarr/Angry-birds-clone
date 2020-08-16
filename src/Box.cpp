@@ -10,13 +10,13 @@ Box::Box(float x, float y, const std::string& type, float angle, b2World& world,
 
     initPhysics(world);
     initTexture();
-    initSprite();
 
 }
 
 Box::~Box(){
 
 }
+
 
 //Applies the physics
 void Box::initPhysics(b2World& world){
@@ -43,7 +43,7 @@ void Box::initBlock(){
     shape.setPosition(x_, y_);
     shape.setTexture(&this->pic_);
     shape.setSize(sf::Vector2f(width, height));
-    shape.setOrigin(width/2, height/2)
+    shape.setOrigin(width/2, height/2);
     shape.rotate(angle_);
 
 }
@@ -62,12 +62,6 @@ void Box::initTexture(){
     if(!this->pic_.loadFromFile(file)){
         std::cout<< "Error when loading the image from textures." <<std::endl;
     }
-}
-
-//Checks the collisions?
-void Box::Update(){
-
-
 }
 
 void Box::Draw(sf::RenderTarget& target){

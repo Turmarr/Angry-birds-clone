@@ -1,9 +1,16 @@
 #include "Box2D/box2d/box2d.h"
 
+#include <SFML/Graphics.hpp>
+#include <SFML/System.hpp>
+#include <SFML/Window.hpp>
+
 #include <vector>
 #include <list>
 #include <algorithm>
 #include "filereader.hpp"
+#include "Bird.hpp"
+#include "Box.hpp"
+#include "Ball.hpp"
 
 #ifndef LEVEL_CLASS
 #define LEVEL_CLASS
@@ -20,11 +27,11 @@ class Level {
         //initialises the level and puts the first pig into the cannon
         Level(std::string filename);
 
-        std::vector<Pig> GetPigs() const {
+        std::vector<Pigc> GetPigs() const {
             return pigs_;
         }
 
-        void Update();
+        void Update(sf::RenderWindow& window);
         //deconstructs the level, is where the level end screen will be determined
         /*
         ~Level() {
@@ -42,24 +49,13 @@ class Level {
         }
         */
         
-        
-
-        //returns how many pigs are left
-        /*
-        int GetPigs() const {
-            auto i = pigs_.begin();
-            for (; i != current_pig_; i++) { }
-            int j = 0;
-            for (; i != pigs_.end(); i++, j++) { }
-            return j;
-        }
-        */
-        
-        //will update all the objects
-        //cannot be implemented before the objects themselves are built
+    
 
     private:
-        static const float SCALE_ = 30.f;
+        void CreateGround();
+        void DrawGround(sf::RenderTarget& target);
+
+        const float SCALE_ = 30.f;
         float timeStep_ = 1.0f / 60.0f;
         int32 velocityIterations_ = 8;
         int32 positionIterations_ = 3;
@@ -68,12 +64,13 @@ class Level {
         
         int points = 0;
 
-        std::vector<struct Pig> pigs_;
-        std::vector<Pig>::iterator current_pig_;
-        std::vector<struct Bird> birds_;
-        std::vector<struct Object> objects_;
-        std::vector<struct Ground> ground_;
-        struct Cannon cannon_;
+        std::vector<Pigc> pigs_;
+        std::vector<Pigc>::iterator current_pig_;
+        std::vector<Bird> birds_;
+        std::vector<Box> box_;
+        std::vector<Ball> ball_;
+        std::vector<struct Groundc> ground_;
+        struct Cannonc cannon_;
         
 };
 

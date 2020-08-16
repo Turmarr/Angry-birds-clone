@@ -14,6 +14,8 @@ class Bird: public Destructables
         float x_,y_; //The placement in the window
         float scale_;
 
+        float radius_ = 30.0f;
+
         void initSprite();
         void initTexture();
         void initPhysics(b2World& world);
@@ -22,7 +24,6 @@ class Bird: public Destructables
         Bird(float x, float y, b2World& world, const float scale);
         ~Bird();
 
-        void Update();
         void Draw(sf::RenderTarget& target);
         
 };

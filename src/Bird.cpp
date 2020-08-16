@@ -9,7 +9,7 @@ Bird::Bird(float x, float y, b2World& world, const float scale){
     
     initTexture();
     initSprite();
-    initPhysics();
+    initPhysics(world);
 
 }
 
@@ -23,7 +23,7 @@ void Bird::initSprite(){
     sprite.setPosition(x_, y_);
     this->sprite.setTexture(this->pic_);
     sprite.scale(sf::Vector2f(0.3f, 0.3f));
-    sprite.setOrigin(sprite.getLocalBounds().width/2, sprite.getLocalBounds().height/2)
+    sprite.setOrigin(sprite.getLocalBounds().width/2, sprite.getLocalBounds().height/2);
     
 }
 //Load texture from file
@@ -45,18 +45,13 @@ void Bird::initPhysics(b2World& world){
     circle.m_radius = radius_/scale_;
 
     b2FixtureDef FixtureDef;
-    FixtureDef.density = 0.8f
-    FixtureDef.friction = 0.3f
+    FixtureDef.density = 0.8f;
+    FixtureDef.friction = 0.3f;
 
     FixtureDef.shape = &circle;
     body->CreateFixture(&FixtureDef);
 }
 
-//Checks the collisions?
-void Bird::Update(){
-
-
-}
 
 void Bird::Draw(sf::RenderTarget& target){
 

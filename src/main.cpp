@@ -1,14 +1,18 @@
 #include <SFML/Graphics.hpp>
 #include <SFML/System.hpp>
 #include <SFML/Window.hpp>
-#include "Destructables.hpp"
-#include "Bird.hpp"
+#include <SFML/Audio.hpp>
+#include <SFML/Network.hpp>
+#include "level.hpp"
 
 int main(){
+
+    Level test("test.txt");
+
     sf::RenderWindow window(sf::VideoMode(800, 600), "Testing for enemies", sf::Style::Titlebar | sf::Style::Close);
     sf::Event ev;
     window.setFramerateLimit(60);
-    Bird bird = Bird(100.f, 100.f);
+    //Bird bird = Bird(100.f, 100.f);
     
 
     //Game loop
@@ -26,14 +30,8 @@ int main(){
         }
 
     //Update
+    test.Update(window);
 
-    //Render
-    window.clear(); //clears old frame
-
-    //Draw here
-    bird.Render(window);
-
-    window.display();  //displays the window after draw
 
     }
 
