@@ -8,9 +8,9 @@ Box::Box(float x, float y, const std::string& type, float angle, b2World& world,
     angle_ = angle;
     scale_ = scale;
 
+    initTexture();
     initBlock();
     initPhysics(world);
-    initTexture();
 
 }
 
@@ -54,7 +54,7 @@ void Box::initTexture(){
     std::string file;
 
     if (type_ == "wood"){
-        file= "Textures/wood.jpg";
+        file = "Textures/wood.jpg";
     }
     else if (type_ == "stone"){
         file = "Textures/stone.jpg";

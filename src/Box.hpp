@@ -14,7 +14,7 @@ class Box: public Destructables
         float x_,y_; //The placement in the window
         float angle_; //The angle of the rotation of the block
         float scale_;
-        float width = 120.f;
+        float width = 60.f;
         float height = 60.f;
 
         //Init functions

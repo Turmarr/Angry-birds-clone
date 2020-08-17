@@ -16,6 +16,7 @@ int main(){
     //Bird bird = Bird(100.f, 100.f);
     
 
+    //std::cout << test.world_->GetBodyCount() << std::endl;
     //Game loop
     while (window.isOpen()){
         sf::Event ev;

@@ -34,7 +34,7 @@ void Ball::initTexture(){
     if (type_ == "wood"){
         file= "Textures/wood.jpg";
     }
-    else if (type_ == "Stone"){
+    else if (type_ == "stone"){
         file = "Textures/stone.jpg";
     }
     

@@ -52,10 +52,11 @@ class Level {
             for (auto i : birds_) {
                 delete i;
             }
+            delete world_;
         }
         
         
-    
+        b2World* world_;
 
     private:
         void NextPig();
@@ -67,7 +68,7 @@ class Level {
         int32 velocityIterations_ = 8;
         int32 positionIterations_ = 3;
         
-        b2World* world_;
+        
         
         int points = 0;
 

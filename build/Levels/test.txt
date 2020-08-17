@@ -5,11 +5,13 @@
 normal 1
 
 # Birds
-/bird 300 450
+bird 300 450
 
 # Objects
-/box wood 300 510
-/ball wood 400 500
+ball wood 100 200
+box stone 300 510
+ball wood 400 500
+ball stone 400 400
 
 # groundpoints
 400 570 800 60

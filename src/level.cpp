@@ -14,8 +14,8 @@ Level::Level(std::string filename) {
 
     //std::cout << "pig" << std::endl;
     b2Vec2 gravity (0.0f, 10.0f);
-    b2World world(gravity);
-    world_ = &world;
+    //b2World *world(gravity);
+    world_ = new b2World(gravity);
 
     //std::cout << "pig" << std::endl;
 
@@ -67,7 +67,6 @@ Level::Level(std::string filename) {
     //std::cout << birds_.size() << std::endl;
     //std::cout << box_.size() << std::endl;
     //std::cout << ball_.size() << std::endl;
-    std::cout << world_->GetBodyCount() << std::endl;
 }
 
 void Level::NextPig() {
@@ -120,7 +119,7 @@ void Level::DrawGround(sf::RenderWindow& window) {
 
 void Level::Update(sf::RenderWindow& window) {
 
-    //world_->Step(timeStep_, velocityIterations_, positionIterations_);
+    world_->Step(timeStep_, velocityIterations_, positionIterations_);
     //std::cout << world_->GetBodyCount() << std::endl;
     window.clear(sf::Color::White);
     //std::cout << 2 << std::endl;
