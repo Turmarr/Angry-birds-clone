@@ -29,12 +29,11 @@ Level::Level(std::string filename) {
     auto temp_pigs = info.GetPigs();
     sort(temp_pigs.begin(), temp_pigs.end(), [](Pigc a, Pigc b) {return a.pos < b.pos;});
     for (auto i : info.GetPigs()) {
-        //check which pig
         pigs_.push_back(i);
     }
 
     //std::cout << "pig" << std::endl;
-
+    
     for (auto i : info.GetBirds()) {
         Bird bird(i.x, i.y, *world_, SCALE_);
         birds_.push_back(bird);
@@ -61,10 +60,33 @@ Level::Level(std::string filename) {
 
     cannon_ = info.GetCannon();
 
+    NextPig();
     //std::cout << "all" << std::endl;
     //std::cout << birds_.size() << std::endl;
     //std::cout << box_.size() << std::endl;
     //std::cout << ball_.size() << std::endl;
+}
+
+void Level::NextPig() {
+    
+    if (pigs_.size() != 0) {
+        Pigc current = pigs_.back();
+        pigs_.pop_back();
+        if (current.type == "normal") {
+            Normal pig(cannon_.x, cannon_.y, world_);
+            current_pig_ = &pig;
+        }
+        if (current.type == "bomb") {
+            Bomb pig(cannon_.x, cannon_.y, world_);
+            current_pig_ = &pig;
+        }
+        else {
+            current_pig_ = nullptr;
+        }
+    }
+    else {
+        current_pig_ = nullptr;
+    }
 }
 
 void Level::CreateGround() {
@@ -95,13 +117,16 @@ void Level::DrawGround(sf::RenderWindow& window) {
 
 void Level::Update(sf::RenderWindow& window) {
 
-    world_->Step(timeStep_, velocityIterations_, positionIterations_);
+    //world_->Step(timeStep_, velocityIterations_, positionIterations_);
     //std::cout << 1 << std::endl;
     window.clear(sf::Color::White);
     //std::cout << 2 << std::endl;
     DrawGround(window);
     //std::cout << 3 << std::endl;
     //add pigs when ready
+    if (current_pig_ != nullptr) {
+        current_pig_->Draw(window);
+    }
 
     for (auto i : birds_) {
         i.Draw(window);

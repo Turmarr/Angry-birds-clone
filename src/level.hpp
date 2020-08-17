@@ -11,6 +11,11 @@
 #include "Bird.hpp"
 #include "Box.hpp"
 #include "Ball.hpp"
+#include "Destructables.hpp"
+#include "Pig.hpp"
+#include "Normal.hpp"
+#include "Bomb.hpp"
+
 
 #ifndef LEVEL_CLASS
 #define LEVEL_CLASS
@@ -52,6 +57,7 @@ class Level {
     
 
     private:
+        void NextPig();
         void CreateGround();
         void DrawGround(sf::RenderWindow& target);
 
@@ -65,7 +71,7 @@ class Level {
         int points = 0;
 
         std::vector<Pigc> pigs_;
-        std::vector<Pigc>::iterator current_pig_;
+        Pig* current_pig_;
         std::vector<Bird> birds_;
         std::vector<Box> box_;
         std::vector<Ball> ball_;

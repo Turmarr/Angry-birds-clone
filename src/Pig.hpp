@@ -7,6 +7,6 @@ public:
     Pig() {}
     ~Pig() {}
     
-    virtual void Draw(sf::RenderWindow& window) = 0;
+    void Draw(sf::RenderWindow& window) { }
 private:
 };

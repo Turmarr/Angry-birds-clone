@@ -2,6 +2,7 @@
 60 540
 
 # Pigs
+normal 1
 
 # Birds
 /bird 300 450
