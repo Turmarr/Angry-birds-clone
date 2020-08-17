@@ -51,6 +51,12 @@ void Bomb::Special() {
     if(specialityUsed){
         return;
     }
+    
+    //Set birds groupIndex to -1 to avoid colliding with the particles created in the explosion
+    b2Fixture* f = body_->GetFixtureList();
+    b2Filter filter = f->GetFilterData();
+    filter.groupIndex = -1;
+    f->SetFilterData(filter);
 
     //Get explosion center
     b2Vec2 center = body_->GetPosition();
@@ -94,7 +100,7 @@ void Bomb::Special() {
 }
 
 void Bomb::initTexture(){
-    if(!texture_.loadFromFile("/Users/henrivalimaki/Desktop/Yliopisto/C++/angry-birds-2020-3/src/Textures/normal_pig.png", sf::IntRect(0, 0, 60, 60))){
+    if(!texture_.loadFromFile("/Users/henrivalimaki/Desktop/Yliopisto/C++/angry-birds-2020-3/src/Textures/bomb_pig.png", sf::IntRect(0, 0, 60, 60))){
         std::cout<< "Error when loading the image from textures." <<std::endl;
     }
 }
