@@ -35,24 +35,26 @@ Level::Level(std::string filename) {
     //std::cout << "pig" << std::endl;
     
     for (auto i : info.GetBirds()) {
-        Bird bird(i.x, i.y, *world_, SCALE_);
+        Bird *bird = new Bird(i.x, i.y, *world_, SCALE_);
         birds_.push_back(bird);
     }
 
-    //std::cout << "bird" << std::endl;
+    //std::cout << birds_.size() << std::endl;
     
     for (auto i : info.GetObjects()) {
         if (i.type == "box") {
-            Box object(i.x, i.y, i.material, 0, *world_, SCALE_);
+            Box *object = new Box(i.x, i.y, i.material, 0, *world_, SCALE_);
             box_.push_back(object);
         }
         if (i.type == "ball") {
-            Ball object(i.x, i.y, i.material, 30.0f, *world_, SCALE_);
+            Ball *object = new Ball(i.x, i.y, i.material, 30.0f, *world_, SCALE_);
             ball_.push_back(object);
         }
     }
 
     //std::cout << "object" << std::endl;
+    //std::cout << box_.size() << std::endl;
+    //std::cout << ball_.size() << std::endl;
 
     for (auto i : info.GetGround()) {
         ground_.push_back(i);
@@ -65,6 +67,7 @@ Level::Level(std::string filename) {
     //std::cout << birds_.size() << std::endl;
     //std::cout << box_.size() << std::endl;
     //std::cout << ball_.size() << std::endl;
+    std::cout << world_->GetBodyCount() << std::endl;
 }
 
 void Level::NextPig() {
@@ -73,12 +76,12 @@ void Level::NextPig() {
         Pigc current = pigs_.back();
         pigs_.pop_back();
         if (current.type == "normal") {
-            Normal pig(cannon_.x, cannon_.y, world_);
-            current_pig_ = &pig;
+            Normal *pig = new Normal(cannon_.x, cannon_.y, world_);
+            current_pig_ = pig;
         }
         if (current.type == "bomb") {
-            Bomb pig(cannon_.x, cannon_.y, world_);
-            current_pig_ = &pig;
+            Bomb *pig = new Bomb(cannon_.x, cannon_.y, world_);
+            current_pig_ = pig;
         }
         else {
             current_pig_ = nullptr;
@@ -118,7 +121,7 @@ void Level::DrawGround(sf::RenderWindow& window) {
 void Level::Update(sf::RenderWindow& window) {
 
     //world_->Step(timeStep_, velocityIterations_, positionIterations_);
-    //std::cout << 1 << std::endl;
+    //std::cout << world_->GetBodyCount() << std::endl;
     window.clear(sf::Color::White);
     //std::cout << 2 << std::endl;
     DrawGround(window);
@@ -129,13 +132,13 @@ void Level::Update(sf::RenderWindow& window) {
     }
 
     for (auto i : birds_) {
-        i.Draw(window);
+        i->Draw(window);
     }
     for (auto i : box_) {
-        i.Draw(window);
+        i->Draw(window);
     }
     for (auto i : ball_) {
-        i.Draw(window);
+        i->Draw(window);
     }
 
     window.display();

@@ -37,7 +37,7 @@ void Normal::Draw(sf::RenderWindow& window) {
 }
 
 void Normal::initTexture(){
-    if(!texture_.loadFromFile("/Users/henrivalimaki/Desktop/Yliopisto/C++/angry-birds-2020-3/src/Textures/normal_pig.png", sf::IntRect(0, 0, 60, 60))){
+    if(!texture_.loadFromFile("Textures/normal_pig.png", sf::IntRect(0, 0, 60, 60))){
         std::cout<< "Error when loading the image from textures." <<std::endl;
     }
 }

@@ -38,21 +38,22 @@ class Level {
 
         void Update(sf::RenderWindow& window);
         //deconstructs the level, is where the level end screen will be determined
-        /*
+        
         ~Level() {
 
-
-            for (auto i : pigs_) {
+            delete current_pig_;
+            
+            for (auto i : box_) {
                 delete i;
             }
-            for (auto i : objects_) {
+            for (auto i : ball_) {
                 delete i;
             }
             for (auto i : birds_) {
                 delete i;
             }
         }
-        */
+        
         
     
 
@@ -72,9 +73,10 @@ class Level {
 
         std::vector<Pigc> pigs_;
         Pig* current_pig_;
-        std::vector<Bird> birds_;
-        std::vector<Box> box_;
-        std::vector<Ball> ball_;
+        std::vector<Pig*> old_pigs_;
+        std::vector<Bird*> birds_;
+        std::vector<Box*> box_;
+        std::vector<Ball*> ball_;
         std::vector<struct Groundc> ground_;
         struct Cannonc cannon_;
         
