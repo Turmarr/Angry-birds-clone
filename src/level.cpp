@@ -35,7 +35,7 @@ Level::Level(std::string filename) {
     //std::cout << "pig" << std::endl;
     
     for (auto i : info.GetBirds()) {
-        Bird *bird = new Bird(i.x, i.y, *world_, SCALE_);
+        Bird *bird = new Bird(i.x, i.y, *world_, SCALE_, bird_radius_);
         birds_.push_back(bird);
     }
 
@@ -43,11 +43,11 @@ Level::Level(std::string filename) {
     
     for (auto i : info.GetObjects()) {
         if (i.type == "box") {
-            Box *object = new Box(i.x, i.y, i.material, 0, *world_, SCALE_);
+            Box *object = new Box(i.x, i.y, i.material, box_angle_, *world_, SCALE_);
             box_.push_back(object);
         }
         if (i.type == "ball") {
-            Ball *object = new Ball(i.x, i.y, i.material, 30.0f, *world_, SCALE_);
+            Ball *object = new Ball(i.x, i.y, i.material, ball_radius_, *world_, SCALE_);
             ball_.push_back(object);
         }
     }
@@ -66,7 +66,8 @@ Level::Level(std::string filename) {
     //std::cout << "all" << std::endl;
     //std::cout << birds_.size() << std::endl;
     //std::cout << box_.size() << std::endl;
-    //std::cout << ball_.size() << std::endl;
+    //std::cout << world_->GetBodyCount() << std::endl;
+    
 }
 
 void Level::NextPig() {
@@ -75,11 +76,11 @@ void Level::NextPig() {
         Pigc current = pigs_.back();
         pigs_.pop_back();
         if (current.type == "normal") {
-            Normal *pig = new Normal(cannon_.x, cannon_.y, world_);
+            Normal *pig = new Normal(cannon_.x / SCALE_, cannon_.y / SCALE_, world_);
             current_pig_ = pig;
         }
-        if (current.type == "bomb") {
-            Bomb *pig = new Bomb(cannon_.x, cannon_.y, world_);
+        else if (current.type == "bomb") {
+            Bomb *pig = new Bomb(cannon_.x / SCALE_, cannon_.y / SCALE_, world_);
             current_pig_ = pig;
         }
         else {
@@ -120,12 +121,10 @@ void Level::DrawGround(sf::RenderWindow& window) {
 void Level::Update(sf::RenderWindow& window) {
 
     world_->Step(timeStep_, velocityIterations_, positionIterations_);
-    //std::cout << world_->GetBodyCount() << std::endl;
     window.clear(sf::Color::White);
-    //std::cout << 2 << std::endl;
     DrawGround(window);
-    //std::cout << 3 << std::endl;
-    //add pigs when ready
+    
+
     if (current_pig_ != nullptr) {
         current_pig_->Draw(window);
     }

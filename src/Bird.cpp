@@ -2,10 +2,11 @@
 #include "Bird.hpp"
 #include <iostream>
 
-Bird::Bird(float x, float y, b2World& world, const float scale){
+Bird::Bird(float x, float y, b2World& world, const float scale, float radius){
     x_ = x;
     y_ = y;
     scale_ = scale;
+    radius_ = radius;
     
     initTexture();
     initSprite();
@@ -21,8 +22,8 @@ Bird::~Bird(){
 void Bird::initSprite(){
 
     sprite.setPosition(x_, y_);
-    this->sprite.setTexture(this->pic_);
-    sprite.scale(sf::Vector2f(0.3f, 0.3f));
+    sprite.setTexture(&this->pic_);
+    sprite.setRadius(radius_);
     sprite.setOrigin(sprite.getLocalBounds().width/2, sprite.getLocalBounds().height/2);
     
 }

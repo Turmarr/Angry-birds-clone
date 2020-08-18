@@ -30,6 +30,7 @@ Normal::~Normal() {
 }
 
 void Normal::Draw(sf::RenderWindow& window) {
+    //std::cout << body_->GetPosition().x << std::endl;
     sprite_.setOrigin(width_ / 2 * SCALE, width_ / 2 * SCALE);
     sprite_.setPosition(body_->GetPosition().x * SCALE, body_->GetPosition().y * SCALE);
     sprite_.setRotation(body_->GetAngle() * 180/b2_pi);

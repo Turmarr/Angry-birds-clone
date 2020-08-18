@@ -56,20 +56,32 @@ class Level {
         }
         
         
-        b2World* world_;
+        
 
     private:
+        //functions
         void NextPig();
         void CreateGround();
         void DrawGround(sf::RenderWindow& target);
 
+        //general variables
         const float SCALE_ = 30.f;
+        b2World* world_;
+
+        //constructor variables maybe added to stuff
+        //float box_height;
+        //float box_width_;
+        float box_angle_ = 0;
+        float ball_radius_ = 30;
+        float bird_radius_ = 30;
+
+
+        //box2d variables
         float timeStep_ = 1.0f / 60.0f;
         int32 velocityIterations_ = 8;
         int32 positionIterations_ = 3;
-        
-        
-        
+
+        //update variables
         int points = 0;
 
         std::vector<Pigc> pigs_;

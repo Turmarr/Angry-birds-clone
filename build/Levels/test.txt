@@ -1,14 +1,13 @@
 # cannon
-60 540
+60 100
 
 # Pigs
-normal 1
+bomb 1
 
 # Birds
 bird 300 450
 
 # Objects
-ball wood 100 200
 box stone 300 510
 ball wood 400 500
 ball stone 400 400
