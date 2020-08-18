@@ -23,7 +23,7 @@ class Box: public Destructables
         void initTexture();
     
     public:
-        Box(float x, float y, const std::string& type, float angle, b2World& world, const float scale);
+        Box(float x, float y, const std::string& type, float angle, b2World& world, const float scale, Points* points);
         ~Box();
 
         void Draw(sf::RenderWindow& target);

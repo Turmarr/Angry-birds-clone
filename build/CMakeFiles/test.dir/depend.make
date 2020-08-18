@@ -39,6 +39,7 @@ CMakeFiles/test.dir/src/Ball.cpp.o: ../src/Box2D/box2d/b2_world.h
 CMakeFiles/test.dir/src/Ball.cpp.o: ../src/Box2D/box2d/b2_world_callbacks.h
 CMakeFiles/test.dir/src/Ball.cpp.o: ../src/Box2D/box2d/box2d.h
 CMakeFiles/test.dir/src/Ball.cpp.o: ../src/Destructables.hpp
+CMakeFiles/test.dir/src/Ball.cpp.o: ../src/Points.hpp
 
 CMakeFiles/test.dir/src/Bird.cpp.o: ../src/Bird.cpp
 CMakeFiles/test.dir/src/Bird.cpp.o: ../src/Bird.hpp
@@ -78,6 +79,7 @@ CMakeFiles/test.dir/src/Bird.cpp.o: ../src/Box2D/box2d/b2_world.h
 CMakeFiles/test.dir/src/Bird.cpp.o: ../src/Box2D/box2d/b2_world_callbacks.h
 CMakeFiles/test.dir/src/Bird.cpp.o: ../src/Box2D/box2d/box2d.h
 CMakeFiles/test.dir/src/Bird.cpp.o: ../src/Destructables.hpp
+CMakeFiles/test.dir/src/Bird.cpp.o: ../src/Points.hpp
 
 CMakeFiles/test.dir/src/Bomb.cpp.o: ../src/Bomb.cpp
 CMakeFiles/test.dir/src/Bomb.cpp.o: ../src/Bomb.hpp
@@ -156,6 +158,7 @@ CMakeFiles/test.dir/src/Box.cpp.o: ../src/Box2D/box2d/b2_world.h
 CMakeFiles/test.dir/src/Box.cpp.o: ../src/Box2D/box2d/b2_world_callbacks.h
 CMakeFiles/test.dir/src/Box.cpp.o: ../src/Box2D/box2d/box2d.h
 CMakeFiles/test.dir/src/Box.cpp.o: ../src/Destructables.hpp
+CMakeFiles/test.dir/src/Box.cpp.o: ../src/Points.hpp
 
 CMakeFiles/test.dir/src/Box2D/b2_block_allocator.cpp.o: ../src/Box2D/b2_block_allocator.cpp
 CMakeFiles/test.dir/src/Box2D/b2_block_allocator.cpp.o: ../src/Box2D/box2d/b2_block_allocator.h
@@ -767,6 +770,7 @@ CMakeFiles/test.dir/src/level.cpp.o: ../src/Box2D/box2d/box2d.h
 CMakeFiles/test.dir/src/level.cpp.o: ../src/Destructables.hpp
 CMakeFiles/test.dir/src/level.cpp.o: ../src/Normal.hpp
 CMakeFiles/test.dir/src/level.cpp.o: ../src/Pig.hpp
+CMakeFiles/test.dir/src/level.cpp.o: ../src/Points.hpp
 CMakeFiles/test.dir/src/level.cpp.o: ../src/filereader.hpp
 CMakeFiles/test.dir/src/level.cpp.o: ../src/level.cpp
 CMakeFiles/test.dir/src/level.cpp.o: ../src/level.hpp
@@ -813,6 +817,7 @@ CMakeFiles/test.dir/src/main.cpp.o: ../src/Box2D/box2d/box2d.h
 CMakeFiles/test.dir/src/main.cpp.o: ../src/Destructables.hpp
 CMakeFiles/test.dir/src/main.cpp.o: ../src/Normal.hpp
 CMakeFiles/test.dir/src/main.cpp.o: ../src/Pig.hpp
+CMakeFiles/test.dir/src/main.cpp.o: ../src/Points.hpp
 CMakeFiles/test.dir/src/main.cpp.o: ../src/filereader.hpp
 CMakeFiles/test.dir/src/main.cpp.o: ../src/level.hpp
 CMakeFiles/test.dir/src/main.cpp.o: ../src/main.cpp

@@ -1,12 +1,14 @@
 #include "Ball.hpp"
 #include <iostream>
 
-Ball::Ball(float x, float y, const std::string& type, float radius, b2World& world, const float scale){
+Ball::Ball(float x, float y, const std::string& type, float radius, b2World& world, const float scale, Points* points){
     x_ = x;
     y_ = y;
     type_ = type;
     radius_ = radius;
     scale_ = scale;
+
+    points_ = points;
 
     initTexture();
     initSprite();
@@ -14,7 +16,7 @@ Ball::Ball(float x, float y, const std::string& type, float radius, b2World& wor
 }
 
 Ball::~Ball(){
-
+    points_->AddPoints(100);
 }
 
 //Initializes the bird

@@ -16,12 +16,6 @@ iostream
 Destructables.hpp
 /mnt/c/Users/tuoma/Documents/Programming/CPP/angry-birds-2020-3/src/Destructables.hpp
 
-/mnt/c/Users/tuoma/Documents/Programming/CPP/angry-birds-2020-3/src/Bird.cpp
-Bird.hpp
-/mnt/c/Users/tuoma/Documents/Programming/CPP/angry-birds-2020-3/src/Bird.hpp
-iostream
--
-
 /mnt/c/Users/tuoma/Documents/Programming/CPP/angry-birds-2020-3/src/Bird.hpp
 Destructables.hpp
 /mnt/c/Users/tuoma/Documents/Programming/CPP/angry-birds-2020-3/src/Destructables.hpp
@@ -285,6 +279,8 @@ SFML/System.hpp
 -
 Box2D/box2d/box2d.h
 /mnt/c/Users/tuoma/Documents/Programming/CPP/angry-birds-2020-3/src/Box2D/box2d/box2d.h
+Points.hpp
+/mnt/c/Users/tuoma/Documents/Programming/CPP/angry-birds-2020-3/src/Points.hpp
 
 /mnt/c/Users/tuoma/Documents/Programming/CPP/angry-birds-2020-3/src/Normal.hpp
 SFML/Graphics.hpp
@@ -301,6 +297,8 @@ Box2D/box2d/box2d.h
 /mnt/c/Users/tuoma/Documents/Programming/CPP/angry-birds-2020-3/src/Box2D/box2d/box2d.h
 iostream
 -
+
+/mnt/c/Users/tuoma/Documents/Programming/CPP/angry-birds-2020-3/src/Points.hpp
 
 /mnt/c/Users/tuoma/Documents/Programming/CPP/angry-birds-2020-3/src/filereader.hpp
 string
@@ -363,6 +361,8 @@ Normal.hpp
 /mnt/c/Users/tuoma/Documents/Programming/CPP/angry-birds-2020-3/src/Normal.hpp
 Bomb.hpp
 /mnt/c/Users/tuoma/Documents/Programming/CPP/angry-birds-2020-3/src/Bomb.hpp
+Points.hpp
+/mnt/c/Users/tuoma/Documents/Programming/CPP/angry-birds-2020-3/src/Points.hpp
 
 /mnt/c/Users/tuoma/Documents/Programming/CPP/angry-birds-2020-3/src/main.cpp
 SFML/Graphics.hpp

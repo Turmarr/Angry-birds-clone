@@ -12,6 +12,9 @@
 
 Level::Level(std::string filename) {
 
+    //init pointcounter
+    points_ = new Points();
+
     //std::cout << "pig" << std::endl;
     b2Vec2 gravity (0.0f, 10.0f);
     //b2World *world(gravity);
@@ -35,7 +38,7 @@ Level::Level(std::string filename) {
     //std::cout << "pig" << std::endl;
     
     for (auto i : info.GetBirds()) {
-        Bird *bird = new Bird(i.x, i.y, *world_, SCALE_, bird_radius_);
+        Bird *bird = new Bird(i.x, i.y, *world_, SCALE_, bird_radius_, points_);
         birds_.push_back(bird);
     }
 
@@ -43,11 +46,11 @@ Level::Level(std::string filename) {
     
     for (auto i : info.GetObjects()) {
         if (i.type == "box") {
-            Box *object = new Box(i.x, i.y, i.material, box_angle_, *world_, SCALE_);
+            Box *object = new Box(i.x, i.y, i.material, box_angle_, *world_, SCALE_, points_);
             box_.push_back(object);
         }
         if (i.type == "ball") {
-            Ball *object = new Ball(i.x, i.y, i.material, ball_radius_, *world_, SCALE_);
+            Ball *object = new Ball(i.x, i.y, i.material, ball_radius_, *world_, SCALE_, points_);
             ball_.push_back(object);
         }
     }

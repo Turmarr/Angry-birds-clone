@@ -2,7 +2,7 @@
 #include "Bird.hpp"
 #include <iostream>
 
-Bird::Bird(float x, float y, b2World& world, const float scale, float radius){
+Bird::Bird(float x, float y, b2World& world, const float scale, float radius, Points* points){
     x_ = x;
     y_ = y;
     scale_ = scale;
@@ -12,10 +12,12 @@ Bird::Bird(float x, float y, b2World& world, const float scale, float radius){
     initSprite();
     initPhysics(world);
 
+    points_ = points;
+
 }
 
 Bird::~Bird(){
-
+    points_->AddPoints(1000);
 }
 
 //Initializes the bird

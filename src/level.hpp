@@ -15,16 +15,14 @@
 #include "Pig.hpp"
 #include "Normal.hpp"
 #include "Bomb.hpp"
+#include "Points.hpp"
 
 
 #ifndef LEVEL_CLASS
 #define LEVEL_CLASS
 
-/*
-To make testing without the real classes possible the level is defined as a template class
-*/
 
-//needs the constructors added to the for loops for the different objects
+
 
 
 class Level {
@@ -52,11 +50,12 @@ class Level {
             for (auto i : birds_) {
                 delete i;
             }
+            std::cout << points_->GetPoints() << std::endl;
+            delete points_;
             delete world_;
         }
         
-        
-        
+
 
     private:
         //functions
@@ -82,7 +81,7 @@ class Level {
         int32 positionIterations_ = 3;
 
         //update variables
-        int points = 0;
+        Points* points_;
 
         std::vector<Pigc> pigs_;
         Pig* current_pig_;

@@ -40,6 +40,7 @@ CMakeFiles/test.dir/src/Ball.cpp.o
  /mnt/c/Users/tuoma/Documents/Programming/CPP/angry-birds-2020-3/src/Box2D/box2d/b2_world_callbacks.h
  /mnt/c/Users/tuoma/Documents/Programming/CPP/angry-birds-2020-3/src/Box2D/box2d/box2d.h
  /mnt/c/Users/tuoma/Documents/Programming/CPP/angry-birds-2020-3/src/Destructables.hpp
+ /mnt/c/Users/tuoma/Documents/Programming/CPP/angry-birds-2020-3/src/Points.hpp
 CMakeFiles/test.dir/src/Bird.cpp.o
  /mnt/c/Users/tuoma/Documents/Programming/CPP/angry-birds-2020-3/src/Bird.cpp
  /mnt/c/Users/tuoma/Documents/Programming/CPP/angry-birds-2020-3/src/Bird.hpp
@@ -79,6 +80,7 @@ CMakeFiles/test.dir/src/Bird.cpp.o
  /mnt/c/Users/tuoma/Documents/Programming/CPP/angry-birds-2020-3/src/Box2D/box2d/b2_world_callbacks.h
  /mnt/c/Users/tuoma/Documents/Programming/CPP/angry-birds-2020-3/src/Box2D/box2d/box2d.h
  /mnt/c/Users/tuoma/Documents/Programming/CPP/angry-birds-2020-3/src/Destructables.hpp
+ /mnt/c/Users/tuoma/Documents/Programming/CPP/angry-birds-2020-3/src/Points.hpp
 CMakeFiles/test.dir/src/Bomb.cpp.o
  /mnt/c/Users/tuoma/Documents/Programming/CPP/angry-birds-2020-3/src/Bomb.cpp
  /mnt/c/Users/tuoma/Documents/Programming/CPP/angry-birds-2020-3/src/Bomb.hpp
@@ -157,6 +159,7 @@ CMakeFiles/test.dir/src/Box.cpp.o
  /mnt/c/Users/tuoma/Documents/Programming/CPP/angry-birds-2020-3/src/Box2D/box2d/b2_world_callbacks.h
  /mnt/c/Users/tuoma/Documents/Programming/CPP/angry-birds-2020-3/src/Box2D/box2d/box2d.h
  /mnt/c/Users/tuoma/Documents/Programming/CPP/angry-birds-2020-3/src/Destructables.hpp
+ /mnt/c/Users/tuoma/Documents/Programming/CPP/angry-birds-2020-3/src/Points.hpp
 CMakeFiles/test.dir/src/Box2D/b2_block_allocator.cpp.o
  /mnt/c/Users/tuoma/Documents/Programming/CPP/angry-birds-2020-3/src/Box2D/b2_block_allocator.cpp
  /mnt/c/Users/tuoma/Documents/Programming/CPP/angry-birds-2020-3/src/Box2D/box2d/b2_block_allocator.h
@@ -768,6 +771,7 @@ CMakeFiles/test.dir/src/level.cpp.o
  /mnt/c/Users/tuoma/Documents/Programming/CPP/angry-birds-2020-3/src/Destructables.hpp
  /mnt/c/Users/tuoma/Documents/Programming/CPP/angry-birds-2020-3/src/Normal.hpp
  /mnt/c/Users/tuoma/Documents/Programming/CPP/angry-birds-2020-3/src/Pig.hpp
+ /mnt/c/Users/tuoma/Documents/Programming/CPP/angry-birds-2020-3/src/Points.hpp
  /mnt/c/Users/tuoma/Documents/Programming/CPP/angry-birds-2020-3/src/filereader.hpp
  /mnt/c/Users/tuoma/Documents/Programming/CPP/angry-birds-2020-3/src/level.cpp
  /mnt/c/Users/tuoma/Documents/Programming/CPP/angry-birds-2020-3/src/level.hpp
@@ -814,6 +818,7 @@ CMakeFiles/test.dir/src/main.cpp.o
  /mnt/c/Users/tuoma/Documents/Programming/CPP/angry-birds-2020-3/src/Destructables.hpp
  /mnt/c/Users/tuoma/Documents/Programming/CPP/angry-birds-2020-3/src/Normal.hpp
  /mnt/c/Users/tuoma/Documents/Programming/CPP/angry-birds-2020-3/src/Pig.hpp
+ /mnt/c/Users/tuoma/Documents/Programming/CPP/angry-birds-2020-3/src/Points.hpp
  /mnt/c/Users/tuoma/Documents/Programming/CPP/angry-birds-2020-3/src/filereader.hpp
  /mnt/c/Users/tuoma/Documents/Programming/CPP/angry-birds-2020-3/src/level.hpp
  /mnt/c/Users/tuoma/Documents/Programming/CPP/angry-birds-2020-3/src/main.cpp

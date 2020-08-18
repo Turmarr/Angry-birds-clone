@@ -1,12 +1,14 @@
 #include "Box.hpp"
 #include <iostream>
 
-Box::Box(float x, float y, const std::string& type, float angle, b2World& world, const float scale){
+Box::Box(float x, float y, const std::string& type, float angle, b2World& world, const float scale, Points* points){
     x_ = x;
     y_ = y;
     type_ = type;
     angle_ = angle;
     scale_ = scale;
+
+    points_ = points;
 
     initTexture();
     initBlock();
@@ -15,7 +17,7 @@ Box::Box(float x, float y, const std::string& type, float angle, b2World& world,
 }
 
 Box::~Box(){
-
+    points_->AddPoints(100);
 }
 
 
