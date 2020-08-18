@@ -29,7 +29,7 @@ private:
     b2World* world_;
 
     //Pointer to Box2D object
-    b2Body* body_;
+    
 
     //List of particles created in explosion
     std::list<b2Body*> blastParticleBodies_;

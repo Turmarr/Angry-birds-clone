@@ -6,12 +6,6 @@
 
 #IncludeRegexTransform: 
 
-/mnt/c/Users/tuoma/Documents/Programming/CPP/angry-birds-2020-3/src/Ball.cpp
-Ball.hpp
-/mnt/c/Users/tuoma/Documents/Programming/CPP/angry-birds-2020-3/src/Ball.hpp
-iostream
--
-
 /mnt/c/Users/tuoma/Documents/Programming/CPP/angry-birds-2020-3/src/Ball.hpp
 Destructables.hpp
 /mnt/c/Users/tuoma/Documents/Programming/CPP/angry-birds-2020-3/src/Destructables.hpp
@@ -28,12 +22,6 @@ Box2D/box2d/box2d.h
 Pig.hpp
 /mnt/c/Users/tuoma/Documents/Programming/CPP/angry-birds-2020-3/src/Pig.hpp
 list
--
-
-/mnt/c/Users/tuoma/Documents/Programming/CPP/angry-birds-2020-3/src/Box.cpp
-Box.hpp
-/mnt/c/Users/tuoma/Documents/Programming/CPP/angry-birds-2020-3/src/Box.hpp
-iostream
 -
 
 /mnt/c/Users/tuoma/Documents/Programming/CPP/angry-birds-2020-3/src/Box.hpp

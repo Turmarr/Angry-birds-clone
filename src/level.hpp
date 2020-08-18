@@ -50,7 +50,7 @@ class Level {
             for (auto i : birds_) {
                 delete i;
             }
-            std::cout << points_->GetPoints() << std::endl;
+            //std::cout << points_->GetPoints() << std::endl;
             delete points_;
             delete world_;
         }
@@ -82,6 +82,7 @@ class Level {
 
         //update variables
         Points* points_;
+        bool Pig_flying_;
 
         std::vector<Pigc> pigs_;
         Pig* current_pig_;

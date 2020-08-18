@@ -74,8 +74,10 @@ Level::Level(std::string filename) {
 }
 
 void Level::NextPig() {
-    
+    //std::cout << pigs_.size() << std::endl;
+    Pig_flying_ = false;
     if (pigs_.size() != 0) {
+        //std::cout << "adding" << std::endl;
         Pigc current = pigs_.back();
         pigs_.pop_back();
         if (current.type == "normal") {
@@ -92,6 +94,7 @@ void Level::NextPig() {
     }
     else {
         current_pig_ = nullptr;
+        //std::cout << "null" << std::endl;
     }
 }
 
@@ -125,9 +128,20 @@ void Level::Update(sf::RenderWindow& window) {
 
     world_->Step(timeStep_, velocityIterations_, positionIterations_);
     window.clear(sf::Color::White);
+    
+    //add the reseting of the camera once added
+    //setup exiting the loop once the last pig dies
+    if (current_pig_ != nullptr) {
+    if (current_pig_->GetSpeed() <= 0.1) {
+        delete current_pig_;
+        NextPig();
+    }
+    }
+
+
+    //Draws the level
     DrawGround(window);
     
-
     if (current_pig_ != nullptr) {
         current_pig_->Draw(window);
     }

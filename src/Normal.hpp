@@ -18,7 +18,7 @@ public:
 private:
 
     //Pointer to Box2D object
-    b2Body* body_;
+    
 
     //Objects heigth and width. Set at 2m so when scaled should be 60 pixels
     float heigth_ = 2.0f;

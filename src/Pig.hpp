@@ -11,5 +11,12 @@ public:
     virtual void Draw(sf::RenderWindow& window) { }
 
     virtual void Special() { }
-private:
+
+    float GetSpeed() const{
+        b2Vec2 vel = body_->GetLinearVelocity();
+        float sp = sqrt(pow(vel.x, 2) + pow(vel.y, 2));
+        return sp;
+    }
+protected:
+    b2Body* body_;
 };
