@@ -6,6 +6,7 @@
 #include <SFML/Window.hpp>
 
 #include <iostream>
+#include <sstream>
 #include "level.hpp"
 
 
@@ -16,6 +17,7 @@ Level::Level(std::string filename) {
 
     //init pointcounter
     points_ = new Points();
+    draw_ = new Vect();
 
     //std::cout << "pig" << std::endl;
     b2Vec2 gravity (0.0f, 10.0f);
@@ -127,6 +129,22 @@ void Level::DrawGround(sf::RenderWindow& window) {
     }
 }
 
+void Level::DrawScore(sf::RenderWindow& window) {
+    sf::Font font;
+    if (!font.loadFromFile("arial.ttf")) {
+        std::cout << "error getting font"<< std::endl;
+    }
+    sf::Text text;
+    text.setFont(font);
+    std::stringstream ss;
+    ss << points_->GetPoints();
+    text.setString(ss.str());
+    text.setCharacterSize(20);
+    text.setFillColor(sf::Color::Red);
+    text.setPosition( {10, 10} );
+    window.draw(text);
+}
+
 void Level::DrawCannon(sf::RenderWindow& window) {
     sf::CircleShape shape;
     shape.setPosition(cannon_.x, cannon_.y);
@@ -142,7 +160,7 @@ float Level::GetDistance(float x1, float y1, float x2, float y2) {
 }
 
 void Level::ReadyCannon(float x, float y) {
-    draw_ = new Vect(cannon_.x - x, cannon_.y - y);
+    draw_->SetVec(cannon_.x - x, cannon_.y - y);
     if (draw_->GetLength() > max_draw_) {
         draw_->SetLen(max_draw_);
     }
@@ -155,79 +173,80 @@ void Level::FirePig() {
     current_pig_->SetAngle(angle_ * b2_pi / 180);
     current_pig_->SetVelocity(b2Vec2(draw_->x_/10, draw_->y_/10));
     pig_flying_ = true;
-    delete draw_;
-    draw_ = nullptr;
 }
 
 void Level::Update(sf::RenderWindow& window) {
-
-    world_->Step(timeStep_, velocityIterations_, positionIterations_);
-    window.clear(sf::Color::White);
-    
-    //add the reseting of the camera once added
-    //setup exiting the loop once the last pig dies
-    if (current_pig_ != nullptr && pig_flying_) {
-        if (current_pig_->GetSpeed() <= 0.1) {
-            delete current_pig_;
-            NextPig();
-        }
-    }
-
-    sf::Event ev;
-        while(window.pollEvent(ev))
-        {
-            switch (ev.type)
-            {
-                case sf::Event::Closed:
-                    window.close();
-                    break;
-                case sf::Event::MouseButtonPressed:
-                    if (pig_flying_ && !current_pig_->GetSpecialityUsed()) {
-                        current_pig_->Special();
-                    }
-                    else if (!pig_flying_) {
-                        float x = ev.mouseButton.x;
-                        float y = ev.mouseButton.y;
-                        if (GetDistance(cannon_.x, cannon_.y, x, y) <= 20 && current_pig_ != nullptr) {
-                            pig_drawn_ = true;
-                        }
-                    }
-                    break;
-                case sf::Event::MouseMoved:
-                    if (pig_drawn_) {
-                        float x = ev.mouseMove.x;
-                        float y = ev.mouseMove.y;
-                        ReadyCannon(x,y);
-                    }
-                    break;
-                case sf::Event::MouseButtonReleased:
-                    if (pig_drawn_) {
-                        float x = ev.mouseButton.x;
-                        float y = ev.mouseButton.y;
-                        FirePig();
-                    }
-                    break;
-                
+    while (running_) {
+        world_->Step(timeStep_, velocityIterations_, positionIterations_);
+        window.clear(sf::Color::White);
+        
+        //add the reseting of the camera once added
+        //setup exiting the loop once the last pig dies
+        if (current_pig_ != nullptr && pig_flying_) {
+            if (current_pig_->GetSpeed() <= 0.1) {
+                delete current_pig_;
+                NextPig();
             }
         }
 
-    //Draws the level
-    DrawGround(window);
-    DrawCannon(window);
-    
-    if (current_pig_ != nullptr && pig_flying_) {
-        current_pig_->Draw(window);
-    }
+        sf::Event ev;
+            while(window.pollEvent(ev))
+            {
+                switch (ev.type)
+                {
+                    case sf::Event::Closed:
+                        running_ = false;
+                        break;
+                    case sf::Event::MouseButtonPressed:
+                        if (pig_flying_ && !current_pig_->GetSpecialityUsed()) {
+                            current_pig_->Special();
+                        }
+                        else if (!pig_flying_) {
+                            float x = ev.mouseButton.x;
+                            float y = ev.mouseButton.y;
+                            if (GetDistance(cannon_.x, cannon_.y, x, y) <= 20 && current_pig_ != nullptr) {
+                                pig_drawn_ = true;
+                            }
+                        }
+                        break;
+                    case sf::Event::MouseMoved:
+                        if (pig_drawn_) {
+                            float x = ev.mouseMove.x;
+                            float y = ev.mouseMove.y;
+                            ReadyCannon(x,y);
+                        }
+                        break;
+                    case sf::Event::MouseButtonReleased:
+                        if (pig_drawn_) {
+                            float x = ev.mouseButton.x;
+                            float y = ev.mouseButton.y;
+                            FirePig();
+                        }
+                        break;
+                    
+                }
+            }
 
-    for (auto i : birds_) {
-        i->Draw(window);
-    }
-    for (auto i : box_) {
-        i->Draw(window);
-    }
-    for (auto i : ball_) {
-        i->Draw(window);
-    }
+        //Draws the level
+        DrawGround(window);
+        DrawCannon(window);
+        
+        if (current_pig_ != nullptr && pig_flying_) {
+            current_pig_->Draw(window);
+        }
 
-    window.display();
+        for (auto i : birds_) {
+            i->Draw(window);
+        }
+        for (auto i : box_) {
+            i->Draw(window);
+        }
+        for (auto i : ball_) {
+            i->Draw(window);
+        }
+
+        DrawScore(window);
+
+        window.display();
+    }
 }

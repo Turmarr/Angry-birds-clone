@@ -25,7 +25,12 @@
 
 class Vect{
     public:
-        Vect(float x, float y) : x_(x), y_(y) {}
+        Vect() {}
+
+        void SetVec(float x, float y) {
+            x_ = x;
+            y_ = y;
+        }
 
         float x_;
         float y_;
@@ -88,9 +93,9 @@ class Level {
             }
             //std::cout << points_->GetPoints() << std::endl;
             delete points_;
-            if (draw_ != nullptr) {
-                delete draw_;
-            }
+            
+            delete draw_;
+            
             delete world_;
         }
         
@@ -105,7 +110,7 @@ class Level {
         void ReadyCannon(float x, float y);
         float GetDistance(float x1, float y1, float x2, float y2);
         void DrawCannon(sf::RenderWindow& window);
-        //void DrawScore();
+        void DrawScore(sf::RenderWindow& window);
 
         //general variables
         const float SCALE_ = 30.f;
@@ -125,7 +130,7 @@ class Level {
         int32 positionIterations_ = 3;
 
         //update variables
-        //bool running_;
+        bool running_ = true;
         Points* points_;
         bool pig_flying_;
         bool pig_drawn_;

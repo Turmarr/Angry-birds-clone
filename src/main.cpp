@@ -14,7 +14,7 @@ int main(){
     
     window.setFramerateLimit(60);
     //Bird bird = Bird(100.f, 100.f);
-    //bool run = false;
+    bool run = false;
 
     //std::cout << test.world_->GetBodyCount() << std::endl;
     //Game loop
@@ -38,11 +38,13 @@ int main(){
         ground.setFillColor(sf::Color::Red);
         window.draw(ground);
 
-        
-        test.Update(window);
+        if (!run) {
+            test.Update(window);
+            run = true;
+        }
             
         
-        //window.display();
+        window.display();
 
     }
 
