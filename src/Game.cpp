@@ -37,14 +37,19 @@ void Game::updatePollEvents(){
     sf::Event ev;
 
     while(window_.pollEvent(ev)){
+
         if (state_ == 0){
-            updateMenuEvent(ev);
+            state_ = menu_->updateMenuEvent(ev, window_);
             
         }
         else if(state_ == 1){
         
         }
+        if (state_ == 3){
+            window_.close();
+        }
     }
+    
 }
 
 void Game::update(){
@@ -61,55 +66,4 @@ void Game::render(){
 
     window_.display();
 
-}
-
-void Game::updateMenuEvent(sf::Event& ev){
-
-    switch (ev.type){
-
-        case sf::Event::Closed:
-            window_.close();
-            state_ = 3;
-            break;
-        case sf::Keyboard::Escape:
-            window_.close();
-            state_ = 3;
-            break;
-
-        case sf::Event::KeyReleased:
-            switch (ev.key.code){
-
-                case sf::Keyboard::Down:
-                    menu_->moveDown();
-                    break;
-                
-                case sf::Keyboard::Up:
-                    menu_->moveUp();
-                    break;
-
-                case sf::Keyboard::Return:
-                    options = menu_->returnSelectedItem();
-                    switch (options){
-
-                        case 0:
-                            std::cout<< "Possible gameplay here" << std::endl;
-                            break;
-                        
-                        case 1:
-                            std::cout<< "Possible highscores here" << std::endl;
-                            break;
-
-                        case 2:
-                            window_.close();
-                            state_ = 4;
-                            break;
-                        
-                        default:
-                            break;
-                    }
-
-                default:
-                    break;
-            }
-    }
 }

@@ -11,7 +11,6 @@ class Game{
 
 
         void updatePollEvents();
-        void updateMenuEvent(sf::Event& ev);
         void updateGameInput();
         void update();
         void render();
@@ -22,7 +21,6 @@ class Game{
         sf::RenderWindow& window_;
         int state_;
         Menu* menu_;
-        int options;
 
         void initWindow();
         void initMenu();
