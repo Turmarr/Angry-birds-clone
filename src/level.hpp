@@ -23,6 +23,42 @@
 
 
 
+class Vect{
+    public:
+        Vect(float x, float y) : x_(x), y_(y) {}
+
+        float x_;
+        float y_;
+
+        float GetLength() const {
+            return sqrt(pow(x_,2)+pow(y_,2));
+        }
+
+        void Multiply(float m) {
+            x_ *= m;
+            y_ *= m;
+        }
+
+        void Divide(float d) {
+            x_ /= d;
+            y_ /= d;
+        }
+                
+        void UnaryVect() {
+            float len = GetLength();
+            Divide(len);
+        }
+
+        void SetLen(float len) {
+            UnaryVect();
+            Multiply(len);
+        }
+
+        float GetAngle() {
+            float ang = tan(y_/x_);
+            return ang;
+        }
+};
 
 
 class Level {
@@ -52,6 +88,9 @@ class Level {
             }
             //std::cout << points_->GetPoints() << std::endl;
             delete points_;
+            if (draw_ != nullptr) {
+                delete draw_;
+            }
             delete world_;
         }
         
@@ -62,6 +101,10 @@ class Level {
         void NextPig();
         void CreateGround();
         void DrawGround(sf::RenderWindow& target);
+        void FirePig();
+        void ReadyCannon(float x, float y);
+        float GetDistance(float x1, float y1, float x2, float y2);
+        void DrawCannon(sf::RenderWindow& window);
 
         //general variables
         const float SCALE_ = 30.f;
@@ -82,7 +125,12 @@ class Level {
 
         //update variables
         Points* points_;
-        bool Pig_flying_;
+        bool pig_flying_;
+        bool pig_drawn_;
+        Vect* draw_;
+        float max_draw_ = 60;
+        float angle_;
+        
 
         std::vector<Pigc> pigs_;
         Pig* current_pig_;

@@ -50,5 +50,5 @@ private:
 
     int SCALE = 30;
 
-    bool specialityUsed = false;
+    
 };

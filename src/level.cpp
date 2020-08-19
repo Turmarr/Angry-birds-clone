@@ -10,6 +10,8 @@
 
 
 
+
+
 Level::Level(std::string filename) {
 
     //init pointcounter
@@ -75,7 +77,8 @@ Level::Level(std::string filename) {
 
 void Level::NextPig() {
     //std::cout << pigs_.size() << std::endl;
-    Pig_flying_ = false;
+    pig_flying_ = false;
+    pig_drawn_ = false;
     if (pigs_.size() != 0) {
         //std::cout << "adding" << std::endl;
         Pigc current = pigs_.back();
@@ -124,6 +127,38 @@ void Level::DrawGround(sf::RenderWindow& window) {
     }
 }
 
+void Level::DrawCannon(sf::RenderWindow& window) {
+    sf::CircleShape shape;
+    shape.setPosition(cannon_.x, cannon_.y);
+    shape.setFillColor(sf::Color::Red);
+    shape.setRadius(20);
+    shape.setOrigin(shape.getLocalBounds().width/2, shape.getLocalBounds().height/2);
+    window.draw(shape);
+}
+
+float Level::GetDistance(float x1, float y1, float x2, float y2) {
+    float dist = sqrt(pow(x2 - x1, 2) + pow(y2 - y1, 2));
+    return dist;
+}
+
+void Level::ReadyCannon(float x, float y) {
+    draw_ = new Vect(cannon_.x - x, cannon_.y - y);
+    if (draw_->GetLength() > max_draw_) {
+        draw_->SetLen(max_draw_);
+    }
+    angle_ = draw_->GetAngle();
+    //add the rotating of the cannon and the possible arrow
+}
+
+void Level::FirePig() {
+    current_pig_->SetDynamic();
+    current_pig_->SetAngle(angle_ * b2_pi / 180);
+    current_pig_->SetVelocity(b2Vec2(draw_->x_/10, draw_->y_/10));
+    pig_flying_ = true;
+    delete draw_;
+    draw_ = nullptr;
+}
+
 void Level::Update(sf::RenderWindow& window) {
 
     world_->Step(timeStep_, velocityIterations_, positionIterations_);
@@ -131,18 +166,56 @@ void Level::Update(sf::RenderWindow& window) {
     
     //add the reseting of the camera once added
     //setup exiting the loop once the last pig dies
-    if (current_pig_ != nullptr) {
-    if (current_pig_->GetSpeed() <= 0.1) {
-        delete current_pig_;
-        NextPig();
-    }
+    if (current_pig_ != nullptr && pig_flying_) {
+        if (current_pig_->GetSpeed() <= 0.1) {
+            delete current_pig_;
+            NextPig();
+        }
     }
 
+    sf::Event ev;
+        while(window.pollEvent(ev))
+        {
+            switch (ev.type)
+            {
+                case sf::Event::Closed:
+                    window.close();
+                    break;
+                case sf::Event::MouseButtonPressed:
+                    if (pig_flying_ && !current_pig_->GetSpecialityUsed()) {
+                        current_pig_->Special();
+                    }
+                    else if (!pig_flying_) {
+                        float x = ev.mouseButton.x;
+                        float y = ev.mouseButton.y;
+                        if (GetDistance(cannon_.x, cannon_.y, x, y) <= 20 && current_pig_ != nullptr) {
+                            pig_drawn_ = true;
+                        }
+                    }
+                    break;
+                case sf::Event::MouseMoved:
+                    if (pig_drawn_) {
+                        float x = ev.mouseMove.x;
+                        float y = ev.mouseMove.y;
+                        ReadyCannon(x,y);
+                    }
+                    break;
+                case sf::Event::MouseButtonReleased:
+                    if (pig_drawn_) {
+                        float x = ev.mouseButton.x;
+                        float y = ev.mouseButton.y;
+                        FirePig();
+                    }
+                    break;
+                
+            }
+        }
 
     //Draws the level
     DrawGround(window);
+    DrawCannon(window);
     
-    if (current_pig_ != nullptr) {
+    if (current_pig_ != nullptr && pig_flying_) {
         current_pig_->Draw(window);
     }
 

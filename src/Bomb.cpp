@@ -11,8 +11,10 @@ Bomb::Bomb(float x, float y, b2World* world) {
 
     body_ = NULL;
 
+    specialityUsed = false;
+
     b2BodyDef bodyDef;
-    bodyDef.type = b2_dynamicBody;
+    bodyDef.type = b2_staticBody;
     bodyDef.position.Set(x, y);
     body_ = world_->CreateBody(&bodyDef);
 
@@ -91,6 +93,7 @@ void Bomb::Special() {
         //Save all particles to a list so we can delete them when objects destructor is called
         blastParticleBodies_.push_back(particle);
     }
+    specialityUsed = false;
 }
 
 void Bomb::initTexture(){

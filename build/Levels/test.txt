@@ -1,8 +1,10 @@
 # cannon
-60 100
+150 200
 
 # Pigs
 bomb 1
+normal 2
+normal 3
 
 # Birds
 bird 300 450

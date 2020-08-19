@@ -17,6 +17,24 @@ public:
         float sp = sqrt(pow(vel.x, 2) + pow(vel.y, 2));
         return sp;
     }
+
+    void SetDynamic() {
+        body_->SetType(b2_dynamicBody);
+    }
+
+    void SetVelocity(b2Vec2 vel) {
+        body_->SetLinearVelocity(vel);
+    }
+
+    void SetAngle(float ang) {
+        body_->SetTransform(body_->GetPosition(), ang);
+    }
+
+    bool GetSpecialityUsed() {
+        return specialityUsed;
+    }
+
 protected:
     b2Body* body_;
+    bool specialityUsed = true;
 };
