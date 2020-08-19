@@ -3,8 +3,8 @@
 
 # Pigs
 bomb 1
-normal 2
-normal 3
+bomb 2
+bomb 3
 
 # Birds
 bird 300 450

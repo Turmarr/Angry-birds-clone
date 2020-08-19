@@ -10,7 +10,7 @@ public:
     
     virtual void Draw(sf::RenderWindow& window) { }
 
-    virtual void Special() { }
+    virtual void Special() {}
 
     float GetSpeed() const{
         b2Vec2 vel = body_->GetLinearVelocity();
@@ -36,5 +36,5 @@ public:
 
 protected:
     b2Body* body_;
-    bool specialityUsed = true;
+    bool specialityUsed = false;
 };

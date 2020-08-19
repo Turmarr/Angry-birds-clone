@@ -105,6 +105,7 @@ class Level {
         void ReadyCannon(float x, float y);
         float GetDistance(float x1, float y1, float x2, float y2);
         void DrawCannon(sf::RenderWindow& window);
+        //void DrawScore();
 
         //general variables
         const float SCALE_ = 30.f;
@@ -124,6 +125,7 @@ class Level {
         int32 positionIterations_ = 3;
 
         //update variables
+        //bool running_;
         Points* points_;
         bool pig_flying_;
         bool pig_drawn_;

@@ -14,7 +14,7 @@ int main(){
     
     window.setFramerateLimit(60);
     //Bird bird = Bird(100.f, 100.f);
-    
+    //bool run = false;
 
     //std::cout << test.world_->GetBodyCount() << std::endl;
     //Game loop
@@ -30,8 +30,6 @@ int main(){
                 
             }
         }
-        
-        /*
         window.clear(sf::Color::White);
         sf::RectangleShape ground { { 800, 16 } };
         ground.setOrigin(400.0f, 8.0f);
@@ -39,8 +37,11 @@ int main(){
         ground.setRotation(0);
         ground.setFillColor(sf::Color::Red);
         window.draw(ground);
-        */
+
+        
         test.Update(window);
+            
+        
         //window.display();
 
     }

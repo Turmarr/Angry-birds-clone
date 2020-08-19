@@ -11,8 +11,6 @@ Bomb::Bomb(float x, float y, b2World* world) {
 
     body_ = NULL;
 
-    specialityUsed = false;
-
     b2BodyDef bodyDef;
     bodyDef.type = b2_staticBody;
     bodyDef.position.Set(x, y);
@@ -41,6 +39,7 @@ Bomb::~Bomb() {
 }
 
 void Bomb::Draw(sf::RenderWindow& window) {
+    //std::cout << body_->GetPosition().x << " " << body_->GetPosition().y << std::endl;
     sprite_.setOrigin(width_ / 2 * SCALE, width_ / 2 * SCALE);
     sprite_.setPosition(body_->GetPosition().x * SCALE, body_->GetPosition().y * SCALE);
     sprite_.setRotation(body_->GetAngle() * 180/b2_pi);
@@ -93,7 +92,7 @@ void Bomb::Special() {
         //Save all particles to a list so we can delete them when objects destructor is called
         blastParticleBodies_.push_back(particle);
     }
-    specialityUsed = false;
+    specialityUsed = true;
 }
 
 void Bomb::initTexture(){

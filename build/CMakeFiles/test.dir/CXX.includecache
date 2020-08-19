@@ -280,16 +280,6 @@ Box2D/box2d/box2d.h
 Points.hpp
 /mnt/c/Users/tuoma/Documents/Programming/CPP/angry-birds-2020-3/src/Points.hpp
 
-/mnt/c/Users/tuoma/Documents/Programming/CPP/angry-birds-2020-3/src/Normal.cpp
-SFML/Graphics.hpp
--
-Box2D/box2d/box2d.h
-/mnt/c/Users/tuoma/Documents/Programming/CPP/angry-birds-2020-3/src/Box2D/box2d/box2d.h
-Normal.hpp
-/mnt/c/Users/tuoma/Documents/Programming/CPP/angry-birds-2020-3/src/Normal.hpp
-iostream
--
-
 /mnt/c/Users/tuoma/Documents/Programming/CPP/angry-birds-2020-3/src/Normal.hpp
 SFML/Graphics.hpp
 -
