@@ -175,7 +175,7 @@ void Level::FirePig() {
     pig_flying_ = true;
 }
 
-void Level::Update(sf::RenderWindow& window) {
+int Level::Run(sf::RenderWindow& window) {
     while (running_) {
         world_->Step(timeStep_, velocityIterations_, positionIterations_);
         window.clear(sf::Color::White);
@@ -195,8 +195,7 @@ void Level::Update(sf::RenderWindow& window) {
                 switch (ev.type)
                 {
                     case sf::Event::Closed:
-                        running_ = false;
-                        break;
+                        return 1;
                     case sf::Event::MouseButtonPressed:
                         if (pig_flying_ && !current_pig_->GetSpecialityUsed()) {
                             current_pig_->Special();
@@ -249,4 +248,5 @@ void Level::Update(sf::RenderWindow& window) {
 
         window.display();
     }
+    return 0;
 }

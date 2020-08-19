@@ -39,7 +39,10 @@ int main(){
         window.draw(ground);
 
         if (!run) {
-            test.Update(window);
+            int result = test.Run(window);
+            if (result = 1) {
+                window.close();
+            }
             run = true;
         }
             

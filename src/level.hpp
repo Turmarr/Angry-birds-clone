@@ -75,7 +75,7 @@ class Level {
             return pigs_;
         }
 
-        void Update(sf::RenderWindow& window);
+        int Run(sf::RenderWindow& window);
         //deconstructs the level, is where the level end screen will be determined
         
         ~Level() {
