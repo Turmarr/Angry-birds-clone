@@ -10,6 +10,7 @@ Box::Box(float x, float y, const std::string& type, float width, float height, f
     width_ = width;
     height_ = height;
 
+    world_ = &world;
 
     points_ = points;
 
@@ -21,6 +22,7 @@ Box::Box(float x, float y, const std::string& type, float width, float height, f
 
 Box::~Box(){
     points_->AddPoints(100);
+    world_->DestroyBody(body);
 }
 
 

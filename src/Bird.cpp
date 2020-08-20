@@ -7,6 +7,8 @@ Bird::Bird(float x, float y, b2World& world, const float scale, float radius, Po
     y_ = y;
     scale_ = scale;
     radius_ = radius;
+
+    world_ = &world;
     
     initTexture();
     initSprite();
@@ -18,7 +20,7 @@ Bird::Bird(float x, float y, b2World& world, const float scale, float radius, Po
 
 Bird::~Bird(){
     points_->AddPoints(1000);
-    
+    world_->DestroyBody(body);
 }
 
 //Initializes the bird

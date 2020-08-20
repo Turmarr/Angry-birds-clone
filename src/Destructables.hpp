@@ -11,6 +11,7 @@ class Destructables
 {
     protected:
         Points* points_;
+        b2World* world_;
     public:
         Destructables(){}
         ~Destructables(){}

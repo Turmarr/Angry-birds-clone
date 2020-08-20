@@ -10,6 +10,8 @@ Ball::Ball(float x, float y, const std::string& type, float radius, b2World& wor
 
     points_ = points;
 
+    world_ = &world;
+
     initTexture();
     initSprite();
     initPhysics(world);
@@ -17,6 +19,7 @@ Ball::Ball(float x, float y, const std::string& type, float radius, b2World& wor
 
 Ball::~Ball(){
     points_->AddPoints(100);
+    world_->DestroyBody(body);
 }
 
 //Initializes the bird
