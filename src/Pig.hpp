@@ -34,6 +34,10 @@ public:
         return specialityUsed;
     }
 
+    b2Vec2 GetPosition() {
+        return body_->GetPosition();
+    }
+
 protected:
     b2Body* body_;
     bool specialityUsed = false;

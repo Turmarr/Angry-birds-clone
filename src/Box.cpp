@@ -1,12 +1,15 @@
 #include "Box.hpp"
 #include <iostream>
 
-Box::Box(float x, float y, const std::string& type, float angle, b2World& world, const float scale, Points* points){
+Box::Box(float x, float y, const std::string& type, float width, float height, float angle, b2World& world, const float scale, Points* points){
     x_ = x;
     y_ = y;
     type_ = type;
     angle_ = angle;
     scale_ = scale;
+    width_ = width;
+    height_ = height;
+
 
     points_ = points;
 
@@ -30,7 +33,7 @@ void Box::initPhysics(b2World& world){
     body = world.CreateBody(&blockDef);
 
     b2PolygonShape box;
-    box.SetAsBox((width/2)/scale_, (height/2)/scale_);
+    box.SetAsBox((width_/2)/scale_, (height_/2)/scale_);
 
     b2FixtureDef fixtureDef;
     fixtureDef.shape = &box;
@@ -45,8 +48,8 @@ void Box::initBlock(){
 
     shape.setPosition(x_, y_);
     shape.setTexture(&this->pic_);
-    shape.setSize(sf::Vector2f(width, height));
-    shape.setOrigin(width/2, height/2);
+    shape.setSize(sf::Vector2f(width_, height_));
+    shape.setOrigin(width_/2, height_/2);
     shape.rotate(angle_);
 
 }

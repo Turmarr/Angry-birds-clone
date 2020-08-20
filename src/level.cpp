@@ -50,11 +50,11 @@ Level::Level(std::string filename) {
     
     for (auto i : info.GetObjects()) {
         if (i.type == "box") {
-            Box *object = new Box(i.x, i.y, i.material, box_angle_, *world_, SCALE_, points_);
+            Box *object = new Box(i.x, i.y, i.material, i.width, i.height, box_angle_, *world_, SCALE_, points_);
             box_.push_back(object);
         }
         if (i.type == "ball") {
-            Ball *object = new Ball(i.x, i.y, i.material, ball_radius_, *world_, SCALE_, points_);
+            Ball *object = new Ball(i.x, i.y, i.material, i.radius, *world_, SCALE_, points_);
             ball_.push_back(object);
         }
     }
@@ -173,6 +173,7 @@ void Level::FirePig() {
     current_pig_->SetAngle(angle_ * b2_pi / 180);
     current_pig_->SetVelocity(b2Vec2(draw_->x_/10, draw_->y_/10));
     pig_flying_ = true;
+    pig_drawn_ = false;
 }
 
 int Level::Run(sf::RenderWindow& window) {
@@ -217,12 +218,9 @@ int Level::Run(sf::RenderWindow& window) {
                         break;
                     case sf::Event::MouseButtonReleased:
                         if (pig_drawn_) {
-                            float x = ev.mouseButton.x;
-                            float y = ev.mouseButton.y;
                             FirePig();
                         }
                         break;
-                    
                 }
             }
 

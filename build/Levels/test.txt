@@ -10,9 +10,9 @@ bomb 3
 bird 300 450
 
 # Objects
-box stone 300 510
-ball wood 400 500
-ball stone 400 400
+box stone 300 510 0 60 60
+ball wood 400 500 60 0 0
+ball stone 400 400 30 0 0
 
 # groundpoints
 400 570 800 60

@@ -302,24 +302,6 @@ sstream
 exception
 -
 
-/mnt/c/Users/tuoma/Documents/Programming/CPP/angry-birds-2020-3/src/level.cpp
-algorithm
--
-Box2D/box2d/box2d.h
-/mnt/c/Users/tuoma/Documents/Programming/CPP/angry-birds-2020-3/src/Box2D/box2d/box2d.h
-SFML/Graphics.hpp
--
-SFML/System.hpp
--
-SFML/Window.hpp
--
-iostream
--
-sstream
--
-level.hpp
-/mnt/c/Users/tuoma/Documents/Programming/CPP/angry-birds-2020-3/src/level.hpp
-
 /mnt/c/Users/tuoma/Documents/Programming/CPP/angry-birds-2020-3/src/level.hpp
 Box2D/box2d/box2d.h
 /mnt/c/Users/tuoma/Documents/Programming/CPP/angry-birds-2020-3/src/Box2D/box2d/box2d.h
@@ -353,4 +335,18 @@ Bomb.hpp
 /mnt/c/Users/tuoma/Documents/Programming/CPP/angry-birds-2020-3/src/Bomb.hpp
 Points.hpp
 /mnt/c/Users/tuoma/Documents/Programming/CPP/angry-birds-2020-3/src/Points.hpp
+
+/mnt/c/Users/tuoma/Documents/Programming/CPP/angry-birds-2020-3/src/main.cpp
+SFML/Graphics.hpp
+-
+SFML/System.hpp
+-
+SFML/Window.hpp
+-
+SFML/Audio.hpp
+-
+SFML/Network.hpp
+-
+level.hpp
+/mnt/c/Users/tuoma/Documents/Programming/CPP/angry-birds-2020-3/src/level.hpp
 

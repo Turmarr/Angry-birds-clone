@@ -33,7 +33,7 @@ Objectc ReadObject(std::string line) {
     Objectc object;
     std::stringstream ss;
     ss.str(line);
-    ss >> object.type >> object.material >> object.x >> object.y;
+    ss >> object.type >> object.material >> object.x >> object.y >> object.radius >> object.width >> object.height;
     return object;
 }
 

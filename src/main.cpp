@@ -10,7 +10,7 @@ int main(){
 
     Level test("LeveLs/test.txt");
 
-    sf::RenderWindow window(sf::VideoMode(800, 600), "Testing for enemies");
+    sf::RenderWindow window(sf::VideoMode(1000, 750), "Testing for enemies");
     
     window.setFramerateLimit(60);
     //Bird bird = Bird(100.f, 100.f);
@@ -40,7 +40,7 @@ int main(){
 
         if (!run) {
             int result = test.Run(window);
-            if (result = 1) {
+            if (result == 1) {
                 window.close();
             }
             run = true;

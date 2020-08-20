@@ -40,7 +40,8 @@ Birds:
 "type of bird" "position on x-axis" "position on y-axis"
 
 Objects:
-"type of object(box/ball)" "material of object" "position on x-axis" "position on y-axis"
+"type of object(box/ball)" "material of object" "position on x-axis" "position on y-axis" "radius(whatever if box)"
+    ..."width(whatever if ball)" "height(whatever if ball)"
 
 Groundboxes:
 "position on x-axis" "position on y-axis" "width" "height"
@@ -74,6 +75,9 @@ struct Objectc {
     float y;
     std::string type;
     std::string material;
+    float width;
+    float height;
+    float radius;
 };
 
 struct Groundc {

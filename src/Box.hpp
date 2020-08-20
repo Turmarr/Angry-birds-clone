@@ -14,8 +14,8 @@ class Box: public Destructables
         float x_,y_; //The placement in the window
         float angle_; //The angle of the rotation of the block
         float scale_;
-        float width = 60.f;
-        float height = 60.f;
+        float width_;
+        float height_;
 
         //Init functions
         void initPhysics(b2World& world);
@@ -23,7 +23,7 @@ class Box: public Destructables
         void initTexture();
     
     public:
-        Box(float x, float y, const std::string& type, float angle, b2World& world, const float scale, Points* points);
+        Box(float x, float y, const std::string& type, float width, float height, float angle, b2World& world, const float scale, Points* points);
         ~Box();
 
         void Draw(sf::RenderWindow& target);
