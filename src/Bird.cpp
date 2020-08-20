@@ -18,6 +18,7 @@ Bird::Bird(float x, float y, b2World& world, const float scale, float radius, Po
 
 Bird::~Bird(){
     points_->AddPoints(1000);
+    
 }
 
 //Initializes the bird

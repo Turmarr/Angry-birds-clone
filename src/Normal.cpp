@@ -26,7 +26,7 @@ Normal::Normal(float x, float y, b2World* world) {
 }
 
 Normal::~Normal() {
-
+    world_->DestroyBody(body_);
 }
 
 void Normal::Draw(sf::RenderWindow& window) {

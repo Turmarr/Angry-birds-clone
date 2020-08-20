@@ -41,4 +41,5 @@ public:
 protected:
     b2Body* body_;
     bool specialityUsed = false;
+    b2World* world_;
 };

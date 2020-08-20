@@ -26,7 +26,7 @@ public:
 private:
 
     //Pointer to the Box2d world
-    b2World* world_;
+    
 
     //Pointer to Box2D object
     
