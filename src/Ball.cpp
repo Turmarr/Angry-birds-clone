@@ -4,13 +4,16 @@
 Ball::Ball(float x, float y, const std::string& type, float radius, b2World& world, const float scale, Points* points){
     x_ = x;
     y_ = y;
-    type_ = type;
+
+    mat = Material(type);
+    
     radius_ = radius;
     scale_ = scale;
 
     points_ = points;
 
-    POINTS_ = 100;
+    POINTS_ = mat.points;
+    hp_ = mat.hp;
 
     world_ = &world;
 
@@ -36,14 +39,7 @@ void Ball::initSprite(){
 //Load texture from file
 void Ball::initTexture(){
     
-    std::string file;
-
-    if (type_ == "wood"){
-        file= "Textures/wood.jpg";
-    }
-    else if (type_ == "stone"){
-        file = "Textures/stone.jpg";
-    }
+    std::string file = mat.texture;
     
     if(!this->pic_.loadFromFile(file)){
         std::cout<< "Error when loading the image from textures." <<std::endl;
@@ -61,12 +57,12 @@ void Ball::initPhysics(b2World& world){
     circle.m_radius = radius_/scale_;
 
     b2FixtureDef FixtureDef;
-    FixtureDef.density = 1.0f;
+    FixtureDef.density = mat.density;
     FixtureDef.friction = 0.3f;
 
     FixtureDef.shape = &circle;
     body->CreateFixture(&FixtureDef);
-
+    body->SetUserData(this);
 }
 
 void Ball::Draw(sf::RenderWindow& target){

@@ -16,6 +16,7 @@
 #include "Normal.hpp"
 #include "Bomb.hpp"
 #include "Points.hpp"
+#include "collision_listener.hpp"
 
 
 #ifndef LEVEL_CLASS
@@ -95,7 +96,7 @@ class Level {
             delete points_;
             
             delete draw_;
-            
+            delete collisions_;
             delete world_;
         }
         
@@ -111,6 +112,7 @@ class Level {
         float GetDistance(float x1, float y1, float x2, float y2);
         void DrawCannon(sf::RenderWindow& window);
         void DrawScore(sf::RenderWindow& window);
+        void DeleteDestroyed();
 
         //general variables
         const float SCALE_ = 30.f;
@@ -143,10 +145,12 @@ class Level {
         Pig* current_pig_;
         std::vector<Pig*> old_pigs_;
         std::vector<Bird*> birds_;
+        std::vector<Destructables*> objects_;
         std::vector<Box*> box_;
         std::vector<Ball*> ball_;
         std::vector<struct Groundc> ground_;
         struct Cannonc cannon_;
+        collision_listener* collisions_;
         
 };
 

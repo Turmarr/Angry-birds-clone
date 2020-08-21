@@ -24,6 +24,9 @@ Level::Level(std::string filename) {
     //b2World *world(gravity);
     world_ = new b2World(gravity);
 
+    collisions_ = new collision_listener();
+    world_->SetContactListener(collisions_);
+
     //std::cout << "pig" << std::endl;
 
     Filereader info(filename);
@@ -176,10 +179,41 @@ void Level::FirePig() {
     pig_drawn_ = false;
 }
 
+void Level::DeleteDestroyed() {
+    std::vector<Bird*>::iterator it = birds_.begin();
+    for (; it != birds_.end(); ) {
+        if ((*it)->GetHp() <= 0) {
+            delete *it;
+            it = birds_.erase(it);
+        }
+        else {it++;}
+    }
+    std::vector<Ball*>::iterator itb = ball_.begin();
+    for (; itb != ball_.end(); ) {
+        if ((*itb)->GetHp() <= 0) {
+            delete *itb;
+            itb = ball_.erase(itb);
+        }
+        else {itb++;}
+    }
+    std::vector<Box*>::iterator itx = box_.begin();
+    for (; itx != box_.end(); ) {
+        if ((*itx)->GetHp() <= 0) {
+            delete *itx;
+            itx = box_.erase(itx);
+        }
+        else {itx++;}
+    }
+}
+
 int Level::Run(sf::RenderWindow& window) {
     while (running_) {
+        //std::cout << "1" << std::endl;
         world_->Step(timeStep_, velocityIterations_, positionIterations_);
+        //std::cout << "2" << std::endl;
         window.clear(sf::Color::White);
+
+        DeleteDestroyed();        
         
         //add the reseting of the camera once added
         //setup exiting the loop once the last pig dies

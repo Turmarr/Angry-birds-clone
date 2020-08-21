@@ -17,6 +17,7 @@ Bird::Bird(float x, float y, b2World& world, const float scale, float radius, Po
     points_ = points;
 
     POINTS_ = 1000;
+    hp_ = 100;
 
 }
 
@@ -53,11 +54,12 @@ void Bird::initPhysics(b2World& world){
     circle.m_radius = radius_/scale_;
 
     b2FixtureDef FixtureDef;
-    FixtureDef.density = 0.8f;
+    FixtureDef.density = 1.0f;
     FixtureDef.friction = 0.3f;
 
     FixtureDef.shape = &circle;
     body->CreateFixture(&FixtureDef);
+    body->SetUserData(this);
 }
 
 

@@ -4,7 +4,9 @@
 Box::Box(float x, float y, const std::string& type, float width, float height, float angle, b2World& world, const float scale, Points* points){
     x_ = x;
     y_ = y;
-    type_ = type;
+    mat = Material(type);
+    
+    //type_ = type;
     angle_ = angle;
     scale_ = scale;
     width_ = width;
@@ -14,7 +16,8 @@ Box::Box(float x, float y, const std::string& type, float width, float height, f
 
     points_ = points;
 
-    POINTS_ = 100;
+    POINTS_ = mat.points;
+    hp_ = mat.hp;
 
     initTexture();
     initBlock();
@@ -41,10 +44,11 @@ void Box::initPhysics(b2World& world){
 
     b2FixtureDef fixtureDef;
     fixtureDef.shape = &box;
-    fixtureDef.density = 1.0f;
+    fixtureDef.density = mat.density;
     fixtureDef.friction = 0.3f;
 
     body->CreateFixture(&fixtureDef);
+    body->SetUserData(this);
 }
 
 //Initializes the shape
@@ -60,14 +64,7 @@ void Box::initBlock(){
 //Loads texture from file
 void Box::initTexture(){
 
-    std::string file;
-
-    if (type_ == "wood"){
-        file = "Textures/wood.jpg";
-    }
-    else if (type_ == "stone"){
-        file = "Textures/stone.jpg";
-    }
+    std::string file = mat.texture;
 
     if(!this->pic_.loadFromFile(file)){
         std::cout<< "Error when loading the image from textures." <<std::endl;

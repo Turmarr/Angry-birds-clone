@@ -25,6 +25,6 @@ class Bird: public Destructables
         Bird(float x, float y, b2World& world, const float scale, float radius, Points* points);
         ~Bird();
 
-        void Draw(sf::RenderWindow& target);
+        virtual void Draw(sf::RenderWindow& target);
         
 };

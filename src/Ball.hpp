@@ -27,6 +27,6 @@ class Ball: public Destructables
         Ball(float x, float y, const std::string& type, float radius, b2World& world, const float scale, Points* points);
         ~Ball();
 
-        void Draw(sf::RenderWindow& target);
+        virtual void Draw(sf::RenderWindow& target);
         
 };

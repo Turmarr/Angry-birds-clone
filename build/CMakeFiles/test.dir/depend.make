@@ -771,6 +771,7 @@ CMakeFiles/test.dir/src/level.cpp.o: ../src/Destructables.hpp
 CMakeFiles/test.dir/src/level.cpp.o: ../src/Normal.hpp
 CMakeFiles/test.dir/src/level.cpp.o: ../src/Pig.hpp
 CMakeFiles/test.dir/src/level.cpp.o: ../src/Points.hpp
+CMakeFiles/test.dir/src/level.cpp.o: ../src/collision_listener.hpp
 CMakeFiles/test.dir/src/level.cpp.o: ../src/filereader.hpp
 CMakeFiles/test.dir/src/level.cpp.o: ../src/level.cpp
 CMakeFiles/test.dir/src/level.cpp.o: ../src/level.hpp
@@ -818,6 +819,7 @@ CMakeFiles/test.dir/src/main.cpp.o: ../src/Destructables.hpp
 CMakeFiles/test.dir/src/main.cpp.o: ../src/Normal.hpp
 CMakeFiles/test.dir/src/main.cpp.o: ../src/Pig.hpp
 CMakeFiles/test.dir/src/main.cpp.o: ../src/Points.hpp
+CMakeFiles/test.dir/src/main.cpp.o: ../src/collision_listener.hpp
 CMakeFiles/test.dir/src/main.cpp.o: ../src/filereader.hpp
 CMakeFiles/test.dir/src/main.cpp.o: ../src/level.hpp
 CMakeFiles/test.dir/src/main.cpp.o: ../src/main.cpp

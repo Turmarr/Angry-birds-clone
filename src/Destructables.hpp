@@ -5,6 +5,37 @@
 #include "Box2D/box2d/box2d.h"
 #include "Points.hpp"
 
+class Material {
+    public:
+        Material() {}
+
+        Material(std::string type) {
+            if (type == "wood") {
+                points = 100;
+                hp = 100;
+                texture = "Textures/wood.jpg";
+                density = 1;
+            }
+            else if (type == "stone") {
+                points = 200;
+                hp = 200;
+                texture = "Textures/stone.jpg";
+                density = 2;
+            }
+            else if (type == "bird") {
+                points = 1000;
+                hp = 100;
+                texture = "Textures/bird.png";
+                density = 1;
+            }
+        }
+    int points;
+    int hp;
+    std::string texture;
+    float density;
+
+};
+
 
 
 class Destructables
@@ -14,6 +45,7 @@ class Destructables
         b2World* world_;
         int POINTS_;
         float hp_ = 0;
+        Material mat;
 
     public:
         Destructables(){}
