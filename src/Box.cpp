@@ -14,6 +14,8 @@ Box::Box(float x, float y, const std::string& type, float width, float height, f
 
     points_ = points;
 
+    POINTS_ = 100;
+
     initTexture();
     initBlock();
     initPhysics(world);
@@ -21,7 +23,7 @@ Box::Box(float x, float y, const std::string& type, float width, float height, f
 }
 
 Box::~Box(){
-    points_->AddPoints(100);
+    points_->AddPoints(POINTS_);
     world_->DestroyBody(body);
 }
 

@@ -16,10 +16,12 @@ Bird::Bird(float x, float y, b2World& world, const float scale, float radius, Po
 
     points_ = points;
 
+    POINTS_ = 1000;
+
 }
 
 Bird::~Bird(){
-    points_->AddPoints(1000);
+    points_->AddPoints(POINTS_);
     world_->DestroyBody(body);
 }
 

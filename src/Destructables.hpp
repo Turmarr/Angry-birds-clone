@@ -12,9 +12,17 @@ class Destructables
     protected:
         Points* points_;
         b2World* world_;
+        int POINTS_;
+        float hp_ = 0;
+
     public:
         Destructables(){}
         ~Destructables(){}
         virtual void Draw(sf::RenderWindow& target) {}
-
+        float GetHp() const {
+            return hp_;
+        }
+        void ReduceHp(float red) {
+            hp_ -= red;
+        }
 };

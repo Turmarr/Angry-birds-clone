@@ -10,6 +10,8 @@ Ball::Ball(float x, float y, const std::string& type, float radius, b2World& wor
 
     points_ = points;
 
+    POINTS_ = 100;
+
     world_ = &world;
 
     initTexture();
@@ -18,7 +20,7 @@ Ball::Ball(float x, float y, const std::string& type, float radius, b2World& wor
 }
 
 Ball::~Ball(){
-    points_->AddPoints(100);
+    points_->AddPoints(POINTS_);
     world_->DestroyBody(body);
 }
 
