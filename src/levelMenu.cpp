@@ -3,37 +3,41 @@
 
 levelMenu::levelMenu(float width, float height)
 {
+    height_ = height;
+    width_ = width;
+
     initFonts();
     initTexture();
     initBackground();
+    initTexts();
+    initStars();
 
-    menu[0].setFont(font);
-    menu[0].setFillColor(sf::Color::Blue);
-    menu[0].setOutlineColor(sf::Color::Black);
-    menu[0].setOutlineThickness(1.f);
+    for (int i = 0; i < 3; i++){
+
+        menu[i].setFont(font);
+        menu[i].setFillColor(sf::Color::White);
+        menu[i].setOutlineColor(sf::Color::Black);
+        menu[i].setOutlineThickness(2.f);
+        menu[i].setCharacterSize(50);
+        menu[i].setOrigin(menu[i].getLocalBounds().width/2, menu[i].getLocalBounds().height/2);
+    }
+    int x = width_/2;
+    int y = height_/2 - 50;
+
+    //Level 1 button
     menu[0].setString("1");
-    menu[0].setCharacterSize(40);
-    menu[0].setOrigin(menu[0].getLocalBounds().width/2, menu[0].getLocalBounds().height/2);
-   
-    menu[1].setFont(font);
-    menu[1].setFillColor(sf::Color::White);
-    menu[1].setOutlineColor(sf::Color::Black);
-    menu[1].setOutlineThickness(1.f);
+    menu[0].setPosition(x - 250, y);
+    menu[0].setCharacterSize(60);
+    menu[0].setFillColor(sf::Color::Blue);
+
+    //Level 2 button
     menu[1].setString("2");
-    menu[1].setCharacterSize(40);
-    menu[1].setOrigin(menu[1].getLocalBounds().width/2, menu[1].getLocalBounds().height/2);
+    menu[1].setPosition(x, y);
    
-    menu[2].setFont(font);
-    menu[2].setFillColor(sf::Color::White);
-    menu[2].setOutlineColor(sf::Color::Black);
-    menu[2].setOutlineThickness(1.f);
+    //Level 3 button
     menu[2].setString("3");
-    menu[2].setCharacterSize(40);
-    menu[2].setOrigin(menu[2].getLocalBounds().width/2, menu[2].getLocalBounds().height/2);
-    
-    menu[0].setPosition((int) width/2, 200);
-    menu[1].setPosition((int) width/2, 300);
-    menu[2].setPosition((int) width/2, 400);
+    menu[2].setPosition(x + 250, y);
+
 
     selectedItemIndex = 0;
 
@@ -49,6 +53,7 @@ void levelMenu::initFonts(){
     if(!font.loadFromFile("Fonts/test2.ttf")){
         std::cout<< "Error while loading menu font."<<std::endl;
     }
+
 }
 
 void levelMenu::initTexture(){
@@ -56,21 +61,75 @@ void levelMenu::initTexture(){
     if(!this->background.loadFromFile("Textures/sky.jpg")){
         std::cout<< "Failed to load menu background." << std::endl;
     }
+    if(!this->imag.loadFromFile("Textures/star.png")){
+        std::cout<< "Failed to load escape button image." << std::endl;
+    }
+
 }
 
 void levelMenu::initBackground(){
 
     rect.setTexture(&this->background);
-    rect.setSize(sf::Vector2f(800, 600));
+    rect.setSize(sf::Vector2f(width_, height_));
+
+}
+//Settings for texts
+void levelMenu::initTexts(){
+
+    toMenu.setFont(font);
+    toMenu.setString("press ESC ro return");
+    toMenu.setFillColor(sf::Color::White);
+    toMenu.setCharacterSize(20);
+    toMenu.setOrigin(toMenu.getLocalBounds().width/2, toMenu.getLocalBounds().height/2);
+    toMenu.setPosition(120.f, 20.f);
+
+    levels.setFont(font);
+    levels.setString("Levels");
+    levels.setFillColor(sf::Color::White);
+    levels.setOutlineColor(sf::Color::Black);
+    levels.setOutlineThickness(1.f);
+    levels.setCharacterSize(60);
+    levels.setOrigin(levels.getLocalBounds().width/2, levels.getLocalBounds().height/2);
+    levels.setPosition((int) width_/2, 50.f);
+
+}
+//Settings for star-sprites
+void levelMenu::initStars(){
+
+    int y = 400;
+    int x = 195;
+    int count = 0;
+
+    for (int i = 0; i <9; i++){
+
+        if (count == 3){
+            x += 40;
+            count = 0;
+        }
+
+        star.setTexture(imag);
+        star.setScale(sf::Vector2f(0.3f, 0.3f));
+        star.setColor(sf::Color(0,0,0, 60));
+        star.setOrigin(star.getLocalBounds().width/2, star.getLocalBounds().height/2);
+        star.setPosition(x, y);
+        x += 70;
+        count++;
+        stars.push_back(star);
+    }
 
 }
 
 void levelMenu::Draw(sf::RenderWindow& window){
 
     window.draw(rect);
+    window.draw(toMenu);
+    window.draw(levels);
 
     for (int i = 0; i< 3; i++){
         window.draw(menu[i]);
+    }
+    for (auto i : stars){
+        window.draw(i);
     }
 
 }
@@ -78,8 +137,10 @@ void levelMenu::Draw(sf::RenderWindow& window){
 void levelMenu::moveLeft(){
 
     if (selectedItemIndex -1 >= 0){
+        menu[selectedItemIndex].setCharacterSize(50);
         menu[selectedItemIndex].setFillColor(sf::Color::White);
         selectedItemIndex--;
+        menu[selectedItemIndex].setCharacterSize(60);
         menu[selectedItemIndex].setFillColor(sf::Color::Blue);
     }
 }
@@ -87,12 +148,14 @@ void levelMenu::moveLeft(){
 void levelMenu::moveRight(){
     
     if (selectedItemIndex +1 < 3){
+        menu[selectedItemIndex].setCharacterSize(50);
         menu[selectedItemIndex].setFillColor(sf::Color::White);
         selectedItemIndex++;
+        menu[selectedItemIndex].setCharacterSize(60);
         menu[selectedItemIndex].setFillColor(sf::Color::Blue);
     }
 }
-
+//level chooser input
 int levelMenu::updateMenuEvent(sf::Event& ev, sf::RenderWindow& window){
 
     switch (ev.type){
@@ -101,12 +164,13 @@ int levelMenu::updateMenuEvent(sf::Event& ev, sf::RenderWindow& window){
             return 3;
             break;
 
-        case sf::Keyboard::Escape:
-            return 0;
-            break;
-
         case sf::Event::KeyReleased:
+
             switch (ev.key.code){
+
+                case sf::Keyboard::Escape:
+                    return 0;
+                    break;
 
                 case sf::Keyboard::Left:
                     this->moveLeft();
@@ -166,5 +230,24 @@ int levelMenu::updateMenuEvent(sf::Event& ev, sf::RenderWindow& window){
 
     mouseHeld = false;
 
-    return 0;
+    return 1;
+}
+//Setting stars to non-transparent
+void levelMenu::updateStars(int no, int level){
+    
+    for (int i = 0; i < no; i++){
+
+        if (level == 2){
+            stars[i+3].setColor(sf::Color::White);
+        }
+        if (level == 3){
+            stars[i+6].setColor(sf::Color::White);
+        }
+        else
+        {
+            stars[i].setColor(sf::Color::White);
+        }
+        
+    }
+
 }

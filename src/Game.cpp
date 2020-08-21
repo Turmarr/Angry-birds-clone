@@ -1,25 +1,33 @@
 #include "Game.hpp"
 
-Game::Game(sf::RenderWindow& window): window_(window){
+Game::Game(sf::RenderWindow& window, float width, float height): window_(window){
+
+    width_ = width;
+    height_ = height;
 
     initWindow();
-    initMenu();
+    initMenus();
     state_ = 0;
 
 }
 
 Game::~Game(){
 
+    delete lMenu_;
     delete menu_;
 }
 
 void Game::initWindow(){
 
     window_.setFramerateLimit(60);
+    
 
 }
-void Game::initMenu(){
-    menu_ = new Menu(800, 600);
+
+void Game::initMenus(){
+    
+    menu_ = new Menu(width_, height_);
+    lMenu_ = new levelMenu(width_, height_);
 }
 
 void Game::run(){
@@ -38,13 +46,21 @@ void Game::updatePollEvents(){
 
     while(window_.pollEvent(ev)){
 
-        if (state_ == 0){
+        switch (state_)
+        {
+        case 0:
             state_ = menu_->updateMenuEvent(ev, window_);
-            
+            break;
+
+        case 1:
+            state_ = lMenu_->updateMenuEvent(ev, window_);
+            break;
+
+        default:
+            break;
         }
-        else if(state_ == 1){
         
-        }
+
         if (state_ == 3){
             window_.close();
         }
@@ -53,16 +69,26 @@ void Game::updatePollEvents(){
 }
 
 void Game::update(){
-
+    
 }
 
 void Game::render(){
 
     window_.clear();
 
-    if (state_ == 0){
-        menu_->Draw(window_);
-    }
+    switch (state_)
+        {
+        case 0:
+            menu_->Draw(window_);
+            break;
+
+        case 1:
+            lMenu_->Draw(window_);
+            break;
+            
+        default:
+            break;
+        }
 
     window_.display();
 

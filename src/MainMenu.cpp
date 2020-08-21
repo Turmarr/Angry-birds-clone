@@ -3,37 +3,43 @@
 
 Menu::Menu(float width, float height)
 {
+    width_ = width;
+    height_ = height;
+
     initFonts();
     initTexture();
     initBackground();
 
-    menu[0].setFont(font);
+    for (int i = 0; i < 3; i++){
+
+        menu[i].setFont(font);
+        menu[i].setFillColor(sf::Color::White);
+        menu[i].setOutlineColor(sf::Color::Black);
+        menu[i].setOutlineThickness(2.f);
+        menu[i].setCharacterSize(55);
+        menu[i].setOrigin(menu[i].getLocalBounds().width/2, menu[i].getLocalBounds().height/2);
+    }
+
+    int x = width_/2;
+    int y = height_/2;
+
+    //Play button
     menu[0].setFillColor(sf::Color::Blue);
-    menu[0].setOutlineColor(sf::Color::Black);
-    menu[0].setOutlineThickness(1.f);
     menu[0].setString("Play");
-    menu[0].setCharacterSize(40);
-    menu[0].setOrigin(menu[0].getLocalBounds().width/2, menu[0].getLocalBounds().height/2);
-   
-    menu[1].setFont(font);
-    menu[1].setFillColor(sf::Color::White);
-    menu[1].setOutlineColor(sf::Color::Black);
-    menu[1].setOutlineThickness(1.f);
+    menu[0].setCharacterSize(65);
+    //menu[0].setOrigin(menu[0].getLocalBounds().width/2, menu[0].getLocalBounds().height/2);
+    menu[0].setPosition(x, y - 150);
+
+    //Highscore button
     menu[1].setString("Highscores");
-    menu[1].setCharacterSize(40);
-    menu[1].setOrigin(menu[1].getLocalBounds().width/2, menu[1].getLocalBounds().height/2);
-   
-    menu[2].setFont(font);
-    menu[2].setFillColor(sf::Color::White);
-    menu[2].setOutlineColor(sf::Color::Black);
-    menu[2].setOutlineThickness(1.f);
+    //menu[1].setOrigin(menu[1].getLocalBounds().width/2, menu[1].getLocalBounds().height/2);
+    menu[1].setPosition(x, y);
+
+    //Exit button
     menu[2].setString("Exit");
-    menu[2].setCharacterSize(40);
-    menu[2].setOrigin(menu[2].getLocalBounds().width/2, menu[2].getLocalBounds().height/2);
-    
-    menu[0].setPosition((int) width/2, 200);
-    menu[1].setPosition((int) width/2, 300);
-    menu[2].setPosition((int) width/2, 400);
+    //menu[2].setOrigin(menu[2].getLocalBounds().width/2, menu[2].getLocalBounds().height/2);
+    menu[2].setPosition(x, y + 150);
+
 
     selectedItemIndex = 0;
 
@@ -61,7 +67,7 @@ void Menu::initTexture(){
 void Menu::initBackground(){
 
     rect.setTexture(&this->background);
-    rect.setSize(sf::Vector2f(800, 600));
+    rect.setSize(sf::Vector2f(width_, height_));
 
 }
 
@@ -79,8 +85,10 @@ void Menu::moveUp(){
 
     if (selectedItemIndex -1 >= 0){
         menu[selectedItemIndex].setFillColor(sf::Color::White);
+        menu[selectedItemIndex].setCharacterSize(55);
         selectedItemIndex--;
         menu[selectedItemIndex].setFillColor(sf::Color::Blue);
+        menu[selectedItemIndex].setCharacterSize(65);
     }
 }
 
@@ -88,11 +96,13 @@ void Menu::moveDown(){
     
     if (selectedItemIndex +1 < 3){
         menu[selectedItemIndex].setFillColor(sf::Color::White);
+        menu[selectedItemIndex].setCharacterSize(55);
         selectedItemIndex++;
         menu[selectedItemIndex].setFillColor(sf::Color::Blue);
+        menu[selectedItemIndex].setCharacterSize(65);
     }
 }
-
+//movement in the Main Menu screen
 int Menu::updateMenuEvent(sf::Event& ev, sf::RenderWindow& window){
 
     switch (ev.type){
@@ -100,13 +110,14 @@ int Menu::updateMenuEvent(sf::Event& ev, sf::RenderWindow& window){
         case sf::Event::Closed:
             return 3;
             break;
-
-        case sf::Keyboard::Escape:
-            return 3;
-            break;
-
+            
         case sf::Event::KeyReleased:
+
             switch (ev.key.code){
+                
+                case sf::Keyboard::Escape:
+                    return 3;
+                    break;
 
                 case sf::Keyboard::Down:
                     this->moveDown();
@@ -119,24 +130,8 @@ int Menu::updateMenuEvent(sf::Event& ev, sf::RenderWindow& window){
                 case sf::Keyboard::Return:
                     
                     options_ = this->returnSelectedItem();
-
-                    switch (options_){
-
-                        case 0:
-                            std::cout<< "Possible gameplay here" << std::endl;
-                            break;
-                        
-                        case 1:
-                            std::cout<< "Possible highscores here" << std::endl;
-                            break;
-
-                        case 2:
-                            return 3;
-                            break;
-                        
-                        default:
-                            break;
-                    }
+                    return (options_ +1);
+                    break;
 
                 default:
                     break;
@@ -153,7 +148,7 @@ int Menu::updateMenuEvent(sf::Event& ev, sf::RenderWindow& window){
                 
                     for (int i = 0; i <3; i++){
                         
-                        if(menu[i].getGlobalBounds().contains(mousePosView)){
+                        if(menu[i].getLocalBounds().contains(mousePosView)){
                             
                             return (i+1);
                             }
