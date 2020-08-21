@@ -52,6 +52,12 @@ void Bomb::Special() {
     if(specialityUsed){
         return;
     }
+    
+    //Set birds groupIndex to -1 to avoid colliding with the particles created in the explosion
+    b2Fixture* f = body_->GetFixtureList();
+    b2Filter filter = f->GetFilterData();
+    filter.groupIndex = -1;
+    f->SetFilterData(filter);
 
     //Get explosion center
     b2Vec2 center = body_->GetPosition();
