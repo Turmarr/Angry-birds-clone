@@ -44,6 +44,19 @@ void Bomb::Draw(sf::RenderWindow& window) {
     sprite_.setPosition(body_->GetPosition().x * SCALE, body_->GetPosition().y * SCALE);
     sprite_.setRotation(body_->GetAngle() * 180/b2_pi);
     window.draw(sprite_);
+
+    for (auto i : blastParticleBodies_) {
+        float vel = sqrt(pow(i->GetLinearVelocity().x, 2) + pow(i->GetLinearVelocity().y, 2));
+        if (vel > 0.01) {
+            sf::CircleShape shape;
+            shape.setPosition(i->GetPosition().x * SCALE, i->GetPosition().y * SCALE);
+            shape.setRadius(1);
+            shape.setOrigin(1, 1);
+            shape.setFillColor(sf::Color::Black);
+            window.draw(shape);
+        }
+        
+    }
 }
 
 void Bomb::Special() {
@@ -66,7 +79,7 @@ void Bomb::Special() {
     float blastPower = 1000;
 
     //Set number of different directions. Higher number mean more CPU usage
-    int numRays = 100;
+    int numRays = 300;
 
     for(int i = 0; i < numRays; i++){
         //Get the direction in which we launch the particle
