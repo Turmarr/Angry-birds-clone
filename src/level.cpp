@@ -238,6 +238,28 @@ void Level::DrawLevel(sf::RenderWindow& window) {
     window.display();
 }
 
+
+//controls the camera, currently moving from destroyed pig
+//back to cannon abrupt, mousescroll for zoom
+void Level::ControlView() {
+    view_.zoom(resize_);
+    float vsx = view_.getSize().x;
+    float vsy = view_.getSize().y;
+    float vpx;
+    float vpy;
+    float fh = ground_[0].y + ground_[0].height/2;
+    vpy = fh - vsy/2;
+    if (!pig_flying_) {
+        vpx = cannon_.x;
+    }
+    else {
+        vpx = current_pig_->GetPosition().x *SCALE_;
+    }
+    view_.setCenter(vpx,vpy);
+    //std::cout << vpx << " " << vpy << std::endl;
+}
+
+
 int Level::Run(sf::RenderWindow& window) {
     while (running_) {
         //std::cout << "1" << std::endl;
@@ -245,12 +267,13 @@ int Level::Run(sf::RenderWindow& window) {
         //std::cout << world_->GetBodyCount() << std::endl;
         
 
-        DeleteDestroyed();        
+        DeleteDestroyed();
+           
         
         //add the reseting of the camera once added
         //setup exiting the loop once the last pig dies
         if (current_pig_ != nullptr && pig_flying_) {
-            view_.setCenter(sf::Vector2f(current_pig_->GetPosition().x * SCALE_, current_pig_->GetPosition().y * SCALE_));
+            //view_.setCenter(sf::Vector2f(current_pig_->GetPosition().x * SCALE_, current_pig_->GetPosition().y * SCALE_));
             if (current_pig_->GetSpeed() <= 0.1) {
                 pig_time_ += 1;
                 if (pig_time_ >= 60) {
@@ -264,7 +287,7 @@ int Level::Run(sf::RenderWindow& window) {
         }
 
 
-
+        resize_ = 1; //is needed so that the window stays the same size when not scrolling
         sf::Event ev;
             while(window.pollEvent(ev))
             {
@@ -273,7 +296,7 @@ int Level::Run(sf::RenderWindow& window) {
                     case sf::Event::Closed:
                         return 1;
                     case sf::Event::MouseButtonPressed:
-                        if (pig_flying_ && !current_pig_->GetSpecialityUsed()) {
+                        if (pig_flying_) {
                             current_pig_->Special();
                         }
                         else if (!pig_flying_ && current_pig_ != nullptr) {
@@ -281,9 +304,6 @@ int Level::Run(sf::RenderWindow& window) {
                             sf::Vector2f worldPos = window.mapPixelToCoords(pixelPos);
                             float x = worldPos.x;
                             float y = worldPos.y;
-                            //if (GetDistance(cannon_.x, cannon_.y, x, y) <= 20 && current_pig_ != nullptr) {
-                            //    pig_drawn_ = true;
-                            //}
                             if (cannnon_hitbox_.getGlobalBounds().contains(x,y)) {
                                 pig_drawn_ = true;
                             }
@@ -303,10 +323,15 @@ int Level::Run(sf::RenderWindow& window) {
                             FirePig();
                         }
                         break;
+                    case sf::Event::MouseWheelScrolled:
+                        if (ev.mouseWheelScroll.wheel == sf::Mouse::VerticalWheel) {
+                            float ticks = ev.mouseWheelScroll.delta;
+                            resize_ = 1-ticks*0.01;
+                        }
                 }
             }
 
-
+        ControlView();
         //Draws the level
         DrawLevel(window);
     }

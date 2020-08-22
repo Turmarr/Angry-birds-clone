@@ -114,6 +114,8 @@ class Level {
         void DrawScore(sf::RenderWindow& window);
         void DeleteDestroyed();
         void DrawLevel(sf::RenderWindow& window);
+        void ControlView();
+        void ResizeView(float i);
 
         //general variables
         const float SCALE_ = 30.f;
@@ -143,6 +145,7 @@ class Level {
         float angle_;
         float pig_time_ = 0;
         sf::CircleShape cannnon_hitbox_;
+        float resize_;
         
 
         std::vector<Pigc> pigs_;
