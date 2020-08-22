@@ -328,6 +328,12 @@ int Level::Run(sf::RenderWindow& window) {
                             float ticks = ev.mouseWheelScroll.delta;
                             resize_ = 1-ticks*0.01;
                         }
+                        break;
+                    case sf::Event::Resized:
+                        sf::FloatRect visibleArea(0.f, 0.f, ev.size.width, ev.size.height);
+                        view_.reset(visibleArea);
+                        break;
+
                 }
             }
 
