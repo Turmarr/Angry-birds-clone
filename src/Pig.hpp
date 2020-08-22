@@ -6,7 +6,7 @@
 class Pig {
 public:
     Pig() {}
-    ~Pig() {}
+    virtual ~Pig() {}
     
     virtual void Draw(sf::RenderWindow& window) { }
 

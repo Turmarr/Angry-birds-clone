@@ -210,7 +210,7 @@ int Level::Run(sf::RenderWindow& window) {
     while (running_) {
         //std::cout << "1" << std::endl;
         world_->Step(timeStep_, velocityIterations_, positionIterations_);
-        //std::cout << "2" << std::endl;
+        //std::cout << world_->GetBodyCount() << std::endl;
         window.clear(sf::Color::White);
 
         DeleteDestroyed();        
