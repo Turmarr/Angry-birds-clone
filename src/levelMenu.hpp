@@ -33,7 +33,7 @@ private:
     sf::Sprite star;
 
 
-    //Initializors
+    //Initializers
     void initFonts();
     void initTexture();
     void initTexts();
@@ -42,12 +42,18 @@ private:
 
 public:
 
+    //Constructor and destructor
     levelMenu(float width, float height);
     ~levelMenu();
 
-    void updateStars(int no, int level);
+    //Loads the information about levels' star rating
+    void updateStars();
+
+    //Called from outside the class
     int updateMenuEvent(sf::Event& ev, sf::RenderWindow& window);
     void Draw(sf::RenderWindow& window);
+
+    //Used to "move" in the menu
     void moveLeft();
     void moveRight();
     int returnSelectedItem() {return selectedItemIndex;}

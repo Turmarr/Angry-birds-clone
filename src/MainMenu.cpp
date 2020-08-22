@@ -10,35 +10,34 @@ Menu::Menu(float width, float height)
     initTexture();
     initBackground();
 
+    menu[0].setString("Play");
+    menu[1].setString("Highscores");
+    menu[2].setString("Exit");
+
     for (int i = 0; i < 3; i++){
 
         menu[i].setFont(font);
         menu[i].setFillColor(sf::Color::White);
         menu[i].setOutlineColor(sf::Color::Black);
         menu[i].setOutlineThickness(2.f);
-        menu[i].setCharacterSize(55);
+        menu[i].setCharacterSize(60);
         menu[i].setOrigin(menu[i].getLocalBounds().width/2, menu[i].getLocalBounds().height/2);
+        
     }
 
     int x = width_/2;
     int y = height_/2;
 
-    //Play button
+    //Play button attributes
     menu[0].setFillColor(sf::Color::Blue);
-    menu[0].setString("Play");
-    menu[0].setCharacterSize(65);
-    //menu[0].setOrigin(menu[0].getLocalBounds().width/2, menu[0].getLocalBounds().height/2);
+    menu[0].setCharacterSize(70);
     menu[0].setPosition(x, y - 150);
 
-    //Highscore button
-    menu[1].setString("Highscores");
-    //menu[1].setOrigin(menu[1].getLocalBounds().width/2, menu[1].getLocalBounds().height/2);
-    menu[1].setPosition(x, y);
+    //Highscore button position
+    menu[1].setPosition(x+10, y);
 
-    //Exit button
-    menu[2].setString("Exit");
-    //menu[2].setOrigin(menu[2].getLocalBounds().width/2, menu[2].getLocalBounds().height/2);
-    menu[2].setPosition(x, y + 150);
+    //Exit button position
+    menu[2].setPosition(x-5, y + 150);
 
 
     selectedItemIndex = 0;
@@ -139,24 +138,25 @@ int Menu::updateMenuEvent(sf::Event& ev, sf::RenderWindow& window){
         case sf::Event::MouseButtonPressed:
 
             if (ev.mouseButton.button == sf::Mouse::Left){
-
+                    
                 if (mouseHeld == false){
-
+                    
                     mouseHeld = true;
                     sf::Vector2i mousePosWindow = sf::Mouse::getPosition(window);
                     sf::Vector2f mousePosView = window.mapPixelToCoords(mousePosWindow);
                 
                     for (int i = 0; i <3; i++){
-                        
-                        if(menu[i].getLocalBounds().contains(mousePosView)){
-                            
+
+                        if(menu[i].getGlobalBounds().contains(mousePosView)){
                             return (i+1);
                             }
                         }
                 }
             }
             break;
-    
+
+        default:
+            break;
     }
 
     mouseHeld = false;

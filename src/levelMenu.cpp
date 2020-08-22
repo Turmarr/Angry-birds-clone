@@ -1,5 +1,7 @@
 #include "levelMenu.hpp"
 #include <iostream>
+#include <fstream>
+#include <sstream>
 
 levelMenu::levelMenu(float width, float height)
 {
@@ -11,7 +13,12 @@ levelMenu::levelMenu(float width, float height)
     initBackground();
     initTexts();
     initStars();
+    updateStars();
 
+    menu[0].setString("1");
+    menu[1].setString("2");
+    menu[2].setString("3");
+    
     for (int i = 0; i < 3; i++){
 
         menu[i].setFont(font);
@@ -25,19 +32,17 @@ levelMenu::levelMenu(float width, float height)
     int y = height_/2 - 50;
 
     //Level 1 button
-    menu[0].setString("1");
+   
     menu[0].setPosition(x - 250, y);
     menu[0].setCharacterSize(60);
     menu[0].setFillColor(sf::Color::Blue);
 
     //Level 2 button
-    menu[1].setString("2");
     menu[1].setPosition(x, y);
    
     //Level 3 button
-    menu[2].setString("3");
+    
     menu[2].setPosition(x + 250, y);
-
 
     selectedItemIndex = 0;
 
@@ -92,12 +97,13 @@ void levelMenu::initTexts(){
     levels.setOrigin(levels.getLocalBounds().width/2, levels.getLocalBounds().height/2);
     levels.setPosition((int) width_/2, 50.f);
 
+
 }
 //Settings for star-sprites
 void levelMenu::initStars(){
 
     int y = 400;
-    int x = 195;
+    int x = 180;
     int count = 0;
 
     for (int i = 0; i <9; i++){
@@ -183,34 +189,38 @@ int levelMenu::updateMenuEvent(sf::Event& ev, sf::RenderWindow& window){
                 case sf::Keyboard::Return:
                     
                     options_ = this->returnSelectedItem();
-
-                    switch (options_){
+                    return (options_ + 4);
+                    break;
+                    /*switch (options_){
 
                         case 0:
                             std::cout<< "Level 1" << std::endl;
+                            return 4;
                             break;
                         
                         case 1:
                             std::cout<< "Level 2" << std::endl;
+                            return 5;
                             break;
 
                         case 2:
                             std::cout<< "Level 3" << std::endl;
+                            return 6;
                             break;
                         
                         default:
-                            break;
-                    }
-
+                            break;*/
+                    
                 default:
                     break;
-            }
+                }
+
         case sf::Event::MouseButtonPressed:
 
             if (ev.mouseButton.button == sf::Mouse::Left){
-
+                    
                 if (mouseHeld == false){
-
+                    
                     mouseHeld = true;
                     sf::Vector2i mousePosWindow = sf::Mouse::getPosition(window);
                     sf::Vector2f mousePosView = window.mapPixelToCoords(mousePosWindow);
@@ -225,6 +235,9 @@ int levelMenu::updateMenuEvent(sf::Event& ev, sf::RenderWindow& window){
                 }
             }
             break;
+        
+        default:
+            break;
     
     }
 
@@ -233,21 +246,35 @@ int levelMenu::updateMenuEvent(sf::Event& ev, sf::RenderWindow& window){
     return 1;
 }
 //Setting stars to non-transparent
-void levelMenu::updateStars(int no, int level){
+void levelMenu::updateStars(){
     
-    for (int i = 0; i < no; i++){
+    std::ifstream is("stars.txt");
+    int level, no;
 
-        if (level == 2){
-            stars[i+3].setColor(sf::Color::White);
-        }
-        if (level == 3){
-            stars[i+6].setColor(sf::Color::White);
-        }
-        else
-        {
-            stars[i].setColor(sf::Color::White);
-        }
-        
+    if(is.rdstate() & (is.failbit | is.badbit)){
+        std::cerr << "Failed to load file stars.txt" << std::endl;
+    }
+    for (int i = 0; i<3; i++){
+
+        std::string line;
+        std::getline(is, line);
+
+        std::stringstream ss;
+        ss.str(line);
+        ss >> level >> no;
+
+        for (int j = 0; j < no; j++){
+            if (level == 2){
+                stars[j+3].setColor(sf::Color::White);
+            }
+            if (level == 3){
+                stars[j+6].setColor(sf::Color::White);
+            }
+            else
+            {
+                stars[j].setColor(sf::Color::White);
+            }
+        } 
     }
 
 }

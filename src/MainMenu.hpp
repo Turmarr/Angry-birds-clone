@@ -12,7 +12,6 @@ private:
     //Menu buttons
     sf::Font font;
     sf::Text menu[3];
-  
 
     //Background
     sf::Texture background;
@@ -24,18 +23,22 @@ private:
     //Is mouse held down
     bool mouseHeld;
 
-    //Initializors
+    //Initializers
     void initFonts();
     void initTexture();
     void initBackground();
 
 public:
 
+    //Constructor and destructor
     Menu(float width, float height);
     ~Menu();
 
+    //Called from outside the class
     int updateMenuEvent(sf::Event& ev, sf::RenderWindow& window);
     void Draw(sf::RenderWindow& window);
+
+    //Used to "move" in the menu
     void moveUp();
     void moveDown();
     int returnSelectedItem() {return selectedItemIndex;}

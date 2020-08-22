@@ -1,0 +1,12 @@
+1 0
+2 0
+3 0
+
+
+
+/* For checking how many stars have been achieved. 
+Checked in levelMenu::updateStars().
+Is updated in __.
+First is the level and then the amount of stars.
+*/
+
