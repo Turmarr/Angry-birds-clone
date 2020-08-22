@@ -160,6 +160,14 @@ void Level::DrawScore(sf::RenderWindow& window) {
 void Level::DrawCannon(sf::RenderWindow& window) {
     cannnon_hitbox_.setOrigin(cannnon_hitbox_.getLocalBounds().width/2, cannnon_hitbox_.getLocalBounds().height/2);
     
+    sf::RectangleShape shape;
+    shape.setPosition(cannon_.x, cannon_.y);
+    shape.setSize(sf::Vector2f(120,60));
+    shape.setOrigin(30,30);
+    shape.rotate(angle_);
+    shape.setFillColor(sf::Color::Black);
+    
+    window.draw(shape);
     window.draw(cannnon_hitbox_);
 }
 
@@ -173,14 +181,14 @@ void Level::ReadyCannon(float x, float y) {
     if (draw_->GetLength() > max_draw_) {
         draw_->SetLen(max_draw_);
     }
-    angle_ = draw_->GetAngle();
+    angle_ = draw_->GetAngle() * 180 / b2_pi;
     //add the rotating of the cannon and the possible arrow
 }
 
 void Level::FirePig() {
     current_pig_->SetDynamic();
     current_pig_->SetAngle(angle_ * b2_pi / 180);
-    current_pig_->SetVelocity(b2Vec2(draw_->x_/10, draw_->y_/10));
+    current_pig_->SetVelocity(b2Vec2(draw_->x_/cannon_power_, draw_->y_/cannon_power_));
     pig_flying_ = true;
     pig_drawn_ = false;
 }

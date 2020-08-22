@@ -61,7 +61,7 @@ class Vect{
         }
 
         float GetAngle() {
-            float ang = tan(y_/x_);
+            float ang = atan2(y_,x_);
             return ang;
         }
 };
@@ -141,11 +141,12 @@ class Level {
         bool pig_flying_;
         bool pig_drawn_;
         Vect* draw_;
-        float max_draw_ = 60;
-        float angle_;
+        float max_draw_ = 60; //how big the max draw can be
+        float angle_ = 0;
         float pig_time_ = 0;
         sf::CircleShape cannnon_hitbox_;
         float resize_;
+        float cannon_power_ = 10; //defines the max velocity of the pig
         
 
         std::vector<Pigc> pigs_;
