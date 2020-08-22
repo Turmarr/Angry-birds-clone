@@ -45,6 +45,14 @@ Groundc ReadGround(std::string line) {
     return ground;
 }
 
+int ReadLevel(std::string line) {
+    int level;
+    std::stringstream ss;
+    ss.str(line);
+    ss >> level;
+    return level;
+}
+
 Filereader::Filereader(std::string filename) {
     std::ifstream file(filename);
 
@@ -92,6 +100,8 @@ Filereader::Filereader(std::string filename) {
                     case 5:
                         ground_.push_back(ReadGround(line));
                         break;
+                    case 6:
+                        level_ = ReadLevel(line);
 
                     default:
                         break;

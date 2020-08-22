@@ -16,3 +16,6 @@ ball stone 400 400 30 0 0
 
 # groundpoints
 400 570 800 60
+
+#
+2

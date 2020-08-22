@@ -45,6 +45,9 @@ Objects:
 
 Groundboxes:
 "position on x-axis" "position on y-axis" "width" "height"
+
+Level
+"Which level it is"
 */
 
 class file_exception : public std::exception {
@@ -111,12 +114,17 @@ class Filereader {
             return cannon_;
         }
 
+        int GetLevel() const {
+            return level_;
+        }
+
     private:
         std::vector<struct Pigc> pigs_;
         std::vector<struct Birdc> birds_;
         std::vector<struct Objectc> objects_;
         std::vector<struct Groundc> ground_;
         struct Cannonc cannon_;
+        int level_;
 };
 
 #endif

@@ -7,6 +7,8 @@
 #include <vector>
 #include <list>
 #include <algorithm>
+#include <sstream>
+
 #include "filereader.hpp"
 #include "Bird.hpp"
 #include "Box.hpp"
@@ -80,7 +82,9 @@ class Level {
         //deconstructs the level, is where the level end screen will be determined
         
         ~Level() {
-
+            if (birds_.size() == 0) {
+                LastLevelCleared();
+            }
             delete current_pig_;
             
             for (auto i : box_) {
@@ -115,7 +119,7 @@ class Level {
         void DeleteDestroyed();
         void DrawLevel(sf::RenderWindow& window);
         void ControlView();
-        void ResizeView(float i);
+        void LastLevelCleared();
 
         //general variables
         const float SCALE_ = 30.f;
@@ -159,6 +163,7 @@ class Level {
         std::vector<struct Groundc> ground_;
         struct Cannonc cannon_;
         collision_listener* collisions_;
+        int level_;
         
 };
 

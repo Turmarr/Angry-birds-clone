@@ -18,6 +18,7 @@ Level::Level(std::string filename) {
     //init pointcounter
     points_ = new Points();
     draw_ = new Vect();
+     
 
     //std::cout << "pig" << std::endl;
     b2Vec2 gravity (0.0f, 10.0f);
@@ -30,7 +31,7 @@ Level::Level(std::string filename) {
     //std::cout << "pig" << std::endl;
 
     Filereader info(filename);
-
+    level_ = info.GetLevel();
     //std::cout << "file" << std::endl;
 
     ground_ = info.GetGround();
@@ -86,6 +87,24 @@ Level::Level(std::string filename) {
     
 
     
+}
+
+void Level::LastLevelCleared() {
+    int level = 0;
+    std::ifstream ifs("Levels/lastcleared.txt");
+    if (ifs.rdstate() & (ifs.failbit | ifs.badbit)) { }
+    else {
+        ifs >> level;
+        ifs.close();
+        //std::cout << level << std::endl;
+    }
+    if (level > level_) {
+        level_ = level;
+    }
+    std::ofstream ofs("Levels/lastcleared.txt");
+    std::cout << level_ << std::endl;
+    ofs << level_;
+    ofs.close();
 }
 
 void Level::NextPig() {
