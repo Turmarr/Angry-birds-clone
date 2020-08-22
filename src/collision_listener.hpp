@@ -4,9 +4,20 @@
 
 #pragma once
 
+//Could add a minimum impulse thereshold to the imp variable it would just be a 
+//if (i > x) / if (i < x) depending on direction of impulse
+//Also could use only the first implements of impulse
+
+/*
+Class based on the contactlistener class,
+Only the postsolve method is in use:
+-It first adds the eigenvalue all of the impulses together
+-Secondly it removes health from the bodies which have health implemented
+*/
+
 class collision_listener : public b2ContactListener {
     void PostSolve(b2Contact *contact, const b2ContactImpulse *impulse) {
-        //std::cout << "1" << std::endl;
+        
         float imp = 0;
         for (auto i : impulse->normalImpulses) {
             if (i > 0) {
@@ -33,6 +44,6 @@ class collision_listener : public b2ContactListener {
         if (body_b) {
             static_cast<Destructables*>(body_b) -> ReduceHp(imp);
         }
-        //std::cout << "d" << std::endl;
+        
     }
 };
