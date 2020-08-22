@@ -118,6 +118,7 @@ class Level {
         //general variables
         const float SCALE_ = 30.f;
         b2World* world_;
+        sf::View view_;
 
         //constructor variables maybe added to stuff
         //float box_height;
@@ -141,6 +142,7 @@ class Level {
         float max_draw_ = 60;
         float angle_;
         float pig_time_ = 0;
+        sf::CircleShape cannnon_hitbox_;
         
 
         std::vector<Pigc> pigs_;

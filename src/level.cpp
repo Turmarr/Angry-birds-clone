@@ -73,10 +73,18 @@ Level::Level(std::string filename) {
     cannon_ = info.GetCannon();
 
     NextPig();
+
+    view_.setCenter(sf::Vector2f(400.f,300.f));
+    view_.setSize(sf::Vector2f(800.f, 600.f));
     //std::cout << "all" << std::endl;
     //std::cout << birds_.size() << std::endl;
     //std::cout << box_.size() << std::endl;
     //std::cout << world_->GetBodyCount() << std::endl;
+    cannnon_hitbox_.setPosition(cannon_.x,cannon_.y);
+    cannnon_hitbox_.setRadius(20);
+    cannnon_hitbox_.setFillColor(sf::Color::Red);
+    
+
     
 }
 
@@ -144,17 +152,15 @@ void Level::DrawScore(sf::RenderWindow& window) {
     text.setString(ss.str());
     text.setCharacterSize(20);
     text.setFillColor(sf::Color::Red);
-    text.setPosition( {10, 10} );
+    sf::Vector2f worldPos = window.mapPixelToCoords(sf::Vector2i(10.f,10.f));
+    text.setPosition(worldPos.x, worldPos.y);
     window.draw(text);
 }
 
 void Level::DrawCannon(sf::RenderWindow& window) {
-    sf::CircleShape shape;
-    shape.setPosition(cannon_.x, cannon_.y);
-    shape.setFillColor(sf::Color::Red);
-    shape.setRadius(20);
-    shape.setOrigin(shape.getLocalBounds().width/2, shape.getLocalBounds().height/2);
-    window.draw(shape);
+    cannnon_hitbox_.setOrigin(cannnon_hitbox_.getLocalBounds().width/2, cannnon_hitbox_.getLocalBounds().height/2);
+    
+    window.draw(cannnon_hitbox_);
 }
 
 float Level::GetDistance(float x1, float y1, float x2, float y2) {
@@ -208,6 +214,7 @@ void Level::DeleteDestroyed() {
 }
 
 void Level::DrawLevel(sf::RenderWindow& window) {
+    window.setView(view_);
     window.clear(sf::Color::White);
     DrawGround(window);
     DrawCannon(window);
@@ -243,6 +250,7 @@ int Level::Run(sf::RenderWindow& window) {
         //add the reseting of the camera once added
         //setup exiting the loop once the last pig dies
         if (current_pig_ != nullptr && pig_flying_) {
+            view_.setCenter(sf::Vector2f(current_pig_->GetPosition().x * SCALE_, current_pig_->GetPosition().y * SCALE_));
             if (current_pig_->GetSpeed() <= 0.1) {
                 pig_time_ += 1;
                 if (pig_time_ >= 60) {
@@ -255,6 +263,8 @@ int Level::Run(sf::RenderWindow& window) {
             }
         }
 
+
+
         sf::Event ev;
             while(window.pollEvent(ev))
             {
@@ -266,18 +276,25 @@ int Level::Run(sf::RenderWindow& window) {
                         if (pig_flying_ && !current_pig_->GetSpecialityUsed()) {
                             current_pig_->Special();
                         }
-                        else if (!pig_flying_) {
-                            float x = ev.mouseButton.x;
-                            float y = ev.mouseButton.y;
-                            if (GetDistance(cannon_.x, cannon_.y, x, y) <= 20 && current_pig_ != nullptr) {
+                        else if (!pig_flying_ && current_pig_ != nullptr) {
+                            sf::Vector2i pixelPos = sf::Mouse::getPosition(window);
+                            sf::Vector2f worldPos = window.mapPixelToCoords(pixelPos);
+                            float x = worldPos.x;
+                            float y = worldPos.y;
+                            //if (GetDistance(cannon_.x, cannon_.y, x, y) <= 20 && current_pig_ != nullptr) {
+                            //    pig_drawn_ = true;
+                            //}
+                            if (cannnon_hitbox_.getGlobalBounds().contains(x,y)) {
                                 pig_drawn_ = true;
                             }
                         }
                         break;
                     case sf::Event::MouseMoved:
                         if (pig_drawn_) {
-                            float x = ev.mouseMove.x;
-                            float y = ev.mouseMove.y;
+                            sf::Vector2i pixelPos = sf::Mouse::getPosition(window);
+                            sf::Vector2f worldPos = window.mapPixelToCoords(pixelPos);
+                            float x = worldPos.x;
+                            float y = worldPos.y;
                             ReadyCannon(x,y);
                         }
                         break;
