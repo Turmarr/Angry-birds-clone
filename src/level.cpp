@@ -207,12 +207,36 @@ void Level::DeleteDestroyed() {
     }
 }
 
+void Level::DrawLevel(sf::RenderWindow& window) {
+    window.clear(sf::Color::White);
+    DrawGround(window);
+    DrawCannon(window);
+    
+    if (current_pig_ != nullptr && pig_flying_) {
+        current_pig_->Draw(window);
+    }
+
+    for (auto i : birds_) {
+        i->Draw(window);
+    }
+    for (auto i : box_) {
+        i->Draw(window);
+    }
+    for (auto i : ball_) {
+        i->Draw(window);
+    }
+
+    DrawScore(window);
+
+    window.display();
+}
+
 int Level::Run(sf::RenderWindow& window) {
     while (running_) {
         //std::cout << "1" << std::endl;
         world_->Step(timeStep_, velocityIterations_, positionIterations_);
         //std::cout << world_->GetBodyCount() << std::endl;
-        window.clear(sf::Color::White);
+        
 
         DeleteDestroyed();        
         
@@ -220,8 +244,14 @@ int Level::Run(sf::RenderWindow& window) {
         //setup exiting the loop once the last pig dies
         if (current_pig_ != nullptr && pig_flying_) {
             if (current_pig_->GetSpeed() <= 0.1) {
-                delete current_pig_;
-                NextPig();
+                pig_time_ += 1;
+                if (pig_time_ >= 60) {
+                    delete current_pig_;
+                    NextPig();
+                }
+            }
+            else {
+                pig_time_ = 0;
             }
         }
 
@@ -259,27 +289,9 @@ int Level::Run(sf::RenderWindow& window) {
                 }
             }
 
+
         //Draws the level
-        DrawGround(window);
-        DrawCannon(window);
-        
-        if (current_pig_ != nullptr && pig_flying_) {
-            current_pig_->Draw(window);
-        }
-
-        for (auto i : birds_) {
-            i->Draw(window);
-        }
-        for (auto i : box_) {
-            i->Draw(window);
-        }
-        for (auto i : ball_) {
-            i->Draw(window);
-        }
-
-        DrawScore(window);
-
-        window.display();
+        DrawLevel(window);
     }
     return 0;
 }

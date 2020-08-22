@@ -113,6 +113,7 @@ class Level {
         void DrawCannon(sf::RenderWindow& window);
         void DrawScore(sf::RenderWindow& window);
         void DeleteDestroyed();
+        void DrawLevel(sf::RenderWindow& window);
 
         //general variables
         const float SCALE_ = 30.f;
@@ -139,6 +140,7 @@ class Level {
         Vect* draw_;
         float max_draw_ = 60;
         float angle_;
+        float pig_time_ = 0;
         
 
         std::vector<Pigc> pigs_;
