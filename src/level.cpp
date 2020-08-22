@@ -182,6 +182,7 @@ void Level::FirePig() {
 void Level::DeleteDestroyed() {
     std::vector<Bird*>::iterator it = birds_.begin();
     for (; it != birds_.end(); ) {
+        //std::cout << "birdhp" << (*it)->GetHp() << std::endl;
         if ((*it)->GetHp() <= 0) {
             delete *it;
             it = birds_.erase(it);
