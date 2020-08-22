@@ -9,6 +9,8 @@ Bird::Bird(float x, float y, b2World& world, const float scale, float radius, Po
     radius_ = radius;
 
     world_ = &world;
+
+    mat = Material("bird");
     
     initTexture();
     initSprite();
@@ -16,8 +18,8 @@ Bird::Bird(float x, float y, b2World& world, const float scale, float radius, Po
 
     points_ = points;
 
-    POINTS_ = 1000;
-    hp_ = 100;
+    POINTS_ = mat.points;
+    hp_ = mat.hp;
 
 }
 
@@ -38,7 +40,7 @@ void Bird::initSprite(){
 //Load texture from file
 void Bird::initTexture(){
 
-    if(!this->pic_.loadFromFile("Textures/bird.png")){
+    if(!this->pic_.loadFromFile(mat.texture)){
         std::cout<< "Error when loading the image from textures." <<std::endl;
     }
 }
@@ -54,7 +56,7 @@ void Bird::initPhysics(b2World& world){
     circle.m_radius = radius_/scale_;
 
     b2FixtureDef FixtureDef;
-    FixtureDef.density = 1.0f;
+    FixtureDef.density = mat.density;
     FixtureDef.friction = 0.3f;
 
     FixtureDef.shape = &circle;

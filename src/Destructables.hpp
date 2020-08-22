@@ -24,7 +24,7 @@ class Material {
             }
             else if (type == "bird") {
                 points = 1000;
-                hp = 100;
+                hp = 50;
                 texture = "Textures/bird.png";
                 density = 1;
             }
