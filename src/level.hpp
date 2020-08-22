@@ -146,7 +146,7 @@ class Level {
         float pig_time_ = 0;
         sf::CircleShape cannnon_hitbox_;
         float resize_;
-        float cannon_power_ = 10; //defines the max velocity of the pig
+        float cannon_power_ = 10; //defines the max velocity of the pig smaller = bigger
         
 
         std::vector<Pigc> pigs_;

@@ -162,7 +162,7 @@ void Level::DrawCannon(sf::RenderWindow& window) {
     
     sf::RectangleShape shape;
     shape.setPosition(cannon_.x, cannon_.y);
-    shape.setSize(sf::Vector2f(120,60));
+    shape.setSize(sf::Vector2f(90,60));
     shape.setOrigin(30,30);
     shape.rotate(angle_);
     shape.setFillColor(sf::Color::Black);
