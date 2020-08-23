@@ -24,17 +24,14 @@ int main(){
         while(window.pollEvent(ev))
         {
             
-            int result = test.Update(window, ev);
-            if (result == 1) {
+            State result = test.Update(window, ev);
+            if (result.i == 1) {
             window.close();
             }
             
             
         }
 
-            
-        
-        
         test.DrawLevel(window);
 
     }

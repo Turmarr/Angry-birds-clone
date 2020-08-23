@@ -87,6 +87,7 @@ Level::Level(std::string filename) {
     
     stars_ = info.GetStars();
     highscore_file_ = info.GetHighScoreFile();
+    viewxpos_ = cannon_.x;
     
 }
 
@@ -110,6 +111,8 @@ void Level::LastLevelCleared() {
 
 void Level::NextPig() {
     //std::cout << pigs_.size() << std::endl;
+    viewxpos_ = cannon_.x;
+    pig_passed_viewxpos_ = false;
     pig_flying_ = false;
     pig_drawn_ = false;
     if (pigs_.size() != 0) {
@@ -273,17 +276,29 @@ void Level::ControlView() {
     view_.zoom(resize_);
     float vsx = view_.getSize().x;
     float vsy = view_.getSize().y;
-    float vpx;
-    float vpy;
     float fh = ground_[0].y + ground_[0].height/2;
-    vpy = fh - vsy/2;
-    if (!pig_flying_) {
-        vpx = cannon_.x;
+    float vpy = fh - vsy/2;
+    if (pig_flying_) {
+        float vpx = current_pig_->GetPosition().x *SCALE_;
+        if (vpx >= viewxpos_) {
+            pig_passed_viewxpos_ = true;
+        } 
+        if (pig_passed_viewxpos_) {
+            viewxpos_ = vpx;
+        }
     }
     else {
-        vpx = current_pig_->GetPosition().x *SCALE_;
+        if (move_to_right_) {
+            viewxpos_ += 2;
+        }
+        if (move_to_left_) {
+            viewxpos_ -= 2;
+            if (viewxpos_ <= cannon_.x) {
+                viewxpos_ = cannon_.x;
+            }
+        }
     }
-    view_.setCenter(vpx,vpy);
+    view_.setCenter(viewxpos_,vpy);
     //std::cout << vpx << " " << vpy << std::endl;
 }
 
@@ -311,14 +326,12 @@ State Level::Update(sf::RenderWindow& window, sf::Event& ev) {
     DeleteDestroyed();
     State state;
     
-    //add the reseting of the camera once added
     //setup exiting the loop once the last pig dies
 
     resize_ = 1; //is needed so that the window stays the same size when not scrolling
     switch (ev.type)
     {
         case sf::Event::Closed:
-            
             state.i = 1;
             return state;
         case sf::Event::MouseButtonPressed:
@@ -355,11 +368,37 @@ State Level::Update(sf::RenderWindow& window, sf::Event& ev) {
                 resize_ = 1-ticks*0.01;
             }
             break;
-        case sf::Event::Resized:
+        case sf::Event::Resized: {
             sf::FloatRect visibleArea(0.f, 0.f, ev.size.width, ev.size.height);
             view_.reset(visibleArea);
             break;
-
+        }
+        case sf::Event::KeyPressed:
+            switch (ev.key.code) {
+                case sf::Keyboard::Right:
+                    move_to_right_ = true;
+                    break;
+                case sf::Keyboard::Left:
+                    move_to_left_ = true;
+                    break;
+                default:
+                    break;
+                }
+            break;
+        case sf::Event::KeyReleased:
+            switch (ev.key.code) {
+                case sf::Keyboard::Right:
+                    move_to_right_ = false;
+                    break;
+                case sf::Keyboard::Left:
+                    move_to_left_ = false;
+                    break;
+                default:
+                    break;
+                }
+            break;
+        default:
+            break;
     }
     
 
