@@ -189,8 +189,15 @@ void Level::DrawCannon(sf::RenderWindow& window) {
     shape.setOrigin(30,30);
     shape.rotate(angle_);
     shape.setFillColor(sf::Color::Black);
-    window.draw(shape);
-    window.draw(cannnon_hitbox_);
+    
+
+    sf::RectangleShape shape2;
+    shape2.setSize(sf::Vector2f(30, ground_[0].y));
+    shape2.setOrigin(15,0);
+    shape2.setFillColor(sf::Color::Blue);
+    shape2.setPosition(cannon_.x,cannon_.y);
+    
+
 
     if (pig_drawn_) {
         Vect offset;
@@ -208,6 +215,9 @@ void Level::DrawCannon(sf::RenderWindow& window) {
         window.draw(arrow);
     }
 
+    window.draw(shape);
+    window.draw(shape2);
+    window.draw(cannnon_hitbox_);
     
 }
 
@@ -264,8 +274,8 @@ void Level::DeleteDestroyed() {
 void Level::DrawLevel(sf::RenderWindow& window) {
     window.setView(view_);
     window.clear(sf::Color::White);
-    DrawGround(window);
     DrawCannon(window);
+    DrawGround(window);
     
     if (current_pig_ != nullptr && pig_flying_) {
         current_pig_->Draw(window);
