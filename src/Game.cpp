@@ -8,6 +8,7 @@ Game::Game(sf::RenderWindow& window, float width, float height): window_(window)
     initWindow();
     initMenus();
     state_.i = 0;
+    constructed_ = false;
 
 }
 
@@ -33,6 +34,7 @@ void Game::initMenus(){
 void Game::createLevel(){
     
     //level_ = new level(state_.file);
+    //constructed_ = true;
     
 }
 
@@ -40,7 +42,9 @@ void Game::deleteLevel(){
     
     lMenu_->updateStars();
     //delete level_;
+    //constructed_ = false;
     state_.i = 1;
+    
 }
 
 void Game::run(){
@@ -73,6 +77,9 @@ void Game::updatePollEvents(){
         } 
 
         else if (state_ == 4){
+            if (constucted_ == false){
+                createlevel();
+            }
             level_->update();
         }*/
 

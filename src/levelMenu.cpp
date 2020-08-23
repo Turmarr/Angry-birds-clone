@@ -82,7 +82,7 @@ void levelMenu::initBackground(){
 void levelMenu::initTexts(){
 
     toMenu.setFont(font);
-    toMenu.setString("press ESC ro return");
+    toMenu.setString("press ESC to return");
     toMenu.setFillColor(sf::Color::White);
     toMenu.setCharacterSize(20);
     toMenu.setOrigin(toMenu.getLocalBounds().width/2, toMenu.getLocalBounds().height/2);

@@ -35,8 +35,10 @@ class Game{
         Menu* menu_;
         levelMenu* lMenu_;
         //Level* level_;
+        bool constructed_;
 
         /* Defines the state of the screen - which class is running
+            state.i =
             0 - main menu
             1 - level menu
             2 - highscores

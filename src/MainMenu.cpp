@@ -34,12 +34,11 @@ Menu::Menu(float width, float height)
     menu[0].setPosition(x, y - 150);
 
     //Highscore button position
-    menu[1].setPosition(x+10, y);
+    menu[1].setPosition(x + 7, y);
 
     //Exit button position
     menu[2].setPosition(x-5, y + 150);
-
-
+   
     selectedItemIndex = 0;
 
 }
@@ -156,7 +155,7 @@ state Menu::updateMenuEvent(sf::Event& ev, sf::RenderWindow& window){
                 }
             }
             break;
-
+        
         default:
             break;
     }
