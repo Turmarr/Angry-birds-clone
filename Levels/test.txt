@@ -4,7 +4,7 @@
 # Pigs
 bomb 1
 speed 2
-normal 3
+bomb 3
 
 # Birds
 bird 300 320

@@ -6,6 +6,26 @@
 
 #IncludeRegexTransform: 
 
+/Users/aleksisohlman/angry-birds-2020-3/src/Bomb.cpp
+SFML/Graphics.hpp
+-
+Box2D/box2d/box2d.h
+/Users/aleksisohlman/angry-birds-2020-3/src/Box2D/box2d/box2d.h
+Bomb.hpp
+/Users/aleksisohlman/angry-birds-2020-3/src/Bomb.hpp
+iostream
+-
+
+/Users/aleksisohlman/angry-birds-2020-3/src/Bomb.hpp
+SFML/Graphics.hpp
+-
+Box2D/box2d/box2d.h
+/Users/aleksisohlman/angry-birds-2020-3/src/Box2D/box2d/box2d.h
+Pig.hpp
+/Users/aleksisohlman/angry-birds-2020-3/src/Pig.hpp
+list
+-
+
 /Users/aleksisohlman/angry-birds-2020-3/src/Box2D/box2d/b2_block_allocator.h
 b2_settings.h
 /Users/aleksisohlman/angry-birds-2020-3/src/Box2D/box2d/b2_settings.h
@@ -236,29 +256,29 @@ b2_weld_joint.h
 b2_wheel_joint.h
 /Users/aleksisohlman/angry-birds-2020-3/src/Box2D/box2d/b2_wheel_joint.h
 
-/Users/aleksisohlman/angry-birds-2020-3/src/Pig.hpp
+/Users/aleksisohlman/angry-birds-2020-3/src/Normal.cpp
 SFML/Graphics.hpp
 -
 Box2D/box2d/box2d.h
 /Users/aleksisohlman/angry-birds-2020-3/src/Box2D/box2d/box2d.h
+Normal.hpp
+/Users/aleksisohlman/angry-birds-2020-3/src/Normal.hpp
 iostream
 -
 
-/Users/aleksisohlman/angry-birds-2020-3/src/Speed.cpp
-SFML/Graphics.hpp
--
-Box2D/box2d/box2d.h
-/Users/aleksisohlman/angry-birds-2020-3/src/Box2D/box2d/box2d.h
-Speed.hpp
-/Users/aleksisohlman/angry-birds-2020-3/src/Speed.hpp
-iostream
--
-
-/Users/aleksisohlman/angry-birds-2020-3/src/Speed.hpp
+/Users/aleksisohlman/angry-birds-2020-3/src/Normal.hpp
 SFML/Graphics.hpp
 -
 Box2D/box2d/box2d.h
 /Users/aleksisohlman/angry-birds-2020-3/src/Box2D/box2d/box2d.h
 Pig.hpp
 /Users/aleksisohlman/angry-birds-2020-3/src/Pig.hpp
+
+/Users/aleksisohlman/angry-birds-2020-3/src/Pig.hpp
+SFML/Graphics.hpp
+-
+Box2D/box2d/box2d.h
+/Users/aleksisohlman/angry-birds-2020-3/src/Box2D/box2d/box2d.h
+iostream
+-
 

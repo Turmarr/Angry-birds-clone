@@ -307,9 +307,7 @@ void Level::ControlView() {
 
 int Level::Run(sf::RenderWindow& window) {
     while (running_) {
-        //std::cout << "1" << std::endl;
         world_->Step(timeStep_, velocityIterations_, positionIterations_);
-        //std::cout << world_->GetBodyCount() << std::endl;
         
 
         DeleteDestroyed();
@@ -318,7 +316,7 @@ int Level::Run(sf::RenderWindow& window) {
         //add the reseting of the camera once added
         //setup exiting the loop once the last pig dies
         if (current_pig_ != nullptr && pig_flying_) {
-            //view_.setCenter(sf::Vector2f(current_pig_->GetPosition().x * SCALE_, current_pig_->GetPosition().y * SCALE_));
+
             if (current_pig_->GetSpeed() <= 0.1) {
                 pig_time_ += 1;
                 if (pig_time_ >= 60) {

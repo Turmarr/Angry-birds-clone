@@ -4,6 +4,8 @@
 #include <iostream>
 
 Speed::Speed(float x, float y, b2World* world) {
+    std::cout << "Speed constructor called" << std::endl;
+
     initTexture();
     initCircle();
 

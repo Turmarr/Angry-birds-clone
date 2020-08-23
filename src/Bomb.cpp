@@ -34,7 +34,7 @@ Bomb::~Bomb() {
         i = NULL;
     }
 
-    //Destroy the bird
+    //Destroy the pig
     world_->DestroyBody(body_);
 }
 
