@@ -775,6 +775,7 @@ CMakeFiles/test.dir/src/level.cpp.o: ../src/collision_listener.hpp
 CMakeFiles/test.dir/src/level.cpp.o: ../src/filereader.hpp
 CMakeFiles/test.dir/src/level.cpp.o: ../src/level.cpp
 CMakeFiles/test.dir/src/level.cpp.o: ../src/level.hpp
+CMakeFiles/test.dir/src/level.cpp.o: ../src/state.hpp
 
 CMakeFiles/test.dir/src/main.cpp.o: ../src/Ball.hpp
 CMakeFiles/test.dir/src/main.cpp.o: ../src/Bird.hpp
@@ -823,4 +824,5 @@ CMakeFiles/test.dir/src/main.cpp.o: ../src/collision_listener.hpp
 CMakeFiles/test.dir/src/main.cpp.o: ../src/filereader.hpp
 CMakeFiles/test.dir/src/main.cpp.o: ../src/level.hpp
 CMakeFiles/test.dir/src/main.cpp.o: ../src/main.cpp
+CMakeFiles/test.dir/src/main.cpp.o: ../src/state.hpp
 

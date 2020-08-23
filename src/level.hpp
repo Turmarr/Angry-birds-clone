@@ -19,6 +19,7 @@
 #include "Bomb.hpp"
 #include "Points.hpp"
 #include "collision_listener.hpp"
+#include "state.hpp"
 
 
 #ifndef LEVEL_CLASS
@@ -78,9 +79,12 @@ class Level {
             return pigs_;
         }
 
-        int Run(sf::RenderWindow& window);
+        int Update(sf::RenderWindow& window, sf::Event& ev);
+        void Simulate();
+        void DrawLevel(sf::RenderWindow& window);
+
+
         //deconstructs the level, is where the level end screen will be determined
-        
         ~Level() {
             if (birds_.size() == 0) {
                 LastLevelCleared();
@@ -117,9 +121,10 @@ class Level {
         void DrawCannon(sf::RenderWindow& window);
         void DrawScore(sf::RenderWindow& window);
         void DeleteDestroyed();
-        void DrawLevel(sf::RenderWindow& window);
+        
         void ControlView();
         void LastLevelCleared();
+        
 
         //general variables
         const float SCALE_ = 30.f;
@@ -164,7 +169,8 @@ class Level {
         struct Cannonc cannon_;
         collision_listener* collisions_;
         int level_;
-        
+        struct Stars stars_;
+        std::string highscore_file_;
 };
 
 #endif

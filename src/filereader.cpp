@@ -53,6 +53,23 @@ int ReadLevel(std::string line) {
     return level;
 }
 
+std::string ReadHighScoreFile(std::string line) {
+    std::string file;
+    std::stringstream ss;
+    ss.str(line);
+    ss >> file;
+    return file;
+}
+
+Stars ReadStars(std::string line) {
+    Stars star;
+    std::stringstream ss;
+    ss.str(line);
+    ss >> star.first >> star.second >> star.third;
+    return star;
+}
+
+
 Filereader::Filereader(std::string filename) {
     std::ifstream file(filename);
 
@@ -102,7 +119,13 @@ Filereader::Filereader(std::string filename) {
                         break;
                     case 6:
                         level_ = ReadLevel(line);
-
+                        break;
+                    case 7:
+                        stars_ = ReadStars(line);
+                        break;
+                    case 8:
+                        highscore_file_ = ReadHighScoreFile(line);
+                        break;
                     default:
                         break;
                     

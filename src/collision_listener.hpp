@@ -20,18 +20,18 @@ class collision_listener : public b2ContactListener {
         
         float imp = 0;
         for (auto i : impulse->normalImpulses) {
-            if (i > 0) {
+            if (i > 1) {
                 imp += i;
             }
-            else {
+            else if (i < -1){
                 imp -= i;
             }
         }
         for (auto i : impulse->tangentImpulses) {
-            if (i > 0) {
+            if (i > 1) {
                 imp += i;
             }
-            else {
+            else if (i < -1){
                 imp -= i;
             }
         }

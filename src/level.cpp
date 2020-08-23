@@ -85,7 +85,8 @@ Level::Level(std::string filename) {
     cannnon_hitbox_.setRadius(20);
     cannnon_hitbox_.setFillColor(sf::Color::Red);
     
-
+    stars_ = info.GetStars();
+    highscore_file_ = info.GetHighScoreFile();
     
 }
 
@@ -102,7 +103,7 @@ void Level::LastLevelCleared() {
         level_ = level;
     }
     std::ofstream ofs("Levels/lastcleared.txt");
-    std::cout << level_ << std::endl;
+    //std::cout << level_ << std::endl;
     ofs << level_;
     ofs.close();
 }
@@ -286,21 +287,10 @@ void Level::ControlView() {
     //std::cout << vpx << " " << vpy << std::endl;
 }
 
+void Level::Simulate() {
+    world_->Step(timeStep_, velocityIterations_, positionIterations_);
 
-int Level::Run(sf::RenderWindow& window) {
-    while (running_) {
-        //std::cout << "1" << std::endl;
-        world_->Step(timeStep_, velocityIterations_, positionIterations_);
-        //std::cout << world_->GetBodyCount() << std::endl;
-        
-
-        DeleteDestroyed();
-           
-        
-        //add the reseting of the camera once added
-        //setup exiting the loop once the last pig dies
-        if (current_pig_ != nullptr && pig_flying_) {
-            //view_.setCenter(sf::Vector2f(current_pig_->GetPosition().x * SCALE_, current_pig_->GetPosition().y * SCALE_));
+    if (current_pig_ != nullptr && pig_flying_) {
             if (current_pig_->GetSpeed() <= 0.1) {
                 pig_time_ += 1;
                 if (pig_time_ >= 60) {
@@ -312,61 +302,72 @@ int Level::Run(sf::RenderWindow& window) {
                 pig_time_ = 0;
             }
         }
+    resize_ = 1;
+    ControlView();
+}
 
+int Level::Update(sf::RenderWindow& window, sf::Event& ev) {
+    //while (running_) {
+        DeleteDestroyed();
+        
+        //add the reseting of the camera once added
+        //setup exiting the loop once the last pig dies
+        
+        //Simulate();
 
         resize_ = 1; //is needed so that the window stays the same size when not scrolling
-        sf::Event ev;
-            while(window.pollEvent(ev))
+        //sf::Event ev;
+        //while(window.pollEvent(ev))
+        //{
+            switch (ev.type)
             {
-                switch (ev.type)
-                {
-                    case sf::Event::Closed:
-                        return 1;
-                    case sf::Event::MouseButtonPressed:
-                        if (pig_flying_) {
-                            current_pig_->Special();
+                case sf::Event::Closed:
+                    return 1;
+                case sf::Event::MouseButtonPressed:
+                    if (pig_flying_) {
+                        current_pig_->Special();
+                    }
+                    else if (!pig_flying_ && current_pig_ != nullptr) {
+                        sf::Vector2i pixelPos = sf::Mouse::getPosition(window);
+                        sf::Vector2f worldPos = window.mapPixelToCoords(pixelPos);
+                        float x = worldPos.x;
+                        float y = worldPos.y;
+                        if (cannnon_hitbox_.getGlobalBounds().contains(x,y)) {
+                            pig_drawn_ = true;
                         }
-                        else if (!pig_flying_ && current_pig_ != nullptr) {
-                            sf::Vector2i pixelPos = sf::Mouse::getPosition(window);
-                            sf::Vector2f worldPos = window.mapPixelToCoords(pixelPos);
-                            float x = worldPos.x;
-                            float y = worldPos.y;
-                            if (cannnon_hitbox_.getGlobalBounds().contains(x,y)) {
-                                pig_drawn_ = true;
-                            }
-                        }
-                        break;
-                    case sf::Event::MouseMoved:
-                        if (pig_drawn_) {
-                            sf::Vector2i pixelPos = sf::Mouse::getPosition(window);
-                            sf::Vector2f worldPos = window.mapPixelToCoords(pixelPos);
-                            float x = worldPos.x;
-                            float y = worldPos.y;
-                            ReadyCannon(x,y);
-                        }
-                        break;
-                    case sf::Event::MouseButtonReleased:
-                        if (pig_drawn_) {
-                            FirePig();
-                        }
-                        break;
-                    case sf::Event::MouseWheelScrolled:
-                        if (ev.mouseWheelScroll.wheel == sf::Mouse::VerticalWheel) {
-                            float ticks = ev.mouseWheelScroll.delta;
-                            resize_ = 1-ticks*0.01;
-                        }
-                        break;
-                    case sf::Event::Resized:
-                        sf::FloatRect visibleArea(0.f, 0.f, ev.size.width, ev.size.height);
-                        view_.reset(visibleArea);
-                        break;
+                    }
+                    break;
+                case sf::Event::MouseMoved:
+                    if (pig_drawn_) {
+                        sf::Vector2i pixelPos = sf::Mouse::getPosition(window);
+                        sf::Vector2f worldPos = window.mapPixelToCoords(pixelPos);
+                        float x = worldPos.x;
+                        float y = worldPos.y;
+                        ReadyCannon(x,y);
+                    }
+                    break;
+                case sf::Event::MouseButtonReleased:
+                    if (pig_drawn_) {
+                        FirePig();
+                    }
+                    break;
+                case sf::Event::MouseWheelScrolled:
+                    if (ev.mouseWheelScroll.wheel == sf::Mouse::VerticalWheel) {
+                        float ticks = ev.mouseWheelScroll.delta;
+                        resize_ = 1-ticks*0.01;
+                    }
+                    break;
+                case sf::Event::Resized:
+                    sf::FloatRect visibleArea(0.f, 0.f, ev.size.width, ev.size.height);
+                    view_.reset(visibleArea);
+                    break;
 
-                }
             }
+        //}
 
         ControlView();
-        //Draws the level
-        DrawLevel(window);
-    }
+        //Draws the level an own function in the end
+        //DrawLevel(window);
+    //}
     return 0;
 }

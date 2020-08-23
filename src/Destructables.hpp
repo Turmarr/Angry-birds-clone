@@ -24,19 +24,16 @@ class Material {
             }
             else if (type == "bird") {
                 points = 1000;
-                hp = 50;
+                hp = 10;
                 texture = "Textures/bird.png";
-                density = 1;
+                density = 0.5;
             }
         }
     int points;
     int hp;
     std::string texture;
     float density;
-
 };
-
-
 
 class Destructables
 {

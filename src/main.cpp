@@ -14,40 +14,28 @@ int main(){
     
     window.setFramerateLimit(60);
     //Bird bird = Bird(100.f, 100.f);
-    bool run = false;
-
+    
+    
     //std::cout << test.world_->GetBodyCount() << std::endl;
     //Game loop
     while (window.isOpen()){
+        test.Simulate();
         sf::Event ev;
         while(window.pollEvent(ev))
         {
-            switch (ev.type)
-            {
-                case sf::Event::Closed:
-                    window.close();
-                    break;
-                
-            }
-        }
-        window.clear(sf::Color::White);
-        sf::RectangleShape ground { { 800, 16 } };
-        ground.setOrigin(400.0f, 8.0f);
-        ground.setPosition(200, 400);
-        ground.setRotation(0);
-        ground.setFillColor(sf::Color::Red);
-        window.draw(ground);
-
-        if (!run) {
-            int result = test.Run(window);
+            
+            int result = test.Update(window, ev);
             if (result == 1) {
-                window.close();
+            window.close();
             }
-            run = true;
+            
+            
         }
+
             
         
-        window.display();
+        
+        test.DrawLevel(window);
 
     }
 

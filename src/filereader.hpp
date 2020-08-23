@@ -48,6 +48,12 @@ Groundboxes:
 
 Level
 "Which level it is"
+
+Stars
+"points for 1 star" "points for 2 stars" "points for 3 stars"
+
+File
+"Highscorefiles location"
 */
 
 class file_exception : public std::exception {
@@ -90,6 +96,12 @@ struct Groundc {
     float height;
 };
 
+struct Stars {
+    int first;
+    int second;
+    int third;
+};
+
 class Filereader {
     public:
         Filereader(std::string filename);
@@ -118,6 +130,14 @@ class Filereader {
             return level_;
         }
 
+        Stars GetStars() const {
+            return stars_;
+        }
+
+        std::string GetHighScoreFile() {
+            return highscore_file_;
+        }
+
     private:
         std::vector<struct Pigc> pigs_;
         std::vector<struct Birdc> birds_;
@@ -125,6 +145,9 @@ class Filereader {
         std::vector<struct Groundc> ground_;
         struct Cannonc cannon_;
         int level_;
+        std::string highscore_file_;
+        struct Stars stars_;
+        
 };
 
 #endif

@@ -6,9 +6,21 @@
 
 #IncludeRegexTransform: 
 
+/mnt/c/Users/tuoma/Documents/Programming/CPP/angry-birds-2020-3/src/Ball.cpp
+Ball.hpp
+/mnt/c/Users/tuoma/Documents/Programming/CPP/angry-birds-2020-3/src/Ball.hpp
+iostream
+-
+
 /mnt/c/Users/tuoma/Documents/Programming/CPP/angry-birds-2020-3/src/Ball.hpp
 Destructables.hpp
 /mnt/c/Users/tuoma/Documents/Programming/CPP/angry-birds-2020-3/src/Destructables.hpp
+
+/mnt/c/Users/tuoma/Documents/Programming/CPP/angry-birds-2020-3/src/Bird.cpp
+Bird.hpp
+/mnt/c/Users/tuoma/Documents/Programming/CPP/angry-birds-2020-3/src/Bird.hpp
+iostream
+-
 
 /mnt/c/Users/tuoma/Documents/Programming/CPP/angry-birds-2020-3/src/Bird.hpp
 Destructables.hpp
@@ -22,6 +34,12 @@ Box2D/box2d/box2d.h
 Pig.hpp
 /mnt/c/Users/tuoma/Documents/Programming/CPP/angry-birds-2020-3/src/Pig.hpp
 list
+-
+
+/mnt/c/Users/tuoma/Documents/Programming/CPP/angry-birds-2020-3/src/Box.cpp
+Box.hpp
+/mnt/c/Users/tuoma/Documents/Programming/CPP/angry-birds-2020-3/src/Box.hpp
+iostream
 -
 
 /mnt/c/Users/tuoma/Documents/Programming/CPP/angry-birds-2020-3/src/Box.hpp
@@ -365,4 +383,24 @@ Points.hpp
 /mnt/c/Users/tuoma/Documents/Programming/CPP/angry-birds-2020-3/src/Points.hpp
 collision_listener.hpp
 /mnt/c/Users/tuoma/Documents/Programming/CPP/angry-birds-2020-3/src/collision_listener.hpp
+state.hpp
+/mnt/c/Users/tuoma/Documents/Programming/CPP/angry-birds-2020-3/src/state.hpp
+
+/mnt/c/Users/tuoma/Documents/Programming/CPP/angry-birds-2020-3/src/main.cpp
+SFML/Graphics.hpp
+-
+SFML/System.hpp
+-
+SFML/Window.hpp
+-
+SFML/Audio.hpp
+-
+SFML/Network.hpp
+-
+level.hpp
+/mnt/c/Users/tuoma/Documents/Programming/CPP/angry-birds-2020-3/src/level.hpp
+
+/mnt/c/Users/tuoma/Documents/Programming/CPP/angry-birds-2020-3/src/state.hpp
+string
+-
 
