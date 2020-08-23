@@ -152,7 +152,7 @@ class Level {
         bool pig_flying_;
         bool pig_drawn_;
         Vect* draw_;
-        float max_draw_ = 60; //how big the max draw can be
+        float max_draw_ = 120; //how big the max draw can be
         float angle_ = 0;
         float pig_time_ = 0;
         sf::CircleShape cannnon_hitbox_;

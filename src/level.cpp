@@ -189,9 +189,26 @@ void Level::DrawCannon(sf::RenderWindow& window) {
     shape.setOrigin(30,30);
     shape.rotate(angle_);
     shape.setFillColor(sf::Color::Black);
-    
     window.draw(shape);
     window.draw(cannnon_hitbox_);
+
+    if (pig_drawn_) {
+        Vect offset;
+        offset.SetVec(draw_->x_,draw_->y_);
+        offset.SetLen(70);
+        sf::ConvexShape arrow;
+        arrow.setPointCount(3);
+        arrow.setPoint(0, sf::Vector2f(0,0));
+        arrow.setPoint(1, sf::Vector2f(draw_->GetLength(),10));
+        arrow.setPoint(2, sf::Vector2f(0,20));
+        arrow.setOrigin(0,10);
+        arrow.setFillColor(sf::Color::Red);
+        arrow.rotate(angle_);
+        arrow.setPosition(cannon_.x + offset.x_, cannon_.y + offset.y_);
+        window.draw(arrow);
+    }
+
+    
 }
 
 float Level::GetDistance(float x1, float y1, float x2, float y2) {
