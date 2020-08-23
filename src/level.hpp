@@ -8,6 +8,7 @@
 #include <list>
 #include <algorithm>
 #include <sstream>
+#include <map>
 
 #include "filereader.hpp"
 #include "Bird.hpp"
@@ -20,6 +21,7 @@
 #include "Points.hpp"
 #include "collision_listener.hpp"
 #include "state.hpp"
+
 
 
 #ifndef LEVEL_CLASS
@@ -79,7 +81,7 @@ class Level {
             return pigs_;
         }
 
-        int Update(sf::RenderWindow& window, sf::Event& ev);
+        State Update(sf::RenderWindow& window, sf::Event& ev);
         void Simulate();
         void DrawLevel(sf::RenderWindow& window);
 

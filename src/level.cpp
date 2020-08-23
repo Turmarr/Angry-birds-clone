@@ -306,68 +306,65 @@ void Level::Simulate() {
     ControlView();
 }
 
-int Level::Update(sf::RenderWindow& window, sf::Event& ev) {
-    //while (running_) {
-        DeleteDestroyed();
-        
-        //add the reseting of the camera once added
-        //setup exiting the loop once the last pig dies
-        
-        //Simulate();
+State Level::Update(sf::RenderWindow& window, sf::Event& ev) {
+    
+    DeleteDestroyed();
+    State state;
+    
+    //add the reseting of the camera once added
+    //setup exiting the loop once the last pig dies
 
-        resize_ = 1; //is needed so that the window stays the same size when not scrolling
-        //sf::Event ev;
-        //while(window.pollEvent(ev))
-        //{
-            switch (ev.type)
-            {
-                case sf::Event::Closed:
-                    return 1;
-                case sf::Event::MouseButtonPressed:
-                    if (pig_flying_) {
-                        current_pig_->Special();
-                    }
-                    else if (!pig_flying_ && current_pig_ != nullptr) {
-                        sf::Vector2i pixelPos = sf::Mouse::getPosition(window);
-                        sf::Vector2f worldPos = window.mapPixelToCoords(pixelPos);
-                        float x = worldPos.x;
-                        float y = worldPos.y;
-                        if (cannnon_hitbox_.getGlobalBounds().contains(x,y)) {
-                            pig_drawn_ = true;
-                        }
-                    }
-                    break;
-                case sf::Event::MouseMoved:
-                    if (pig_drawn_) {
-                        sf::Vector2i pixelPos = sf::Mouse::getPosition(window);
-                        sf::Vector2f worldPos = window.mapPixelToCoords(pixelPos);
-                        float x = worldPos.x;
-                        float y = worldPos.y;
-                        ReadyCannon(x,y);
-                    }
-                    break;
-                case sf::Event::MouseButtonReleased:
-                    if (pig_drawn_) {
-                        FirePig();
-                    }
-                    break;
-                case sf::Event::MouseWheelScrolled:
-                    if (ev.mouseWheelScroll.wheel == sf::Mouse::VerticalWheel) {
-                        float ticks = ev.mouseWheelScroll.delta;
-                        resize_ = 1-ticks*0.01;
-                    }
-                    break;
-                case sf::Event::Resized:
-                    sf::FloatRect visibleArea(0.f, 0.f, ev.size.width, ev.size.height);
-                    view_.reset(visibleArea);
-                    break;
-
+    resize_ = 1; //is needed so that the window stays the same size when not scrolling
+    switch (ev.type)
+    {
+        case sf::Event::Closed:
+            
+            state.i = 1;
+            return state;
+        case sf::Event::MouseButtonPressed:
+            if (pig_flying_) {
+                current_pig_->Special();
             }
-        //}
+            else if (!pig_flying_ && current_pig_ != nullptr) {
+                sf::Vector2i pixelPos = sf::Mouse::getPosition(window);
+                sf::Vector2f worldPos = window.mapPixelToCoords(pixelPos);
+                float x = worldPos.x;
+                float y = worldPos.y;
+                if (cannnon_hitbox_.getGlobalBounds().contains(x,y)) {
+                    pig_drawn_ = true;
+                }
+            }
+            break;
+        case sf::Event::MouseMoved:
+            if (pig_drawn_) {
+                sf::Vector2i pixelPos = sf::Mouse::getPosition(window);
+                sf::Vector2f worldPos = window.mapPixelToCoords(pixelPos);
+                float x = worldPos.x;
+                float y = worldPos.y;
+                ReadyCannon(x,y);
+            }
+            break;
+        case sf::Event::MouseButtonReleased:
+            if (pig_drawn_) {
+                FirePig();
+            }
+            break;
+        case sf::Event::MouseWheelScrolled:
+            if (ev.mouseWheelScroll.wheel == sf::Mouse::VerticalWheel) {
+                float ticks = ev.mouseWheelScroll.delta;
+                resize_ = 1-ticks*0.01;
+            }
+            break;
+        case sf::Event::Resized:
+            sf::FloatRect visibleArea(0.f, 0.f, ev.size.width, ev.size.height);
+            view_.reset(visibleArea);
+            break;
 
-        ControlView();
-        //Draws the level an own function in the end
-        //DrawLevel(window);
-    //}
-    return 0;
+    }
+    
+
+    ControlView();
+    
+    state.i = 4;
+    return state;
 }
