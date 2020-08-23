@@ -58,7 +58,7 @@ void Menu::initFonts(){
 
 void Menu::initTexture(){
 
-    if(!this->background.loadFromFile("Textures/sky.jpg")){
+    if(!this->background.loadFromFile("Textures/sky.png")){
         std::cout<< "Failed to load menu background." << std::endl;
     }
 }
