@@ -1,5 +1,6 @@
 #pragma once
 #include <SFML/Graphics.hpp>
+#include "state.hpp"
 
 class levelMenu
 {
@@ -10,7 +11,7 @@ private:
 
     //Which option is selected right now
     int selectedItemIndex;
-    int options_;
+    state options_;
 
     //Level options
     sf::Font font;
@@ -50,7 +51,7 @@ public:
     void updateStars();
 
     //Called from outside the class
-    int updateMenuEvent(sf::Event& ev, sf::RenderWindow& window);
+    state updateMenuEvent(sf::Event& ev, sf::RenderWindow& window);
     void Draw(sf::RenderWindow& window);
 
     //Used to "move" in the menu

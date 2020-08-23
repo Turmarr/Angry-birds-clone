@@ -1,5 +1,6 @@
 #pragma once
 #include <SFML/Graphics.hpp>
+#include "state.hpp"
 
 class Menu
 {
@@ -7,7 +8,7 @@ private:
 
     //Which button is selected
     int selectedItemIndex;
-    int options_;
+    state options_;
 
     //Menu buttons
     sf::Font font;
@@ -35,7 +36,7 @@ public:
     ~Menu();
 
     //Called from outside the class
-    int updateMenuEvent(sf::Event& ev, sf::RenderWindow& window);
+    state updateMenuEvent(sf::Event& ev, sf::RenderWindow& window);
     void Draw(sf::RenderWindow& window);
 
     //Used to "move" in the menu

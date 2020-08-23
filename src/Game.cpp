@@ -7,7 +7,7 @@ Game::Game(sf::RenderWindow& window, float width, float height): window_(window)
 
     initWindow();
     initMenus();
-    state_ = 0;
+    state_.i = 0;
 
 }
 
@@ -32,30 +32,15 @@ void Game::initMenus(){
 //Chooses which file is downloaded
 void Game::createLevel(){
     
-    /*switch (state_)
-    {
-    case 4:
-        level = Level("")
-        break;
+    //level_ = new level(state_.file);
     
-    case 5:
-        level = Level("")
-        break;
-
-    case 6:
-        level = Level("")
-        break;
-
-    default:
-        break;
-    }*/
 }
 
 void Game::deleteLevel(){
     
     lMenu_->updateStars();
     //delete level_;
-    state_ = 1;
+    state_.i = 1;
 }
 
 void Game::run(){
@@ -75,11 +60,11 @@ void Game::updatePollEvents(){
 
     while(window_.pollEvent(ev)){
 
-        if (state_ == 0){
-            state_ = menu_->updateMenuEvent(ev, window_);
+        if (state_.i == 0){
+            state_= menu_->updateMenuEvent(ev, window_);
         }
 
-        else if (state_ == 1){
+        else if (state_.i == 1){
             state_ = lMenu_->updateMenuEvent(ev, window_);
         }
         
@@ -87,11 +72,11 @@ void Game::updatePollEvents(){
             state_ = lMenu_->updateMenuEvent(ev, window_);
         } 
 
-        else if (state_ == 4 || state_ == 5 || state_ == 6){
-            level_->updateEvent();
+        else if (state_ == 4){
+            level_->update();
         }*/
 
-        if (state_ == 3){
+        if (state_.i == 3){
             window_.close();
         }
     }
@@ -101,10 +86,10 @@ void Game::updatePollEvents(){
 //Updates game forward
 void Game::update(){
 
-   /*if (state_ == 4 || state_ == 5 || state_ == 6){
-       level_->update();
+   /*if (state_ == 4){
+       level_->Simulate();
    }*/
-   if (state_ == 7){
+   if (state_.i == 7){
        deleteLevel();
    }
     
@@ -114,20 +99,20 @@ void Game::render(){
 
     window_.clear();
 
-   if (state_ == 0){
+   if (state_.i == 0){
             menu_->Draw(window_);
         }
         
-        else if (state_ == 1){
+        else if (state_.i == 1){
             lMenu_->Draw(window_);
         }
         
-        /*else if (state_ == 2){        
+        /*else if (state_.i == 2){        
             highscore->Draw(window_);
         } 
 
-        else if (state_ == 4 || state_ == 5 || state_ == 6){
-            level_->Draw(window_);
+        else if (state_.i == 4){
+            level_->drawlevel(window_);
         }*/
 
     window_.display();

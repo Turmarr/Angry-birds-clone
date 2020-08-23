@@ -2,6 +2,8 @@
 #include <SFML/Graphics.hpp>
 #include "MainMenu.hpp"
 #include "levelMenu.hpp"
+#include "state.hpp"
+//#include "level.hpp"
 #include <iostream>
 
 class Game{
@@ -39,10 +41,11 @@ class Game{
             1 - level menu
             2 - highscores
             3 - exit
-            4,5,6 - tells which level has been chosen
-            7 - called when a level has ended (either closed or finished and saved)
+            4 - when playing the game itself
+            5 - called when a level has ended (either closed or finished and saved)
+            Also passes a string which is used to hold filename.
         */
-        int state_;
+        state state_;
 
         //Initializers
         void initWindow();

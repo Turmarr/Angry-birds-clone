@@ -102,12 +102,13 @@ void Menu::moveDown(){
     }
 }
 //movement in the Main Menu screen
-int Menu::updateMenuEvent(sf::Event& ev, sf::RenderWindow& window){
+state Menu::updateMenuEvent(sf::Event& ev, sf::RenderWindow& window){
 
     switch (ev.type){
 
         case sf::Event::Closed:
-            return 3;
+            options_.i = 3;
+            return options_;
             break;
             
         case sf::Event::KeyReleased:
@@ -115,7 +116,8 @@ int Menu::updateMenuEvent(sf::Event& ev, sf::RenderWindow& window){
             switch (ev.key.code){
                 
                 case sf::Keyboard::Escape:
-                    return 3;
+                    options_.i = 3;
+                    return options_;
                     break;
 
                 case sf::Keyboard::Down:
@@ -127,9 +129,8 @@ int Menu::updateMenuEvent(sf::Event& ev, sf::RenderWindow& window){
                     break;
 
                 case sf::Keyboard::Return:
-                    
-                    options_ = this->returnSelectedItem();
-                    return (options_ +1);
+                    options_.i = this->returnSelectedItem()+1;
+                    return options_;
                     break;
 
                 default:
@@ -148,7 +149,8 @@ int Menu::updateMenuEvent(sf::Event& ev, sf::RenderWindow& window){
                     for (int i = 0; i <3; i++){
 
                         if(menu[i].getGlobalBounds().contains(mousePosView)){
-                            return (i+1);
+                            options_.i = i+1;
+                            return options_;
                             }
                         }
                 }
@@ -160,6 +162,6 @@ int Menu::updateMenuEvent(sf::Event& ev, sf::RenderWindow& window){
     }
 
     mouseHeld = false;
-
-    return 0;
+    options_.i = 0;
+    return options_;
 }

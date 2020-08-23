@@ -162,12 +162,13 @@ void levelMenu::moveRight(){
     }
 }
 //level chooser input
-int levelMenu::updateMenuEvent(sf::Event& ev, sf::RenderWindow& window){
+state levelMenu::updateMenuEvent(sf::Event& ev, sf::RenderWindow& window){
 
     switch (ev.type){
 
         case sf::Event::Closed:
-            return 3;
+            options_.i = 3;
+            return options_;
             break;
 
         case sf::Event::KeyReleased:
@@ -175,7 +176,8 @@ int levelMenu::updateMenuEvent(sf::Event& ev, sf::RenderWindow& window){
             switch (ev.key.code){
 
                 case sf::Keyboard::Escape:
-                    return 0;
+                    options_.i = 0;
+                    return options_;
                     break;
 
                 case sf::Keyboard::Left:
@@ -188,29 +190,29 @@ int levelMenu::updateMenuEvent(sf::Event& ev, sf::RenderWindow& window){
 
                 case sf::Keyboard::Return:
                     
-                    options_ = this->returnSelectedItem();
-                    return (options_ + 4);
-                    break;
-                    /*switch (options_){
+                    options_.i = this->returnSelectedItem();
+                    switch (options_.i){
 
                         case 0:
-                            std::cout<< "Level 1" << std::endl;
-                            return 4;
+                            options_.file = "level1.txt";
+                            return options_;
                             break;
                         
                         case 1:
-                            std::cout<< "Level 2" << std::endl;
-                            return 5;
+                            options_.file = "level2.txt";
+                            return options_;
                             break;
 
                         case 2:
-                            std::cout<< "Level 3" << std::endl;
-                            return 6;
+                            options_.file = "level3.txt";
+                            return options_;
                             break;
                         
                         default:
-                            break;*/
-                    
+                            break;
+                    }
+                    break;
+
                 default:
                     break;
                 }
@@ -229,11 +231,32 @@ int levelMenu::updateMenuEvent(sf::Event& ev, sf::RenderWindow& window){
                         
                         if(menu[i].getGlobalBounds().contains(mousePosView)){
                             
-                            return (i+1);
+                            options_.i = i;
+                            switch (options_.i){
+
+                                case 0:
+                                    options_.file = "level1.txt";
+                                    return options_;
+                                    break;
+                                
+                                case 1:
+                                    options_.file = "level2.txt";
+                                    return options_;
+                                    break;
+
+                                case 2:
+                                    options_.file = "level3.txt";
+                                    return options_;
+                                    break;
+                                
+                                default:
+                                    break;
                             }
                         }
+                    }
                 }
             }
+
             break;
         
         default:
@@ -242,8 +265,8 @@ int levelMenu::updateMenuEvent(sf::Event& ev, sf::RenderWindow& window){
     }
 
     mouseHeld = false;
-
-    return 1;
+    options_.i = 1;
+    return options_;
 }
 //Setting stars to non-transparent
 void levelMenu::updateStars(){
