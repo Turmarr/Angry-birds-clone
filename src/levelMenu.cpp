@@ -63,7 +63,7 @@ void levelMenu::initFonts(){
 
 void levelMenu::initTexture(){
 
-    if(!this->background.loadFromFile("Textures/sky.jpg")){
+    if(!this->background.loadFromFile("Textures/sky.png")){
         std::cout<< "Failed to load menu background." << std::endl;
     }
     if(!this->imag.loadFromFile("Textures/star.png")){
@@ -103,7 +103,7 @@ void levelMenu::initTexts(){
 void levelMenu::initStars(){
 
     int y = 400;
-    int x = 180;
+    int x = 277;
     int count = 0;
 
     for (int i = 0; i <9; i++){

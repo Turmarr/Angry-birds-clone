@@ -7,7 +7,7 @@
 
 int main(){
 
-    float width = 1000;
+    float width = 1200;
     float height = 700;
     sf::RenderWindow window(sf::VideoMode(width, height), "Vengeful Pigs", sf::Style::Close | sf::Style::Titlebar);
     Game game(window, width, height);
