@@ -17,22 +17,9 @@ public:
 
 private:
 
-    //Pointer to Box2D object
-    
-
-    //Objects heigth and width. Set at 2m so when scaled should be 60 pixels
-    float heigth_ = 2.0f;
-    float width_ = 2.0f;
-
-    sf::Texture texture_;
-
     //Loads texture from file
     void initTexture();
 
-    sf::Sprite sprite_;
-
     //Sets sprites texture
-    void initSprite();
-
-    int SCALE = 30;
+    void initCircle();
 };

@@ -26,7 +26,7 @@ class Material {
                 points = 1000;
                 hp = 10;
                 texture = "Textures/bird.png";
-                density = 0.5;
+                density = 1;
             }
         }
     int points;

@@ -38,8 +38,28 @@ public:
         return body_->GetPosition();
     }
 
+    
 protected:
-    b2Body* body_;
-    bool specialityUsed = false;
+    //Pointer to the Box2d world
     b2World* world_;
+
+    //Pointer to Box2D object
+    b2Body* body_;
+
+    //Objects radius. Set at 1m so circle should be 60 pixels
+    float radius_ = 1.0f;
+
+    sf::Texture texture_;
+
+    //Loads texture from file
+    virtual void initTexture() = 0;
+
+    sf::CircleShape circle_;
+
+    //Sets sprites texture
+    virtual void initCircle() = 0;
+
+    int SCALE = 30;
+
+    bool specialityUsed = false;
 };

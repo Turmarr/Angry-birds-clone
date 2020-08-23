@@ -2,9 +2,9 @@
 150 200
 
 # Pigs
-bomb 1
+normal 1
 bomb 2
-bomb 3
+speed 3
 
 # Birds
 bird 300 450
@@ -15,7 +15,9 @@ ball wood 400 500 60 0 0
 ball stone 400 400 30 0 0
 
 # groundpoints
-400 570 800 60
+400 570 3000 60
+1200 150 10 800
+-200 150 10 800
 
 #
 2

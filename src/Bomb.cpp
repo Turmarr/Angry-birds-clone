@@ -5,7 +5,7 @@
 
 Bomb::Bomb(float x, float y, b2World* world) {
     initTexture();
-    initSprite();
+    initCircle();
 
     world_ = world;
 
@@ -16,11 +16,11 @@ Bomb::Bomb(float x, float y, b2World* world) {
     bodyDef.position.Set(x, y);
     body_ = world_->CreateBody(&bodyDef);
 
-    b2PolygonShape dynamicBox;
-    dynamicBox.SetAsBox((width_/2), (heigth_/2));
+    b2CircleShape dynamicCircle;
+    dynamicCircle.m_radius = radius_;
 
     b2FixtureDef fixtureDef;
-    fixtureDef.shape = &dynamicBox;
+    fixtureDef.shape = &dynamicCircle;
     fixtureDef.density = 1.0f;
     fixtureDef.friction = 0.3f;
 
@@ -40,10 +40,10 @@ Bomb::~Bomb() {
 
 void Bomb::Draw(sf::RenderWindow& window) {
     //std::cout << body_->GetPosition().x << " " << body_->GetPosition().y << std::endl;
-    sprite_.setOrigin(width_ / 2 * SCALE, width_ / 2 * SCALE);
-    sprite_.setPosition(body_->GetPosition().x * SCALE, body_->GetPosition().y * SCALE);
-    sprite_.setRotation(body_->GetAngle() * 180/b2_pi);
-    window.draw(sprite_);
+    circle_.setOrigin(radius_ * SCALE, radius_ * SCALE);
+    circle_.setPosition(body_->GetPosition().x * SCALE, body_->GetPosition().y * SCALE);
+    circle_.setRotation(body_->GetAngle() * 180/b2_pi);
+    window.draw(circle_);
 
     for (auto i : blastParticleBodies_) {
         float vel = sqrt(pow(i->GetLinearVelocity().x, 2) + pow(i->GetLinearVelocity().y, 2));
@@ -111,8 +111,11 @@ void Bomb::Special() {
         //Save all particles to a list so we can delete them when objects destructor is called
         blastParticleBodies_.push_back(particle);
     }
+
     specialityUsed = true;
 }
+
+
 
 void Bomb::initTexture(){
     if(!texture_.loadFromFile("Textures/bomb_pig.png", sf::IntRect(0, 0, 60, 60))){
@@ -120,6 +123,7 @@ void Bomb::initTexture(){
     }
 }
 
-void Bomb::initSprite(){
-    this->sprite_.setTexture(this->texture_);
+void Bomb::initCircle(){
+    circle_.setRadius(radius_ * SCALE);
+    circle_.setTexture(&texture_);
 }

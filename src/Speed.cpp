@@ -1,9 +1,9 @@
 #include <SFML/Graphics.hpp>
 #include "Box2D/box2d/box2d.h"
-#include "Normal.hpp"
+#include "Speed.hpp"
 #include <iostream>
 
-Normal::Normal(float x, float y, b2World* world) {
+Speed::Speed(float x, float y, b2World* world) {
     initTexture();
     initCircle();
 
@@ -27,24 +27,39 @@ Normal::Normal(float x, float y, b2World* world) {
     body_->CreateFixture(&fixtureDef);
 }
 
-Normal::~Normal() {
+Speed::~Speed() {
     world_->DestroyBody(body_);
 }
 
-void Normal::Draw(sf::RenderWindow& window) {
+void Speed::Draw(sf::RenderWindow& window) {
     circle_.setOrigin(radius_ * SCALE, radius_ * SCALE);
     circle_.setPosition(body_->GetPosition().x * SCALE, body_->GetPosition().y * SCALE);
     circle_.setRotation(body_->GetAngle() * 180/b2_pi);
     window.draw(circle_);
 }
 
-void Normal::initTexture(){
-    if(!texture_.loadFromFile("Textures/normal_pig.png", sf::IntRect(0, 0, 60, 60))){
+void Speed::Special() {
+    if(specialityUsed){
+        return;
+    }
+
+    float impulse = 3;
+    b2Vec2 vel = body_->GetLinearVelocity();
+    body_->SetLinearVelocity(b2Vec2(vel.x * impulse, vel.y * impulse));
+    
+    
+    //body_->ApplyLinearImpulseToCenter(b2Vec2(cos(body_->GetAngle()) * impulse, sin(body_->GetAngle()) * impulse), true);
+    
+    specialityUsed = true;
+}
+
+void Speed::initTexture(){
+    if(!texture_.loadFromFile("Textures/speed_pig.png", sf::IntRect(0, 0, 60, 60))){
         std::cout<< "Error when loading the image from textures." <<std::endl;
     }
 }
 
-void Normal::initCircle(){
+void Speed::initCircle(){
     circle_.setRadius(radius_ * SCALE);
     circle_.setTexture(&texture_);
 }

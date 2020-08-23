@@ -50,6 +50,7 @@ file(REMOVE_RECURSE
   "CMakeFiles/test.dir/src/Box2D/b2_world.cpp.o"
   "CMakeFiles/test.dir/src/Box2D/b2_world_callbacks.cpp.o"
   "CMakeFiles/test.dir/src/Normal.cpp.o"
+  "CMakeFiles/test.dir/src/Speed.cpp.o"
   "CMakeFiles/test.dir/src/filereader.cpp.o"
   "CMakeFiles/test.dir/src/level.cpp.o"
   "CMakeFiles/test.dir/src/main.cpp.o"
