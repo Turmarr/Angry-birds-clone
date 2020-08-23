@@ -152,6 +152,11 @@ class Level {
         float resize_;
         float cannon_power_ = 10; //defines the max velocity of the pig smaller = bigger
         
+        //camera control
+        bool custom_camera_;
+        bool moving_camera_;
+        float camera_offset_;
+        float last_mouse_x_;
 
         std::vector<Pigc> pigs_;
         Pig* current_pig_;

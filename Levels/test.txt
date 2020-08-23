@@ -1,0 +1,21 @@
+# cannon
+0 350
+
+# Pigs
+bomb 1
+bomb 2
+bomb 3
+
+# Birds
+bird 300 320
+
+# Objects
+box stone 300 400 0 60 60
+ball wood 400 290 60 0 0
+ball stone 400 400 30 0 0
+
+# groundpoints
+-1000 450 5000 80
+
+#
+2

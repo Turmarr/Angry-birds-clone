@@ -1,9 +1,10 @@
 cmake_minimum_required(VERSION 3.16.3)
-project(test)
+set(CMAKE_CXX_STANDARD 11)
+project(Angry_Birds)
 
 #include_directories(src/Box2D/box2d/)
 
-set(EXECUTABLE_NAME test)
+set(EXECUTABLE_NAME Angry_Birds)
 
 file(GLOB SOURCES src/*.cpp src/*.hpp src/Box2D/*)
 add_executable(${EXECUTABLE_NAME} ${SOURCES})

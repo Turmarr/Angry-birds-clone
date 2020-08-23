@@ -8,7 +8,8 @@
 int main(){
 
 
-    Level test("LeveLs/test.txt");
+    Level test("../Levels/test.txt");
+    
 
     sf::RenderWindow window(sf::VideoMode(1000, 750), "Testing for enemies");
     
@@ -30,13 +31,7 @@ int main(){
                 
             }
         }
-        window.clear(sf::Color::White);
-        sf::RectangleShape ground { { 800, 16 } };
-        ground.setOrigin(400.0f, 8.0f);
-        ground.setPosition(200, 400);
-        ground.setRotation(0);
-        ground.setFillColor(sf::Color::Red);
-        window.draw(ground);
+   
 
         if (!run) {
             int result = test.Run(window);

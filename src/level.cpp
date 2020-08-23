@@ -85,13 +85,15 @@ Level::Level(std::string filename) {
     cannnon_hitbox_.setRadius(20);
     cannnon_hitbox_.setFillColor(sf::Color::Red);
     
-
+    custom_camera_ = false;
+    moving_camera_ = false;
+    camera_offset_ = 0;
     
 }
 
 void Level::LastLevelCleared() {
     int level = 0;
-    std::ifstream ifs("Levels/lastcleared.txt");
+    std::ifstream ifs("../Levels/lastcleared.txt");
     if (ifs.rdstate() & (ifs.failbit | ifs.badbit)) { }
     else {
         ifs >> level;
@@ -101,7 +103,7 @@ void Level::LastLevelCleared() {
     if (level > level_) {
         level_ = level;
     }
-    std::ofstream ofs("Levels/lastcleared.txt");
+    std::ofstream ofs("../Levels/lastcleared.txt");
     std::cout << level_ << std::endl;
     ofs << level_;
     ofs.close();
@@ -154,14 +156,19 @@ void Level::DrawGround(sf::RenderWindow& window) {
         ground.setOrigin(i.width/2, i.height/2);
         ground.setPosition(i.x, i.y);
         //ground.setRotation(groundBody->GetAngle() * 180/b2_pi);
-        ground.setFillColor(sf::Color::Black);
+        ground.setFillColor(sf::Color(8, 130, 16));
+        sf::RectangleShape line(sf::Vector2f(i.width, 2));
+        line.setOrigin(i.width/2, i.height/2);
+        line.setPosition(i.x, i.y );
+        line.setFillColor(sf::Color::Black);
         window.draw(ground);
+        window.draw(line);
     }
 }
 
 void Level::DrawScore(sf::RenderWindow& window) {
     sf::Font font;
-    if (!font.loadFromFile("arial.ttf")) {
+    if (!font.loadFromFile("../arial.ttf")) {
         std::cout << "error getting font"<< std::endl;
     }
     sf::Text text;
@@ -242,7 +249,7 @@ void Level::DeleteDestroyed() {
 
 void Level::DrawLevel(sf::RenderWindow& window) {
     window.setView(view_);
-    window.clear(sf::Color::White);
+    window.clear(sf::Color(66, 224, 255));
     DrawGround(window);
     DrawCannon(window);
     
@@ -276,13 +283,20 @@ void Level::ControlView() {
     float vpy;
     float fh = ground_[0].y + ground_[0].height/2;
     vpy = fh - vsy/2;
-    if (!pig_flying_) {
-        vpx = cannon_.x;
+    
+    if (!pig_flying_ and not custom_camera_) {
+        vpx = cannon_.x ;
+    }
+    else if(custom_camera_){
+        vpx = cannon_.x + camera_offset_;
+        if(vpx < -500) {vpx = -500;}
+        if(vpx > 1500) {vpx = 1500;}
+        
     }
     else {
         vpx = current_pig_->GetPosition().x *SCALE_;
     }
-    view_.setCenter(vpx,vpy);
+    view_.setCenter(vpx + 175 ,vpy);
     //std::cout << vpx << " " << vpy << std::endl;
 }
 
@@ -333,6 +347,14 @@ int Level::Run(sf::RenderWindow& window) {
                             float y = worldPos.y;
                             if (cannnon_hitbox_.getGlobalBounds().contains(x,y)) {
                                 pig_drawn_ = true;
+                                custom_camera_ = false;
+                            }
+                            else {
+                                custom_camera_ = true;
+                                moving_camera_ = true;
+                                sf::Vector2i pixelPos = sf::Mouse::getPosition(window);
+                                sf::Vector2f worldPos = window.mapPixelToCoords(pixelPos);
+                                last_mouse_x_ = worldPos.x;
                             }
                         }
                         break;
@@ -344,10 +366,19 @@ int Level::Run(sf::RenderWindow& window) {
                             float y = worldPos.y;
                             ReadyCannon(x,y);
                         }
+                        if(moving_camera_){
+                            sf::Vector2i pixelPos = sf::Mouse::getPosition(window);
+                            sf::Vector2f worldPos = window.mapPixelToCoords(pixelPos);
+                            float x = worldPos.x;
+                            camera_offset_ += (last_mouse_x_ - x) / 20;
+                        }
                         break;
                     case sf::Event::MouseButtonReleased:
                         if (pig_drawn_) {
                             FirePig();
+                        }
+                        if(moving_camera_){
+                            moving_camera_ = false;
                         }
                         break;
                     case sf::Event::MouseWheelScrolled:
@@ -367,6 +398,7 @@ int Level::Run(sf::RenderWindow& window) {
         ControlView();
         //Draws the level
         DrawLevel(window);
+        
     }
     return 0;
 }
