@@ -5,7 +5,7 @@
 
 Bomb::Bomb(float x, float y, b2World* world) {
     initTexture();
-    initSprite();
+    initCircle();
 
     world_ = world;
 
@@ -16,11 +16,11 @@ Bomb::Bomb(float x, float y, b2World* world) {
     bodyDef.position.Set(x, y);
     body_ = world_->CreateBody(&bodyDef);
 
-    b2PolygonShape dynamicBox;
-    dynamicBox.SetAsBox((width_/2), (heigth_/2));
+    b2CircleShape dynamicCircle;
+    dynamicCircle.m_radius = radius_;
 
     b2FixtureDef fixtureDef;
-    fixtureDef.shape = &dynamicBox;
+    fixtureDef.shape = &dynamicCircle;
     fixtureDef.density = 1.0f;
     fixtureDef.friction = 0.3f;
 
@@ -36,13 +36,6 @@ Bomb::~Bomb() {
 
     //Destroy the bird
     world_->DestroyBody(body_);
-}
-
-void Bomb::Draw(sf::RenderWindow& window) {
-    sprite_.setOrigin(width_ / 2 * SCALE, width_ / 2 * SCALE);
-    sprite_.setPosition(body_->GetPosition().x * SCALE, body_->GetPosition().y * SCALE);
-    sprite_.setRotation(body_->GetAngle() * 180/b2_pi);
-    window.draw(sprite_);
 }
 
 void Bomb::Special() {
@@ -97,14 +90,24 @@ void Bomb::Special() {
         //Save all particles to a list so we can delete them when objects destructor is called
         blastParticleBodies_.push_back(particle);
     }
+
+    specialityUsed = true;
+}
+
+void Bomb::Draw(sf::RenderWindow& window) {
+    circle_.setOrigin(radius_ * SCALE, radius_ * SCALE);
+    circle_.setPosition(body_->GetPosition().x * SCALE, body_->GetPosition().y * SCALE);
+    circle_.setRotation(body_->GetAngle() * 180/b2_pi);
+    window.draw(circle_);
 }
 
 void Bomb::initTexture(){
-    if(!texture_.loadFromFile("/Users/henrivalimaki/Desktop/Yliopisto/C++/angry-birds-2020-3/src/Textures/bomb_pig.png", sf::IntRect(0, 0, 60, 60))){
+    if(!texture_.loadFromFile("/Users/henrivalimaki/Desktop/Yliopisto/C++/angry-birds-2020-3/build/Textures/bomb_pig.png", sf::IntRect(0, 0, 60, 60))){
         std::cout<< "Error when loading the image from textures." <<std::endl;
     }
 }
 
-void Bomb::initSprite(){
-    this->sprite_.setTexture(this->texture_);
+void Bomb::initCircle(){
+    circle_.setRadius(radius_ * SCALE);
+    circle_.setTexture(&texture_);
 }

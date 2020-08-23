@@ -3,6 +3,7 @@
 #include <iostream>
 #include "Normal.hpp"
 #include "Bomb.hpp"
+#include "Speed.hpp"
 
 int scale = 30;
 
@@ -36,10 +37,13 @@ int main()
 	// Add the ground fixture to the ground body.
 	groundBody->CreateFixture(&groundBox, 0.0f);
 
-	Normal pig1(12.f, 3.f, &world);
-	Normal pig2(20.f, 0.f, &world);
+	/*Normal pig1(13.f, 3.f, &world);
+	Normal pig2(18.f, 0.f, &world);
 
-	Bomb pig3(16.f, 0.f, &world);
+	Bomb pig3(16.f, 0.f, &world);*/
+
+	Speed pig4(16.f, 0.f, &world);
+	
 
 	// Define the dynamic body. We set its position and call the body factory.
 	/*b2BodyDef bodyDef;
@@ -96,7 +100,8 @@ int main()
         }
 
 		if (sf::Keyboard::isKeyPressed(sf::Keyboard::Space)){
-			pig3.Special();
+			//pig3.Special();
+			pig4.Special();
 		}
 
         window.clear();
@@ -118,9 +123,10 @@ int main()
         box.setPosition(sf::Vector2f(position2.x * scale, position2.y * scale));*/
 
         window.draw(ground);
-		pig1.Draw(window);
+		/*pig1.Draw(window);
 		pig2.Draw(window);
-		pig3.Draw(window);
+		pig3.Draw(window);*/
+		pig4.Draw(window);
         //window.draw(box);
 
         window.display();

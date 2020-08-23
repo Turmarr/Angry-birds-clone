@@ -753,6 +753,119 @@ CMakeFiles/Angry_Birds.dir/src/Normal.cpp.o
  /usr/local/include/SFML/Window/Window.hpp
  /usr/local/include/SFML/Window/WindowHandle.hpp
  /usr/local/include/SFML/Window/WindowStyle.hpp
+CMakeFiles/Angry_Birds.dir/src/Speed.cpp.o
+ /Users/henrivalimaki/Desktop/Yliopisto/C++/angry-birds-2020-3/src/Box2D/box2d/b2_block_allocator.h
+ /Users/henrivalimaki/Desktop/Yliopisto/C++/angry-birds-2020-3/src/Box2D/box2d/b2_body.h
+ /Users/henrivalimaki/Desktop/Yliopisto/C++/angry-birds-2020-3/src/Box2D/box2d/b2_broad_phase.h
+ /Users/henrivalimaki/Desktop/Yliopisto/C++/angry-birds-2020-3/src/Box2D/box2d/b2_chain_shape.h
+ /Users/henrivalimaki/Desktop/Yliopisto/C++/angry-birds-2020-3/src/Box2D/box2d/b2_circle_shape.h
+ /Users/henrivalimaki/Desktop/Yliopisto/C++/angry-birds-2020-3/src/Box2D/box2d/b2_collision.h
+ /Users/henrivalimaki/Desktop/Yliopisto/C++/angry-birds-2020-3/src/Box2D/box2d/b2_contact.h
+ /Users/henrivalimaki/Desktop/Yliopisto/C++/angry-birds-2020-3/src/Box2D/box2d/b2_contact_manager.h
+ /Users/henrivalimaki/Desktop/Yliopisto/C++/angry-birds-2020-3/src/Box2D/box2d/b2_distance_joint.h
+ /Users/henrivalimaki/Desktop/Yliopisto/C++/angry-birds-2020-3/src/Box2D/box2d/b2_draw.h
+ /Users/henrivalimaki/Desktop/Yliopisto/C++/angry-birds-2020-3/src/Box2D/box2d/b2_dynamic_tree.h
+ /Users/henrivalimaki/Desktop/Yliopisto/C++/angry-birds-2020-3/src/Box2D/box2d/b2_edge_shape.h
+ /Users/henrivalimaki/Desktop/Yliopisto/C++/angry-birds-2020-3/src/Box2D/box2d/b2_fixture.h
+ /Users/henrivalimaki/Desktop/Yliopisto/C++/angry-birds-2020-3/src/Box2D/box2d/b2_friction_joint.h
+ /Users/henrivalimaki/Desktop/Yliopisto/C++/angry-birds-2020-3/src/Box2D/box2d/b2_gear_joint.h
+ /Users/henrivalimaki/Desktop/Yliopisto/C++/angry-birds-2020-3/src/Box2D/box2d/b2_growable_stack.h
+ /Users/henrivalimaki/Desktop/Yliopisto/C++/angry-birds-2020-3/src/Box2D/box2d/b2_joint.h
+ /Users/henrivalimaki/Desktop/Yliopisto/C++/angry-birds-2020-3/src/Box2D/box2d/b2_math.h
+ /Users/henrivalimaki/Desktop/Yliopisto/C++/angry-birds-2020-3/src/Box2D/box2d/b2_motor_joint.h
+ /Users/henrivalimaki/Desktop/Yliopisto/C++/angry-birds-2020-3/src/Box2D/box2d/b2_mouse_joint.h
+ /Users/henrivalimaki/Desktop/Yliopisto/C++/angry-birds-2020-3/src/Box2D/box2d/b2_polygon_shape.h
+ /Users/henrivalimaki/Desktop/Yliopisto/C++/angry-birds-2020-3/src/Box2D/box2d/b2_prismatic_joint.h
+ /Users/henrivalimaki/Desktop/Yliopisto/C++/angry-birds-2020-3/src/Box2D/box2d/b2_pulley_joint.h
+ /Users/henrivalimaki/Desktop/Yliopisto/C++/angry-birds-2020-3/src/Box2D/box2d/b2_revolute_joint.h
+ /Users/henrivalimaki/Desktop/Yliopisto/C++/angry-birds-2020-3/src/Box2D/box2d/b2_rope_joint.h
+ /Users/henrivalimaki/Desktop/Yliopisto/C++/angry-birds-2020-3/src/Box2D/box2d/b2_settings.h
+ /Users/henrivalimaki/Desktop/Yliopisto/C++/angry-birds-2020-3/src/Box2D/box2d/b2_shape.h
+ /Users/henrivalimaki/Desktop/Yliopisto/C++/angry-birds-2020-3/src/Box2D/box2d/b2_stack_allocator.h
+ /Users/henrivalimaki/Desktop/Yliopisto/C++/angry-birds-2020-3/src/Box2D/box2d/b2_time_step.h
+ /Users/henrivalimaki/Desktop/Yliopisto/C++/angry-birds-2020-3/src/Box2D/box2d/b2_timer.h
+ /Users/henrivalimaki/Desktop/Yliopisto/C++/angry-birds-2020-3/src/Box2D/box2d/b2_weld_joint.h
+ /Users/henrivalimaki/Desktop/Yliopisto/C++/angry-birds-2020-3/src/Box2D/box2d/b2_wheel_joint.h
+ /Users/henrivalimaki/Desktop/Yliopisto/C++/angry-birds-2020-3/src/Box2D/box2d/b2_world.h
+ /Users/henrivalimaki/Desktop/Yliopisto/C++/angry-birds-2020-3/src/Box2D/box2d/b2_world_callbacks.h
+ /Users/henrivalimaki/Desktop/Yliopisto/C++/angry-birds-2020-3/src/Box2D/box2d/box2d.h
+ /Users/henrivalimaki/Desktop/Yliopisto/C++/angry-birds-2020-3/src/Pig.hpp
+ /Users/henrivalimaki/Desktop/Yliopisto/C++/angry-birds-2020-3/src/Speed.cpp
+ /Users/henrivalimaki/Desktop/Yliopisto/C++/angry-birds-2020-3/src/Speed.hpp
+ /usr/local/include/SFML/Config.hpp
+ /usr/local/include/SFML/Graphics.hpp
+ /usr/local/include/SFML/Graphics/BlendMode.hpp
+ /usr/local/include/SFML/Graphics/CircleShape.hpp
+ /usr/local/include/SFML/Graphics/Color.hpp
+ /usr/local/include/SFML/Graphics/ConvexShape.hpp
+ /usr/local/include/SFML/Graphics/Drawable.hpp
+ /usr/local/include/SFML/Graphics/Export.hpp
+ /usr/local/include/SFML/Graphics/Font.hpp
+ /usr/local/include/SFML/Graphics/Glsl.hpp
+ /usr/local/include/SFML/Graphics/Glsl.inl
+ /usr/local/include/SFML/Graphics/Glyph.hpp
+ /usr/local/include/SFML/Graphics/Image.hpp
+ /usr/local/include/SFML/Graphics/PrimitiveType.hpp
+ /usr/local/include/SFML/Graphics/Rect.hpp
+ /usr/local/include/SFML/Graphics/Rect.inl
+ /usr/local/include/SFML/Graphics/RectangleShape.hpp
+ /usr/local/include/SFML/Graphics/RenderStates.hpp
+ /usr/local/include/SFML/Graphics/RenderTarget.hpp
+ /usr/local/include/SFML/Graphics/RenderTexture.hpp
+ /usr/local/include/SFML/Graphics/RenderWindow.hpp
+ /usr/local/include/SFML/Graphics/Shader.hpp
+ /usr/local/include/SFML/Graphics/Shape.hpp
+ /usr/local/include/SFML/Graphics/Sprite.hpp
+ /usr/local/include/SFML/Graphics/Text.hpp
+ /usr/local/include/SFML/Graphics/Texture.hpp
+ /usr/local/include/SFML/Graphics/Transform.hpp
+ /usr/local/include/SFML/Graphics/Transformable.hpp
+ /usr/local/include/SFML/Graphics/Vertex.hpp
+ /usr/local/include/SFML/Graphics/VertexArray.hpp
+ /usr/local/include/SFML/Graphics/VertexBuffer.hpp
+ /usr/local/include/SFML/Graphics/View.hpp
+ /usr/local/include/SFML/System.hpp
+ /usr/local/include/SFML/System/Clock.hpp
+ /usr/local/include/SFML/System/Err.hpp
+ /usr/local/include/SFML/System/Export.hpp
+ /usr/local/include/SFML/System/FileInputStream.hpp
+ /usr/local/include/SFML/System/InputStream.hpp
+ /usr/local/include/SFML/System/Lock.hpp
+ /usr/local/include/SFML/System/MemoryInputStream.hpp
+ /usr/local/include/SFML/System/Mutex.hpp
+ /usr/local/include/SFML/System/NonCopyable.hpp
+ /usr/local/include/SFML/System/Sleep.hpp
+ /usr/local/include/SFML/System/String.hpp
+ /usr/local/include/SFML/System/String.inl
+ /usr/local/include/SFML/System/Thread.hpp
+ /usr/local/include/SFML/System/Thread.inl
+ /usr/local/include/SFML/System/ThreadLocal.hpp
+ /usr/local/include/SFML/System/ThreadLocalPtr.hpp
+ /usr/local/include/SFML/System/ThreadLocalPtr.inl
+ /usr/local/include/SFML/System/Time.hpp
+ /usr/local/include/SFML/System/Utf.hpp
+ /usr/local/include/SFML/System/Utf.inl
+ /usr/local/include/SFML/System/Vector2.hpp
+ /usr/local/include/SFML/System/Vector2.inl
+ /usr/local/include/SFML/System/Vector3.hpp
+ /usr/local/include/SFML/System/Vector3.inl
+ /usr/local/include/SFML/Window.hpp
+ /usr/local/include/SFML/Window/Clipboard.hpp
+ /usr/local/include/SFML/Window/Context.hpp
+ /usr/local/include/SFML/Window/ContextSettings.hpp
+ /usr/local/include/SFML/Window/Cursor.hpp
+ /usr/local/include/SFML/Window/Event.hpp
+ /usr/local/include/SFML/Window/Export.hpp
+ /usr/local/include/SFML/Window/GlResource.hpp
+ /usr/local/include/SFML/Window/Joystick.hpp
+ /usr/local/include/SFML/Window/Keyboard.hpp
+ /usr/local/include/SFML/Window/Mouse.hpp
+ /usr/local/include/SFML/Window/Sensor.hpp
+ /usr/local/include/SFML/Window/Touch.hpp
+ /usr/local/include/SFML/Window/VideoMode.hpp
+ /usr/local/include/SFML/Window/Window.hpp
+ /usr/local/include/SFML/Window/WindowHandle.hpp
+ /usr/local/include/SFML/Window/WindowStyle.hpp
 CMakeFiles/Angry_Birds.dir/src/main.cpp.o
  /Users/henrivalimaki/Desktop/Yliopisto/C++/angry-birds-2020-3/src/Bomb.hpp
  /Users/henrivalimaki/Desktop/Yliopisto/C++/angry-birds-2020-3/src/Box2D/box2d/b2_block_allocator.h
@@ -792,6 +905,7 @@ CMakeFiles/Angry_Birds.dir/src/main.cpp.o
  /Users/henrivalimaki/Desktop/Yliopisto/C++/angry-birds-2020-3/src/Box2D/box2d/box2d.h
  /Users/henrivalimaki/Desktop/Yliopisto/C++/angry-birds-2020-3/src/Normal.hpp
  /Users/henrivalimaki/Desktop/Yliopisto/C++/angry-birds-2020-3/src/Pig.hpp
+ /Users/henrivalimaki/Desktop/Yliopisto/C++/angry-birds-2020-3/src/Speed.hpp
  /Users/henrivalimaki/Desktop/Yliopisto/C++/angry-birds-2020-3/src/main.cpp
  /usr/local/include/SFML/Config.hpp
  /usr/local/include/SFML/Graphics.hpp
