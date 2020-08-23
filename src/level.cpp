@@ -125,6 +125,10 @@ void Level::NextPig() {
             Bomb *pig = new Bomb(cannon_.x / SCALE_, cannon_.y / SCALE_, world_);
             current_pig_ = pig;
         }
+        else if (current.type == "speed") {
+            Speed *pig = new Speed(cannon_.x / SCALE_, cannon_.y / SCALE_, world_);
+            current_pig_ = pig;
+        }
         else {
             current_pig_ = nullptr;
         }

@@ -1520,6 +1520,33 @@ src/Normal.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Angry_Birds.dir/build.make CMakeFiles/Angry_Birds.dir/src/Normal.cpp.s
 .PHONY : src/Normal.cpp.s
 
+src/Speed.o: src/Speed.cpp.o
+
+.PHONY : src/Speed.o
+
+# target to build an object file
+src/Speed.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Angry_Birds.dir/build.make CMakeFiles/Angry_Birds.dir/src/Speed.cpp.o
+.PHONY : src/Speed.cpp.o
+
+src/Speed.i: src/Speed.cpp.i
+
+.PHONY : src/Speed.i
+
+# target to preprocess a source file
+src/Speed.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Angry_Birds.dir/build.make CMakeFiles/Angry_Birds.dir/src/Speed.cpp.i
+.PHONY : src/Speed.cpp.i
+
+src/Speed.s: src/Speed.cpp.s
+
+.PHONY : src/Speed.s
+
+# target to generate assembly for a file
+src/Speed.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Angry_Birds.dir/build.make CMakeFiles/Angry_Birds.dir/src/Speed.cpp.s
+.PHONY : src/Speed.cpp.s
+
 src/filereader.o: src/filereader.cpp.o
 
 .PHONY : src/filereader.o
@@ -1763,6 +1790,9 @@ help:
 	@echo "... src/Normal.o"
 	@echo "... src/Normal.i"
 	@echo "... src/Normal.s"
+	@echo "... src/Speed.o"
+	@echo "... src/Speed.i"
+	@echo "... src/Speed.s"
 	@echo "... src/filereader.o"
 	@echo "... src/filereader.i"
 	@echo "... src/filereader.s"

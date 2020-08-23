@@ -17,6 +17,7 @@
 #include "Pig.hpp"
 #include "Normal.hpp"
 #include "Bomb.hpp"
+#include "Speed.hpp"
 #include "Points.hpp"
 #include "collision_listener.hpp"
 
