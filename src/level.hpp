@@ -18,6 +18,7 @@
 #include "Pig.hpp"
 #include "Normal.hpp"
 #include "Bomb.hpp"
+#include "Speed.hpp"
 #include "Points.hpp"
 #include "collision_listener.hpp"
 #include "state.hpp"
@@ -159,11 +160,18 @@ class Level {
         sf::CircleShape cannnon_hitbox_;
         float resize_;
         float cannon_power_ = 10; //defines the max velocity of the pig smaller = bigger
+
+
         float viewxpos_;
         bool pig_passed_viewxpos_ = false;
         bool move_to_right_ = false;
         bool move_to_left_ = false;
-
+        
+        //camera control
+        bool custom_camera_;
+        bool moving_camera_;
+        float camera_offset_;
+        float last_mouse_x_;
 
         std::vector<Pigc> pigs_;
         Pig* current_pig_;

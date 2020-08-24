@@ -88,12 +88,15 @@ Level::Level(std::string filename) {
     stars_ = info.GetStars();
     highscore_file_ = info.GetHighScoreFile();
     viewxpos_ = cannon_.x;
+    custom_camera_ = false;
+    moving_camera_ = false;
+    camera_offset_ = 175;
     
 }
 
 void Level::LastLevelCleared() {
     int level = 0;
-    std::ifstream ifs("Levels/lastcleared.txt");
+    std::ifstream ifs("../Levels/lastcleared.txt");
     if (ifs.rdstate() & (ifs.failbit | ifs.badbit)) { }
     else {
         ifs >> level;
@@ -103,7 +106,7 @@ void Level::LastLevelCleared() {
     if (level > level_) {
         level_ = level;
     }
-    std::ofstream ofs("Levels/lastcleared.txt");
+    std::ofstream ofs("../Levels/lastcleared.txt");
     //std::cout << level_ << std::endl;
     ofs << level_;
     ofs.close();
@@ -112,6 +115,7 @@ void Level::LastLevelCleared() {
 void Level::NextPig() {
     //std::cout << pigs_.size() << std::endl;
     viewxpos_ = cannon_.x;
+    camera_offset_ = 175;
     pig_passed_viewxpos_ = false;
     pig_flying_ = false;
     pig_drawn_ = false;
@@ -162,14 +166,19 @@ void Level::DrawGround(sf::RenderWindow& window) {
         ground.setOrigin(i.width/2, i.height/2);
         ground.setPosition(i.x, i.y);
         //ground.setRotation(groundBody->GetAngle() * 180/b2_pi);
-        ground.setFillColor(sf::Color::Black);
+        ground.setFillColor(sf::Color(8, 130, 16));
+        sf::RectangleShape line(sf::Vector2f(i.width, 2));
+        line.setOrigin(i.width/2, i.height/2);
+        line.setPosition(i.x, i.y );
+        line.setFillColor(sf::Color::Black);
         window.draw(ground);
+        window.draw(line);
     }
 }
 
 void Level::DrawScore(sf::RenderWindow& window) {
     sf::Font font;
-    if (!font.loadFromFile("arial.ttf")) {
+    if (!font.loadFromFile("../arial.ttf")) {
         std::cout << "error getting font"<< std::endl;
     }
     sf::Text text;
@@ -319,15 +328,21 @@ void Level::ControlView() {
         }
     }
     else {
-        if (move_to_right_) {
-            viewxpos_ += 2;
-        }
-        if (move_to_left_) {
-            viewxpos_ -= 2;
-            if (viewxpos_ <= cannon_.x) {
-                viewxpos_ = cannon_.x;
-            }
-        }
+        viewxpos_ = cannon_.x + 175 + camera_offset_;
+    }
+    
+    if (move_to_right_) {
+        camera_offset_ += 2;
+    }
+    if (move_to_left_) {
+        camera_offset_ -= 2;
+        
+    }
+    if (viewxpos_ <= cannon_.x) {
+        viewxpos_ = cannon_.x;
+    }
+    if (viewxpos_ >= cannon_.x + 1500) {
+        viewxpos_ = cannon_.x + 1500;
     }
     view_.setCenter(viewxpos_,vpy);
     //std::cout << vpx << " " << vpy << std::endl;
@@ -376,6 +391,14 @@ State Level::Update(sf::RenderWindow& window, sf::Event& ev) {
                 float y = worldPos.y;
                 if (cannnon_hitbox_.getGlobalBounds().contains(x,y)) {
                     pig_drawn_ = true;
+                    custom_camera_ = false;
+                }
+                else {
+                    custom_camera_ = true;
+                    moving_camera_ = true;
+                    sf::Vector2i pixelPos = sf::Mouse::getPosition(window);
+                    sf::Vector2f worldPos = window.mapPixelToCoords(pixelPos);
+                    last_mouse_x_ = worldPos.x;
                 }
             }
             break;
@@ -387,10 +410,19 @@ State Level::Update(sf::RenderWindow& window, sf::Event& ev) {
                 float y = worldPos.y;
                 ReadyCannon(x,y);
             }
+            if(moving_camera_){
+                sf::Vector2i pixelPos = sf::Mouse::getPosition(window);
+                sf::Vector2f worldPos = window.mapPixelToCoords(pixelPos);
+                float x = worldPos.x;
+                camera_offset_ += (last_mouse_x_ - x) / 20;
+            }
             break;
         case sf::Event::MouseButtonReleased:
             if (pig_drawn_) {
                 FirePig();
+            }
+            if(moving_camera_){
+                moving_camera_ = false;
             }
             break;
         case sf::Event::MouseWheelScrolled:

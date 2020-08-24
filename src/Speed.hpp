@@ -2,6 +2,7 @@
 #include "Box2D/box2d/box2d.h"
 #include "Pig.hpp"
 
+#pragma once
 class Speed: public Pig {
 public:
     //Constructor. Creates a new Box2D object

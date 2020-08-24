@@ -54,7 +54,7 @@ void Speed::Special() {
 }
 
 void Speed::initTexture(){
-    if(!texture_.loadFromFile("Textures/speed_pig.png", sf::IntRect(0, 0, 60, 60))){
+    if(!texture_.loadFromFile("../Textures/speed_pig.png", sf::IntRect(0, 0, 60, 60))){
         std::cout<< "Error when loading the image from textures." <<std::endl;
     }
 }

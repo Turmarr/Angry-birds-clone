@@ -13,19 +13,19 @@ class Material {
             if (type == "wood") {
                 points = 100;
                 hp = 100;
-                texture = "Textures/wood.jpg";
+                texture = "../Textures/wood.jpg";
                 density = 1;
             }
             else if (type == "stone") {
                 points = 200;
                 hp = 200;
-                texture = "Textures/stone.jpg";
+                texture = "../Textures/stone.jpg";
                 density = 2;
             }
             else if (type == "bird") {
                 points = 1000;
-                hp = 10;
-                texture = "Textures/bird.png";
+                hp = 50;
+                texture = "../Textures/bird.png";
                 density = 1;
             }
         }
