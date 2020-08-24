@@ -15,6 +15,7 @@ levelMenu::levelMenu(float width, float height)
     initStars();
     updateStars();
 
+
     menu[0].setString("1");
     menu[1].setString("2");
     menu[2].setString("3");
@@ -22,17 +23,19 @@ levelMenu::levelMenu(float width, float height)
     for (int i = 0; i < 3; i++){
 
         menu[i].setFont(font);
-        menu[i].setFillColor(sf::Color::White);
+        menu[i].setFillColor(sf::Color(0, 0, 0, 80));
         menu[i].setOutlineColor(sf::Color::Black);
         menu[i].setOutlineThickness(2.f);
         menu[i].setCharacterSize(50);
         menu[i].setOrigin(menu[i].getLocalBounds().width/2, menu[i].getLocalBounds().height/2);
     }
+    
+    updateLevel();
+    
     int x = width_/2;
     int y = height_/2 - 50;
 
     //Level 1 button
-   
     menu[0].setPosition(x - 250, y);
     menu[0].setCharacterSize(60);
     menu[0].setFillColor(sf::Color::Blue);
@@ -41,8 +44,8 @@ levelMenu::levelMenu(float width, float height)
     menu[1].setPosition(x, y);
    
     //Level 3 button
-    
     menu[2].setPosition(x + 250, y);
+    
 
     selectedItemIndex = 0;
 
@@ -84,6 +87,8 @@ void levelMenu::initTexts(){
     toMenu.setFont(font);
     toMenu.setString("press ESC to return");
     toMenu.setFillColor(sf::Color::White);
+    toMenu.setOutlineColor(sf::Color::Black);
+    toMenu.setOutlineThickness(1.f);
     toMenu.setCharacterSize(20);
     toMenu.setOrigin(toMenu.getLocalBounds().width/2, toMenu.getLocalBounds().height/2);
     toMenu.setPosition(120.f, 20.f);
@@ -153,7 +158,7 @@ void levelMenu::moveLeft(){
 
 void levelMenu::moveRight(){
     
-    if (selectedItemIndex +1 < 3){
+    if (selectedItemIndex +1 < 3 && selectedItemIndex+1 <= maxLevelIndex){
         menu[selectedItemIndex].setCharacterSize(50);
         menu[selectedItemIndex].setFillColor(sf::Color::White);
         selectedItemIndex++;
@@ -229,23 +234,23 @@ state levelMenu::updateMenuEvent(sf::Event& ev, sf::RenderWindow& window){
                 
                     for (int i = 0; i <3; i++){
                         
-                        if(menu[i].getGlobalBounds().contains(mousePosView)){
+                        if(menu[i].getGlobalBounds().contains(mousePosView) && (i+1) <= maxLevelIndex){
                             
                             options_.i = i;
                             switch (options_.i){
 
                                 case 0:
-                                    options_.file = "level1.txt";
+                                    options_.file = "Levels/level1.txt";
                                     return options_;
                                     break;
                                 
                                 case 1:
-                                    options_.file = "level2.txt";
+                                    options_.file = "Levels/level2.txt";
                                     return options_;
                                     break;
 
                                 case 2:
-                                    options_.file = "level3.txt";
+                                    options_.file = "Levels/level3.txt";
                                     return options_;
                                     break;
                                 
@@ -299,5 +304,25 @@ void levelMenu::updateStars(){
             }
         } 
     }
+    is.close();
+}
 
+void levelMenu::updateLevel(){
+    
+    std::ifstream is("lastlevel.txt");
+    if(is.rdstate() & (is.failbit | is.badbit)){
+        std::cerr << "Failed to load file stars.txt" << std::endl;
+    }
+    std::string line;
+    std::getline(is, line);
+
+    std::stringstream ss;
+    ss.str(line);
+    ss >> maxLevelIndex;
+    is.close();
+
+    for (int i = 0; i < (maxLevelIndex+1);i++){
+        menu[i].setFillColor(sf::Color::White);
+        
+    }
 }

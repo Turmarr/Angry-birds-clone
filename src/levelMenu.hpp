@@ -12,6 +12,7 @@ private:
     //Which option is selected right now
     int selectedItemIndex;
     state options_;
+    int maxLevelIndex;
 
     //Level options
     sf::Font font;
@@ -49,6 +50,7 @@ public:
 
     //Loads the information about levels' star rating
     void updateStars();
+    void updateLevel();
 
     //Called from outside the class
     state updateMenuEvent(sf::Event& ev, sf::RenderWindow& window);

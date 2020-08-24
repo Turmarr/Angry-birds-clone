@@ -16,6 +16,9 @@ Game::~Game(){
 
     delete lMenu_;
     delete menu_;
+    /*if (level_ != nullptr){
+        delete level_;
+    }*/
 }
 
 void Game::initWindow(){
@@ -41,6 +44,7 @@ void Game::createLevel(){
 void Game::deleteLevel(){
     
     lMenu_->updateStars();
+    lMenu_->updateLevel();
     //delete level_;
     //constructed_ = false;
     state_.i = 1;
@@ -72,15 +76,15 @@ void Game::updatePollEvents(){
             state_ = lMenu_->updateMenuEvent(ev, window_);
         }
         
-        /*else if (state_ == 2){        
+        /*else if (state_.i == 2){        
             state_ = lMenu_->updateMenuEvent(ev, window_);
         } 
 
-        else if (state_ == 4){
+        else if (state_.i == 4){
             if (constucted_ == false){
                 createlevel();
             }
-            level_->update();
+            level_->Update(window_, ev);
         }*/
 
         if (state_.i == 3){
@@ -119,7 +123,7 @@ void Game::render(){
         } 
 
         else if (state_.i == 4){
-            level_->drawlevel(window_);
+            level_->DrawLevel(window_);
         }*/
 
     window_.display();
