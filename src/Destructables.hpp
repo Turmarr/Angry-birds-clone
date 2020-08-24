@@ -13,19 +13,31 @@ class Material {
             if (type == "wood") {
                 points = 100;
                 hp = 100;
-                texture = "../Textures/wood.jpg";
+                texture = "../src/Textures/wood.jpg";
                 density = 1;
             }
             else if (type == "stone") {
                 points = 200;
                 hp = 200;
-                texture = "../Textures/stone.jpg";
+                texture = "../src/Textures/stone.jpg";
                 density = 2;
             }
             else if (type == "bird") {
                 points = 1000;
+                hp = 20;
+                texture = "../src/Textures/bird.png";
+                density = 1;
+            }
+            else if (type == "strongbird") {
+                points = 2000;
                 hp = 50;
-                texture = "../Textures/bird.png";
+                texture = "../src/Textures/bird.png";
+                density = 1;
+            }
+            else if (type == "kingbird") {
+                points = 5000;
+                hp = 20;
+                texture = "../src/Textures/bird.png";
                 density = 1;
             }
         }

@@ -8,7 +8,7 @@
 int main(){
 
 
-    Level test("Levels/test.txt");
+    Level test("../Levels/test.txt");
     
 
     sf::RenderWindow window(sf::VideoMode(1000, 750), "Testing for enemies");

@@ -96,7 +96,7 @@ Level::Level(std::string filename) {
 
 void Level::LastLevelCleared() {
     int level = 0;
-    std::ifstream ifs("../Levels/lastcleared.txt");
+    std::ifstream ifs("../src/Levels/lastcleared.txt");
     if (ifs.rdstate() & (ifs.failbit | ifs.badbit)) { }
     else {
         ifs >> level;
@@ -106,7 +106,7 @@ void Level::LastLevelCleared() {
     if (level > level_) {
         level_ = level;
     }
-    std::ofstream ofs("../Levels/lastcleared.txt");
+    std::ofstream ofs("../src/Levels/lastcleared.txt");
     //std::cout << level_ << std::endl;
     ofs << level_;
     ofs.close();
@@ -178,7 +178,7 @@ void Level::DrawGround(sf::RenderWindow& window) {
 
 void Level::DrawScore(sf::RenderWindow& window) {
     sf::Font font;
-    if (!font.loadFromFile("../arial.ttf")) {
+    if (!font.loadFromFile("../src/Fonts/arial.ttf")) {
         std::cout << "error getting font"<< std::endl;
     }
     sf::Text text;
@@ -369,7 +369,7 @@ void Level::Simulate() {
 
 void Level::LevelStars() {
     std::map<int,int> star;
-    std::ifstream is("../Levels/stars.txt");
+    std::ifstream is("../src/Levels/stars.txt");
     if (is.rdstate() & (is.failbit | is.badbit)) { }
     else {
         while(!is.eof()) {
@@ -399,7 +399,7 @@ void Level::LevelStars() {
     if (star[level_] < current_stars) {
         star[level_] = current_stars;
     }
-    std::ofstream os("../Levels/stars.txt");
+    std::ofstream os("../src/Levels/stars.txt");
     for (int i = 1; i <= LEVELCOUNT_; i++) {
         os << i << star[i] << "\n";
     }
