@@ -37,10 +37,10 @@ int main(){
             if (result.i == 5) {
                 if (result.points != -1) {
                     std::string f = result.file;
-                    std::cout << result.points << result.file << std::endl;
+                    //std::cout << result.points << result.file << std::endl;
                 }
                 else {
-                    std::cout << result.points << std::endl;
+                    //std::cout << result.points << std::endl;
                 }
                 
             }
