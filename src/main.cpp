@@ -16,26 +16,27 @@ int main(){
     window.setFramerateLimit(60);
     //Bird bird = Bird(100.f, 100.f);
     
-    
+    State result;
     //std::cout << test.world_->GetBodyCount() << std::endl;
     //Game loop
     while (window.isOpen()){
         test.Simulate();
         sf::Event ev;
-        State result;
+        
         while(window.pollEvent(ev))
         {   
             if(ev.type == sf::Event::Closed) {
                 window.close();
             }
-            if (result.i != 7) {
+            if (result.i != 5) {
                 result = test.Update(window, ev);
             }
             if (result.i == 1) {
                 window.close();
             }
-            if (result.i == 7) {
+            if (result.i == 5) {
                 if (result.points != -1) {
+                    std::string f = result.file;
                     std::cout << result.points << result.file << std::endl;
                 }
                 else {

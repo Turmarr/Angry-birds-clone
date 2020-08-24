@@ -485,6 +485,10 @@ State Level::Update(sf::RenderWindow& window, sf::Event& ev) {
                 case sf::Keyboard::Left:
                     move_to_left_ = true;
                     break;
+                case sf::Keyboard::Escape:
+                    state.i = 5;
+                    state.points = -1;
+                    return state;
                 default:
                     break;
                 }
@@ -505,15 +509,13 @@ State Level::Update(sf::RenderWindow& window, sf::Event& ev) {
             break;
     }
     
-
-    ControlView();
     
     if ((current_pig_ != nullptr && birds_.size() != 0) || pig_flying_) {
         state.i = 4;
         return state;
     }
     else {
-        state.i = 7;
+        state.i = 5;
         state.points = -1;
         if (birds_.size() == 0) {
             for (auto i : pigs_) {
@@ -524,7 +526,9 @@ State Level::Update(sf::RenderWindow& window, sf::Event& ev) {
             }
             state.points = points_->GetPoints();
             LevelStars();
-            state.file = highscore_file_;
+            std::stringstream ss;
+            ss << highscore_file_;
+            ss >> state.file;
         }
         return state;
     }

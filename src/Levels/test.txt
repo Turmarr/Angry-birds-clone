@@ -21,3 +21,9 @@ ball stone 400 400 30 0 0
 
 #
 2
+
+#
+3000 5000
+
+#
+../src/Highscores/level2.txt
