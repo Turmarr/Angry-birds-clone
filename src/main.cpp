@@ -22,12 +22,26 @@ int main(){
     while (window.isOpen()){
         test.Simulate();
         sf::Event ev;
+        State result;
         while(window.pollEvent(ev))
-        {
-            
-            State result = test.Update(window, ev);
+        {   
+            if(ev.type == sf::Event::Closed) {
+                window.close();
+            }
+            if (result.i != 7) {
+                result = test.Update(window, ev);
+            }
             if (result.i == 1) {
-            window.close();
+                window.close();
+            }
+            if (result.i == 7) {
+                if (result.points != -1) {
+                    std::cout << result.points << result.file << std::endl;
+                }
+                else {
+                    std::cout << result.points << std::endl;
+                }
+                
             }
             
             

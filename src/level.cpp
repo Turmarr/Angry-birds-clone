@@ -419,7 +419,7 @@ State Level::Update(sf::RenderWindow& window, sf::Event& ev) {
     switch (ev.type)
     {
         case sf::Event::Closed:
-            state.i = 1;
+            state.i = 3;
             return state;
         case sf::Event::MouseButtonPressed:
             if (pig_flying_) {
@@ -508,6 +508,25 @@ State Level::Update(sf::RenderWindow& window, sf::Event& ev) {
 
     ControlView();
     
-    state.i = 4;
-    return state;
+    if (current_pig_ != nullptr && birds_.size() != 0) {
+        state.i = 4;
+        return state;
+    }
+    else {
+        state.i = 7;
+        state.points = -1;
+        if (birds_.size() == 0) {
+            for (auto i : pigs_) {
+                points_->AddPoints(1000);
+            }
+            if (current_pig_ != nullptr) {
+                points_->AddPoints(1000);
+            }
+            state.points = points_->GetPoints();
+            LevelStars();
+            state.file = highscore_file_;
+        }
+        return state;
+    }
+    
 }
