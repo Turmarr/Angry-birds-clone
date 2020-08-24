@@ -70,7 +70,7 @@ void levelMenu::initTexture(){
         std::cout<< "Failed to load menu background." << std::endl;
     }
     if(!this->imag.loadFromFile("Textures/star.png")){
-        std::cout<< "Failed to load escape button image." << std::endl;
+        std::cout<< "Failed to load star image." << std::endl;
     }
 
 }
@@ -311,7 +311,7 @@ void levelMenu::updateLevel(){
     
     std::ifstream is("lastlevel.txt");
     if(is.rdstate() & (is.failbit | is.badbit)){
-        std::cerr << "Failed to load file stars.txt" << std::endl;
+        std::cerr << "Failed to load file lastlevel.txt" << std::endl;
     }
     std::string line;
     std::getline(is, line);

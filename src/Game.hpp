@@ -4,6 +4,7 @@
 #include "levelMenu.hpp"
 #include "state.hpp"
 //#include "level.hpp"
+//#include "higscore.hpp"
 #include <iostream>
 
 class Game{
@@ -31,11 +32,15 @@ class Game{
         sf::RenderWindow& window_;
         float width_, height_;
         
-        //Pointer to defferent menues
+        //Pointer to different menus
         Menu* menu_;
         levelMenu* lMenu_;
         //Level* level_;
         bool constructed_;
+
+        //For highscore updates
+        bool newHigscore;
+        bool input;
 
         /* Defines the state of the screen - which class is running
             state.i =
@@ -45,6 +50,7 @@ class Game{
             3 - exit
             4 - when playing the game itself
             5 - called when a level has ended (either closed or finished and saved)
+            6 - highscore input window
             Also passes a string which is used to hold filename.
         */
         state state_;
