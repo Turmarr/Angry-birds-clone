@@ -508,7 +508,7 @@ State Level::Update(sf::RenderWindow& window, sf::Event& ev) {
 
     ControlView();
     
-    if (current_pig_ != nullptr && birds_.size() != 0) {
+    if ((current_pig_ != nullptr && birds_.size() != 0) || pig_flying_) {
         state.i = 4;
         return state;
     }
