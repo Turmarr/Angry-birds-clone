@@ -65,7 +65,7 @@ Stars ReadStars(std::string line) {
     Stars star;
     std::stringstream ss;
     ss.str(line);
-    ss >> star.first >> star.second >> star.third;
+    ss >> star.second >> star.third;
     return star;
 }
 

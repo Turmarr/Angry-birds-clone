@@ -62,4 +62,6 @@ void Speed::initTexture(){
 void Speed::initCircle(){
     circle_.setRadius(radius_ * SCALE);
     circle_.setTexture(&texture_);
+    circle_.setOutlineThickness(1);
+    circle_.setOutlineColor(sf::Color::Black);
 }

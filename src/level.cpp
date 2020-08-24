@@ -367,6 +367,47 @@ void Level::Simulate() {
     ControlView();
 }
 
+void Level::LevelStars() {
+    std::map<int,int> star;
+    std::ifstream is("../Levels/stars.txt");
+    if (is.rdstate() & (is.failbit | is.badbit)) { }
+    else {
+        while(!is.eof()) {
+            std::string line;
+            std::getline(is, line);
+            std::stringstream ss;
+            ss << line;
+            int starcount;
+            int level;
+            ss >> level >> starcount;
+            
+            star[level] = starcount;
+        }
+        is.close();
+    }
+    int current_stars;
+    if (points_->GetPoints() >= stars_.third) {
+        current_stars = 3;
+    }
+    else if (points_->GetPoints() >= stars_.second) {
+        current_stars = 2;
+    }
+    else {
+        current_stars = 1;
+    }
+
+    if (star[level_] < current_stars) {
+        star[level_] = current_stars;
+    }
+    std::ofstream os("../Levels/stars.txt");
+    for (int i = 1; i <= LEVELCOUNT_; i++) {
+        os << i << star[i] << "\n";
+    }
+    os.close();
+    
+
+}
+
 State Level::Update(sf::RenderWindow& window, sf::Event& ev) {
     
     DeleteDestroyed();

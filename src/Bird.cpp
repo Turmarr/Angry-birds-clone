@@ -34,6 +34,8 @@ void Bird::initSprite(){
     sprite.setPosition(x_, y_);
     sprite.setTexture(&this->pic_);
     sprite.setRadius(radius_);
+    sprite.setOutlineThickness(1);
+    sprite.setOutlineColor(sf::Color::Black);
     sprite.setOrigin(sprite.getLocalBounds().width/2, sprite.getLocalBounds().height/2);
     
 }

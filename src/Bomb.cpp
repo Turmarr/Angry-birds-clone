@@ -43,6 +43,7 @@ void Bomb::Draw(sf::RenderWindow& window) {
     circle_.setOrigin(radius_ * SCALE, radius_ * SCALE);
     circle_.setPosition(body_->GetPosition().x * SCALE, body_->GetPosition().y * SCALE);
     circle_.setRotation(body_->GetAngle() * 180/b2_pi);
+    
     window.draw(circle_);
 
     for (auto i : blastParticleBodies_) {
@@ -126,4 +127,6 @@ void Bomb::initTexture(){
 void Bomb::initCircle(){
     circle_.setRadius(radius_ * SCALE);
     circle_.setTexture(&texture_);
+    circle_.setOutlineThickness(1);
+    circle_.setOutlineColor(sf::Color::Black);
 }

@@ -6,13 +6,35 @@
 
 #IncludeRegexTransform: 
 
+/mnt/c/Users/tuoma/Documents/Programming/CPP/angry-birds-2020-3/src/Ball.cpp
+Ball.hpp
+/mnt/c/Users/tuoma/Documents/Programming/CPP/angry-birds-2020-3/src/Ball.hpp
+iostream
+-
+
 /mnt/c/Users/tuoma/Documents/Programming/CPP/angry-birds-2020-3/src/Ball.hpp
 Destructables.hpp
 /mnt/c/Users/tuoma/Documents/Programming/CPP/angry-birds-2020-3/src/Destructables.hpp
 
+/mnt/c/Users/tuoma/Documents/Programming/CPP/angry-birds-2020-3/src/Bird.cpp
+Bird.hpp
+/mnt/c/Users/tuoma/Documents/Programming/CPP/angry-birds-2020-3/src/Bird.hpp
+iostream
+-
+
 /mnt/c/Users/tuoma/Documents/Programming/CPP/angry-birds-2020-3/src/Bird.hpp
 Destructables.hpp
 /mnt/c/Users/tuoma/Documents/Programming/CPP/angry-birds-2020-3/src/Destructables.hpp
+
+/mnt/c/Users/tuoma/Documents/Programming/CPP/angry-birds-2020-3/src/Bomb.cpp
+SFML/Graphics.hpp
+-
+Box2D/box2d/box2d.h
+/mnt/c/Users/tuoma/Documents/Programming/CPP/angry-birds-2020-3/src/Box2D/box2d/box2d.h
+Bomb.hpp
+/mnt/c/Users/tuoma/Documents/Programming/CPP/angry-birds-2020-3/src/Bomb.hpp
+iostream
+-
 
 /mnt/c/Users/tuoma/Documents/Programming/CPP/angry-birds-2020-3/src/Bomb.hpp
 SFML/Graphics.hpp
@@ -22,6 +44,12 @@ Box2D/box2d/box2d.h
 Pig.hpp
 /mnt/c/Users/tuoma/Documents/Programming/CPP/angry-birds-2020-3/src/Pig.hpp
 list
+-
+
+/mnt/c/Users/tuoma/Documents/Programming/CPP/angry-birds-2020-3/src/Box.cpp
+Box.hpp
+/mnt/c/Users/tuoma/Documents/Programming/CPP/angry-birds-2020-3/src/Box.hpp
+iostream
 -
 
 /mnt/c/Users/tuoma/Documents/Programming/CPP/angry-birds-2020-3/src/Box.hpp
@@ -270,6 +298,16 @@ Box2D/box2d/box2d.h
 Points.hpp
 /mnt/c/Users/tuoma/Documents/Programming/CPP/angry-birds-2020-3/src/Points.hpp
 
+/mnt/c/Users/tuoma/Documents/Programming/CPP/angry-birds-2020-3/src/Normal.cpp
+SFML/Graphics.hpp
+-
+Box2D/box2d/box2d.h
+/mnt/c/Users/tuoma/Documents/Programming/CPP/angry-birds-2020-3/src/Box2D/box2d/box2d.h
+Normal.hpp
+/mnt/c/Users/tuoma/Documents/Programming/CPP/angry-birds-2020-3/src/Normal.hpp
+iostream
+-
+
 /mnt/c/Users/tuoma/Documents/Programming/CPP/angry-birds-2020-3/src/Normal.hpp
 SFML/Graphics.hpp
 -
@@ -288,6 +326,16 @@ iostream
 
 /mnt/c/Users/tuoma/Documents/Programming/CPP/angry-birds-2020-3/src/Points.hpp
 
+/mnt/c/Users/tuoma/Documents/Programming/CPP/angry-birds-2020-3/src/Speed.cpp
+SFML/Graphics.hpp
+-
+Box2D/box2d/box2d.h
+/mnt/c/Users/tuoma/Documents/Programming/CPP/angry-birds-2020-3/src/Box2D/box2d/box2d.h
+Speed.hpp
+/mnt/c/Users/tuoma/Documents/Programming/CPP/angry-birds-2020-3/src/Speed.hpp
+iostream
+-
+
 /mnt/c/Users/tuoma/Documents/Programming/CPP/angry-birds-2020-3/src/Speed.hpp
 SFML/Graphics.hpp
 -
@@ -304,6 +352,16 @@ Destructables.hpp
 iostream
 /mnt/c/Users/tuoma/Documents/Programming/CPP/angry-birds-2020-3/src/iostream
 
+/mnt/c/Users/tuoma/Documents/Programming/CPP/angry-birds-2020-3/src/filereader.cpp
+filereader.hpp
+/mnt/c/Users/tuoma/Documents/Programming/CPP/angry-birds-2020-3/src/filereader.hpp
+iostream
+-
+fstream
+-
+sstream
+-
+
 /mnt/c/Users/tuoma/Documents/Programming/CPP/angry-birds-2020-3/src/filereader.hpp
 string
 -
@@ -317,6 +375,24 @@ sstream
 -
 exception
 -
+
+/mnt/c/Users/tuoma/Documents/Programming/CPP/angry-birds-2020-3/src/level.cpp
+algorithm
+-
+Box2D/box2d/box2d.h
+/mnt/c/Users/tuoma/Documents/Programming/CPP/angry-birds-2020-3/src/Box2D/box2d/box2d.h
+SFML/Graphics.hpp
+-
+SFML/System.hpp
+-
+SFML/Window.hpp
+-
+iostream
+-
+sstream
+-
+level.hpp
+/mnt/c/Users/tuoma/Documents/Programming/CPP/angry-birds-2020-3/src/level.hpp
 
 /mnt/c/Users/tuoma/Documents/Programming/CPP/angry-birds-2020-3/src/level.hpp
 Box2D/box2d/box2d.h

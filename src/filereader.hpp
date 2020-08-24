@@ -50,7 +50,7 @@ Level
 "Which level it is"
 
 Stars
-"points for 1 star" "points for 2 stars" "points for 3 stars"
+"points for 2 stars" "points for 3 stars"
 
 File
 "Highscorefiles location"
@@ -97,7 +97,6 @@ struct Groundc {
 };
 
 struct Stars {
-    int first;
     int second;
     int third;
 };

@@ -90,9 +90,6 @@ class Level {
 
         //deconstructs the level, is where the level end screen will be determined
         ~Level() {
-            if (birds_.size() == 0) {
-                LastLevelCleared();
-            }
             delete current_pig_;
             
             for (auto i : box_) {
@@ -128,12 +125,14 @@ class Level {
         
         void ControlView();
         void LastLevelCleared();
+        void LevelStars();
         
 
         //general variables
         const float SCALE_ = 30.f;
         b2World* world_;
         sf::View view_;
+        const int LEVELCOUNT_ = 3;
 
         //constructor variables maybe added to stuff
         //float box_height;
@@ -161,13 +160,11 @@ class Level {
         float resize_;
         float cannon_power_ = 10; //defines the max velocity of the pig smaller = bigger
 
-
+        //camera control
         float viewxpos_;
         bool pig_passed_viewxpos_ = false;
         bool move_to_right_ = false;
         bool move_to_left_ = false;
-        
-        //camera control
         bool custom_camera_;
         bool moving_camera_;
         float camera_offset_;

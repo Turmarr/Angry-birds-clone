@@ -59,6 +59,8 @@ void Box::initBlock(){
     shape.setSize(sf::Vector2f(width_, height_));
     shape.setOrigin(width_/2, height_/2);
     shape.rotate(angle_);
+    shape.setOutlineThickness(1);
+    shape.setOutlineColor(sf::Color::Black);
 
 }
 //Loads texture from file
@@ -75,5 +77,6 @@ void Box::initTexture(){
 void Box::Draw(sf::RenderWindow& target){
     shape.setPosition(body->GetPosition().x*scale_, body->GetPosition().y*scale_);
     shape.setRotation(body->GetAngle()*180/b2_pi);
+    
     target.draw(shape);
 }
