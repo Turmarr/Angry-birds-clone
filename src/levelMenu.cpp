@@ -7,7 +7,8 @@ levelMenu::levelMenu(float width, float height)
 {
     height_ = height;
     width_ = width;
-
+    selectedItemIndex = 0;
+    
     initFonts();
     initTexture();
     initBackground();
@@ -35,24 +36,25 @@ levelMenu::levelMenu(float width, float height)
     int x = width_/2;
     int y = height_/2 - 50;
 
-    //Level 1 button
+    //Positions
     menu[0].setPosition(x - 250, y);
-    menu[0].setCharacterSize(60);
-    menu[0].setFillColor(sf::Color::Blue);
-
-    //Level 2 button
     menu[1].setPosition(x, y);
-   
-    //Level 3 button
     menu[2].setPosition(x + 250, y);
     
 
-    selectedItemIndex = 0;
+    
+    updateSelected();
 
 }
 
 levelMenu::~levelMenu()
 {
+
+}
+void levelMenu::updateSelected(){
+
+    menu[selectedItemIndex].setCharacterSize(60);
+    menu[selectedItemIndex].setFillColor(sf::Color::Blue);
 
 }
 
@@ -196,8 +198,8 @@ state levelMenu::updateMenuEvent(sf::Event& ev, sf::RenderWindow& window){
                 case sf::Keyboard::Return:
                     
                     options_.i = 4;
-                    index = this->returnSelectedItem();
-                    switch (index){
+                    //index = this->returnSelectedItem();
+                    switch (selectedItemIndex){
 
                         case 0:
                             options_.file = "../src/Levels/level1.txt";
@@ -238,6 +240,7 @@ state levelMenu::updateMenuEvent(sf::Event& ev, sf::RenderWindow& window){
                         if(menu[i].getGlobalBounds().contains(mousePosView) && (i+1) <= maxLevelIndex){
                             
                             options_.i = 4;
+                            selectedItemIndex = i;
                             switch (options_.i){
 
                                 case 0:
@@ -326,4 +329,5 @@ void levelMenu::updateLevel(){
         menu[i].setFillColor(sf::Color::White);
         
     }
+    updateSelected();
 }
