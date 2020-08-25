@@ -3,7 +3,7 @@
 #include "MainMenu.hpp"
 #include "levelMenu.hpp"
 #include "state.hpp"
-//#include "level.hpp"
+#include "level.hpp"
 //#include "higscore.hpp"
 #include <iostream>
 
@@ -35,7 +35,7 @@ class Game{
         //Pointer to different menus
         Menu* menu_;
         levelMenu* lMenu_;
-        //Level* level_;
+        Level* level_;
         bool constructed_;
 
         //For highscore updates

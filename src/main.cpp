@@ -5,7 +5,7 @@
 #include <SFML/Network.hpp>
 #include "level.hpp"
 
-int main(){
+int main2(){
 
 
     Level test("../src/Levels/test.txt");
@@ -16,7 +16,7 @@ int main(){
     window.setFramerateLimit(60);
     //Bird bird = Bird(100.f, 100.f);
     
-    State result;
+    state result;
     //std::cout << test.world_->GetBodyCount() << std::endl;
     //Game loop
     while (window.isOpen()){

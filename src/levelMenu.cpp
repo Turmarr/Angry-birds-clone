@@ -58,7 +58,7 @@ levelMenu::~levelMenu()
 
 void levelMenu::initFonts(){
 
-    if(!font.loadFromFile("Fonts/test2.ttf")){
+    if(!font.loadFromFile("../src/Fonts/test2.ttf")){
         std::cout<< "Error while loading menu font."<<std::endl;
     }
 
@@ -66,10 +66,10 @@ void levelMenu::initFonts(){
 
 void levelMenu::initTexture(){
 
-    if(!this->background.loadFromFile("Textures/sky.png")){
+    if(!this->background.loadFromFile("../src/Textures/sky.png")){
         std::cout<< "Failed to load menu background." << std::endl;
     }
-    if(!this->imag.loadFromFile("Textures/star.png")){
+    if(!this->imag.loadFromFile("../src/Textures/star.png")){
         std::cout<< "Failed to load star image." << std::endl;
     }
 
@@ -199,17 +199,17 @@ state levelMenu::updateMenuEvent(sf::Event& ev, sf::RenderWindow& window){
                     switch (options_.i){
 
                         case 0:
-                            options_.file = "level1.txt";
+                            options_.file = "../src/Levels/level1.txt";
                             return options_;
                             break;
                         
                         case 1:
-                            options_.file = "level2.txt";
+                            options_.file = "../src/Levels/level2.txt";
                             return options_;
                             break;
 
                         case 2:
-                            options_.file = "level3.txt";
+                            options_.file = "../src/Levels/level3.txt";
                             return options_;
                             break;
                         
@@ -240,17 +240,17 @@ state levelMenu::updateMenuEvent(sf::Event& ev, sf::RenderWindow& window){
                             switch (options_.i){
 
                                 case 0:
-                                    options_.file = "Levels/level1.txt";
+                                    options_.file = "../src/Levels/level1.txt";
                                     return options_;
                                     break;
                                 
                                 case 1:
-                                    options_.file = "Levels/level2.txt";
+                                    options_.file = "../src/Levels/level2.txt";
                                     return options_;
                                     break;
 
                                 case 2:
-                                    options_.file = "Levels/level3.txt";
+                                    options_.file = "../src/Levels/level3.txt";
                                     return options_;
                                     break;
                                 
@@ -276,7 +276,7 @@ state levelMenu::updateMenuEvent(sf::Event& ev, sf::RenderWindow& window){
 //Setting stars to non-transparent
 void levelMenu::updateStars(){
     
-    std::ifstream is("stars.txt");
+    std::ifstream is("../src/Levels/stars.txt");
     int level, no;
 
     if(is.rdstate() & (is.failbit | is.badbit)){
@@ -309,7 +309,7 @@ void levelMenu::updateStars(){
 
 void levelMenu::updateLevel(){
     
-    std::ifstream is("lastlevel.txt");
+    std::ifstream is("../src/Levels/lastlevel.txt");
     if(is.rdstate() & (is.failbit | is.badbit)){
         std::cerr << "Failed to load file lastlevel.txt" << std::endl;
     }

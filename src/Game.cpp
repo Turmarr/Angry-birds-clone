@@ -17,10 +17,10 @@ Game::~Game(){
 
     delete lMenu_;
     delete menu_;
-    /*if (level_ != nullptr){
+    if (level_ != nullptr){
         delete level_;
     }
-    delete highscore_;*/
+    //delete highscore_;
 }
 //Settings for the window
 void Game::initWindow(){
@@ -36,20 +36,24 @@ void Game::initMenus(){
     //highscore_ = new Highscore(width_, height_);
 }
 
-//Chooses which file is downloaded
+
 void Game::createLevel(){
     
-    //level_ = new level(state_.file);
-    //constructed_ = true;
+    level_ = new Level(state_.file);
+    constructed_ = true;
     
 }
 //Called when level has finished running
 void Game::deleteLevel(){
     
+    /* For checking how many stars have been achieved. 
+    Checked in levelMenu::updateStars().
+    First is the level and then the amount of stars.
+    */
     lMenu_->updateStars();
     lMenu_->updateLevel();
-    //delete level_;
-    //constructed_ = false;
+    delete level_;
+    constructed_ = false;
     if(state_.points = -1){
         state_.i = 1;
     }
@@ -84,13 +88,13 @@ void Game::updatePollEvents(){
         /*else if (state_.i == 2){        
             state_ = highscores_->updateEvent(ev);
         } 
-
+        */
         else if (state_.i == 4){
             if (constructed_ == false){
-                createlevel();
+                createLevel();
             }
             level_->Update(window_, ev);
-        }*/
+        }
 
         if (state_.i == 3){
             window_.close();
@@ -102,11 +106,11 @@ void Game::updatePollEvents(){
 //Updates state objects
 void Game::update(){
 
-   /*if (state_ == 4){
+   if (state_.i == 4){
        level_->Simulate();
-   }*/
+   }
 
-   if (state_.i == 5){
+   else if (state_.i == 5){
        deleteLevel();
        /*if (state_.i == 5){
           newHighscore = highscore_->updateHighscores(state_.file, state_.points);
@@ -138,10 +142,11 @@ void Game::render(){
         /*else if (state_.i == 2){        
             highscore_->Draw(window_);
         } 
-
+        */
         else if (state_.i == 4){
             level_->DrawLevel(window_);
         }
+        /*
         else if (state_.i == 6 && input = true){
             highscore_->drawInputBox(window_);
         }*/

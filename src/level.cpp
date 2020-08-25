@@ -96,7 +96,7 @@ Level::Level(std::string filename) {
 
 void Level::LastLevelCleared() {
     int level = 0;
-    std::ifstream ifs("../src/Levels/lastcleared.txt");
+    std::ifstream ifs("../src/Levels/lastlevel.txt");
     if (ifs.rdstate() & (ifs.failbit | ifs.badbit)) { }
     else {
         ifs >> level;
@@ -106,7 +106,7 @@ void Level::LastLevelCleared() {
     if (level > level_) {
         level_ = level;
     }
-    std::ofstream ofs("../src/Levels/lastcleared.txt");
+    std::ofstream ofs("../src/Levels/lastlevel.txt");
     //std::cout << level_ << std::endl;
     ofs << level_;
     ofs.close();
@@ -400,7 +400,7 @@ void Level::LevelStars() {
         star[level_] = current_stars;
     }
     std::ofstream os("../src/Levels/stars.txt");
-    for (int i = 1; i <= LEVELCOUNT_; i++) {
+    for (int i = 1; i <= LEVELCOUNT_; i++) { //map.size() should work also
         os << i << star[i] << "\n";
     }
     os.close();
@@ -408,10 +408,10 @@ void Level::LevelStars() {
 
 }
 
-State Level::Update(sf::RenderWindow& window, sf::Event& ev) {
+state Level::Update(sf::RenderWindow& window, sf::Event& ev) {
     
     DeleteDestroyed();
-    State state;
+    state state;
     
     //setup exiting the loop once the last pig dies
 

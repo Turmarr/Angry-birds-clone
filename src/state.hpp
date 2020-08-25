@@ -1,7 +1,7 @@
 #include <string>
 #pragma once
 
-struct State
+struct state
 {
     int i;
     std::string file;

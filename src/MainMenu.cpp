@@ -50,14 +50,14 @@ Menu::~Menu()
 
 void Menu::initFonts(){
 
-    if(!font.loadFromFile("Fonts/test2.ttf")){
+    if(!font.loadFromFile("../src/Fonts/test2.ttf")){
         std::cout<< "Error while loading menu font."<<std::endl;
     }
 }
 
 void Menu::initTexture(){
 
-    if(!this->background.loadFromFile("Textures/sky.png")){
+    if(!this->background.loadFromFile("../src/Textures/sky.png")){
         std::cout<< "Failed to load menu background." << std::endl;
     }
 }

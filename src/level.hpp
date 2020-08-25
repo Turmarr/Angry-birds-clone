@@ -83,7 +83,7 @@ class Level {
             return pigs_;
         }
 
-        State Update(sf::RenderWindow& window, sf::Event& ev);
+        state Update(sf::RenderWindow& window, sf::Event& ev);
         void Simulate();
         void DrawLevel(sf::RenderWindow& window);
 
@@ -132,7 +132,7 @@ class Level {
         const float SCALE_ = 30.f;
         b2World* world_;
         sf::View view_;
-        const int LEVELCOUNT_ = 3;
+        const int LEVELCOUNT_ = 3; //map.size() should work also
 
         //constructor variables maybe added to stuff
         //float box_height;
@@ -158,7 +158,7 @@ class Level {
         float pig_time_ = 0;
         sf::CircleShape cannnon_hitbox_;
         float resize_;
-    float cannon_power_ = 8 ; //defines the max velocity of the pig smaller = bigger
+        float cannon_power_ = 8 ; //defines the max velocity of the pig smaller = bigger
 
         //camera control
         float viewxpos_;
