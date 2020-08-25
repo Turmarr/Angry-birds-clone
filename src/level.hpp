@@ -137,7 +137,7 @@ class Level {
         //constructor variables maybe added to stuff
         //float box_height;
         //float box_width_;
-        float box_angle_ = 0;
+        //float box_angle_ = 0;
         float ball_radius_ = 30;
         float bird_radius_ = 30;
 
@@ -158,7 +158,7 @@ class Level {
         float pig_time_ = 0;
         sf::CircleShape cannnon_hitbox_;
         float resize_;
-        float cannon_power_ = 10; //defines the max velocity of the pig smaller = bigger
+    float cannon_power_ = 8 ; //defines the max velocity of the pig smaller = bigger
 
         //camera control
         float viewxpos_;

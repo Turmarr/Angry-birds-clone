@@ -87,6 +87,7 @@ struct Objectc {
     float width;
     float height;
     float radius;
+    float angle;
 };
 
 struct Groundc {

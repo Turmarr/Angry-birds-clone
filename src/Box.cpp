@@ -36,11 +36,14 @@ void Box::initPhysics(b2World& world){
     b2BodyDef blockDef;
     blockDef.type = b2_dynamicBody;
     blockDef.position.Set(x_/scale_, y_/scale_);
+    blockDef.angle = angle_/180 *b2_pi;
 
     body = world.CreateBody(&blockDef);
-
+    
+        
     b2PolygonShape box;
     box.SetAsBox((width_/2)/scale_, (height_/2)/scale_);
+    
 
     b2FixtureDef fixtureDef;
     fixtureDef.shape = &box;
@@ -59,7 +62,7 @@ void Box::initBlock(){
     shape.setSize(sf::Vector2f(width_, height_));
     shape.setOrigin(width_/2, height_/2);
     shape.rotate(angle_);
-    shape.setOutlineThickness(1);
+    shape.setOutlineThickness(-2);
     shape.setOutlineColor(sf::Color::Black);
 
 }

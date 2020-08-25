@@ -34,6 +34,7 @@ Objectc ReadObject(std::string line) {
     std::stringstream ss;
     ss.str(line);
     ss >> object.type >> object.material >> object.x >> object.y >> object.radius >> object.width >> object.height;
+    if(object.type == "box") {object.angle = object.radius;}
     return object;
 }
 

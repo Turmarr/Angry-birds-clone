@@ -54,7 +54,7 @@ Level::Level(std::string filename) {
     
     for (auto i : info.GetObjects()) {
         if (i.type == "box") {
-            Box *object = new Box(i.x, i.y, i.material, i.width, i.height, box_angle_, *world_, SCALE_, points_);
+            Box *object = new Box(i.x, i.y, i.material, i.width, i.height, i.angle, *world_, SCALE_, points_);
             box_.push_back(object);
         }
         if (i.type == "ball") {
@@ -328,7 +328,7 @@ void Level::ControlView() {
         }
     }
     else {
-        viewxpos_ = cannon_.x + 175 + camera_offset_;
+        viewxpos_ = cannon_.x + 75 + camera_offset_;
     }
     
     if (move_to_right_) {
@@ -457,6 +457,13 @@ State Level::Update(sf::RenderWindow& window, sf::Event& ev) {
                 float x = worldPos.x;
                 camera_offset_ += (last_mouse_x_ - x) / 20;
             }
+            // This helps with level designing
+            // Comment this out later
+            /*if(custom_camera_){
+                sf::Vector2i pixelPos = sf::Mouse::getPosition(window);
+                sf::Vector2f worldPos = window.mapPixelToCoords(pixelPos);
+                std::cout <<  worldPos.x << std::endl;
+            }*/
             break;
         case sf::Event::MouseButtonReleased:
             if (pig_drawn_) {

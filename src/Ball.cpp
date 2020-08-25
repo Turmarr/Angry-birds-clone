@@ -33,7 +33,7 @@ void Ball::initSprite(){
     shape.setPosition(x_, y_);
     shape.setTexture(&this->pic_);
     shape.setRadius(radius_);
-    shape.setOutlineThickness(1);
+    shape.setOutlineThickness(-2);
     shape.setOutlineColor(sf::Color::Black);
     shape.setOrigin(shape.getLocalBounds().width/2, shape.getLocalBounds().height/2);
 
