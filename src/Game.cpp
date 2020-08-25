@@ -17,7 +17,8 @@ Game::~Game(){
 
     delete lMenu_;
     delete menu_;
-    if (level_ != nullptr){
+    if (level_ == nullptr){
+        std::cout<< "Level deleted twice" << std::endl;
         delete level_;
     }
     //delete highscore_;
@@ -42,6 +43,7 @@ void Game::createLevel(){
     level_ = new Level(state_.file);
     constructed_ = true;
     
+    
 }
 //Called when level has finished running
 void Game::deleteLevel(){
@@ -54,6 +56,8 @@ void Game::deleteLevel(){
     lMenu_->updateLevel();
     delete level_;
     constructed_ = false;
+    sf::View view = window_.getDefaultView();
+    window_.setView(view);
     if(state_.points = -1){
         state_.i = 1;
     }
@@ -90,10 +94,7 @@ void Game::updatePollEvents(){
         } 
         */
         else if (state_.i == 4){
-            if (constructed_ == false){
-                createLevel();
-            }
-            level_->Update(window_, ev);
+            state_ = level_->Update(window_, ev);
         }
 
         if (state_.i == 3){
@@ -107,7 +108,15 @@ void Game::updatePollEvents(){
 void Game::update(){
 
    if (state_.i == 4){
-       level_->Simulate();
+       
+    if (constructed_ == true){
+        level_->Simulate();
+    }   
+
+    else if (constructed_ == false){
+        createLevel();
+    }
+
    }
 
    else if (state_.i == 5){

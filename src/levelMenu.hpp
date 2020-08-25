@@ -13,6 +13,7 @@ private:
     int selectedItemIndex;
     state options_;
     int maxLevelIndex;
+    int index;
 
     //Level options
     sf::Font font;

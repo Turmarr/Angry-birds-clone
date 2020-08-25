@@ -401,7 +401,7 @@ void Level::LevelStars() {
     }
     std::ofstream os("../src/Levels/stars.txt");
     for (int i = 1; i <= LEVELCOUNT_; i++) { //map.size() should work also
-        os << i << star[i] << "\n";
+        os << i << " " << star[i] << "\n";
     }
     os.close();
     

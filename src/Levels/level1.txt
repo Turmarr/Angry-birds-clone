@@ -11,8 +11,8 @@ bird 300 450
 
 # Objects
 / Vertical foundation
-box wood 800 475 0 30 110
-box wood 950 475 0 30 110
+box wood 600 475 0 30 110
+box wood 750 475 0 30 110
 
 / Horizontal bar 
 box wood 875 350 90 30 200
@@ -27,10 +27,10 @@ ball stone 400 400 30 0 0
 400 570 3000 60
 
 #
-2
+1
 
 #
 3000 5000
 
 #
-../src/Highscores/level2.txt
+../src/Highscores/level1.txt
