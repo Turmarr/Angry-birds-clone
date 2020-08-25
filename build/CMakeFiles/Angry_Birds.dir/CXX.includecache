@@ -246,6 +246,18 @@ b2_weld_joint.h
 b2_wheel_joint.h
 /Users/henrivalimaki/Desktop/Yliopisto/C++/angry-birds-2020-3/src/Box2D/box2d/b2_wheel_joint.h
 
+/Users/henrivalimaki/Desktop/Yliopisto/C++/angry-birds-2020-3/src/Highscores.hpp
+SFML/Graphics.hpp
+/Users/henrivalimaki/Desktop/Yliopisto/C++/angry-birds-2020-3/src/SFML/Graphics.hpp
+fstream
+-
+string
+-
+vector
+-
+state.hpp
+/Users/henrivalimaki/Desktop/Yliopisto/C++/angry-birds-2020-3/src/state.hpp
+
 /Users/henrivalimaki/Desktop/Yliopisto/C++/angry-birds-2020-3/src/Normal.hpp
 SFML/Graphics.hpp
 -
@@ -259,16 +271,6 @@ SFML/Graphics.hpp
 -
 Box2D/box2d/box2d.h
 /Users/henrivalimaki/Desktop/Yliopisto/C++/angry-birds-2020-3/src/Box2D/box2d/box2d.h
-
-/Users/henrivalimaki/Desktop/Yliopisto/C++/angry-birds-2020-3/src/Speed.cpp
-SFML/Graphics.hpp
--
-Box2D/box2d/box2d.h
-/Users/henrivalimaki/Desktop/Yliopisto/C++/angry-birds-2020-3/src/Box2D/box2d/box2d.h
-Speed.hpp
-/Users/henrivalimaki/Desktop/Yliopisto/C++/angry-birds-2020-3/src/Speed.hpp
-iostream
--
 
 /Users/henrivalimaki/Desktop/Yliopisto/C++/angry-birds-2020-3/src/Speed.hpp
 SFML/Graphics.hpp
@@ -291,6 +293,12 @@ Bomb.hpp
 /Users/henrivalimaki/Desktop/Yliopisto/C++/angry-birds-2020-3/src/Bomb.hpp
 Speed.hpp
 /Users/henrivalimaki/Desktop/Yliopisto/C++/angry-birds-2020-3/src/Speed.hpp
+Highscores.hpp
+/Users/henrivalimaki/Desktop/Yliopisto/C++/angry-birds-2020-3/src/Highscores.hpp
+
+/Users/henrivalimaki/Desktop/Yliopisto/C++/angry-birds-2020-3/src/state.hpp
+string
+-
 
 /usr/local/include/SFML/Config.hpp
 TargetConditionals.h

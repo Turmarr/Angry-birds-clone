@@ -1411,6 +1411,33 @@ src/Box2D/b2_world_callbacks.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Angry_Birds.dir/build.make CMakeFiles/Angry_Birds.dir/src/Box2D/b2_world_callbacks.cpp.s
 .PHONY : src/Box2D/b2_world_callbacks.cpp.s
 
+src/Highscores.o: src/Highscores.cpp.o
+
+.PHONY : src/Highscores.o
+
+# target to build an object file
+src/Highscores.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Angry_Birds.dir/build.make CMakeFiles/Angry_Birds.dir/src/Highscores.cpp.o
+.PHONY : src/Highscores.cpp.o
+
+src/Highscores.i: src/Highscores.cpp.i
+
+.PHONY : src/Highscores.i
+
+# target to preprocess a source file
+src/Highscores.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Angry_Birds.dir/build.make CMakeFiles/Angry_Birds.dir/src/Highscores.cpp.i
+.PHONY : src/Highscores.cpp.i
+
+src/Highscores.s: src/Highscores.cpp.s
+
+.PHONY : src/Highscores.s
+
+# target to generate assembly for a file
+src/Highscores.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Angry_Birds.dir/build.make CMakeFiles/Angry_Birds.dir/src/Highscores.cpp.s
+.PHONY : src/Highscores.cpp.s
+
 src/Normal.o: src/Normal.cpp.o
 
 .PHONY : src/Normal.o
@@ -1642,6 +1669,9 @@ help:
 	@echo "... src/Box2D/b2_world_callbacks.o"
 	@echo "... src/Box2D/b2_world_callbacks.i"
 	@echo "... src/Box2D/b2_world_callbacks.s"
+	@echo "... src/Highscores.o"
+	@echo "... src/Highscores.i"
+	@echo "... src/Highscores.s"
 	@echo "... src/Normal.o"
 	@echo "... src/Normal.i"
 	@echo "... src/Normal.s"

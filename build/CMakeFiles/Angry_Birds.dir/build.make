@@ -687,9 +687,22 @@ CMakeFiles/Angry_Birds.dir/src/Box2D/b2_world_callbacks.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Angry_Birds.dir/src/Box2D/b2_world_callbacks.cpp.s"
 	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/henrivalimaki/Desktop/Yliopisto/C++/angry-birds-2020-3/src/Box2D/b2_world_callbacks.cpp -o CMakeFiles/Angry_Birds.dir/src/Box2D/b2_world_callbacks.cpp.s
 
+CMakeFiles/Angry_Birds.dir/src/Highscores.cpp.o: CMakeFiles/Angry_Birds.dir/flags.make
+CMakeFiles/Angry_Birds.dir/src/Highscores.cpp.o: ../src/Highscores.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/henrivalimaki/Desktop/Yliopisto/C++/angry-birds-2020-3/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_48) "Building CXX object CMakeFiles/Angry_Birds.dir/src/Highscores.cpp.o"
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Angry_Birds.dir/src/Highscores.cpp.o -c /Users/henrivalimaki/Desktop/Yliopisto/C++/angry-birds-2020-3/src/Highscores.cpp
+
+CMakeFiles/Angry_Birds.dir/src/Highscores.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Angry_Birds.dir/src/Highscores.cpp.i"
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/henrivalimaki/Desktop/Yliopisto/C++/angry-birds-2020-3/src/Highscores.cpp > CMakeFiles/Angry_Birds.dir/src/Highscores.cpp.i
+
+CMakeFiles/Angry_Birds.dir/src/Highscores.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Angry_Birds.dir/src/Highscores.cpp.s"
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/henrivalimaki/Desktop/Yliopisto/C++/angry-birds-2020-3/src/Highscores.cpp -o CMakeFiles/Angry_Birds.dir/src/Highscores.cpp.s
+
 CMakeFiles/Angry_Birds.dir/src/Normal.cpp.o: CMakeFiles/Angry_Birds.dir/flags.make
 CMakeFiles/Angry_Birds.dir/src/Normal.cpp.o: ../src/Normal.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/henrivalimaki/Desktop/Yliopisto/C++/angry-birds-2020-3/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_48) "Building CXX object CMakeFiles/Angry_Birds.dir/src/Normal.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/henrivalimaki/Desktop/Yliopisto/C++/angry-birds-2020-3/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_49) "Building CXX object CMakeFiles/Angry_Birds.dir/src/Normal.cpp.o"
 	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Angry_Birds.dir/src/Normal.cpp.o -c /Users/henrivalimaki/Desktop/Yliopisto/C++/angry-birds-2020-3/src/Normal.cpp
 
 CMakeFiles/Angry_Birds.dir/src/Normal.cpp.i: cmake_force
@@ -702,7 +715,7 @@ CMakeFiles/Angry_Birds.dir/src/Normal.cpp.s: cmake_force
 
 CMakeFiles/Angry_Birds.dir/src/Speed.cpp.o: CMakeFiles/Angry_Birds.dir/flags.make
 CMakeFiles/Angry_Birds.dir/src/Speed.cpp.o: ../src/Speed.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/henrivalimaki/Desktop/Yliopisto/C++/angry-birds-2020-3/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_49) "Building CXX object CMakeFiles/Angry_Birds.dir/src/Speed.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/henrivalimaki/Desktop/Yliopisto/C++/angry-birds-2020-3/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_50) "Building CXX object CMakeFiles/Angry_Birds.dir/src/Speed.cpp.o"
 	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Angry_Birds.dir/src/Speed.cpp.o -c /Users/henrivalimaki/Desktop/Yliopisto/C++/angry-birds-2020-3/src/Speed.cpp
 
 CMakeFiles/Angry_Birds.dir/src/Speed.cpp.i: cmake_force
@@ -715,7 +728,7 @@ CMakeFiles/Angry_Birds.dir/src/Speed.cpp.s: cmake_force
 
 CMakeFiles/Angry_Birds.dir/src/main.cpp.o: CMakeFiles/Angry_Birds.dir/flags.make
 CMakeFiles/Angry_Birds.dir/src/main.cpp.o: ../src/main.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/henrivalimaki/Desktop/Yliopisto/C++/angry-birds-2020-3/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_50) "Building CXX object CMakeFiles/Angry_Birds.dir/src/main.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/henrivalimaki/Desktop/Yliopisto/C++/angry-birds-2020-3/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_51) "Building CXX object CMakeFiles/Angry_Birds.dir/src/main.cpp.o"
 	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Angry_Birds.dir/src/main.cpp.o -c /Users/henrivalimaki/Desktop/Yliopisto/C++/angry-birds-2020-3/src/main.cpp
 
 CMakeFiles/Angry_Birds.dir/src/main.cpp.i: cmake_force
@@ -775,6 +788,7 @@ Angry_Birds_OBJECTS = \
 "CMakeFiles/Angry_Birds.dir/src/Box2D/b2_wheel_joint.cpp.o" \
 "CMakeFiles/Angry_Birds.dir/src/Box2D/b2_world.cpp.o" \
 "CMakeFiles/Angry_Birds.dir/src/Box2D/b2_world_callbacks.cpp.o" \
+"CMakeFiles/Angry_Birds.dir/src/Highscores.cpp.o" \
 "CMakeFiles/Angry_Birds.dir/src/Normal.cpp.o" \
 "CMakeFiles/Angry_Birds.dir/src/Speed.cpp.o" \
 "CMakeFiles/Angry_Birds.dir/src/main.cpp.o"
@@ -829,6 +843,7 @@ Angry_Birds: CMakeFiles/Angry_Birds.dir/src/Box2D/b2_weld_joint.cpp.o
 Angry_Birds: CMakeFiles/Angry_Birds.dir/src/Box2D/b2_wheel_joint.cpp.o
 Angry_Birds: CMakeFiles/Angry_Birds.dir/src/Box2D/b2_world.cpp.o
 Angry_Birds: CMakeFiles/Angry_Birds.dir/src/Box2D/b2_world_callbacks.cpp.o
+Angry_Birds: CMakeFiles/Angry_Birds.dir/src/Highscores.cpp.o
 Angry_Birds: CMakeFiles/Angry_Birds.dir/src/Normal.cpp.o
 Angry_Birds: CMakeFiles/Angry_Birds.dir/src/Speed.cpp.o
 Angry_Birds: CMakeFiles/Angry_Birds.dir/src/main.cpp.o
@@ -839,7 +854,7 @@ Angry_Birds: /usr/local/lib/libsfml-graphics.2.5.1.dylib
 Angry_Birds: /usr/local/lib/libsfml-window.2.5.1.dylib
 Angry_Birds: /usr/local/lib/libsfml-system.2.5.1.dylib
 Angry_Birds: CMakeFiles/Angry_Birds.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/Users/henrivalimaki/Desktop/Yliopisto/C++/angry-birds-2020-3/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_51) "Linking CXX executable Angry_Birds"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/Users/henrivalimaki/Desktop/Yliopisto/C++/angry-birds-2020-3/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_52) "Linking CXX executable Angry_Birds"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/Angry_Birds.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
