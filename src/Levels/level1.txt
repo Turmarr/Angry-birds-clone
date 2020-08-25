@@ -15,7 +15,7 @@ box wood 600 475 0 30 110
 box wood 750 475 0 30 110
 
 / Horizontal bar 
-box wood 875 350 90 30 200
+box wood 675 350 90 30 200
 
 /ball wood 900 500 60 0 0
 ball stone 400 400 30 0 0
