@@ -5,6 +5,7 @@
 #include <SFML/Network.hpp>
 #include "level.hpp"
 
+/*
 int main2(){
 
 
@@ -54,3 +55,4 @@ int main2(){
 
     return 0;
 }
+*/

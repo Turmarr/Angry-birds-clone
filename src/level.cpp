@@ -533,6 +533,7 @@ state Level::Update(sf::RenderWindow& window, sf::Event& ev) {
             }
             state.points = points_->GetPoints();
             LevelStars();
+            LastLevelCleared();
             std::stringstream ss;
             ss << highscore_file_;
             ss >> state.file;
