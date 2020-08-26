@@ -1,0 +1,31 @@
+The sources of all the pictures used in the project.
+
+sky.png:
+https://pngtree.com/free-backgrounds - free background photos from pngtree.com
+
+star.png:
+https://www.freepngimg.com/png/607-gold-star-png-image - Gold Star Png Image FreePNGImg.com
+
+stone.jpg:
+https://fi.pinterest.com/pin/145874475400422709/
+From pintrest, the original site has been deleted.
+
+wood.jpg:
+http://smashinghub.com/40-high-quality-free-wood-textures.htm
+
+test2.ttf:
+http://smashinghub.com/40-high-quality-free-wood-textures.htm
+By Fontry, used in main menu, level menu etc.
+
+
+bird.png,
+kingbird.png,
+strongbird.png,
+pig.png,
+speedpig.png and
+bombpig.png:
+Meri Mäkelä
+
+
+
+
