@@ -4,7 +4,7 @@
 #include "levelMenu.hpp"
 #include "state.hpp"
 #include "level.hpp"
-//#include "higscore.hpp"
+#include "Highscores.hpp"
 #include <iostream>
 
 class Game{
@@ -39,7 +39,8 @@ class Game{
         bool constructed_;
 
         //For highscore updates
-        bool newHigscore;
+        Highscores* highscore_;
+        bool newHighscore;
         bool input;
 
         /* Defines the state of the screen - which class is running

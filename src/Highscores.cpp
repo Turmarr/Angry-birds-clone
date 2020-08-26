@@ -13,29 +13,47 @@ Highscores::Highscores(float width, float height){
     initFonts();
     initTexture();
     initBackground();
+    initInputBox();
 
     /*texts[0].setString("Highscores");
     texts[1].setString("Level select");*/
+    texts[0].setString("New highscore!");
+    texts[1].setString("Enter your name");
+    texts[2].setString("Max 10 characters");
+
 
     for(int i = 0; i < 5; i++){
         texts[i].setFont(font);
         texts[i].setFillColor(sf::Color::White);
         texts[i].setOutlineColor(sf::Color::Black);
+        texts[i].setOrigin(texts[i].getLocalBounds().width/2, texts[i].getLocalBounds().height/2);
         texts[i].setOutlineThickness(2.f);
     }
+    
+    texts[0].setCharacterSize(20);
+    texts[0].setPosition(box.getPosition().x, box.getGlobalBounds().top + 50);
+    
+    texts[1].setCharacterSize(15);
+    texts[1].setOrigin(texts[1].getLocalBounds().width/2, texts[1].getLocalBounds().height/2);
+    texts[1].setPosition(box.getPosition().x, box.getGlobalBounds().top + 125);
+
+    texts[2].setCharacterSize(10);
+    texts[2].setOrigin(texts[2].getLocalBounds().width/2, texts[2].getLocalBounds().height/2);
+    texts[2].setPosition(box.getPosition().x, box.getGlobalBounds().top + 150);
+
 
 }
 
 void Highscores::initFonts(){
 
-    if(!font.loadFromFile("/Users/henrivalimaki/Desktop/Yliopisto/C++/angry-birds-2020-3/build/Fonts/test2.ttf")){
+    if(!font.loadFromFile("../src/Fonts/test2.ttf")){
         std::cout<< "Error while loading menu font."<<std::endl;
     }
 }
 
 void Highscores::initTexture(){
 
-    if(!this->background.loadFromFile("/Users/henrivalimaki/Desktop/Yliopisto/C++/angry-birds-2020-3/build/Textures/sky.png")){
+    if(!this->background.loadFromFile("../src/Textures/sky.png")){
         std::cout<< "Failed to load menu background." << std::endl;
     }
 }
@@ -44,6 +62,23 @@ void Highscores::initBackground(){
 
     rect.setTexture(&this->background);
     rect.setSize(sf::Vector2f(width_, height_));
+}
+void Highscores::initInputBox(){
+
+    box.setSize(sf::Vector2f(300, 300));
+    box.setFillColor(sf::Color::White);
+    box.setOutlineColor(sf::Color::Black);
+    box.setOutlineThickness(2.f);
+    box.setOrigin(box.getLocalBounds().width / 2, box.getLocalBounds().height / 2);
+    box.setPosition(width_ / 2, height_ / 2);
+
+    inputBox.setSize(sf::Vector2f(box.getLocalBounds().width - 50, 50));
+    inputBox.setFillColor(sf::Color::White);
+    inputBox.setOutlineColor(sf::Color::Black);
+    inputBox.setOutlineThickness(2.f);
+    inputBox.setOrigin(inputBox.getLocalBounds().width / 2, inputBox.getLocalBounds().height / 2);
+    inputBox.setPosition(box.getPosition().x, box.getGlobalBounds().top + 225);
+
 }
 
 bool Highscores::Read(std::string filename){
@@ -116,7 +151,7 @@ bool Highscores::updateHighscores(std::string filename, int points){
     
     //Returns true if points > last member of highscores
     if (points > currentHighscores[maxSize - 1].second){
-        draw = true;
+        //draw = true;
         return true;
     }
     else{
@@ -126,7 +161,7 @@ bool Highscores::updateHighscores(std::string filename, int points){
 
 state Highscores::updateEvent(sf::Event& event){
 
-    options_.i = 2;
+    options_.i = 6;
 
     switch (event.type)
     {
@@ -150,7 +185,6 @@ state Highscores::updateEvent(sf::Event& event){
             }
         }
 
-        return options_;
         break;
     
     case sf::Event::Closed:
@@ -161,62 +195,31 @@ state Highscores::updateEvent(sf::Event& event){
     case sf::Event::KeyReleased:
         if(event.key.code == sf::Keyboard::Escape){
             options_.i = 0;
+            return options_;
         }
-        return options_;
         break;
     
     default:
-        return options_;
         break;
     }
+    return options_;
 }
-
-void Highscores::drawInputBox(sf::RenderWindow& window){
-
-    if(!draw){
-        return;
-    }
-
-    sf::RectangleShape box(sf::Vector2f(300, 300));
-    box.setFillColor(sf::Color::White);
-    box.setOutlineColor(sf::Color::Black);
-    box.setOutlineThickness(2.f);
-    box.setOrigin(box.getLocalBounds().width / 2, box.getLocalBounds().height / 2);
-    box.setPosition(width_ / 2, height_ / 2);
-
-    texts[0].setString("New highscore!");
-    texts[0].setCharacterSize(20);
-    texts[0].setOrigin(texts[0].getLocalBounds().width/2, texts[0].getLocalBounds().height/2);
-    texts[0].setPosition(box.getPosition().x, box.getGlobalBounds().top + 50);
-
-    texts[1].setString("Enter your name");
-    texts[1].setCharacterSize(15);
-    texts[1].setOrigin(texts[1].getLocalBounds().width/2, texts[1].getLocalBounds().height/2);
-    texts[1].setPosition(box.getPosition().x, box.getGlobalBounds().top + 125);
-
-    texts[2].setString("Max 10 characters");
-    texts[2].setCharacterSize(10);
-    texts[2].setOrigin(texts[2].getLocalBounds().width/2, texts[2].getLocalBounds().height/2);
-    texts[2].setPosition(box.getPosition().x, box.getGlobalBounds().top + 150);
-
-    sf::RectangleShape inputBox(sf::Vector2f(box.getLocalBounds().width - 50, 50));
-    inputBox.setFillColor(sf::Color::White);
-    inputBox.setOutlineColor(sf::Color::Black);
-    inputBox.setOutlineThickness(2.f);
-    inputBox.setOrigin(inputBox.getLocalBounds().width / 2, inputBox.getLocalBounds().height / 2);
-    inputBox.setPosition(box.getPosition().x, box.getGlobalBounds().top + 225);
+void Highscores::updateInputBox(){
 
     texts[3].setString(userInput);
     texts[3].setCharacterSize(30);
     texts[3].setOrigin(texts[3].getLocalBounds().width/2, texts[3].getLocalBounds().height/2);
     texts[3].setPosition(inputBox.getPosition().x, inputBox.getGlobalBounds().top + 20);
 
+}
+void Highscores::drawInputBox(sf::RenderWindow& window){
 
     window.draw(rect);
     window.draw(box);
-    window.draw(texts[0]);
-    window.draw(texts[1]);
-    window.draw(texts[2]);
     window.draw(inputBox);
-    window.draw(texts[3]);
+    
+    for (int i = 0; i < 4; i++){
+        window.draw(texts[i]);
+    }
+
 }

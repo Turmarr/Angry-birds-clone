@@ -1,5 +1,5 @@
 #pragma once
-#include "SFML/Graphics.hpp"
+#include <SFML/Graphics.hpp>
 #include <fstream>
 #include <string>
 #include <vector>
@@ -10,18 +10,21 @@ private:
 
     state options_;
 
-    bool draw = false;
+    //bool draw = false;
 
-    static const int maxSize = 5;
+    int maxSize = 5;
     
     sf::Font font;
 
     //Highscores texts
     sf::Text texts[5];
 
-    //Scoreboard texts
-    sf::Text topTen[maxSize];
+    //Input box
+    sf::RectangleShape box;
+    sf::RectangleShape inputBox;
 
+    //Scoreboard texts
+    //sf::Text topTen[maxSize];
 
     //Background
     sf::Texture background;
@@ -51,6 +54,7 @@ private:
     void initFonts();
     void initTexture();
     void initBackground();
+    void initInputBox();
 
     //Reads highscores from file. Returns true if successful
     bool Read(std::string filename);
@@ -72,6 +76,7 @@ public:
     Returns false when input is finished
     */
     state updateEvent(sf::Event& event);
+    void updateInputBox();
 
     //Draws user input window
     void drawInputBox(sf::RenderWindow& window);
