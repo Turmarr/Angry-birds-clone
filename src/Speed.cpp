@@ -8,6 +8,7 @@ Speed::Speed(float x, float y, b2World* world) {
     initCircle();
 
     world_ = world;
+    type_ = "Speed";
 
     body_ = NULL;
 

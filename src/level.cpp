@@ -193,6 +193,23 @@ void Level::DrawScore(sf::RenderWindow& window) {
     window.draw(text);
 }
 
+void Level::DrawPigcount(sf::RenderWindow& window) {
+    sf::Font font;
+    if (!font.loadFromFile("../src/Fonts/arial.ttf")) {
+        std::cout << "error getting font"<< std::endl;
+    }
+    sf::Text text;
+    text.setFont(font);
+    std::stringstream ss;
+    ss << "Pigs left: " << pigs_.size() + 1 << " Next Pig: " << current_pig_->GetType();
+    text.setString(ss.str());
+    text.setCharacterSize(20);
+    text.setFillColor(sf::Color::Red);
+    sf::Vector2f worldPos = window.mapPixelToCoords(sf::Vector2i(10.f,40.f));
+    text.setPosition(worldPos.x, worldPos.y);
+    window.draw(text);
+}
+
 void Level::DrawCannon(sf::RenderWindow& window) {
     cannnon_hitbox_.setOrigin(cannnon_hitbox_.getLocalBounds().width/2, cannnon_hitbox_.getLocalBounds().height/2);
     
@@ -305,6 +322,7 @@ void Level::DrawLevel(sf::RenderWindow& window) {
     }
 
     DrawScore(window);
+    DrawPigcount(window);
 
     window.display();
 }
@@ -345,6 +363,7 @@ void Level::ControlView() {
         viewxpos_ = cannon_.x + 1500;
     }
     view_.setCenter(viewxpos_,vpy);
+    resize_ = 1;
     //std::cout << vpx << " " << vpy << std::endl;
 }
 
@@ -363,7 +382,6 @@ void Level::Simulate() {
                 pig_time_ = 0;
             }
         }
-    resize_ = 1;
     ControlView();
 }
 
@@ -477,6 +495,7 @@ state Level::Update(sf::RenderWindow& window, sf::Event& ev) {
             if (ev.mouseWheelScroll.wheel == sf::Mouse::VerticalWheel) {
                 float ticks = ev.mouseWheelScroll.delta;
                 resize_ = 1-ticks*0.01;
+                std::cout << resize_ << std::endl;
             }
             break;
         case sf::Event::Resized: {
