@@ -38,6 +38,10 @@ public:
         return body_->GetPosition();
     }
 
+    std::string GetType() {
+        return type_;
+    }
+
     
 protected:
     //Pointer to the Box2d world
@@ -62,4 +66,5 @@ protected:
     int SCALE = 30;
 
     bool specialityUsed = false;
+    std::string type_ = "Normal";
 };
