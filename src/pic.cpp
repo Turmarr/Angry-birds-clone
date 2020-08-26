@@ -5,7 +5,7 @@
 
 int main(){
     sf::Texture texture;
-    if(!texture.loadFromFile("Textures/bird.png")){
+    if(!texture.loadFromFile("Textures/pig.png")){
         std::cout<< "Error when loading image."<<std::endl;
     }
     else
@@ -13,10 +13,10 @@ int main(){
         std::cout <<"Works!" << std::endl;
     }
     
-    sf::Sprite shape;
+    sf::CircleShape shape(50.f);
     shape.setPosition(200.f, 200.f);
-    shape.setTexture(texture);
-    shape.scale(sf::Vector2f(0.5f, 0.5f));
+    shape.setTexture(&texture);
+    //shape.scale(sf::Vector2f(0.5f, 0.5f));
 
 
     sf::RenderWindow window(sf::VideoMode(800, 600), "Testing for enemies", sf::Style::Titlebar | sf::Style::Close);
