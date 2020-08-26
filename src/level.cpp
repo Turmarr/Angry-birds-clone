@@ -478,11 +478,11 @@ state Level::Update(sf::RenderWindow& window, sf::Event& ev) {
             }
             // This helps with level designing
             // Comment this out later
-            if(custom_camera_){
+            /*if(custom_camera_){
                 sf::Vector2i pixelPos = sf::Mouse::getPosition(window);
                 sf::Vector2f worldPos = window.mapPixelToCoords(pixelPos);
-                std::cout <<  worldPos.x <<"," << worldPos.y << std::endl;
-            }
+                std::cout <<  worldPos.x << std::endl;
+            }*/
             break;
         case sf::Event::MouseButtonReleased:
             if (pig_drawn_) {
@@ -512,10 +512,7 @@ state Level::Update(sf::RenderWindow& window, sf::Event& ev) {
                 case sf::Keyboard::Left:
                     move_to_left_ = true;
                     break;
-                case sf::Keyboard::Escape:
-                    state.i = 5;
-                    state.points = -1;
-                    return state;
+
                 default:
                     break;
                 }
@@ -528,6 +525,10 @@ state Level::Update(sf::RenderWindow& window, sf::Event& ev) {
                 case sf::Keyboard::Left:
                     move_to_left_ = false;
                     break;
+                case sf::Keyboard::Escape:
+                    state.i = 5;
+                    state.points = -1;
+                    return state;
                 default:
                     break;
                 }

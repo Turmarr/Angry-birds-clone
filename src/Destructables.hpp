@@ -31,13 +31,13 @@ class Material {
             else if (type == "strongbird") {
                 points = 2000;
                 hp = 50;
-                texture = "../src/Textures/bird.png";
+                texture = "../src/Textures/strongbird.png";
                 density = 1;
             }
             else if (type == "kingbird") {
                 points = 5000;
                 hp = 20;
-                texture = "../src/Textures/bird.png";
+                texture = "../src/Textures/kingbird.png";
                 density = 1;
             }
         }

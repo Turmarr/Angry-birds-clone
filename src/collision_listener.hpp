@@ -4,6 +4,7 @@
 
 #pragma once
 
+
 //Could add a minimum impulse thereshold to the imp variable it would just be a 
 //if (i > x) / if (i < x) depending on direction of impulse
 //Also could use only the first implements of impulse
