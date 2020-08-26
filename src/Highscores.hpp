@@ -6,7 +6,7 @@
 #include "state.hpp"
 
 class Highscores {
-private:
+protected:
 
     state options_;
 
@@ -16,12 +16,12 @@ private:
     
     sf::Font font;
 
+    //Boxes where texts are displayed
+    sf::RectangleShape box;
+    sf::RectangleShape inputBox;
+
     //Highscores texts
-    sf::Text texts[5];
-
-    //Scoreboard texts
-    sf::Text topTen[maxSize];
-
+    sf::Text texts[4];
 
     //Background
     sf::Texture background;
@@ -29,9 +29,6 @@ private:
 
     //Size of the window
     float width_, height_;
-
-    //Is mouse held down
-    bool mouseHeld;
 
     //Temporary storage for highscores
     std::vector<std::pair<std::string, int>> currentHighscores;
@@ -58,20 +55,25 @@ private:
     //Writes highscores to file. Returns true if succesful
     bool Write(std::string filename);
 
+    Highscores(){}
+
 public:
 
     //Constructor and destructor
     Highscores(float width, float height);
     ~Highscores() {}
 
-    //Checks if points get you onto highscore list
+    //Gets events from Game class and changes state accordingly
+    state updateEvent(sf::Event& event);
+
+    //Checks if points get you onto highscore list. DON'T use in a loop!
     bool updateHighscores(std::string filename, int points);
 
     /*
     Gets user input. Only called when updateHighscores returns true.
     Returns false when input is finished
     */
-    state updateEvent(sf::Event& event);
+    bool updateUserInput(sf::Event& event);
 
     //Draws user input window
     void drawInputBox(sf::RenderWindow& window);

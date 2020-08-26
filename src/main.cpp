@@ -5,15 +5,15 @@
 #include "Bomb.hpp"
 #include "Speed.hpp"
 #include "Highscores.hpp"
+#include "Scoreboard.hpp"
 
 int scale = 30;
 
 int main()
 {
 
-	Highscores h1(800, 600);
-
-    h1.updateHighscores("/Users/henrivalimaki/Desktop/Yliopisto/C++/angry-birds-2020-3/build/Highscores.txt", 300);
+    Scoreboard s1(800, 600);
+    s1.setScoreTexts();
 
     sf::RenderWindow window(sf::VideoMode(800, 600), "Testi");
 	window.setFramerateLimit(60);
@@ -26,12 +26,11 @@ int main()
                 window.close();
             }
 
-            h1.updateEvent(event);
         }
 
         window.clear();
         
-		h1.drawInputBox(window);
+		s1.Draw(window);
 
         window.display();
     }

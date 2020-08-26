@@ -246,6 +246,11 @@
 },
 {
   "directory": "/Users/henrivalimaki/Desktop/Yliopisto/C++/angry-birds-2020-3/build",
+  "command": "/Library/Developer/CommandLineTools/usr/bin/c++  -I/Users/henrivalimaki/Desktop/Yliopisto/C++/angry-birds-2020-3/src/Box2D/box2d -isystem /usr/local/include -g -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX10.15.sdk -std=gnu++11 -o CMakeFiles/Angry_Birds.dir/src/Scoreboard.cpp.o -c /Users/henrivalimaki/Desktop/Yliopisto/C++/angry-birds-2020-3/src/Scoreboard.cpp",
+  "file": "/Users/henrivalimaki/Desktop/Yliopisto/C++/angry-birds-2020-3/src/Scoreboard.cpp"
+},
+{
+  "directory": "/Users/henrivalimaki/Desktop/Yliopisto/C++/angry-birds-2020-3/build",
   "command": "/Library/Developer/CommandLineTools/usr/bin/c++  -I/Users/henrivalimaki/Desktop/Yliopisto/C++/angry-birds-2020-3/src/Box2D/box2d -isystem /usr/local/include -g -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX10.15.sdk -std=gnu++11 -o CMakeFiles/Angry_Birds.dir/src/Speed.cpp.o -c /Users/henrivalimaki/Desktop/Yliopisto/C++/angry-birds-2020-3/src/Speed.cpp",
   "file": "/Users/henrivalimaki/Desktop/Yliopisto/C++/angry-birds-2020-3/src/Speed.cpp"
 },

@@ -2,4 +2,4 @@ Tuomas 670
 Aleksi 460
 Meri 300
 Pekka 300
-Henri 150
+Henri 300

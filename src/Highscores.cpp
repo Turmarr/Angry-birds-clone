@@ -14,15 +14,42 @@ Highscores::Highscores(float width, float height){
     initTexture();
     initBackground();
 
-    /*texts[0].setString("Highscores");
-    texts[1].setString("Level select");*/
-
-    for(int i = 0; i < 5; i++){
+    for(int i = 0; i < 4; i++){
         texts[i].setFont(font);
         texts[i].setFillColor(sf::Color::White);
         texts[i].setOutlineColor(sf::Color::Black);
         texts[i].setOutlineThickness(2.f);
     }
+
+    box.setSize(sf::Vector2f(300, 300));
+    box.setFillColor(sf::Color::White);
+    box.setOutlineColor(sf::Color::Black);
+    box.setOutlineThickness(2.f);
+    box.setOrigin(box.getLocalBounds().width / 2, box.getLocalBounds().height / 2);
+    box.setPosition(width_ / 2, height_ / 2);
+
+    texts[0].setString("New highscore!");
+    texts[0].setCharacterSize(20);
+    texts[0].setOrigin(texts[0].getLocalBounds().width/2, texts[0].getLocalBounds().height/2);
+    texts[0].setPosition(box.getPosition().x, box.getGlobalBounds().top + 50);
+
+    texts[1].setString("Enter your name");
+    texts[1].setCharacterSize(15);
+    texts[1].setOrigin(texts[1].getLocalBounds().width/2, texts[1].getLocalBounds().height/2);
+    texts[1].setPosition(box.getPosition().x, box.getGlobalBounds().top + 125);
+
+    texts[2].setString("Max 10 characters");
+    texts[2].setCharacterSize(10);
+    texts[2].setOrigin(texts[2].getLocalBounds().width/2, texts[2].getLocalBounds().height/2);
+    texts[2].setPosition(box.getPosition().x, box.getGlobalBounds().top + 150);
+
+    inputBox.setSize(sf::Vector2f(box.getLocalBounds().width - 50, 50));
+    inputBox.setFillColor(sf::Color::White);
+    inputBox.setOutlineColor(sf::Color::Black);
+    inputBox.setOutlineThickness(2.f);
+    inputBox.setOrigin(inputBox.getLocalBounds().width / 2, inputBox.getLocalBounds().height / 2);
+    inputBox.setPosition(box.getPosition().x, box.getGlobalBounds().top + 225);
+
 
 }
 
@@ -47,6 +74,9 @@ void Highscores::initBackground(){
 }
 
 bool Highscores::Read(std::string filename){
+
+    currentHighscores.clear();
+
     std::ifstream file(filename);
 
     if(!file.is_open()){
@@ -88,11 +118,6 @@ bool Highscores::Write(std::string filename){
         file << i.first << " " << i.second << std::endl;
     }
 
-    //Check if unsuccesful
-    if(!file){
-        return false;
-    }
-
     file.close();
     return true;
 }
@@ -109,13 +134,8 @@ bool Highscores::updateHighscores(std::string filename, int points){
     currentPoints = points;
     currentFileName = filename;
 
-    userInput.clear();
-
-    
-    
-    
     //Returns true if points > last member of highscores
-    if (points > currentHighscores[maxSize - 1].second){
+    if (points > currentHighscores.back().second){
         draw = true;
         return true;
     }
@@ -130,29 +150,6 @@ state Highscores::updateEvent(sf::Event& event){
 
     switch (event.type)
     {
-    case sf::Event::TextEntered:
-        if(event.text.unicode == 10){
-            currentHighscores.emplace_back(userInput, currentPoints);
-            std::sort(currentHighscores.begin(), currentHighscores.end(), higherScore);
-            currentHighscores.pop_back();
-            this->Write(currentFileName);
-            options_.i = 1;
-            return options_;
-        }
-
-        else if(event.text.unicode == 8){
-            userInput.pop_back();
-        }
-
-        else if(event.text.unicode < 128){
-            if(userInput.length() <= maxInputSize){
-                userInput += event.text.unicode;
-            }
-        }
-
-        return options_;
-        break;
-    
     case sf::Event::Closed:
         options_.i = 3;
         return options_;
@@ -171,40 +168,35 @@ state Highscores::updateEvent(sf::Event& event){
     }
 }
 
+bool Highscores::updateUserInput(sf::Event& event){
+
+    if(event.type == sf::Event::TextEntered){
+        if(event.text.unicode == 10){   //Return key
+            currentHighscores.emplace_back(userInput, currentPoints);
+            std::sort(currentHighscores.begin(), currentHighscores.end(), higherScore);
+            currentHighscores.pop_back();
+            this->Write(currentFileName);
+            return false;
+        }
+
+        else if(event.text.unicode == 8){   //Backspace key
+            userInput.pop_back();
+        }
+
+        else if(event.text.unicode < 128){
+            if(userInput.length() <= maxInputSize){
+                userInput += event.text.unicode;
+            }
+        }
+    }
+    return true;
+}
+
 void Highscores::drawInputBox(sf::RenderWindow& window){
 
     if(!draw){
         return;
     }
-
-    sf::RectangleShape box(sf::Vector2f(300, 300));
-    box.setFillColor(sf::Color::White);
-    box.setOutlineColor(sf::Color::Black);
-    box.setOutlineThickness(2.f);
-    box.setOrigin(box.getLocalBounds().width / 2, box.getLocalBounds().height / 2);
-    box.setPosition(width_ / 2, height_ / 2);
-
-    texts[0].setString("New highscore!");
-    texts[0].setCharacterSize(20);
-    texts[0].setOrigin(texts[0].getLocalBounds().width/2, texts[0].getLocalBounds().height/2);
-    texts[0].setPosition(box.getPosition().x, box.getGlobalBounds().top + 50);
-
-    texts[1].setString("Enter your name");
-    texts[1].setCharacterSize(15);
-    texts[1].setOrigin(texts[1].getLocalBounds().width/2, texts[1].getLocalBounds().height/2);
-    texts[1].setPosition(box.getPosition().x, box.getGlobalBounds().top + 125);
-
-    texts[2].setString("Max 10 characters");
-    texts[2].setCharacterSize(10);
-    texts[2].setOrigin(texts[2].getLocalBounds().width/2, texts[2].getLocalBounds().height/2);
-    texts[2].setPosition(box.getPosition().x, box.getGlobalBounds().top + 150);
-
-    sf::RectangleShape inputBox(sf::Vector2f(box.getLocalBounds().width - 50, 50));
-    inputBox.setFillColor(sf::Color::White);
-    inputBox.setOutlineColor(sf::Color::Black);
-    inputBox.setOutlineThickness(2.f);
-    inputBox.setOrigin(inputBox.getLocalBounds().width / 2, inputBox.getLocalBounds().height / 2);
-    inputBox.setPosition(box.getPosition().x, box.getGlobalBounds().top + 225);
 
     texts[3].setString(userInput);
     texts[3].setCharacterSize(30);

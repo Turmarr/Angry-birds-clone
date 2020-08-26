@@ -50,6 +50,7 @@ file(REMOVE_RECURSE
   "CMakeFiles/Angry_Birds.dir/src/Box2D/b2_world_callbacks.cpp.o"
   "CMakeFiles/Angry_Birds.dir/src/Highscores.cpp.o"
   "CMakeFiles/Angry_Birds.dir/src/Normal.cpp.o"
+  "CMakeFiles/Angry_Birds.dir/src/Scoreboard.cpp.o"
   "CMakeFiles/Angry_Birds.dir/src/Speed.cpp.o"
   "CMakeFiles/Angry_Birds.dir/src/main.cpp.o"
 )
