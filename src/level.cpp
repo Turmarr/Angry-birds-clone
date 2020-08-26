@@ -322,7 +322,7 @@ void Level::DrawLevel(sf::RenderWindow& window) {
     }
 
     DrawScore(window);
-    DrawPigcount(window);
+    //DrawPigcount(window);
 
     window.display();
 }
@@ -382,6 +382,7 @@ void Level::Simulate() {
                 pig_time_ = 0;
             }
         }
+    //resize_ = 1;
     ControlView();
 }
 
@@ -495,7 +496,7 @@ state Level::Update(sf::RenderWindow& window, sf::Event& ev) {
             if (ev.mouseWheelScroll.wheel == sf::Mouse::VerticalWheel) {
                 float ticks = ev.mouseWheelScroll.delta;
                 resize_ = 1-ticks*0.01;
-                std::cout << resize_ << std::endl;
+                //std::cout << resize_ << std::endl;
             }
             break;
         case sf::Event::Resized: {

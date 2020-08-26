@@ -158,7 +158,7 @@ class Level {
         float angle_ = 0;
         float pig_time_ = 0;
         sf::CircleShape cannnon_hitbox_;
-        float resize_;
+        float resize_ = 1;
         float cannon_power_ = 8 ; //defines the max velocity of the pig smaller = bigger
 
         //camera control
