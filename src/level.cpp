@@ -492,10 +492,7 @@ state Level::Update(sf::RenderWindow& window, sf::Event& ev) {
                 case sf::Keyboard::Left:
                     move_to_left_ = true;
                     break;
-                case sf::Keyboard::Escape:
-                    state.i = 5;
-                    state.points = -1;
-                    return state;
+
                 default:
                     break;
                 }
@@ -508,6 +505,10 @@ state Level::Update(sf::RenderWindow& window, sf::Event& ev) {
                 case sf::Keyboard::Left:
                     move_to_left_ = false;
                     break;
+                case sf::Keyboard::Escape:
+                    state.i = 5;
+                    state.points = -1;
+                    return state;
                 default:
                     break;
                 }
