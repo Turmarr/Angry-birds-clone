@@ -6,6 +6,7 @@ Box::Box(float x, float y, const std::string& type, float width, float height, f
     y_ = y;
     mat = Material(type);
     
+    
     //type_ = type;
     angle_ = angle;
     scale_ = scale;
