@@ -58,9 +58,10 @@ void Game::deleteLevel(){
     constructed_ = false;
     sf::View view = window_.getDefaultView();
     window_.setView(view);
-    if(state_.points = -1){
+    if(state_.points == -1){
         state_.i = 1;
     }
+    state_.i = 1;
     
 }
 //Game loop
