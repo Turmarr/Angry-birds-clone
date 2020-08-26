@@ -61,6 +61,7 @@ void Game::deleteLevel(){
     if(state_.points == -1){
         state_.i = 1;
     }
+    state_.i = 1;
     
 }
 //Game loop
