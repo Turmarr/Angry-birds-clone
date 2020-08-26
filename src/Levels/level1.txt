@@ -1,24 +1,28 @@
 # cannon
-100 400
+100 300
 
 # Pigs
-speed 1
-bomb 2
+bomb 1
+normal 2
 normal 3
 
 # Birds
-bird 300 450
+bird 875 450
+bird 875 400
+
 
 # Objects
 / Vertical foundation
-box wood 600 475 0 30 110
-box wood 750 475 0 30 110
+box wood 800 475 0 20 110
+box wood 950 475 0 20 110
 
 / Horizontal bar 
-box wood 675 350 90 30 200
+box wood 875 410 90 20 300
 
-/ball wood 900 500 60 0 0
-ball stone 400 400 30 0 0
+/ Some balls
+ball wood 780 400 30 0 0
+ball wood 980 400 30 0 0
+
 
 # groundpoints
 400 570 3000 60 
@@ -34,3 +38,4 @@ ball stone 400 400 30 0 0
 
 #
 ../src/Highscores/level1.txt
+
