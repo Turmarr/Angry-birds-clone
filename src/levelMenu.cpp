@@ -198,7 +198,6 @@ state levelMenu::updateMenuEvent(sf::Event& ev, sf::RenderWindow& window){
                 case sf::Keyboard::Return:
                     
                     options_.i = 4;
-                    //index = this->returnSelectedItem();
                     switch (selectedItemIndex){
 
                         case 0:
@@ -237,11 +236,11 @@ state levelMenu::updateMenuEvent(sf::Event& ev, sf::RenderWindow& window){
                 
                     for (int i = 0; i <3; i++){
                         
-                        if(menu[i].getGlobalBounds().contains(mousePosView) && (i+1) <= maxLevelIndex){
+                        if(menu[i].getGlobalBounds().contains(mousePosView) && (i <= maxLevelIndex)){
                             
                             options_.i = 4;
                             selectedItemIndex = i;
-                            switch (options_.i){
+                            switch (i){
 
                                 case 0:
                                     options_.file = "../src/Levels/level1.txt";
