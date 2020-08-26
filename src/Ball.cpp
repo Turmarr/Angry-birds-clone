@@ -43,7 +43,7 @@ void Ball::initTexture(){
     
     std::string file = mat.texture;
     
-    if(!this->pic_.loadFromFile(file, sf::IntRect(0,0, 80,80))){
+    if(!this->pic_.loadFromFile(file, sf::IntRect(0,0, 100, 100))){
         std::cout<< "Error when loading the image from textures." <<std::endl;
     }
 }
