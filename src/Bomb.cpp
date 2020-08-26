@@ -120,7 +120,7 @@ void Bomb::Special() {
 
 
 void Bomb::initTexture(){
-    if(!texture_.loadFromFile("../src/Textures/bomb_pig.png", sf::IntRect(0, 0, 60, 60))){
+    if(!texture_.loadFromFile("../src/Textures/bombpig.png")){
         std::cout<< "Error when loading the image from textures." <<std::endl;
     }
 }
