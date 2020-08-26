@@ -10,6 +10,7 @@ Bomb::Bomb(float x, float y, b2World* world) {
     world_ = world;
 
     body_ = NULL;
+    type_ = "Bomb";
 
     b2BodyDef bodyDef;
     bodyDef.type = b2_staticBody;

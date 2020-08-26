@@ -126,6 +126,7 @@ class Level {
         void ControlView();
         void LastLevelCleared();
         void LevelStars();
+        void DrawPigcount(sf::RenderWindow& window);
         
 
         //general variables
