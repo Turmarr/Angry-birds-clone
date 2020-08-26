@@ -13,7 +13,7 @@ private:
     int selectedItemIndex;
     state options_;
     int maxLevelIndex;
-    int index;
+    //int index;
 
     //Level options
     sf::Font font;
@@ -42,6 +42,7 @@ private:
     void initTexts();
     void initStars();
     void initBackground();
+    void updateSelected();
 
 public:
 
