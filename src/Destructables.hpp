@@ -11,19 +11,19 @@ class Material {
 
         Material(std::string type) {
             if (type == "wood") {
-                points = 100;
-                hp = 100;
+                points = 200;
+                hp = 200;
                 texture = "../src/Textures/wood.jpg";
                 density = 1;
             }
             else if (type == "stone") {
-                points = 200;
-                hp = 200;
+                points = 600;
+                hp = 600;
                 texture = "../src/Textures/stone.jpg";
                 density = 2;
             }
             else if (type == "bird") {
-                points = 1000;
+                points = 700;
                 hp = 20;
                 texture = "../src/Textures/bird.png";
                 density = 1;

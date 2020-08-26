@@ -1,0 +1,38 @@
+# cannon
+100 300
+
+# Pigs
+speed 1
+bomb 2
+normal 3
+
+# Birds
+bird 700 270
+bird 1250 500
+bird 1150 90
+
+
+# Objects
+
+ball stone 700 515 100 50 60
+ball stone 950 515 150 50 60
+box wood 1150 330 0 50 400
+box wood 1150 130 90 20 100
+box stone 700 320 90 30 200
+
+
+
+# groundpoints
+400 570 3000 60 
+-200 150 10 800
+1895 150 10 800
+400 570 3000 60
+
+#
+3
+
+#
+3000 5000
+
+#
+../src/Highscores/level3.txt
