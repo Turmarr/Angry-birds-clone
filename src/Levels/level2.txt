@@ -1,0 +1,50 @@
+# cannon
+100 400
+
+# Pigs
+bomb 1
+bomb 2
+
+
+# Birds
+bird 775 230
+bird 975 230
+bird 875 400
+
+
+# Objects
+/ Vertical
+box stone 750 515 0 50 60
+box stone 840 515 0 50 60
+box stone 930 515 0 50 60
+box stone 1000 515 0 50 60
+
+box wood 750 355 0 20 200
+box wood 1000 355 0 20 200
+
+/ Horizontal  
+box stone 875 465 90 30 350
+box wood 875 240 90 20 340
+
+
+
+
+/ Some balls
+/ball wood 780 400 30 0 0
+/ball wood 980 400 30 0 0
+
+
+# groundpoints
+400 570 3000 60 
+-200 150 10 800
+1895 150 10 800
+400 570 3000 60
+
+#
+2
+
+#
+3000 5000
+
+#
+../src/Highscores/level2.txt
