@@ -10,8 +10,6 @@ private:
 
     state options_;
 
-    //bool draw = false;
-
     int maxSize = 5;
     
     sf::Font font;
@@ -22,9 +20,6 @@ private:
     //Input box
     sf::RectangleShape box;
     sf::RectangleShape inputBox;
-
-    //Scoreboard texts
-    //sf::Text topTen[maxSize];
 
     //Background
     sf::Texture background;

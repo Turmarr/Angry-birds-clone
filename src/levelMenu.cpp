@@ -144,6 +144,7 @@ void levelMenu::Draw(sf::RenderWindow& window){
     for (auto i : stars){
         window.draw(i);
     }
+    std::cout<< "did it draw?" << std::endl;
 
 }
 
@@ -307,6 +308,7 @@ void levelMenu::updateStars(){
         } 
     }
     is.close();
+    std::cout<< "updateStars" << std::endl;
 }
 
 void levelMenu::updateLevel(){
@@ -328,4 +330,5 @@ void levelMenu::updateLevel(){
         
     }
     updateSelected();
+    std::cout<< "updateCleared" << std::endl;
 }

@@ -322,7 +322,7 @@ void Level::DrawLevel(sf::RenderWindow& window) {
     }
 
     DrawScore(window);
-    //DrawPigcount(window);
+    DrawPigcount(window);
 
     window.display();
 }
@@ -543,6 +543,7 @@ state Level::Update(sf::RenderWindow& window, sf::Event& ev) {
         return state;
     }
     else {
+        ///std::cout<< "state is set to 5" << std::endl;
         state.i = 5;
         state.points = -1;
         if (birds_.size() == 0) {

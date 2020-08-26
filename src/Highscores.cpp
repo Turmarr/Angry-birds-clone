@@ -15,8 +15,6 @@ Highscores::Highscores(float width, float height){
     initBackground();
     initInputBox();
 
-    /*texts[0].setString("Highscores");
-    texts[1].setString("Level select");*/
     texts[0].setString("New highscore!");
     texts[1].setString("Enter your name");
     texts[2].setString("Max 10 characters");
@@ -34,11 +32,11 @@ Highscores::Highscores(float width, float height){
     texts[0].setPosition(box.getPosition().x, box.getGlobalBounds().top + 50);
     
     texts[1].setCharacterSize(15);
-    texts[1].setOrigin(texts[1].getLocalBounds().width/2, texts[1].getLocalBounds().height/2);
+    //texts[1].setOrigin(texts[1].getLocalBounds().width/2, texts[1].getLocalBounds().height/2);
     texts[1].setPosition(box.getPosition().x, box.getGlobalBounds().top + 125);
 
     texts[2].setCharacterSize(10);
-    texts[2].setOrigin(texts[2].getLocalBounds().width/2, texts[2].getLocalBounds().height/2);
+    //texts[2].setOrigin(texts[2].getLocalBounds().width/2, texts[2].getLocalBounds().height/2);
     texts[2].setPosition(box.getPosition().x, box.getGlobalBounds().top + 150);
 
 
@@ -82,6 +80,9 @@ void Highscores::initInputBox(){
 }
 
 bool Highscores::Read(std::string filename){
+
+    currentHighscores.clear();
+
     std::ifstream file(filename);
 
     if(!file.is_open()){
@@ -133,28 +134,30 @@ bool Highscores::Write(std::string filename){
 }
 
 bool Highscores::updateHighscores(std::string filename, int points){
-
+    std::cout<< "before reading file" << std::endl;
     //Check if reading was unsuccesful
     if(!Read(filename)){
         return false;
     }
-
+    std::cout<< "after" << std::endl;
     std::sort(currentHighscores.begin(), currentHighscores.end(), higherScore);
 
     currentPoints = points;
     currentFileName = filename;
 
     userInput.clear();
-
+    std::cout<< "updated" << std::endl;
     
     
     
     //Returns true if points > last member of highscores
     if (points > currentHighscores[maxSize - 1].second){
         //draw = true;
+        std::cout<< "bigger" << std::endl;
         return true;
     }
     else{
+        std::cout<< "smaller" << std::endl;
         return false;
     }
 }
@@ -214,12 +217,17 @@ void Highscores::updateInputBox(){
 }
 void Highscores::drawInputBox(sf::RenderWindow& window){
 
+    std::cout<< "drawing" << std::endl;
     window.draw(rect);
+    std::cout<< "background" << std::endl;
     window.draw(box);
+    std::cout<< "box" << std::endl;
     window.draw(inputBox);
+    std::cout<< "input" << std::endl;
     
     for (int i = 0; i < 4; i++){
         window.draw(texts[i]);
+        std::cout<< i << std::endl;
     }
 
 }

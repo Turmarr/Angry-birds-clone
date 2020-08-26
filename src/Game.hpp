@@ -40,7 +40,7 @@ class Game{
 
         //For highscore updates
         Highscores* highscore_;
-        bool newHighscore;
+        bool newHighscore_;
         bool input;
 
         /* Defines the state of the screen - which class is running
