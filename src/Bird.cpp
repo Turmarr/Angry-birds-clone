@@ -2,7 +2,7 @@
 #include "Bird.hpp"
 #include <iostream>
 
-Bird::Bird(float x, float y, b2World& world, const float scale, float radius, Points* points){
+Bird::Bird(float x, float y, std::string type, b2World& world, const float scale, float radius, Points* points){
     x_ = x;
     y_ = y;
     scale_ = scale;
@@ -10,7 +10,7 @@ Bird::Bird(float x, float y, b2World& world, const float scale, float radius, Po
 
     world_ = &world;
 
-    mat = Material("bird");
+    mat = Material(type);
     
     initTexture();
     initSprite();
