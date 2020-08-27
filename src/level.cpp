@@ -383,7 +383,7 @@ void Level::Simulate() {
     world_->Step(timeStep_, velocityIterations_, positionIterations_);
 
     if (current_pig_ != nullptr && pig_flying_) {
-            if (current_pig_->GetSpeed() <= 0.1) {
+            if (current_pig_->GetSpeed() <= 0.5) {
                 pig_time_ += 1;
                 if (pig_time_ >= 60) {
                     delete current_pig_;
