@@ -315,7 +315,7 @@ void Level::DeleteDestroyed() {
 
 void Level::DrawLevel(sf::RenderWindow& window) {
     window.setView(view_);
-    window.clear(sf::Color::White);
+    window.clear(sf::Color(0, 217, 255));
     DrawCannon(window);
     DrawGround(window);
     
