@@ -336,7 +336,6 @@ void Level::DrawLevel(sf::RenderWindow& window) {
     DrawScore(window);
     DrawPigcount(window);
 
-    window.display();
 }
 
 
