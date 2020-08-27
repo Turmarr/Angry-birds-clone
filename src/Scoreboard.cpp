@@ -83,6 +83,7 @@ void Scoreboard::initBackground(){
 }
 
 void Scoreboard::setScoreTexts(){
+    scores_.clear();
     for(int i = 1; i <= 3; i++){
         std::string filename = "../src/Highscores/Highscores" + std::to_string(i) + ".txt";
         if(this->Read(filename)){
