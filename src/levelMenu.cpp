@@ -144,7 +144,7 @@ void levelMenu::Draw(sf::RenderWindow& window){
     for (auto i : stars){
         window.draw(i);
     }
-    std::cout<< "did it draw?" << std::endl;
+    //std::cout<< "did it draw?" << std::endl;
 
 }
 
@@ -197,7 +197,6 @@ state levelMenu::updateMenuEvent(sf::Event& ev, sf::RenderWindow& window){
                     break;
 
                 case sf::Keyboard::Return:
-                    
                     options_.i = 4;
                     switch (selectedItemIndex){
 
@@ -218,8 +217,9 @@ state levelMenu::updateMenuEvent(sf::Event& ev, sf::RenderWindow& window){
                         
                         default:
                             break;
-                    }
+                        }
                     break;
+
 
                 default:
                     break;
@@ -308,7 +308,7 @@ void levelMenu::updateStars(){
         } 
     }
     is.close();
-    std::cout<< "updateStars" << std::endl;
+    //std::cout<< "updateStars" << std::endl;
 }
 
 void levelMenu::updateLevel(){
@@ -330,5 +330,5 @@ void levelMenu::updateLevel(){
         
     }
     updateSelected();
-    std::cout<< "updateCleared" << std::endl;
+    //std::cout<< "updateCleared" << std::endl;
 }

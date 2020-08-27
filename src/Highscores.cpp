@@ -9,6 +9,8 @@ bool higherScore(std::pair<std::string, int> a, std::pair<std::string, int> b){
 Highscores::Highscores(float width, float height){
     width_ = width;
     height_ = height;
+    enter = false;
+    backtrack = false;
 
     initFonts();
     initTexture();
@@ -134,42 +136,61 @@ bool Highscores::Write(std::string filename){
 }
 
 bool Highscores::updateHighscores(std::string filename, int points){
-    std::cout<< "before reading file" << std::endl;
+    
     //Check if reading was unsuccesful
     if(!Read(filename)){
         return false;
     }
-    std::cout<< "after" << std::endl;
+
     std::sort(currentHighscores.begin(), currentHighscores.end(), higherScore);
 
     currentPoints = points;
     currentFileName = filename;
 
     userInput.clear();
-    std::cout<< "updated" << std::endl;
-    
     
     
     //Returns true if points > last member of highscores
     if (points > currentHighscores[maxSize - 1].second){
-        //draw = true;
-        std::cout<< "bigger" << std::endl;
         return true;
     }
     else{
-        std::cout<< "smaller" << std::endl;
         return false;
     }
 }
 
 state Highscores::updateEvent(sf::Event& event){
 
-    options_.i = 6;
+    
 
     switch (event.type)
     {
+    case sf::Event::KeyPressed:
+        switch (event.key.code)
+        {
+        case sf::Keyboard::Return:
+            if (enter == false){
+                currentHighscores.emplace_back(userInput, currentPoints);
+                std::sort(currentHighscores.begin(), currentHighscores.end(), higherScore);
+                currentHighscores.pop_back();
+                this->Write(currentFileName);
+                enter = true;
+            }
+            break;
+
+        case sf::Keyboard::BackSpace:
+            if (backtrack == false){
+                backtrack = true;
+                userInput.pop_back();
+            }
+            break;
+
+        default:
+            break;
+        }
     case sf::Event::TextEntered:
-        if(event.text.unicode == 10){
+        /*if(event.text.unicode == 10){
+            std::cout << "Enter pressed" << std::endl;
             currentHighscores.emplace_back(userInput, currentPoints);
             std::sort(currentHighscores.begin(), currentHighscores.end(), higherScore);
             currentHighscores.pop_back();
@@ -178,13 +199,14 @@ state Highscores::updateEvent(sf::Event& event){
             return options_;
         }
 
-        else if(event.text.unicode == 8){
+        if(event.text.unicode == 8){
             userInput.pop_back();
-        }
+        }*/
 
-        else if(event.text.unicode < 128){
+        if(event.text.unicode < 128 && enter == false && backtrack == false){
             if(userInput.length() <= maxInputSize){
                 userInput += event.text.unicode;
+                
             }
         }
 
@@ -196,15 +218,32 @@ state Highscores::updateEvent(sf::Event& event){
         break;
 
     case sf::Event::KeyReleased:
-        if(event.key.code == sf::Keyboard::Escape){
-            options_.i = 0;
-            return options_;
+        
+        switch (event.key.code)
+        {    
+            case sf::Keyboard::Escape:
+                options_.i = 0;
+                return options_;
+                break;
+
+            case sf::Keyboard::Return:
+                options_.i = 1;
+                enter = false;
+                backtrack = false;
+                return options_;
+                break;
+            case sf::Keyboard::BackSpace:
+                backtrack = false;
+                break;
+            default:
+                break;
+        
         }
-        break;
-    
+        
     default:
         break;
     }
+    options_.i = 6;
     return options_;
 }
 void Highscores::updateInputBox(){
@@ -217,17 +256,12 @@ void Highscores::updateInputBox(){
 }
 void Highscores::drawInputBox(sf::RenderWindow& window){
 
-    std::cout<< "drawing" << std::endl;
     window.draw(rect);
-    std::cout<< "background" << std::endl;
     window.draw(box);
-    std::cout<< "box" << std::endl;
     window.draw(inputBox);
-    std::cout<< "input" << std::endl;
+    updateInputBox();
     
     for (int i = 0; i < 4; i++){
         window.draw(texts[i]);
-        std::cout<< i << std::endl;
     }
-
 }

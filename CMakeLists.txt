@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 3.16.3)
-set(CMAKE_CXX_STANDARD 11)
+set(CMAKE_CXX_STANDARD 14)
 project(Angry_Birds)
 
 #include_directories(src/Box2D/box2d/)

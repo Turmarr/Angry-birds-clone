@@ -198,10 +198,19 @@ void Level::DrawPigcount(sf::RenderWindow& window) {
     if (!font.loadFromFile("../src/Fonts/arial.ttf")) {
         std::cout << "error getting font"<< std::endl;
     }
+    
     sf::Text text;
     text.setFont(font);
     std::stringstream ss;
-    ss << "Pigs left: " << pigs_.size() + 1 << " Next Pig: " << current_pig_->GetType();
+
+    if (current_pig_ != NULL){
+        
+        ss << "Pigs left: " << pigs_.size() + 1 << " Next Pig: " << current_pig_->GetType();
+    }
+    else
+    {
+        ss << "Pigs left: 0    Next Pig: NONE";
+    }
     text.setString(ss.str());
     text.setCharacterSize(20);
     text.setFillColor(sf::Color::Red);
@@ -274,6 +283,7 @@ void Level::FirePig() {
 }
 
 void Level::DeleteDestroyed() {
+    //std::cout<< "delete destroyed" << std::endl;
     std::vector<Bird*>::iterator it = birds_.begin();
     for (; it != birds_.end(); ) {
         //std::cout << "birdhp" << (*it)->GetHp() << std::endl;
@@ -283,6 +293,7 @@ void Level::DeleteDestroyed() {
         }
         else {it++;}
     }
+    //std::cout<< "delete ball" << std::endl;
     std::vector<Ball*>::iterator itb = ball_.begin();
     for (; itb != ball_.end(); ) {
         if ((*itb)->GetHp() <= 0) {
@@ -291,6 +302,7 @@ void Level::DeleteDestroyed() {
         }
         else {itb++;}
     }
+    //std::cout<< "delete box" << std::endl;
     std::vector<Box*>::iterator itx = box_.begin();
     for (; itx != box_.end(); ) {
         if ((*itx)->GetHp() <= 0) {
@@ -543,9 +555,7 @@ state Level::Update(sf::RenderWindow& window, sf::Event& ev) {
         return state;
     }
     else {
-        ///std::cout<< "state is set to 5" << std::endl;
         state.i = 5;
-        state.points = -1;
         if (birds_.size() == 0) {
             for (auto i : pigs_) {
                 points_->AddPoints(1000);
@@ -553,13 +563,15 @@ state Level::Update(sf::RenderWindow& window, sf::Event& ev) {
             if (current_pig_ != nullptr) {
                 points_->AddPoints(1000);
             }
-            state.points = points_->GetPoints();
-            LevelStars();
-            LastLevelCleared();
-            std::stringstream ss;
-            ss << highscore_file_;
-            ss >> state.file;
         }
+        state.points = points_->GetPoints();
+        LevelStars();
+        LastLevelCleared();
+        std::stringstream ss;
+        ss << highscore_file_;
+        ss >> state.file;
+        
+        //std::cout<< state.points << " after ending " << state.i << std::endl;
         return state;
     }
     

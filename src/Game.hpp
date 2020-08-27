@@ -6,6 +6,7 @@
 #include "level.hpp"
 #include "Highscores.hpp"
 #include <iostream>
+#include <memory>
 
 class Game{
     public:
@@ -33,15 +34,15 @@ class Game{
         float width_, height_;
         
         //Pointer to different menus
-        Menu* menu_;
-        levelMenu* lMenu_;
-        Level* level_;
+        std::unique_ptr<Menu> menu_;
+        std::unique_ptr<levelMenu> lMenu_;
+        std::unique_ptr<Level> level_;
         bool constructed_;
 
         //For highscore updates
-        Highscores* highscore_;
+        std::unique_ptr<Highscores> highscore_;
         bool newHighscore_;
-        bool input;
+        bool enterPressed;
 
         /* Defines the state of the screen - which class is running
             state.i =

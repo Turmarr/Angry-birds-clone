@@ -10,19 +10,17 @@ Game::Game(sf::RenderWindow& window, float width, float height): window_(window)
     state_.i = 0;
     constructed_ = false;
     newHighscore_ = false;
+    level_ = nullptr;
 
 
 }
 
 Game::~Game(){
 
-    delete lMenu_;
-    delete menu_;
-    if (level_ == nullptr){
+    if (level_ != nullptr){
         std::cout<< "Level deleted twice" << std::endl;
-        delete level_;
+        level_ = nullptr;
     }
-    delete highscore_;
 }
 //Settings for the window
 void Game::initWindow(){
@@ -33,15 +31,15 @@ void Game::initWindow(){
 //Creates the objects for different screens (except level)
 void Game::initMenus(){
     
-    menu_ = new Menu(width_, height_);
-    lMenu_ = new levelMenu(width_, height_);
-    highscore_ = new Highscores(width_, height_);
+    menu_ = std::make_unique<Menu>(width_, height_);
+    lMenu_ = std::make_unique<levelMenu>(width_, height_);
+    highscore_ = std::make_unique<Highscores>(width_, height_);
 }
 
 
 void Game::createLevel(){
     
-    level_ = new Level(state_.file);
+    level_ = std::make_unique<Level>(state_.file);
     constructed_ = true;
     
 }
@@ -53,20 +51,16 @@ void Game::deleteLevel(){
     Checked in levelMenu::updateStars().
     First is the level and then the amount of stars.
     */
-    std::cout<< "do twice?" << std::endl;
     lMenu_->updateStars();
     lMenu_->updateLevel();
-    delete level_;
+    level_ = nullptr;
     constructed_ = false;
     sf::View view = window_.getDefaultView();
     window_.setView(view);
     if(state_.points == -1){
         state_.i = 1;
-        std::cout<< "set to level" << std::endl;
+        std::cout<< "back to level state is " << state_.i << std::endl;
     }
-    //state_.i = 1;
-    std::cout<< state_.i << std::endl;
-    
 }
 //Game loop
 void Game::run(){
@@ -91,6 +85,7 @@ void Game::updatePollEvents(){
 
         else if (state_.i == 1){
             state_ = lMenu_->updateMenuEvent(ev, window_);
+        
         }
         
         /*else if (state_.i == 2){        
@@ -101,8 +96,8 @@ void Game::updatePollEvents(){
             state_ = level_->Update(window_, ev);
         }
         else if (state_.i == 6){
-            std::cout<< "Highscore evet" << std::endl;
             state_ = highscore_->updateEvent(ev);
+
         }
 
         if (state_.i == 3){
@@ -128,15 +123,12 @@ void Game::update(){
    }
 
    else if (state_.i == 5){
-       std::cout<< "state is 5" << std::endl;
         deleteLevel();
 
         if (state_.i == 5){
-            std::cout<< "state is still 5" << std::endl;
             newHighscore_ = highscore_->updateHighscores(state_.file, state_.points);
             if (newHighscore_ = true){
-                state_.i == 6;
-                std::cout<< "Highscore inputbox called" << std::endl;
+                state_.i = 6;
             }
             else
             {
@@ -145,25 +137,19 @@ void Game::update(){
             
         }
     }
-
-    else if (state_.i == 6){
-    std::cout<< "inputbox" << std::endl;
-       highscore_->updateInputBox();
-    }
    
 }
 
 //Draws the screen for each state
 void Game::render(){
-    //std::cout<< "draw" << std::endl;
+    
     window_.clear();
 
     if (state_.i == 0){
-            menu_->Draw(window_);
+        menu_->Draw(window_);
     }
         
     else if (state_.i == 1){
-        std::cout<< "leveldraw" << std::endl;
         lMenu_->Draw(window_);
     }
     
@@ -175,9 +161,7 @@ void Game::render(){
     }
     
     else if (state_.i == 6){
-        std::cout<< "Drawing" << std::endl;
         highscore_->drawInputBox(window_);
-        std::cout<< "Drawing box" << std::endl;
     }
 
     window_.display();

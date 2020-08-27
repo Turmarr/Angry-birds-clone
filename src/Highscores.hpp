@@ -20,6 +20,8 @@ private:
     //Input box
     sf::RectangleShape box;
     sf::RectangleShape inputBox;
+    bool backtrack;
+    bool enter;
 
     //Background
     sf::Texture background;
