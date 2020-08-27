@@ -1,6 +1,10 @@
 #include "Scoreboard.hpp"
 #include <iostream>
 
+bool higher(std::pair<std::string, int>& a, std::pair<std::string, int>& b){
+    return a.second > b.second;
+}
+
 Scoreboard::Scoreboard(float width, float height){
     width_ = width;
     height_ = height;
@@ -36,7 +40,7 @@ Scoreboard::Scoreboard(float width, float height){
     }
 
 
-    headers[0].setString("Highscores");
+    headers[0].setString("Scoreboard");
     headers[0].setCharacterSize(30);
     headers[0].setOrigin(headers[0].getLocalBounds().width/2, headers[0].getLocalBounds().height/2);
     headers[0].setPosition(width_ / 2, 30);
@@ -56,11 +60,31 @@ Scoreboard::Scoreboard(float width, float height){
     headers[3].setOrigin(headers[3].getLocalBounds().width/2, headers[3].getLocalBounds().height/2);
     headers[3].setPosition(box[2].getPosition().x, box[2].getGlobalBounds().top + 20);
 
+    setScoreTexts();
+}
+void Scoreboard::initFonts(){
+
+    if(!font.loadFromFile("../src/Fonts/test2.ttf")){
+        std::cout<< "Error while loading menu font."<<std::endl;
+    }
+}
+
+void Scoreboard::initTexture(){
+
+    if(!this->background.loadFromFile("../src/Textures/sky.png")){
+        std::cout<< "Failed to load menu background." << std::endl;
+    }
+}
+
+void Scoreboard::initBackground(){
+
+    rect.setTexture(&this->background);
+    rect.setSize(sf::Vector2f(width_, height_));
 }
 
 void Scoreboard::setScoreTexts(){
     for(int i = 1; i <= 3; i++){
-        std::string filename = "/Users/henrivalimaki/Desktop/Yliopisto/C++/angry-birds-2020-3/build/Highscores" + std::to_string(i) + ".txt";
+        std::string filename = "../src/Highscores/Highscores" + std::to_string(i) + ".txt";
         if(this->Read(filename)){
             for(int j = 0; j < currentHighscores.size(); j++){
                 sf::Text name;
@@ -110,5 +134,95 @@ void Scoreboard::Draw(sf::RenderWindow& window){
 
     for(auto i : scores_){
         window.draw(i);
+        //std::cout << count  << std::endl;
     }
+}
+bool Scoreboard::Read(std::string filename){
+
+    currentHighscores.clear();
+
+    std::ifstream file(filename);
+
+    if(!file.is_open()){
+        std::cout << "Failed to open highscores file." << std::endl;
+        return false;
+    }
+
+    std::string name;
+    int points;
+
+    while(file >> name >> points){
+        currentHighscores.emplace_back(name, points);
+    }
+
+    //Sort the list
+    std::sort(currentHighscores.begin(), currentHighscores.end(), higher);
+
+    //Make sure it's not longer than max size
+    while(currentHighscores.size() > maxSize){
+        currentHighscores.pop_back();
+    }
+
+    file.close();
+    return true;
+}
+
+bool Scoreboard::Write(std::string filename){
+
+    std::sort(currentHighscores.begin(), currentHighscores.end(), higher);
+
+    std::ofstream file(filename);
+
+    if(!file.is_open()){
+        std::cout << "Failed to open highscores file." << std::endl;
+        return false;
+    }
+
+    for(auto i : currentHighscores){
+        file << i.first << " " << i.second << std::endl;
+    }
+
+    //Check if unsuccesful
+    if(!file){
+        return false;
+    }
+
+    file.close();
+    return true;
+}
+
+state Scoreboard::updateEvent(sf::Event& ev){
+
+    switch (ev.type)
+    {
+    case sf::Event::KeyReleased:
+
+        switch (ev.key.code)
+        {
+        case sf::Keyboard::Return:
+            options_.i = 0;
+            return options_;
+            break;
+        case sf::Keyboard::Escape:
+            options_.i = 0;
+            return options_;
+            break;
+        
+        default:
+            break;
+        }
+        
+        break;
+
+    case sf::Event::Closed:
+        options_.i = 0;
+        return options_;
+        break;
+    
+    default:
+        break;
+    }
+    
+    options_.i = 2;
+    return options_;
 }

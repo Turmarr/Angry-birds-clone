@@ -8,7 +8,7 @@ bomb 2
 
 # Birds
 bird 775 230
-bird 975 230
+strongbird 975 230
 bird 875 400
 
 
@@ -47,4 +47,4 @@ box wood 875 240 90 20 340
 3000 5000
 
 #
-../src/Highscores/level2.txt
+../src/Highscores/Highscores2.txt

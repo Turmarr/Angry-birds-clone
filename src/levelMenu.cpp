@@ -324,7 +324,9 @@ void levelMenu::updateLevel(){
     ss.str(line);
     ss >> maxLevelIndex;
     is.close();
-
+    if (maxLevelIndex >= 3){
+        maxLevelIndex--;
+    }
     for (int i = 0; i < (maxLevelIndex+1);i++){
         menu[i].setFillColor(sf::Color::White);
         

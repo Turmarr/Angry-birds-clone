@@ -17,10 +17,6 @@ Game::Game(sf::RenderWindow& window, float width, float height): window_(window)
 
 Game::~Game(){
 
-    if (level_ != nullptr){
-        std::cout<< "Level deleted twice" << std::endl;
-        level_ = nullptr;
-    }
 }
 //Settings for the window
 void Game::initWindow(){
@@ -34,6 +30,7 @@ void Game::initMenus(){
     menu_ = std::make_unique<Menu>(width_, height_);
     lMenu_ = std::make_unique<levelMenu>(width_, height_);
     highscore_ = std::make_unique<Highscores>(width_, height_);
+    board_ = std::make_unique<Scoreboard>(width_, height_);
 }
 
 
@@ -59,7 +56,6 @@ void Game::deleteLevel(){
     window_.setView(view);
     if(state_.points == -1){
         state_.i = 1;
-        std::cout<< "back to level state is " << state_.i << std::endl;
     }
 }
 //Game loop
@@ -88,15 +84,18 @@ void Game::updatePollEvents(){
         
         }
         
-        /*else if (state_.i == 2){        
-            state_ = highscores_->updateEvent(ev);
-        } 
-        */
+        else if (state_.i == 2){        
+            state_ = board_->updateEvent(ev);
+        }
+
         else if (state_.i == 4){
             state_ = level_->Update(window_, ev);
         }
         else if (state_.i == 6){
             state_ = highscore_->updateEvent(ev);
+            if (state_.i == 1){
+                board_->setScoreTexts();
+            }
 
         }
 
@@ -109,7 +108,7 @@ void Game::updatePollEvents(){
 
 //Updates state objects
 void Game::update(){
-    //std::cout<< "update" << std::endl;
+    
    if (state_.i == 4){
        
         if (constructed_ == true){
@@ -126,6 +125,7 @@ void Game::update(){
         deleteLevel();
 
         if (state_.i == 5){
+            //std::cout<< "end level 3" << std::endl;
             newHighscore_ = highscore_->updateHighscores(state_.file, state_.points);
             if (newHighscore_ = true){
                 state_.i = 6;
@@ -153,9 +153,9 @@ void Game::render(){
         lMenu_->Draw(window_);
     }
     
-    /*else if (state_.i == 2){        
-        highscore_->Draw(window_);
-    } */
+    else if (state_.i == 2){        
+        board_->Draw(window_);
+    }
     else if (state_.i == 4){
         level_->DrawLevel(window_);
     }

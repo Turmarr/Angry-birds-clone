@@ -5,6 +5,7 @@
 #include "state.hpp"
 #include "level.hpp"
 #include "Highscores.hpp"
+#include "Scoreboard.hpp"
 #include <iostream>
 #include <memory>
 
@@ -37,6 +38,7 @@ class Game{
         std::unique_ptr<Menu> menu_;
         std::unique_ptr<levelMenu> lMenu_;
         std::unique_ptr<Level> level_;
+        std::unique_ptr<Scoreboard> board_;
         bool constructed_;
 
         //For highscore updates

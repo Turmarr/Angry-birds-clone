@@ -8,8 +8,8 @@ normal 3
 
 # Birds
 bird 700 270
-bird 1250 500
-bird 1150 90
+strongbird 1250 500
+kingbird 1150 90
 
 
 # Objects
@@ -35,4 +35,4 @@ box stone 700 320 90 30 200
 3000 5000
 
 #
-../src/Highscores/level3.txt
+../src/Highscores/Highscores3.txt

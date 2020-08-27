@@ -1,0 +1,5 @@
+Tuomas 5000
+Aleksi 4600
+Meri 3000
+Pekka 300
+Henri 300

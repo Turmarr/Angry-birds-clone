@@ -2,7 +2,7 @@
 #include <iostream>
 
 //Function that defines sorting criteria
-bool higherScore(std::pair<std::string, int> a, std::pair<std::string, int> b){
+bool higherScore(std::pair<std::string, int>& a, std::pair<std::string, int>& b){
     return a.second > b.second;
 }
 
@@ -20,6 +20,7 @@ Highscores::Highscores(float width, float height){
     texts[0].setString("New highscore!");
     texts[1].setString("Enter your name");
     texts[2].setString("Max 10 characters");
+    texts[4].setString("Press Enter to save");
 
 
     for(int i = 0; i < 5; i++){
@@ -34,12 +35,13 @@ Highscores::Highscores(float width, float height){
     texts[0].setPosition(box.getPosition().x, box.getGlobalBounds().top + 50);
     
     texts[1].setCharacterSize(15);
-    //texts[1].setOrigin(texts[1].getLocalBounds().width/2, texts[1].getLocalBounds().height/2);
     texts[1].setPosition(box.getPosition().x, box.getGlobalBounds().top + 125);
 
     texts[2].setCharacterSize(10);
-    //texts[2].setOrigin(texts[2].getLocalBounds().width/2, texts[2].getLocalBounds().height/2);
     texts[2].setPosition(box.getPosition().x, box.getGlobalBounds().top + 150);
+
+    texts[4].setCharacterSize(15);
+    texts[4].setPosition(box.getPosition().x, inputBox.getGlobalBounds().top + 70);
 
 
 }
@@ -181,7 +183,7 @@ state Highscores::updateEvent(sf::Event& event){
         case sf::Keyboard::BackSpace:
             if (backtrack == false){
                 backtrack = true;
-                userInput.pop_back();
+                userInput.erase(userInput.size()-1, 1);
             }
             break;
 
@@ -205,7 +207,7 @@ state Highscores::updateEvent(sf::Event& event){
 
         if(event.text.unicode < 128 && enter == false && backtrack == false){
             if(userInput.length() <= maxInputSize){
-                userInput += event.text.unicode;
+                userInput += static_cast<char>(event.text.unicode);
                 
             }
         }
@@ -261,7 +263,7 @@ void Highscores::drawInputBox(sf::RenderWindow& window){
     window.draw(inputBox);
     updateInputBox();
     
-    for (int i = 0; i < 4; i++){
+    for (int i = 0; i < 5; i++){
         window.draw(texts[i]);
     }
 }

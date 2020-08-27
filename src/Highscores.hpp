@@ -30,9 +30,6 @@ private:
     //Size of the window
     float width_, height_;
 
-    //Is mouse held down
-    bool mouseHeld;
-
     //Temporary storage for highscores
     std::vector<std::pair<std::string, int>> currentHighscores;
 
@@ -59,6 +56,7 @@ private:
     //Writes highscores to file. Returns true if succesful
     bool Write(std::string filename);
 
+
 public:
 
     //Constructor and destructor
@@ -78,5 +76,9 @@ public:
     //Draws user input window
     void drawInputBox(sf::RenderWindow& window);
 
-    friend bool higherScore(std::pair<std::string, int> a, std::pair<std::string, int> b);
+    friend bool higherScore(std::pair<std::string, int>& a, std::pair<std::string, int>& b);
 };
+
+/*bool higherScore(std::pair<std::string, int>& a, std::pair<std::string, int>& b){
+    return a.second > b.second;
+}*/
