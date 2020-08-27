@@ -183,7 +183,8 @@ state Highscores::updateEvent(sf::Event& event){
         }
     case sf::Event::TextEntered:
 
-        if(event.text.unicode == '\n'){
+        //If enter key actually worked
+        /*if(event.text.unicode == '\n'){
             std::cout << "Enter pressed" << std::endl;
             currentHighscores.emplace_back(userInput, currentPoints);
             std::sort(currentHighscores.begin(), currentHighscores.end(), higherScore);
@@ -191,15 +192,17 @@ state Highscores::updateEvent(sf::Event& event){
             this->Write(currentFileName);
             options_.i = 1;
             return options_;
-        }
+        }*/
 
-        else if(event.text.unicode == '\b'){
-            userInput.pop_back();
+        if(event.text.unicode == '\b'){
+            if(userInput.size() > 0){
+                userInput.pop_back();
+            }
         }
 
         else if(event.text.unicode < 128){
-            if(userInput.length() <= maxInputSize){
-                std::cout << "ASCII character typed: " << static_cast<char>(event.text.unicode) << std::endl;
+            if(userInput.length() <= maxInputSize && isalpha(event.text.unicode)){
+                //std::cout << "ASCII character typed: " << static_cast<char>(event.text.unicode) << std::endl;
                 userInput += event.text.unicode;
                 
             }
@@ -239,7 +242,7 @@ state Highscores::updateEvent(sf::Event& event){
     return options_;
 }
 void Highscores::updateInputBox(){
-
+    
     texts[3].setString(userInput);
     texts[3].setCharacterSize(30);
     texts[3].setOrigin(texts[3].getLocalBounds().width/2, texts[3].getLocalBounds().height/2);
