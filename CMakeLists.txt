@@ -1,10 +1,10 @@
 cmake_minimum_required(VERSION 3.16.3)
 set(CMAKE_CXX_STANDARD 14)
-project(Angry_Birds)
+project(Vengeful_pigs)
 
 #include_directories(src/Box2D/box2d/)
 
-set(EXECUTABLE_NAME test)
+set(EXECUTABLE_NAME Vengeful_pigs)
 
 file(GLOB SOURCES src/*.cpp src/*.hpp src/Box2D/*)
 add_executable(${EXECUTABLE_NAME} ${SOURCES})
