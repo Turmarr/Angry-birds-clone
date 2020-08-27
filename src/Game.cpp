@@ -141,12 +141,12 @@ void Game::update(){
         if (state_.i == 5){
             //std::cout<< "end level 3" << std::endl;
             newHighscore_ = highscore_->updateHighscores(state_.file, state_.points);
-            if (newHighscore_ = true){
+            if (newHighscore_ == true){
                 state_.i = 6;
             }
             else
             {
-                state_.i == 1;
+                state_.i = 1;
             }
             
         }
