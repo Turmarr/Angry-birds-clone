@@ -144,6 +144,7 @@ void levelMenu::Draw(sf::RenderWindow& window){
     for (auto i : stars){
         window.draw(i);
     }
+    //std::cout<< "did it draw?" << std::endl;
 
 }
 
@@ -196,7 +197,6 @@ state levelMenu::updateMenuEvent(sf::Event& ev, sf::RenderWindow& window){
                     break;
 
                 case sf::Keyboard::Return:
-                    
                     options_.i = 4;
                     switch (selectedItemIndex){
 
@@ -217,8 +217,9 @@ state levelMenu::updateMenuEvent(sf::Event& ev, sf::RenderWindow& window){
                         
                         default:
                             break;
-                    }
+                        }
                     break;
+
 
                 default:
                     break;
@@ -237,7 +238,6 @@ state levelMenu::updateMenuEvent(sf::Event& ev, sf::RenderWindow& window){
                     for (int i = 0; i <3; i++){
                         
                         if(menu[i].getGlobalBounds().contains(mousePosView) && (i <= maxLevelIndex)){
-                            
                             options_.i = 4;
                             selectedItemIndex = i;
                             switch (i){
@@ -276,7 +276,8 @@ state levelMenu::updateMenuEvent(sf::Event& ev, sf::RenderWindow& window){
     options_.i = 1;
     return options_;
 }
-//Setting stars to non-transparent
+
+//Setting stars to non-transparent, also checking how many stars have been achieved. 
 void levelMenu::updateStars(){
     
     std::ifstream is("../src/Levels/stars.txt");
@@ -308,6 +309,7 @@ void levelMenu::updateStars(){
         } 
     }
     is.close();
+    
 }
 
 void levelMenu::updateLevel(){
@@ -323,7 +325,9 @@ void levelMenu::updateLevel(){
     ss.str(line);
     ss >> maxLevelIndex;
     is.close();
-
+    if (maxLevelIndex >= 3){
+        maxLevelIndex--;
+    }
     for (int i = 0; i < (maxLevelIndex+1);i++){
         menu[i].setFillColor(sf::Color::White);
         

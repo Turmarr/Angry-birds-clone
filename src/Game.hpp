@@ -4,8 +4,10 @@
 #include "levelMenu.hpp"
 #include "state.hpp"
 #include "level.hpp"
-//#include "higscore.hpp"
+#include "Highscores.hpp"
+#include "Scoreboard.hpp"
 #include <iostream>
+#include <memory>
 
 class Game{
     public:
@@ -32,15 +34,28 @@ class Game{
         sf::RenderWindow& window_;
         float width_, height_;
         
-        //Pointer to different menus
+        //Pointer to different menus C++14
+        
+        std::unique_ptr<Menu> menu_;
+        std::unique_ptr<levelMenu> lMenu_;
+        std::unique_ptr<Level> level_;
+        std::unique_ptr<Scoreboard> board_;
+        std::unique_ptr<Highscores> highscore_;
+        
+        /*
+        //Pointer to different menus C++11
         Menu* menu_;
         levelMenu* lMenu_;
         Level* level_;
+        Scoreboard* board_;
+        Highscores* highscore_;
+        */
         bool constructed_;
 
         //For highscore updates
-        bool newHigscore;
-        bool input;
+        
+        bool newHighscore_;
+        bool enterPressed;
 
         /* Defines the state of the screen - which class is running
             state.i =

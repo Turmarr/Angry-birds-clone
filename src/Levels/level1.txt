@@ -37,5 +37,4 @@ ball wood 980 400 30 0 0
 3000 5000
 
 #
-../src/Highscores/level1.txt
-
+../src/Highscores/Highscores1.txt

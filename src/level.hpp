@@ -90,6 +90,7 @@ class Level {
 
         //deconstructs the level, is where the level end screen will be determined
         ~Level() {
+            
             delete current_pig_;
             
             for (auto i : box_) {

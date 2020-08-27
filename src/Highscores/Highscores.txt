@@ -1,0 +1,5 @@
+Meri 1300
+Tuomas 400
+Henri 300
+Meri 200
+Aleksi 200

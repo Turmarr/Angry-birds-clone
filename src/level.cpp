@@ -46,7 +46,7 @@ Level::Level(std::string filename) {
     //std::cout << "pig" << std::endl;
     
     for (auto i : info.GetBirds()) {
-        Bird *bird = new Bird(i.x, i.y, i.type,*world_, SCALE_, bird_radius_, points_);
+        Bird *bird = new Bird(i.x, i.y, i.type, *world_, SCALE_, bird_radius_, points_);
         birds_.push_back(bird);
     }
 
@@ -198,10 +198,19 @@ void Level::DrawPigcount(sf::RenderWindow& window) {
     if (!font.loadFromFile("../src/Fonts/arial.ttf")) {
         std::cout << "error getting font"<< std::endl;
     }
+    
     sf::Text text;
     text.setFont(font);
     std::stringstream ss;
-    ss << "Pigs left: " << pigs_.size() + 1 << " Next Pig: " << current_pig_->GetType();
+
+    if (current_pig_ != NULL){
+        
+        ss << "Pigs left: " << pigs_.size() + 1 << " Next Pig: " << current_pig_->GetType();
+    }
+    else
+    {
+        ss << "Pigs left: 0    Next Pig: NONE";
+    }
     text.setString(ss.str());
     text.setCharacterSize(20);
     text.setFillColor(sf::Color::Red);
@@ -274,6 +283,7 @@ void Level::FirePig() {
 }
 
 void Level::DeleteDestroyed() {
+    //std::cout<< "delete destroyed" << std::endl;
     std::vector<Bird*>::iterator it = birds_.begin();
     for (; it != birds_.end(); ) {
         //std::cout << "birdhp" << (*it)->GetHp() << std::endl;
@@ -283,6 +293,7 @@ void Level::DeleteDestroyed() {
         }
         else {it++;}
     }
+    //std::cout<< "delete ball" << std::endl;
     std::vector<Ball*>::iterator itb = ball_.begin();
     for (; itb != ball_.end(); ) {
         if ((*itb)->GetHp() <= 0) {
@@ -291,6 +302,7 @@ void Level::DeleteDestroyed() {
         }
         else {itb++;}
     }
+    //std::cout<< "delete box" << std::endl;
     std::vector<Box*>::iterator itx = box_.begin();
     for (; itx != box_.end(); ) {
         if ((*itx)->GetHp() <= 0) {
@@ -324,7 +336,6 @@ void Level::DrawLevel(sf::RenderWindow& window) {
     DrawScore(window);
     DrawPigcount(window);
 
-    window.display();
 }
 
 
@@ -371,7 +382,7 @@ void Level::Simulate() {
     world_->Step(timeStep_, velocityIterations_, positionIterations_);
 
     if (current_pig_ != nullptr && pig_flying_) {
-            if (current_pig_->GetSpeed() <= 0.1) {
+            if (current_pig_->GetSpeed() <= 1) {
                 pig_time_ += 1;
                 if (pig_time_ >= 60) {
                     delete current_pig_;
@@ -481,7 +492,7 @@ state Level::Update(sf::RenderWindow& window, sf::Event& ev) {
             /*if(custom_camera_){
                 sf::Vector2i pixelPos = sf::Mouse::getPosition(window);
                 sf::Vector2f worldPos = window.mapPixelToCoords(pixelPos);
-                std::cout <<  worldPos.x <<"," << worldPos.y << std::endl;
+                std::cout <<  worldPos.x << std::endl;
             }*/
             break;
         case sf::Event::MouseButtonReleased:
@@ -512,7 +523,6 @@ state Level::Update(sf::RenderWindow& window, sf::Event& ev) {
                 case sf::Keyboard::Left:
                     move_to_left_ = true;
                     break;
-                
                 default:
                     break;
                 }
@@ -529,7 +539,6 @@ state Level::Update(sf::RenderWindow& window, sf::Event& ev) {
                     state.i = 5;
                     state.points = -1;
                     return state;
-
                 default:
                     break;
                 }
@@ -545,7 +554,6 @@ state Level::Update(sf::RenderWindow& window, sf::Event& ev) {
     }
     else {
         state.i = 5;
-        state.points = -1;
         if (birds_.size() == 0) {
             for (auto i : pigs_) {
                 points_->AddPoints(1000);
@@ -553,13 +561,15 @@ state Level::Update(sf::RenderWindow& window, sf::Event& ev) {
             if (current_pig_ != nullptr) {
                 points_->AddPoints(1000);
             }
-            state.points = points_->GetPoints();
-            LevelStars();
-            LastLevelCleared();
-            std::stringstream ss;
-            ss << highscore_file_;
-            ss >> state.file;
         }
+        state.points = points_->GetPoints();
+        LevelStars();
+        LastLevelCleared();
+        std::stringstream ss;
+        ss << highscore_file_;
+        ss >> state.file;
+        
+        //std::cout<< state.points << " after ending " << state.i << std::endl;
         return state;
     }
     
