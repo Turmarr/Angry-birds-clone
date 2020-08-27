@@ -181,6 +181,7 @@ state Highscores::updateEvent(sf::Event& event){
         default:
             break;
         }
+        break;
     case sf::Event::TextEntered:
 
         //If enter key actually worked
