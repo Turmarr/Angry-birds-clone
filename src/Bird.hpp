@@ -22,7 +22,7 @@ class Bird: public Destructables
         void initPhysics(b2World& world);
     
     public:
-        Bird(float x, float y, b2World& world, const float scale, float radius, Points* points);
+        Bird(float x, float y, std::string type, b2World& world, const float scale, float radius, Points* points);
         ~Bird();
 
         virtual void Draw(sf::RenderWindow& target);

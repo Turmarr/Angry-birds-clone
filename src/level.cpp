@@ -46,7 +46,7 @@ Level::Level(std::string filename) {
     //std::cout << "pig" << std::endl;
     
     for (auto i : info.GetBirds()) {
-        Bird *bird = new Bird(i.x, i.y, *world_, SCALE_, bird_radius_, points_);
+        Bird *bird = new Bird(i.x, i.y, i.type,*world_, SCALE_, bird_radius_, points_);
         birds_.push_back(bird);
     }
 
