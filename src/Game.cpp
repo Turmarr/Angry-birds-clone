@@ -17,6 +17,14 @@ Game::Game(sf::RenderWindow& window, float width, float height): window_(window)
 
 Game::~Game(){
 
+    /*delete menu_;
+    delete lMenu_;
+    delete board_;
+    delete highscore_;
+    if (level_ != nullptr){
+        delete level_;
+    }*/
+
 }
 //Settings for the window
 void Game::initWindow(){
@@ -26,17 +34,26 @@ void Game::initWindow(){
 }
 //Creates the objects for different screens (except level)
 void Game::initMenus(){
-    
+
+    //with C++14 compiler
     menu_ = std::make_unique<Menu>(width_, height_);
     lMenu_ = std::make_unique<levelMenu>(width_, height_);
     highscore_ = std::make_unique<Highscores>(width_, height_);
     board_ = std::make_unique<Scoreboard>(width_, height_);
+    /*
+    //With C++11
+    menu_ = new Menu(width_, height_);
+    lMenu_ = new levelMenu(width_, height_);
+    highscore_ = new Highscores(width_, height_);
+    board_ = new Scoreboard(width_, height_);
+    */
 }
 
 
 void Game::createLevel(){
     
     level_ = std::make_unique<Level>(state_.file);
+    //level_ = new Level(state_.file);
     constructed_ = true;
     
 }
@@ -44,13 +61,10 @@ void Game::createLevel(){
 //Called when level has finished running
 void Game::deleteLevel(){
     
-    /* For checking how many stars have been achieved. 
-    Checked in levelMenu::updateStars().
-    First is the level and then the amount of stars.
-    */
     lMenu_->updateStars();
     lMenu_->updateLevel();
     level_ = nullptr;
+    //delete level_;
     constructed_ = false;
     sf::View view = window_.getDefaultView();
     window_.setView(view);

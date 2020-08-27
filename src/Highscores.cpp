@@ -31,17 +31,17 @@ Highscores::Highscores(float width, float height){
         texts[i].setOutlineThickness(2.f);
     }
     
-    texts[0].setCharacterSize(20);
+    texts[0].setCharacterSize(30);
     texts[0].setPosition(box.getPosition().x, box.getGlobalBounds().top + 50);
     
-    texts[1].setCharacterSize(15);
-    texts[1].setPosition(box.getPosition().x, box.getGlobalBounds().top + 125);
+    texts[1].setCharacterSize(20);
+    texts[1].setPosition(box.getPosition().x+30, box.getGlobalBounds().top + 130);
 
-    texts[2].setCharacterSize(10);
-    texts[2].setPosition(box.getPosition().x, box.getGlobalBounds().top + 150);
+    texts[2].setCharacterSize(20);
+    texts[2].setPosition(box.getPosition().x+30, box.getGlobalBounds().top + 165);
 
-    texts[4].setCharacterSize(15);
-    texts[4].setPosition(box.getPosition().x, inputBox.getGlobalBounds().top + 70);
+    texts[4].setCharacterSize(20);
+    texts[4].setPosition(box.getPosition().x+30, inputBox.getGlobalBounds().top + 70);
 
 
 }
@@ -161,9 +161,7 @@ bool Highscores::updateHighscores(std::string filename, int points){
     }
 }
 
-state Highscores::updateEvent(sf::Event& event){
-
-    
+state Highscores::updateEvent(sf::Event& event){    
 
     switch (event.type)
     {
@@ -180,18 +178,12 @@ state Highscores::updateEvent(sf::Event& event){
             }
             break;
 
-        case sf::Keyboard::BackSpace:
-            if (backtrack == false){
-                backtrack = true;
-                userInput.erase(userInput.size()-1, 1);
-            }
-            break;
-
         default:
             break;
         }
     case sf::Event::TextEntered:
-        /*if(event.text.unicode == 10){
+
+        if(event.text.unicode == '\n'){
             std::cout << "Enter pressed" << std::endl;
             currentHighscores.emplace_back(userInput, currentPoints);
             std::sort(currentHighscores.begin(), currentHighscores.end(), higherScore);
@@ -201,13 +193,14 @@ state Highscores::updateEvent(sf::Event& event){
             return options_;
         }
 
-        if(event.text.unicode == 8){
+        else if(event.text.unicode == '\b'){
             userInput.pop_back();
-        }*/
+        }
 
-        if(event.text.unicode < 128 && enter == false && backtrack == false){
+        else if(event.text.unicode < 128){
             if(userInput.length() <= maxInputSize){
-                userInput += static_cast<char>(event.text.unicode);
+                std::cout << "ASCII character typed: " << static_cast<char>(event.text.unicode) << std::endl;
+                userInput += event.text.unicode;
                 
             }
         }
@@ -231,12 +224,9 @@ state Highscores::updateEvent(sf::Event& event){
             case sf::Keyboard::Return:
                 options_.i = 1;
                 enter = false;
-                backtrack = false;
                 return options_;
                 break;
-            case sf::Keyboard::BackSpace:
-                backtrack = false;
-                break;
+        
             default:
                 break;
         

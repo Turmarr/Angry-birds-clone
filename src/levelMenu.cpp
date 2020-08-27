@@ -276,7 +276,8 @@ state levelMenu::updateMenuEvent(sf::Event& ev, sf::RenderWindow& window){
     options_.i = 1;
     return options_;
 }
-//Setting stars to non-transparent
+
+//Setting stars to non-transparent, also checking how many stars have been achieved. 
 void levelMenu::updateStars(){
     
     std::ifstream is("../src/Levels/stars.txt");
@@ -308,7 +309,7 @@ void levelMenu::updateStars(){
         } 
     }
     is.close();
-    //std::cout<< "updateStars" << std::endl;
+    
 }
 
 void levelMenu::updateLevel(){
@@ -332,5 +333,4 @@ void levelMenu::updateLevel(){
         
     }
     updateSelected();
-    //std::cout<< "updateCleared" << std::endl;
 }
