@@ -1,5 +1,5 @@
 Tuomas 5000
 Aleksi 4600
-Meri 3000
-Pekka 300
-Henri 300
+Meri 3100
+Henri 1300
+0 0
