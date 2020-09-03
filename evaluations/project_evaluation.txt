@@ -1,0 +1,11 @@
+Design: 4
+The design choices are sensible and use appropriate features. Some more advanced C++ features might have been useful to make the code clearer.
+
+Working practices: 2
+Git commits are somewhat sensible, but branching is not used quite correctly. Work log is good. Testing of the software is not documented.
+
+Implementation: 2
+CMake is used and enables building for multiple platforms. The program sometimes crashes when starting a level. Some uninitalized values are present when running the program. 
+
+Topical features: 4
+All the basic features have been implemented and in addition some additional features have been implemented too.

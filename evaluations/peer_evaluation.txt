@@ -1,0 +1,18 @@
+Design: 5
+Clear class structure. Suitable for extensions. Inheritance used well. 
+
+Working practices: 4
+Git is used appropriately. Work has been distributed quite adequately. There is some documentation about testing of the software. Branches were used. 
+
+Implementation: 3
+There is a make/Cmake for easy building of software. Basic operation works without crashing. No smart pointers. Doesn't work on OSX.
+
+Topical features: 4
+Quite many features that worked well:
+
+Cool menu and graphics in general.
+
+Highscores and stars.
+
+Exploding pigs, (speed pigs, was not able to test level3 for some reason?), different birds, many different blocks.
+
