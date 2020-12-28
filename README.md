@@ -1,4 +1,4 @@
-#Angry-birds-clone
+# Angry-birds-clone
 
 Coursework for C++ course. Aim was to create an angry birds type game. The project was done in a group of four people.
 
